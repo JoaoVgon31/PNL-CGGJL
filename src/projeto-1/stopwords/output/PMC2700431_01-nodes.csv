@@ -1,0 +1,8 @@
+case_id,node_id,type,label,attributes
+PMC2700431_01,P1,Patient,patient,case_id=PMC2700431_01; article_id=PMC2700431; gender=Male; age=35; age_unit=years
+PMC2700431_01,F1,Finding,opacities right lower lung region large endotracheal cuff shadow [Figure 1],polarity=present; certainty=confirmed
+PMC2700431_01,F2,Finding,fistula demonstrated passage secretions air,polarity=present; certainty=confirmed
+PMC2700431_01,A1,AnatomicalSite,spleen,
+PMC2700431_01,A2,AnatomicalSite,liver,
+PMC2700431_01,A3,AnatomicalSite,lung,laterality=right; region_qualifier=lower
+PMC2700431_01,O1,Outcome,expired,type=death; polarity=present

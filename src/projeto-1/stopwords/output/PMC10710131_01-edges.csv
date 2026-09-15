@@ -1,0 +1,5 @@
+case_id,edge_id,source_id,target_id,relation,attributes
+PMC10710131_01,e1,P1,E1,UNDERWENT_EXAM,evidence_text=Eighteen patients underwent second bone augmentation simultaneously with dental implant placement at T2; trigger=underwent; certainty=asserted; char_start=369; char_end=444
+PMC10710131_01,e2,P1,F1,HAS_FINDING,evidence_text=A clinical exam revealed good oral hygiene and a normal smile line (Figs; trigger=revealed; certainty=asserted; char_start=888; char_end=935
+PMC10710131_01,e3,P1,F2,HAS_FINDING,evidence_text=The preoperative CBCT reveals a severely vertical and horizontal bone defect with a bladed alveolar crest (Fig; trigger=reveals; certainty=asserted; char_start=1129; char_end=1209
+PMC10710131_01,e4,P1,T1,TREATED_WITH,evidence_text=Eighteen patients underwent second bone augmentation simultaneously with dental implant placement at T2; trigger=underwent; certainty=asserted; char_start=369; char_end=444

@@ -1,0 +1,12 @@
+case_id,node_id,type,label,attributes
+PMC11723754_01,P1,Patient,patient,case_id=PMC11723754_01; article_id=PMC11723754; gender=Male; age=0.0; age_unit=years
+PMC11723754_01,F1,Finding,deranged electrolytes raised creatinine,source=imaging; polarity=present; certainty=confirmed
+PMC11723754_01,F2,Finding,shown Figure 7,polarity=present; certainty=confirmed
+PMC11723754_01,E1,Exam,PRBC transfusion view low Hb 7g/dl,
+PMC11723754_01,D1,Diagnosis,septicaemia septic shock,certainty=confirmed; polarity=present; role=principal
+PMC11723754_01,M1,Medication,Hb,dose_value=7; dose_unit=g
+PMC11723754_01,A1,AnatomicalSite,bladder,
+PMC11723754_01,A2,AnatomicalSite,liver,
+PMC11723754_01,O1,Outcome,improvement,type=improvement; polarity=absent
+PMC11723754_01,O2,Outcome,improved,type=improvement; polarity=present
+PMC11723754_01,O3,Outcome,discharged,type=discharge; polarity=present

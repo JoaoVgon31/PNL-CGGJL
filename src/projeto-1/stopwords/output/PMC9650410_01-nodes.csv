@@ -1,0 +1,7 @@
+case_id,node_id,type,label,attributes
+PMC9650410_01,P1,Patient,patient,case_id=PMC9650410_01; article_id=PMC9650410; gender=Female; age=67; age_unit=years
+PMC9650410_01,F1,Finding,several important lessons regarding deception Silicon Valley,polarity=present; certainty=confirmed
+PMC9650410_01,F2,Finding,droplet blood needed conduct tests,source=imaging; polarity=present; certainty=confirmed
+PMC9650410_01,R1,ExamResult,Gibbons,value=67; raw_text=Gibbons was 67
+PMC9650410_01,D1,Diagnosis,cancer,certainty=confirmed; polarity=present; role=principal
+PMC9650410_01,O1,Outcome,death,type=death; polarity=present

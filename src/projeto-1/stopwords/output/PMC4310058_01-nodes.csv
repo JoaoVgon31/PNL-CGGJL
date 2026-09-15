@@ -1,0 +1,7 @@
+case_id,node_id,type,label,attributes
+PMC4310058_01,P1,Patient,patient,case_id=PMC4310058_01; article_id=PMC4310058; gender=Male; age=16; age_unit=years
+PMC4310058_01,F1,Finding,indentation 2 weeks prior no recent change size,polarity=absent; certainty=confirmed
+PMC4310058_01,F2,Finding,patient noted palpable defect indentation right parietal bone,source=imaging; polarity=present; certainty=confirmed
+PMC4310058_01,F3,Finding,skull defect right parietal bone [Figure 1a],source=imaging; polarity=present; certainty=confirmed
+PMC4310058_01,F4,Finding,progressive erosion skull [Figure 1b c],source=imaging; polarity=present; certainty=confirmed
+PMC4310058_01,O1,Outcome,discharged,type=discharge; polarity=present; timing=postoperative day 2; length_of_stay=postoperative day 2

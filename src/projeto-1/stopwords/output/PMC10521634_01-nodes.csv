@@ -1,0 +1,22 @@
+case_id,node_id,type,label,attributes
+PMC10521634_01,P1,Patient,patient,case_id=PMC10521634_01; article_id=PMC10521634; gender=Male; age=38; age_unit=years
+PMC10521634_01,H1,History,UC admitted Emergency Department institution increased bowel movements 8 stools/day),subject=patient; polarity=present; category=condition
+PMC10521634_01,H2,History,dizziness,subject=patient; polarity=present; category=condition
+PMC10521634_01,H3,History,rectal bleeding,subject=patient; polarity=present; category=condition
+PMC10521634_01,F1,Finding,extensive colitis classified grade 3 Mayo endoscopic score,source=endoscopy; polarity=present; certainty=confirmed
+PMC10521634_01,F2,Finding,hemoglobin (Hb) level 11,source=lab; polarity=present; certainty=confirmed
+PMC10521634_01,F3,Finding,mild thrombocytosis,polarity=present; certainty=confirmed
+PMC10521634_01,F4,Finding,severe continuous active disease diffuse erosions,source=imaging; polarity=absent; certainty=confirmed
+PMC10521634_01,F5,Finding,Mayo 2 lesions,source=imaging; polarity=present; certainty=confirmed
+PMC10521634_01,E1,Exam,rule infections,modality=imaging
+PMC10521634_01,E2,Exam,showing erythema,
+PMC10521634_01,E3,Exam,showing active diffuse arterial bleeding multiple sites descendent,modality=imaging
+PMC10521634_01,E4,Exam,CT scan,modality=imaging
+PMC10521634_01,R1,ExamResult,level,value=11.5; unit=g/dl; interpretation=normal; raw_text=level of 11.5g/dl
+PMC10521634_01,R2,ExamResult,total,value=120; raw_text=A total of 120
+PMC10521634_01,T1,Treatment,CT scan,type=procedure; status=performed
+PMC10521634_01,M1,Medication,VDZ,dose_value=300; dose_unit=mg; route=intravenous
+PMC10521634_01,A1,AnatomicalSite,colon,
+PMC10521634_01,A2,AnatomicalSite,rectum,
+PMC10521634_01,O1,Outcome,discharged,type=discharge; polarity=present
+PMC10521634_01,O2,Outcome,complication,type=complication; polarity=present

@@ -1,0 +1,7 @@
+case_id,node_id,type,label,attributes
+PMC6083636_01,P1,Patient,patient,case_id=PMC6083636_01; article_id=PMC6083636; gender=Male; age=9.0; age_unit=years
+PMC6083636_01,H1,History,amblyopia,subject=family; polarity=absent; category=condition
+PMC6083636_01,H2,History,strabismus eye disorders family,subject=family; polarity=absent; category=condition
+PMC6083636_01,H3,History,no parental consanguinity,subject=family; polarity=absent; category=condition
+PMC6083636_01,F1,Finding,obvious signs cutaneous ocular albinism,source=physical_exam; polarity=absent; certainty=confirmed
+PMC6083636_01,M1,Medication,Cicloplegicedol,dose_value=10; dose_unit=mg

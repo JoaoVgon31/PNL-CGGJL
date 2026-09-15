@@ -1,0 +1,24 @@
+case_id,node_id,type,label,attributes
+PMC10405809_01,P1,Patient,patient,case_id=PMC10405809_01; article_id=PMC10405809; gender=Female; age=55; age_unit=years
+PMC10405809_01,S1,Symptom,progressive dysphagia solids,polarity=present
+PMC10405809_01,S2,Symptom,lost 10 kg weight two years,polarity=present
+PMC10405809_01,S3,Symptom,history ingesting caustic substance,polarity=absent
+PMC10405809_01,S4,Symptom,radiotherapy,polarity=absent
+PMC10405809_01,S5,Symptom,atopy,polarity=absent
+PMC10405809_01,S6,Symptom,comorbid illnesses,polarity=absent
+PMC10405809_01,H1,History,ingesting caustic substance,subject=patient; polarity=present; category=condition
+PMC10405809_01,H2,History,radiotherapy,subject=patient; polarity=present; category=medication
+PMC10405809_01,H3,History,atopy,subject=patient; polarity=present; category=condition
+PMC10405809_01,H4,History,comorbid illnesses,subject=patient; polarity=present; category=condition
+PMC10405809_01,F1,Finding,pale ill-nourished,source=physical_exam; polarity=present; certainty=confirmed
+PMC10405809_01,F2,Finding,hemoglobin 8,polarity=present; certainty=confirmed
+PMC10405809_01,F3,Finding,microcytic hypochromic red blood cells,polarity=present; certainty=confirmed
+PMC10405809_01,F4,Finding,3 cm x 2 cm sized diverticulum right lateral wall cervical esophagus short segment narrowing distal esophagus upstream dilation (Fig,polarity=present; certainty=confirmed; size=3 cm
+PMC10405809_01,F5,Finding,homogenous circumferential wall thickening lower esophagus no significant periesophageal lymph nodes (Fig,source=imaging; polarity=absent; certainty=confirmed
+PMC10405809_01,F6,Finding,KJD 20 cm incisors tight stricture lower esophagus beyond endoscope not negotiable (Fig,source=imaging; polarity=absent; certainty=confirmed; size=20 cm
+PMC10405809_01,E1,Exam,three CRE balloon dilatation sessions 12 15 mm 4-weeks intervals,
+PMC10405809_01,R1,ExamResult,repeat hemoglobin,value=10.9; interpretation=normal; raw_text=and her repeat hemoglobin was 10.9
+PMC10405809_01,D1,Diagnosis,KJD peptic stricture made,certainty=confirmed; polarity=present; role=principal
+PMC10405809_01,T1,Treatment,three CRE balloon dilatation sessions 12 15 mm 4-weeks intervals,type=procedure; status=performed
+PMC10405809_01,M1,Medication,omeprazole,dose_value=20; dose_unit=mg; frequency=twice daily
+PMC10405809_01,A1,AnatomicalSite,esophagus,region_qualifier=distal

@@ -1,0 +1,37 @@
+case_id,node_id,type,label,attributes
+PMC12215201_01,P1,Patient,patient,case_id=PMC12215201_01; article_id=PMC12215201; gender=Male; age=56; age_unit=years
+PMC12215201_01,H1,History,originally presented emergency department complaints 2 months fatigue,subject=patient; polarity=present; category=condition
+PMC12215201_01,H2,History,swollen abdomen,subject=patient; polarity=present; category=condition
+PMC12215201_01,H3,History,decreased appetite,subject=patient; polarity=present; category=condition
+PMC12215201_01,H4,History,weight loss,subject=patient; polarity=present; category=condition
+PMC12215201_01,F1,Finding,diffusely tender distended abdomen shifting dullness indicative ascites,source=physical_exam; polarity=present; certainty=confirmed
+PMC12215201_01,F2,Finding,hemoglobin 6,source=lab; polarity=present; certainty=confirmed
+PMC12215201_01,F3,Finding,multiple solid masses liver,source=imaging; polarity=present; certainty=confirmed
+PMC12215201_01,F4,Finding,PMN count >250 cytology negative malignant cells,polarity=absent; certainty=confirmed
+PMC12215201_01,F5,Finding,multiple erythematous nodular lesions gastric body (Fig,polarity=present; certainty=confirmed
+PMC12215201_01,F6,Finding,numerous metastatic lesions seen throughout stomach small bowel,source=endoscopy; polarity=present; certainty=confirmed
+PMC12215201_01,F7,Finding,small aggregates anastomosing vascular channels highly atypical cells suggestive angiosarcoma (Fig,source=pathology; polarity=present; certainty=suspected
+PMC12215201_01,E1,Exam,showed multiple solid masses liver,
+PMC12215201_01,E2,Exam,CT abdomen,modality=imaging; contrast=true
+PMC12215201_01,E3,Exam,paracentesis twice removal 5,
+PMC12215201_01,E4,Exam,liver biopsy,modality=pathology
+PMC12215201_01,E5,Exam,Pleurx catheter placement palliative support,
+PMC12215201_01,R1,ExamResult,social history,value=negative; interpretation=negative; raw_text=His social history was negative
+PMC12215201_01,R2,ExamResult,ascitic fluid protein,value=1; unit=g/dl; raw_text=The ascitic fluid protein was 1 g/dL
+PMC12215201_01,T1,Treatment,CT abdomen,type=procedure; status=performed
+PMC12215201_01,T2,Treatment,paracentesis twice removal 5,type=procedure; status=performed
+PMC12215201_01,T3,Treatment,liver biopsy,type=procedure; status=performed
+PMC12215201_01,T4,Treatment,Pleurx catheter placement palliative support,type=procedure; status=performed
+PMC12215201_01,M1,Medication,hemoglobin,dose_value=6.1; dose_unit=g
+PMC12215201_01,M2,Medication,bilirubin,dose_value=3.2; dose_unit=mg
+PMC12215201_01,M3,Medication,phosphatase,dose_value=315; dose_unit=iu
+PMC12215201_01,M4,Medication,AST,dose_value=305; dose_unit=iu
+PMC12215201_01,M5,Medication,ALT,dose_value=209; dose_unit=iu
+PMC12215201_01,M6,Medication,albumin,dose_value=2.6; dose_unit=g
+PMC12215201_01,M7,Medication,and,dose_value=2; dose_unit=g
+PMC12215201_01,A1,AnatomicalSite,liver,
+PMC12215201_01,A2,AnatomicalSite,spleen,
+PMC12215201_01,A3,AnatomicalSite,lung,
+PMC12215201_01,A4,AnatomicalSite,kidney,laterality=bilateral
+PMC12215201_01,A5,AnatomicalSite,duodenum,
+PMC12215201_01,A6,AnatomicalSite,stomach,

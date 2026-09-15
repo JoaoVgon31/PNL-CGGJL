@@ -1,0 +1,22 @@
+case_id,node_id,type,label,attributes
+PMC7718649_01,P1,Patient,patient,case_id=PMC7718649_01; article_id=PMC7718649; gender=Female; age=65; age_unit=years
+PMC7718649_01,S1,Symptom,mild coughing,polarity=present
+PMC7718649_01,F1,Finding,bilateral patchy ground-glass opacities (according medical records,source=imaging; polarity=absent; certainty=confirmed
+PMC7718649_01,F2,Finding,pulmonary lesions extension (according medical records,source=imaging; polarity=absent; certainty=confirmed
+PMC7718649_01,F3,Finding,conscious patient clear,source=physical_exam; polarity=present; certainty=confirmed
+PMC7718649_01,F4,Finding,bilateral ground-glass,source=imaging; polarity=present; certainty=confirmed
+PMC7718649_01,F5,Finding,values better previous tests (Table 1),source=lab; polarity=present; certainty=confirmed
+PMC7718649_01,F6,Finding,modest upturn lesions (Figure 2b),source=imaging; polarity=present; certainty=confirmed
+PMC7718649_01,F7,Finding,obvious improvement acute exudative lesions negative results rRT-PCR SARS-CoV-2 two nasal pharyngeal swabs 24 h),polarity=present; certainty=confirmed
+PMC7718649_01,R1,ExamResult,temperature,value=37.1; raw_text=temperature was 37.1
+PMC7718649_01,R2,ExamResult,Glycosylated hemoglobin,value=7.1; unit=%; interpretation=elevated; raw_text=Glycosylated hemoglobin was 7.1%
+PMC7718649_01,M1,Medication,oseltamivir,dose_value=75; dose_unit=mg; frequency=twice daily; route=oral
+PMC7718649_01,M2,Medication,arbidol,dose_value=0.3; dose_unit=g; frequency=twice daily; route=oral
+PMC7718649_01,M3,Medication,moxifloxacin,dose_value=0.4; dose_unit=g; frequency=once daily; route=oral
+PMC7718649_01,M4,Medication,capsules,dose_value=1.4; dose_unit=g; frequency=three times daily; route=oral
+PMC7718649_01,M5,Medication,to,dose_value=15; dose_unit=mg; frequency=once daily
+PMC7718649_01,A1,AnatomicalSite,kidney,
+PMC7718649_01,A2,AnatomicalSite,liver,
+PMC7718649_01,O1,Outcome,improved,type=improvement; polarity=present
+PMC7718649_01,O2,Outcome,improvement,type=improvement; polarity=present
+PMC7718649_01,O3,Outcome,discharged,type=discharge; polarity=present; timing=3 days; length_of_stay=3 days

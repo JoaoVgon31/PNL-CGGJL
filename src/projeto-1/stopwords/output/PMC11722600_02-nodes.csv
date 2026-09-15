@@ -1,0 +1,28 @@
+case_id,node_id,type,label,attributes
+PMC11722600_02,P1,Patient,patient,case_id=PMC11722600_02; article_id=PMC11722600; gender=Female; age=44; age_unit=years
+PMC11722600_02,S1,Symptom,abdominal pain 72 h,polarity=present
+PMC11722600_02,S2,Symptom,initially epigastrium,polarity=present
+PMC11722600_02,S3,Symptom,later localized RIF,polarity=present
+PMC11722600_02,S4,Symptom,oral intolerance,polarity=present
+PMC11722600_02,H1,History,endometriosis hormonal treatment,subject=patient; polarity=present; category=condition
+PMC11722600_02,H2,History,previous surgeries including two cesarean sections,subject=patient; polarity=present; category=condition
+PMC11722600_02,H3,History,laparoscopic exploration resection pelvic endometriotic foci two years prior,subject=patient; polarity=present; category=surgery
+PMC11722600_02,H4,History,presented abdominal pain 72 h,subject=patient; polarity=present; category=condition
+PMC11722600_02,H5,History,initially epigastrium,subject=patient; polarity=present; category=condition
+PMC11722600_02,H6,History,later localized RIF,subject=patient; polarity=present; category=condition
+PMC11722600_02,H7,History,associated oral intolerance,subject=patient; polarity=present; category=condition
+PMC11722600_02,F1,Finding,abdominal pain RIF,source=physical_exam; polarity=present; certainty=confirmed
+PMC11722600_02,F2,Finding,enlarged cecal appendix measuring 17 mm diameter marked inflammatory process around cecum terminal ileum,source=imaging; polarity=present; certainty=suspected; size=17 mm
+PMC11722600_02,F3,Finding,inflammatory process RIF adhered anterior lateral parietal peritoneum involving cecum,source=imaging; polarity=present; certainty=confirmed
+PMC11722600_02,F4,Finding,no germ growth,source=imaging; polarity=absent; certainty=confirmed
+PMC11722600_02,F5,Finding,enlarged cecal appendix coprolite inside,source=imaging; polarity=absent; certainty=confirmed
+PMC11722600_02,F6,Finding,cecal appendix significant inflammatory component,source=imaging; polarity=present; certainty=confirmed
+PMC11722600_02,F7,Finding,cecal appendix coprolite inside lumen chronic inflammatory process,source=imaging; polarity=absent; certainty=confirmed
+PMC11722600_02,E1,Exam,due firmness inflammatory process,
+PMC11722600_02,E2,Exam,ensure complete drainage periappendiceal collection,modality=imaging
+PMC11722600_02,R1,ExamResult,Rebound tenderness,value=positive; interpretation=positive; raw_text=Rebound tenderness was positive
+PMC11722600_02,D1,Diagnosis,acute appendicitis made,certainty=suspected; polarity=present; role=principal
+PMC11722600_02,D2,Diagnosis,advanced appendicitis,certainty=confirmed; polarity=present; role=principal
+PMC11722600_02,M1,Medication,at,dose_value=85; dose_unit=mg
+PMC11722600_02,A1,AnatomicalSite,appendix,
+PMC11722600_02,O1,Outcome,discharged,type=discharge; polarity=present; timing=7 days; length_of_stay=7 days
