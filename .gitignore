@@ -1,6 +1,6 @@
 /sample
 src/projeto-1/dicionarios/data/
-output/dicionarios_v2/
+src/projeto-1/dicionarios/output_v2/
 src/projeto-1/dicionarios/slides/
 venv/
 .venv/

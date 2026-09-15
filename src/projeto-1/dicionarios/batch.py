@@ -8,6 +8,8 @@ from crossval import cross_validate_case
 from exporters import export_graph
 from pipeline import load_gazetteers_by_category, process_case_from_csv
 
+DEFAULT_OUTPUT_DIR = Path(__file__).parent / "output"
+
 
 def run_batch(cases_csv: str | Path, metadata_csv: str | Path, output_dir: str | Path) -> None:
     cases_csv, metadata_csv, output_dir = Path(cases_csv), Path(metadata_csv), Path(output_dir)
@@ -56,7 +58,7 @@ def build_parser() -> argparse.ArgumentParser:
     parser = argparse.ArgumentParser()
     parser.add_argument("--cases", required=True)
     parser.add_argument("--metadata", required=True)
-    parser.add_argument("--output", default="output/dicionarios")
+    parser.add_argument("--output", default=DEFAULT_OUTPUT_DIR)
     return parser
 
 

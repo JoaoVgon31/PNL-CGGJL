@@ -1,105 +1,70 @@
 # Dicionários, tesauros e ontologias — issue #6
 
-> Parte do Projeto 1 (MC896, 2026). Ver o contrato comum das issues #3–#6, as entidades/atributos em [`docs/projeto-1/01-dados-a-extrair.md`](../../../docs/projeto-1/01-dados-a-extrair.md) e o esquema do grafo em [`docs/projeto-1/02-esquema-grafo.md`](../../../docs/projeto-1/02-esquema-grafo.md).
+Parser de caso clínico → grafo de conhecimento, com as entidades **ligadas a vocabulário controlado** (MeSH + um gazetteer próprio de `AnatomicalSite`).
 
-Este README acompanha o desenvolvimento do pipeline: cada processo abaixo ganha sua descrição quando é implementado, e a seção de progresso no final é atualizada a cada fase concluída.
+> Documentação detalhada — decisões, licença do MeSH, calibração dos thresholds, resultados e discussão — em [`docs/projeto-1/06-dicionarios.md`](../../../docs/projeto-1/06-dicionarios.md). Este README é só o manual de uso.
 
-## O pipeline
+## O que foi feito, e para que serve
 
-A partir de um `case_id`, o texto do caso (`case_text`) passa pelos seguintes processos até virar as tabelas de nós e arestas:
+O NER por regras decide **quais trechos do caso são entidades**; o dicionário entra depois e responde **"essa menção corresponde a algum conceito catalogado?"**. Quando corresponde, a entidade ganha um nó `Concept` (`vocabulary`, `code`, `preferred_term`) e uma aresta `SAME_AS`.
 
-1. **Leitura do caso.** Localiza a linha correspondente ao `case_id` em `sample/cases.csv` e recupera o texto bruto. Sem isso não há o que processar — é a entrada do pipeline.
+Isso é o que transforma um grafo de strings num grafo consultável: `"T2DM"` num caso e `"type 2 diabetes mellitus"` em outro deixam de ser dois rótulos diferentes e passam a apontar para o mesmo código (`D003924`), o que permite agrupar, contar e cruzar casos por conceito em vez de por grafia. Menção sem casamento continua virando nó normal — só não ganha `Concept`.
 
-2. **Normalização do texto.** Reduz o texto a uma forma canônica (minúsculas, tokenização, tratamento de pontuação e parênteses) antes de qualquer comparação. A importância: sem normalizar, `"Type 2 Diabetes Mellitus"` e `"type 2 diabetes mellitus"` seriam tratadas como strings diferentes e o casamento com o dicionário falharia por uma diferença que não tem relevância clínica nenhuma. A mesma função é aplicada tanto ao texto do caso quanto às entradas do gazetteer (processo 3) — se normalizássemos os dois de formas diferentes, o casamento não funcionaria nem para os casos mais óbvios.
+Em números, nos 56 casos da amostra: **48,3% das entidades ligáveis** geraram `SAME_AS` (139 de 288), produzindo 135 nós `Concept`.
 
-3. **Construção do gazetteer a partir do MeSH.** Processa o thesaurus MeSH (arquivo `desc2026.xml`) e monta uma estrutura de busca rápida que mapeia cada termo — o nome oficial de um conceito e todos os seus sinônimos (*entry terms*) — para um código estável (ex. `D003924`). Sem esse pré-processamento, cada consulta exigiria varrer o XML inteiro do MeSH, e não haveria como saber que `"T2DM"` e `"type 2 diabetes mellitus"` apontam para o mesmo conceito — essa equivalência já vem catalogada no MeSH como sinônimos do mesmo *descriptor*.
+O pipeline, em ordem: leitura do caso → normalização (NFKC + lowercase + pontuação das bordas) → NER por gatilho léxico (`presented with`, `diagnosed with`, `underwent`, ...) → casamento contra o gazetteer (exact → longest → fuzzy, `rapidfuzz`, threshold 85 e mínimo de 5 caracteres) → materialização de `Concept`/`SAME_AS` → validação cruzada contra os `mesh_terms` do artigo.
 
-4. **Extração de menções candidatas (NER baseado em regras).** Antes de tentar casar qualquer coisa com o dicionário, é preciso decidir *quais trechos* do texto são candidatos a entidade (um sintoma, um diagnóstico, um exame...). Isso é feito com regras determinísticas — padrões de POS-tagging, gatilhos lexicais (`presented with`, `diagnosed with`) — sem modelo de linguagem. Sem esse passo, só seria possível comparar palavra por palavra contra o dicionário, perdendo conceitos de mais de uma palavra (`"chronic kidney disease"`) e desperdiçando tempo comparando palavras irrelevantes do texto (artigos, verbos, etc.).
+## Como rodar
 
-5. **Casamento (matching) com o gazetteer.** Cada menção candidata é comparada contra o gazetteer em ordem de rigor decrescente: primeiro **exact match** (string idêntica após normalização), depois **longest match** (para conceitos multi-palavra, tentando a maior janela de tokens antes de janelas menores) e por fim **fuzzy match** (distância de edição, para pegar variações não previstas como erros de digitação), com um threshold de similaridade e uma regra de desempate quando mais de um conceito casa. A importância de encadear as três, em vez de usar só uma: exact match sozinho tem cobertura baixa (só pega o que já está listado literalmente como sinônimo); fuzzy match sozinho, sem as etapas mais estritas antes, arrisca casar termos parecidos que não deveriam ser equivalentes.
+Dependências (Python 3.10+):
 
-6. **Ligação ao grafo (`Concept` + `SAME_AS`).** Toda menção que teve casamento bem-sucedido gera um nó `Concept` (com `vocabulary`, `code` e `preferred_term`) e uma aresta `SAME_AS` ligando a entidade original a esse conceito. Menções sem casamento continuam como nó normal, sem `Concept`/`SAME_AS`. Sem esse passo, o resultado do matching ficaria só na memória do programa — é aqui que ele vira, de fato, parte das tabelas de nós e arestas exigidas pelo contrato.
+```bash
+pip install nltk rapidfuzz
+python -c "import nltk; nltk.download('punkt_tab')"
+```
 
-7. **Validação cruzada com `mesh_terms`.** Compara os conceitos MeSH que o pipeline encontrou no texto do caso com a lista de `mesh_terms` que o próprio artigo já tem em `metadata.csv` (atribuída por curadores humanos do PubMed). A importância: como não existe um gabarito anotado à mão para os casos desta amostra, essa comparação é o único sinal independente de que o casamento está encontrando conceitos plausíveis — mesmo sabendo que `mesh_terms` descreve o artigo inteiro, não o caso específico, então não deve ser tratado como gabarito perfeito.
+Os gazetteers já vêm versionados em `gazetteer/` — **não é preciso baixar o MeSH** para rodar o pipeline. Os comandos abaixo rodam da raiz do repositório e assumem a amostra em `sample/` (não versionada).
 
-8. **Gazetteer próprio para `AnatomicalSite`.** Sítios anatômicos não têm, neste projeto, um vocabulário oficial associado — por isso essa categoria usa uma estrutura equivalente ao gazetteer do MeSH, mas com códigos internos (`ANAT001`, `ANAT002`, ...) definidos e curados por nós, a partir de pesquisa manual (não bootstrap automático no MeSH) — ver progresso abaixo.
+**Um caso:**
 
-## Progresso
+```bash
+python src/projeto-1/dicionarios/main.py --cases sample/cases.csv --case-id PMC5137649_01
+```
 
-- **Leitura do caso (1) e insumos para a normalização (2):** ambiente configurado (`nltk`, `rapidfuzz`) e `sample/cases.csv`/`sample/metadata.csv` inspecionados de verdade — 56 casos de 50 artigos, formato de `case_text` e das colunas de lista de `metadata.csv` confirmados. `mesh_terms` (necessário para o processo 7) usa um formato próprio de lista entre colchetes com escape de aspas (ex. `'Research Support, Non-U.S. Gov\'t'`); um parser dedicado para esse formato já foi implementado e validado nos 50 artigos da amostra.
+**Todos os casos da amostra, com o relatório de validação cruzada:**
 
-- **Construção do gazetteer a partir do MeSH (processo 3):** feita. `desc2026.xml` (NLM, ~313 MB) baixado localmente (não versionado — ver `.gitignore`) sob licença pública, com atribuição obrigatória à NLM ([termos oficiais](https://www.nlm.nih.gov/databases/download/terms_and_conditions_mesh.html)), sem restrição de redistribuição. Parser em streaming implementado em `mesh_parser.py` (`iterparse`, sem carregar a árvore inteira em memória — 31.110 descriptors processados em ~3,6s). A restrição "procurar só na categoria certa do MeSH" é implementada filtrando por prefixo do `TreeNumber` na hora de **construir** o gazetteer (não na hora de buscar) — descriptors fora do prefixo nunca entram no dicionário daquela categoria:
+```bash
+python src/projeto-1/dicionarios/batch.py --cases sample/cases.csv --metadata sample/metadata.csv
+```
 
-  | Entidade (doc 01) | Sub-ramo MeSH | Termos (com sinônimos) | Descriptors únicos |
-  |---|---|---:|---:|
-  | `Diagnosis`, `History`, `Symptom`, `Finding` | `C` — Diseases | 58.284 | 5.069 |
-  | `Medication` | `D` — Chemicals and Drugs | 94.012 | 10.688 |
-  | `Exam` | `E01` — Diagnosis (técnicas) | 7.787 | 784 |
-  | `Treatment` | `E02`+`E04` — Therapeutics / Surgical Procedures | 11.076 | 1.236 |
-  | `Diagnosis` (psiquiátrico) | `F03` — Mental Disorders | 3.063 | 235 |
-  | `AnatomicalSite`, `Patient`, `ExamResult`, `Outcome` | *(nenhum)* | — | — |
+**Regerar o gazetteer próprio de `AnatomicalSite`** (a partir da lista curada em `anatomical_site_terms.py`):
 
-  Validado com termos reais do caso de exemplo: `"Type 2 Diabetes Mellitus"` e `"NIDDM"` resolvem para o mesmo código (`D003924`) que `"Diabetes Mellitus, Type 2"`; `"Pancreatitis"` → `D010195`; `"Oseltamivir"` → `D053139`. Uma limitação real já observada: `"CT"` (sigla) **não** está cadastrada como sinônimo de `Tomography, X-Ray Computed` no MeSH — siglas curtas/ambíguas em geral não entram no thesaurus, então precisam ser resolvidas dentro do próprio caso (padrão `termo por extenso (SIGLA)`), não via o dicionário.
+```bash
+python src/projeto-1/dicionarios/build_anatomical_gazetteer.py
+```
 
-  **O gazetteer persistido é sempre cru (sem normalizar).** `build_gazetteer_rows()` faz uma única passada pelo XML (antes eu reparseava o arquivo inteiro uma vez por categoria — ineficiente) e gera uma linha por `(termo, categoria)` exatamente como está no MeSH, sem tocar em maiúscula/pontuação. Essas 174.006 linhas ficam salvas, versionadas, em `gazetteer/mesh_gazetteer.csv` (11 MB — bem abaixo do limite do GitHub). A normalização só entra depois, como uma etapa de *carregamento* (`rows_to_raw_gazetteer()` + `build_normalized_gazetteer()`), separada de propósito: se o projeto convergir numa normalização "oficial" compartilhada entre as quatro issues, basta trocar a função injetada (ver próxima seção) — o gazetteer em si não precisa ser regerado, e o arquivo de 313 MB do MeSH não precisa estar presente pra isso.
+Para regerar o gazetteer do MeSH é preciso o `desc2026.xml` da NLM (~313 MB, não versionado) e chamar `mesh_parser.build_gazetteer_rows()`.
 
-- **Normalização (processo 2):** implementada em `normalization.py`. Escopo mínimo por decisão deliberada: NFKC + lowercase + remoção de pontuação nas bordas do token, **sem stemming, lematização ou remoção de stop-words** — variação morfológica não coberta pelo MeSH fica a cargo do fuzzy match (processo 5), não da normalização; ver justificativa completa nas notas de progresso da Fase 2 abaixo. A normalização nunca sobrescreve o texto original: só gera a chave usada para consulta no gazetteer, o `label` do nó continua com o texto tal como apareceu no caso (evita ter que reconstruir manualmente a grafia de termos sensíveis a maiúscula, como `IgG`/`CA 19-9`).
+## O que é produzido
 
-  Testado com os casos difíceis que o próprio doc 01 já sinalizava: `"(CEA)"` → `"cea"` (parênteses descartados), `"CA 19-9"` → `"ca 19-9"` (hífen interno preservado pelo tokenizador), `"IgG"` → `"igg"`, `"Diabetes Mellitus, Type 2"` e `"Type 2 Diabetes Mellitus"` → ambos sem a vírgula. Reaplicando aos ~58 mil termos do gazetteer da categoria `C`, o número de chaves caiu de 58.284 para 58.062 — a diferença são colisões de maiúscula/pontuação que agora compartilham uma única entrada.
+Tudo em `output/` (`--output` muda o destino):
 
-  **Bug real encontrado e corrigido durante o teste:** ao juntar tokens normalizados numa janela pra formar a chave de busca, um token que normaliza para string vazia (pontuação pura, ex. `"."`) podia ser silenciosamente absorvido dentro de uma janela — a chave ficava correta (o vazio some ao juntar), mas o span consumido incluía a pontuação (ex. `"constipation ."` em vez de `"constipation"`), o que arriscaria unir span através de fronteiras de frase em outros casos. Corrigido expondo `align_normalized_tokens()`, que descarta tokens vazios *antes* de qualquer janela ser formada, preservando o índice original de cada token restante para reconstruir o span correto depois.
+| Arquivo | Conteúdo |
+|---|---|
+| `<case_id>-nodes.csv` | `case_id, node_id, type, label, attributes` — um por caso, incluindo os nós `Concept` |
+| `<case_id>-edges.csv` | `case_id, edge_id, source_id, target_id, relation, attributes` — inclui as arestas `SAME_AS` e `LOCATED_IN` |
+| `_crossval_summary.csv` | só no modo lote: por caso, nº de nós/arestas, conceitos casados e sobreposição com os `mesh_terms` do artigo |
 
-- **Casamento (processo 5):** implementado em `matching.py`. `greedy_match()` faz exact+longest match numa só função (janela decrescente, exact match é só o caso `w=1`); o que sobra sem casar vai pro `fuzzy_match_leftover()` (rapidfuzz, `fuzz.ratio`, threshold **85** — escolhido testando erros de digitação reais de termos que sabíamos existir no MeSH: `pancreatits`/`naussea`/`hypertention`/`diabetis mellitus type 2` pontuaram 91–96, enquanto palavras que não deveriam casar (`flank`, `she`) pontuaram 57–67; 85 fica com folga segura entre os dois grupos). Desempate: nos dados reais só existe **1 chave ambígua em 58.062** (`"anemia hypoplastic congenital"`, que aponta tanto para `D029502` quanto para `D029503`) — resolvida preferindo o concept cujo `preferred_term` normaliza exatamente para a chave (o termo canônico, não um sinônimo emprestado).
+Entradas versionadas em `gazetteer/`: `mesh_gazetteer.csv` (174.006 termos do MeSH, cru) e `anatomical_site_gazetteer.csv` (50 conceitos curados à mão, códigos `ANAT001`...).
 
-- **NER por gatilho léxico (processo 4) e ligação ao grafo (processo 6):** implementados. `core/models.py` + `core/graph.py` reproduzem o schema comum (`NODE_PREFIXES`/`ALLOWED_RELATIONS`, incluindo `SAME_AS`) de forma independente (não importa código de outra issue). `extractors/` tem um módulo por entidade (`patient`, `symptoms`, `history`, `diagnoses`, `procedures` — Exam+Treatment juntos, pois nascem do mesmo gatilho `underwent` e só se diferenciam por uma lista de palavras-chave —, `medications`, `outcomes`), cada um regex/gatilho simples (nível #4, sem POS-tagging — ver discussão de escopo acima). `concepts.py` chama `matching.link_label_to_concept` pra cada entidade extraída e materializa `Concept`+`SAME_AS`, reaproveitando o mesmo nó `Concept` quando duas entidades do caso casam com o mesmo código. `pipeline.py` orquestra tudo; `exporters.py`/`main.py` geram os CSVs finais.
+> As tabelas atualmente em `output/` são a rodada **anterior** à inclusão de `AnatomicalSite`; a versão com essa entidade existe localmente mas não foi versionada — decisão pendente (ver §9 do doc).
 
-  Rodado nos 56 casos da amostra, sem exceção em nenhum: 56 `Patient`, 64 `Symptom`, 48 `History`, 46 `Diagnosis`, 41 `Treatment`, 41 `Medication`, 33 `Outcome`, 30 `Exam`, **119 `Concept`**. Das 270 entidades de tipo "linkável" (`Symptom`/`History`/`Diagnosis`/`Exam`/`Treatment`/`Medication`), **122 geraram aresta `SAME_AS` — cobertura de 45,2%**. É maior que o achado do colega do POS-tagging (14% dos sintagmas dele tinham tipo no léxico) — plausível, já que ali a cobertura media *qualquer* léxico contra *todo* sintagma, enquanto aqui o matching já é restrito à categoria certa do MeSH por entidade.
+## Onde a estratégia falha
 
-  Validado no caso de referência (`PMC5137649_01`, o mesmo do `example1.md`/`example2.md`): `Treatment` `laparoscopic distal pancreatectomy` (`status=planned`) e `open resection` (`status=converted`) saíram corretos depois de eu notar que os gatilhos originais (só `underwent`/`treated with`) não cobriam `"was planned"`/`"converted to"` — adicionados depois de rodar e ver o buraco. Achado real de limitação do MeSH: `"contrast enhanced computed tomography"` só casa (via `exact`, não `longest`) com o descriptor genérico **`Tomography`** (`D014054`) — nem `"computed tomography"` nem `"CT"` estão cadastrados como sinônimo do descriptor mais específico `Tomography, X-Ray Computed` (`D014057`); é o mesmo tipo de lacuna do achado anterior sobre `"CT"`, agora em outra direção (match genérico em vez de zero match). Por outro lado, `"mucinous pancreatic cystic neoplasm"` casou (via `longest`) com um conceito bem específico: `Neoplasms, Cystic, Mucinous, and Serous` (`D018297`).
-
-- **Validação cruzada com `mesh_terms` (processo 7):** implementada em `metadata_reader.py` (parser de lista entre colchetes da Fase 0, agora salvo de vez em módulo) + `crossval.py`. Para cada caso, compara o conjunto de `preferred_term` dos `Concept` casados com os `mesh_terms` do artigo em `metadata.csv` (removendo o qualificador, ex. `"Cysts / diagnosis"` → `"Cysts"`).
-
-  Resultado nos 56 casos: **8 artigos têm `mesh_terms` vazio** (excluídos da média); dos 48 restantes, a sobreposição média é de só **1,1%** dos termos do artigo, com overlap positivo em apenas **3 de 48 casos (6,2%)**. Isso é baixo, mas **exatamente o que o enunciado avisa**: `mesh_terms` descreve o artigo inteiro (frequentemente com múltiplos casos, introdução, discussão), curado por humano sobre outro nível de granularidade — não o `case_text` isolado. Quebrando o overlap por tipo de entidade de origem do `Concept`, a hipótese se confirma (amostra pequena, mas a direção é clara): `Diagnosis` (8,7%), `Treatment` (16,7%) e `Exam` (14,3%) batem mais que `Symptom` (0%) e `History` (0%) — curadores do PubMed indexam pelo **tema clínico** do artigo (diagnóstico, procedimento), não por cada sintoma pontual do caso. Ou seja: overlap baixo não é sinal de que o matching falha, é sinal de que `mesh_terms` e `case_text` descrevem coisas em níveis diferentes — o próprio propósito de tratar isso como sinal, não gabarito.
-
-- **Gazetteer próprio de `AnatomicalSite` (processo 8):** feito, do zero, sem bootstrap no MeSH — decisão deliberada do autor de encarar a curadoria manual de verdade, não só cruzar uma lista já pronta contra o corpus. Fonte: pesquisa na internet por referências de terminologia anatômica (não uma única fonte "oficial", já que não existe um vocabulário fechado sendo adotado aqui) — [SEER Training Modules](https://training.seer.cancer.gov/anatomy/body/terminology.html) (National Cancer Institute) para termos direcionais/de cavidade, e [Anatomy & Physiology, SUNY/Lumen Learning](https://courses.lumenlearning.com/suny-ap1/chapter/anatomical-terminology/) para termos de região corporal — usadas só como matéria-prima; a lista final (`anatomical_site_terms.py`, 50 conceitos/101 termos com sinônimo) foi selecionada e escrita à mão, cruzando essas referências com o vocabulário que aparece de fato em relatos clínicos. Cada conceito recebe um código **interno** (`ANAT001`, `ANAT002`, ...) e `vocabulary=local` no `Concept` — deliberadamente **não** o código do MeSH, mesmo esse existindo para anatomia (categoria `A`), porque o ponto desta parte é demonstrar a técnica complementar (vocabulário **construído**), em contraste com o resto do projeto (vocabulário **pronto**). Gerado por `build_anatomical_gazetteer.py`, persistido em `gazetteer/anatomical_site_gazetteer.csv` (versionado, é conteúdo autoral nosso — sem questão de licença).
-
-  **NER para esta entidade é mais simples que o resto do pipeline**, de propósito: como o vocabulário aqui é pequeno e curado por nós (fechado, ~50 conceitos), varrer o texto direto contra o próprio gazetteer (`extractors/anatomical_site.py`, usa `matching.match_text` direto sobre o `case_text` inteiro) já é uma extração razoável — o risco de falso positivo que motivou o NER por gatilho nas outras entidades (§ "Limitações", abaixo) é bem menor aqui, porque a lista é curta e fechada. Duas salvaguardas: (1) uma menção só vira nó se ficar dentro do span de evidência de um `Symptom`/`Treatment` já extraído — sem uma entidade-âncora pra gerar a aresta `LOCATED_IN`, o nó não é criado (não implementamos `Finding`, então a superfície de ancoragem é menor do que seria — limitação documentada); (2) uma menção que cai dentro do span de evidência de um `Diagnosis` é descartada, para não duplicar o órgão já embutido no nome da doença (regra do doc 01 — ex. não gerar `pancreas` a partir de `"pancreatitis"`).
-
-  **Bug real encontrado e corrigido ao rodar isso pela primeira vez**, que afeta o `matching.py` inteiro, não só esta entidade: `fuzz.ratio("had", "head") = 85.7`, `fuzz.ratio("one", "bone") = 85.7`, `fuzz.ratio("fear", "ear") = 85.7`, `fuzz.ratio("year", "ear") = 85.7` — todos cruzando o threshold 85 escolhido no processo 5. O gazetteer de `AnatomicalSite` tem muita chave curta (`head`, `bone`, `ear`, `eye`...), e pra strings curtas uma única edição de caractere já produz uma similaridade desproporcionalmente alta — o threshold 85, calibrado testando erros de digitação em termos médicos **longos**, não é seguro pra chaves curtas. Corrigido com `MIN_FUZZY_LENGTH = 5`: fuzzy match não roda mais para tokens/labels com menos de 5 caracteres (typo correction não faz sentido pra palavra tão curta mesmo). Rodando de novo nos 56 casos: os 4 falsos positivos (`had`, `one`, `fear`, `year.` viravam nó `AnatomicalSite`) desapareceram, e a correção **também** eliminou um falso positivo pré-existente em outra categoria (`Medication` `"that"` casando por fuzzy com `Tacrine`, em `PMC5804616_01`) — mostrando que o problema não era exclusivo da entidade nova, só ficou visível por causa da densidade maior de chaves curtas neste gazetteer.
-
-  Resultado nos 56 casos, comparando antes/depois de adicionar esta parte (`output/dicionarios/`, o antigo, vs. `output/dicionarios_v2/`, não versionado — ver `.gitignore`): **+18 nós `AnatomicalSite`**, **+18 arestas `LOCATED_IN`**, **+18 arestas `SAME_AS`** (cobertura de **100%** nesta categoria — inevitável, já que a própria extração *é* a varredura do dicionário, então tudo que vira nó já bateu com uma chave), e **-1** aresta `SAME_AS` em outro lugar (o falso positivo do `"that"`/`Tacrine` corrigido). Nenhuma outra contagem mudou — mudança puramente aditiva no resto do grafo. Termos finais encontrados: `abdomen`, `abdominal` (×4), `cardiac`, `chest` (×3), `dorsal`, `esophagus.` (ponto grudado — limite de tokenização, cosmético, não afeta o conceito casado), `Esophageal`, `forearm`, `gastric`, `palm`, `pancreatic`, `pulmonary`, `skin`.
-
-- Falta fechar os entregáveis finais (decidir se `output/dicionarios_v2/` substitui `output/dicionarios/`, e atualizar `docs/projeto-1/06-dicionarios.md` com esta seção).
-
-## Arquitetura pensada para integração futura
-
-Duas decisões deliberadas para que esta parte seja fácil de encaixar num pipeline geral do projeto (que ainda não existe, mas as outras issues também vão precisar produzir/consumir peças parecidas):
-
-1. **Gazetteer versionado sempre cru, normalização como etapa de carregamento separada e trocável.** Ver processo 3 acima. Concretamente: `build_normalized_gazetteer(raw_gazetteer, normalize_fn=...)` e `align_normalized_tokens(tokens, normalize_fn=...)` aceitam a função de normalização como parâmetro (default: a nossa, em `normalization.py`) — trocar por uma normalização compartilhada do projeto não exige mudar a lógica de casamento nem o arquivo do gazetteer.
-
-2. **Um único ponto de entrada para quem for integrar:** `matching.link_label_to_concept(label, gazetteer) -> Match | None`. Ao contrário de `match_text()` (que varre um texto inteiro atrás de várias menções — usado internamente pelo nosso próprio pipeline), esta função assume que **outra coisa já decidiu os limites da entidade** — o NER de qualquer uma das quatro estratégias (#3-#6), não só a nossa — e só responde "isso tem um conceito equivalente no dicionário, ou não?". Testado com labels que um extrator já teria delimitado:
-
-   ```
-   'epigastric pain'                                  -> Match('pain', D010146, 'Pain', exact)
-   'right flank and lower quadrant abdominal pain'    -> Match('abdominal pain', D015746, 'Abdominal Pain', longest)
-   'naussea'                                          -> Match('nausea', D009325, 'Nausea', fuzzy, score=92.3)
-   'the patient'                                      -> None
-   ```
-
-   (O primeiro caso é um achado real, não um bug: o MeSH não cataloga `"Epigastric Pain"` como termo específico — só o genérico `Pain`. É o mesmo tipo de lacuna de cobertura já documentado para `"CT"` no processo 3.)
-
-   Quem quiser reusar só a técnica de dicionário — de dentro desta issue ou de um pipeline unificado futuro — não precisa conhecer `greedy_match`/`fuzzy_match_leftover` nem a estrutura interna do `Match`; só chama essa função com um label e a categoria de gazetteer certa.
-
-## Limitações e discussão futura (notas para `docs/projeto-1/06-dicionarios.md`)
-
-- **Um gazetteer sozinho não substitui o NER.** Cogitamos varrer o `case_text` inteiro direto contra o dicionário (sem uma etapa prévia de NER por regras) e descartamos essa ideia: (1) qualquer menção que não esteja cadastrada no MeSH nunca seria sequer candidata a nó — cobertura zero para o que o vocabulário não prevê, o que contradiz o contrato ("menção sem match ainda vira nó normal", já que sem NER não haveria "menção" para começo de conversa); (2) o dicionário não informa atributos como `polarity`/`duration`/`certainty` — isso só vem do contexto textual ao redor da menção (gatilhos do doc 01); (3) o mesmo conceito MeSH muda de tipo de entidade dependendo do gatilho ao redor (`"history of hypertension"` → `History`, `"diagnosed with hypertension"` → `Diagnosis`), algo que o dicionário não decide sozinho; (4) sem uma âncora de contexto, o risco de falso positivo (bater por coincidência com um termo médico obscuro) aumenta. Por isso o NER por regras (processo 4) continua necessário mesmo numa estratégia cujo foco é o dicionário — o dicionário entra depois, para enriquecer (ou não) uma entidade que o NER já decidiu que existe.
-
-## Como reproduzir o experimento
-
-*(seção a preencher quando o pipeline tiver um ponto de entrada único capaz de rodar sobre `sample/cases.csv`)*
-
-Vai cobrir, no mínimo:
-- como criar o ambiente virtual e instalar as dependências (`requirements.txt`);
-- como (e de onde) obter o arquivo do MeSH (`desc2026.xml`) usado no processo 3, já que ele não é versionado no repositório;
-- o comando para rodar o pipeline sobre um `case_id` específico e onde as tabelas de nós/arestas resultantes são salvas;
-- o comando para rodar em lote sobre todos os casos da amostra e gerar o relatório de validação cruzada do processo 7.
+- **O que o vocabulário não cataloga, não casa.** Siglas curtas e ambíguas ficam de fora do MeSH (`"CT"` não é sinônimo cadastrado de `Tomography, X-Ray Computed`) — resolver isso exigiria expansão local do tipo `termo por extenso (SIGLA)`, não implementada.
+- **Casamento genérico demais.** `"contrast enhanced computed tomography"` casa com o descriptor genérico `Tomography` (`D014054`), não com o específico `D014057`. O `Concept` fica correto, mas perde especificidade.
+- **`Symptom`/`History` quase não batem com o vocabulário do artigo.** A validação cruzada dá sobreposição média de 1,1% com os `mesh_terms`: `Diagnosis`/`Treatment`/`Exam` batem (8–17%), sintoma e histórico dão 0%. Isso é diferença de granularidade — o `mesh_terms` indexa o artigo, não o caso — e por isso serve como sinal, nunca como gabarito.
+- **Fuzzy match é frágil em chave curta.** `fuzz.ratio("had", "head") = 85.7` cruzava o threshold e gerava falso positivo; contornado com `MIN_FUZZY_LENGTH = 5`, o que em troca desliga a correção de erro de digitação em termos curtos. O fuzzy também só roda span a span, nunca em janela multi-palavra.
+- **A cobertura depende do NER, não do dicionário.** Gatilho léxico é simples de propósito: construções como `"past medical, family and medication history were otherwise non-contributory"` não são reconhecidas — o pipeline fica silencioso (não gera nó errado, só não gera nó).
+- **`AnatomicalSite` só existe ancorado.** Um sítio só vira nó se cair no span de um `Symptom`/`Treatment` já extraído; como não implementamos `Finding`, sítios mencionados em trechos descritivos se perdem. Os 100% de cobertura dessa entidade são estruturais — o NER dela *é* a varredura do dicionário —, não uma medida de precisão.
+- **Só MeSH.** RxNorm, SNOMED CT, LOINC e ICD-10 não estão integrados; `Patient`, `ExamResult` e `Outcome` não têm vocabulário associado nenhum.
