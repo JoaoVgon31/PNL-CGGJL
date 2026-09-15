@@ -23,24 +23,24 @@ pip install nltk rapidfuzz
 python -c "import nltk; nltk.download('punkt_tab')"
 ```
 
-Os gazetteers já vêm versionados em `gazetteer/` — **não é preciso baixar o MeSH** para rodar o pipeline. Os comandos abaixo rodam da raiz do repositório e assumem a amostra em `sample/` (não versionada).
+Os gazetteers já vêm versionados em `gazetteer/` — **não é preciso baixar o MeSH** para rodar o pipeline. Os comandos abaixo rodam da raiz do repositório e assumem a amostra em `project1/sample/` (não versionada).
 
 **Um caso:**
 
 ```bash
-python src/projeto-1/dicionarios/main.py --cases sample/cases.csv --case-id PMC5137649_01
+python project1/src/projeto-1/dicionarios/main.py --cases project1/sample/cases.csv --case-id PMC5137649_01
 ```
 
 **Todos os casos da amostra, com o relatório de validação cruzada:**
 
 ```bash
-python src/projeto-1/dicionarios/batch.py --cases sample/cases.csv --metadata sample/metadata.csv
+python project1/src/projeto-1/dicionarios/batch.py --cases project1/sample/cases.csv --metadata project1/sample/metadata.csv
 ```
 
 **Regerar o gazetteer próprio de `AnatomicalSite`** (a partir da lista curada em `anatomical_site_terms.py`):
 
 ```bash
-python src/projeto-1/dicionarios/build_anatomical_gazetteer.py
+python project1/src/projeto-1/dicionarios/build_anatomical_gazetteer.py
 ```
 
 Para regerar o gazetteer do MeSH é preciso o `desc2026.xml` da NLM (~313 MB, não versionado) e chamar `mesh_parser.build_gazetteer_rows()`.

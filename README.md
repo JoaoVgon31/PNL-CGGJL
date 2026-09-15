@@ -1,4 +1,4 @@
-# PNL-CGGJL
+# Grupo CGGJL
 
 Repositório dos projetos da disciplina de **Processamento de Linguagem Natural (MC896)** — Unicamp, 2026.
 
@@ -14,8 +14,6 @@ O enunciado dos projetos vem do repositório da disciplina: [santanche/nlp2learn
 | João Vitor Gonçalves Oliveira | 237871 |
 | Lucas Guarnieri | 119756 |
 
-## Projetos
+# Apresentação
 
-### Projeto 1 — MultiCaRe → grafo de conhecimento
-
-Extração de entidades e relações de casos clínicos do MultiCaRe — um repositório que cataloga casos clínicos publicados em artigos do PubMed — representando cada caso como um grafo de conhecimento em duas tabelas, uma de nós e uma de arestas. Nesta etapa a extração deve usar apenas técnicas clássicas de PNL, sem modelos de linguagem. [Enunciado original](https://github.com/santanche/nlp2learn/tree/main/projects/2026/project1).
+O presente projeto foi originado no contexto das atividades da disciplina de graduação [*Processamento de Línguas Naturais*](https://www.ic.unicamp.br/~santanch/teaching/nlp/2026-2/), oferecida no segundo semestre de 2026, na Unicamp.

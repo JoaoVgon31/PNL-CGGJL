@@ -33,11 +33,11 @@ detecção de negação, certeza ou relação. É esse ganho — modesto, e não
 
 ## Como usar
 
-A partir da raiz do repositório, entrando em `src/projeto-1` (os módulos são importados como
+A partir da raiz do repositório, entrando em `project1/src/projeto-1` (os módulos são importados como
 `stopwords.*`, então os comandos precisam rodar daqui):
 
 ```bash
-cd src/projeto-1
+cd project1/src/projeto-1
 ```
 
 **Processar um caso e ver as tabelas.** Gera `<case_id>-nodes.csv` e `<case_id>-edges.csv` no

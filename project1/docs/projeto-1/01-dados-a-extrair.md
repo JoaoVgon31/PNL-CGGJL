@@ -3,7 +3,7 @@
 > Entregável da [issue #1](https://github.com/caiomelloni/PNL-CGGJL/issues/1) — Projeto 1 (MC896, 2026).
 > Define **o que** extrair do `case_text`. O **como representar** é a issue [#2](https://github.com/caiomelloni/PNL-CGGJL/issues/2); o **como extrair**, as issues [#3](https://github.com/caiomelloni/PNL-CGGJL/issues/3)–[#6](https://github.com/caiomelloni/PNL-CGGJL/issues/6). (outros métodos de extração podem ser adicionados além das issues 3-6)
 
-**Amostra:** 56 casos em `sample/cases.csv`, de 50 artigos em `sample/metadata.csv`. Os percentuais abaixo foram medidos sobre esses 56 casos e indicam em quantos há pista lexical da categoria.
+**Amostra:** 56 casos em `project1/sample/cases.csv`, de 50 artigos em `project1/sample/metadata.csv`. Os percentuais abaixo foram medidos sobre esses 56 casos e indicam em quantos há pista lexical da categoria.
 
 
 **Regra geral:** só extraímos o que é um trecho identificável do texto. Nada é inferido por conhecimento clínico nosso.
