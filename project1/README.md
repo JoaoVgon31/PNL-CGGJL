@@ -13,13 +13,13 @@ O trabalho foi feito em duas fases:
 1. **Contrato comum.** Primeiro definimos o que extrair e como representar. O resultado são 11 entidades e 12 relações, cada uma com domínio de valores e exemplo tirado da amostra ([`docs/01-dados-a-extrair.md`](docs/01-dados-a-extrair.md)). Também definimos o esquema do grafo ([`docs/02-esquema-grafo.md`](docs/02-esquema-grafo.md)). A regra geral é extrair apenas trechos identificáveis no texto, sem inferir nada por conhecimento clínico.
 2. **Uma estratégia clássica por parser.** Cada integrante implementou um parser independente, `case_id` → nós + arestas, que aprofunda uma técnica e mede o impacto dela sobre o grafo final:
 
-| Estratégia | Pergunta investigada | Código | Documentação |
-|---|---|---|---|
-| Tokenização | Onde ficam as fronteiras dos tokens em texto clínico, como `12,476.5ng/ml`? | [`src/tokenizacao`](src/tokenizacao/) | [`docs/tokenizacao.md`](docs/tokenizacao.md) |
-| Normalização | Como fazer menções diferentes convergirem para o mesmo `label`? | [`src/normalizacao`](src/normalizacao/) | [`docs/normalizacao.md`](docs/normalizacao.md) |
-| Remoção de stop-words | A remoção deve ser feita? Se sim, onde e com qual lista? | [`src/stopwords`](src/stopwords/) | [`docs/stopwords.md`](docs/stopwords.md) |
-| Dicionários e ontologias | Como ligar menções a conceitos com código estável (MeSH)? | [`src/dicionarios`](src/dicionarios/) | [`docs/dicionarios.md`](docs/dicionarios.md) |
-| POS tagging e sintagmas | Como a sintaxe separa candidatos a nó (sintagmas nominais) de candidatos a aresta (verbos)? | [`src/sintagmas`](src/sintagmas/) | [`src/sintagmas/README.md`](src/sintagmas/README.md) |
+| Estratégia | Responsável | Issue | Pergunta investigada | Código | Documentação |
+|---|---|---|---|---|---|
+| Tokenização | Gabriel Lorhan Rodrigues Dourado | [#3](https://github.com/caiomelloni/PNL-CGGJL/issues/3) | Onde ficam as fronteiras dos tokens em texto clínico, como `12,476.5ng/ml`? | [`src/tokenizacao`](src/tokenizacao/) | [`docs/tokenizacao.md`](docs/tokenizacao.md) |
+| Normalização | George Henrique de Lima Sá | [#4](https://github.com/caiomelloni/PNL-CGGJL/issues/4) | Como fazer menções diferentes convergirem para o mesmo `label`? | [`src/normalizacao`](src/normalizacao/) | [`docs/normalizacao.md`](docs/normalizacao.md) |
+| Remoção de stop-words | João Vitor Gonçalves Oliveira | [#5](https://github.com/caiomelloni/PNL-CGGJL/issues/5) | A remoção deve ser feita? Se sim, onde e com qual lista? | [`src/stopwords`](src/stopwords/) | [`docs/stopwords.md`](docs/stopwords.md) |
+| Dicionários e ontologias | Lucas Guarnieri | [#6](https://github.com/caiomelloni/PNL-CGGJL/issues/6) | Como ligar menções a conceitos com código estável (MeSH)? | [`src/dicionarios`](src/dicionarios/) | [`docs/dicionarios.md`](docs/dicionarios.md) |
+| POS tagging e sintagmas | Caio Melloni | [#9](https://github.com/caiomelloni/PNL-CGGJL/issues/9) | Como a sintaxe separa candidatos a nó (sintagmas nominais) de candidatos a aresta (verbos)? | [`src/sintagmas`](src/sintagmas/) | [`src/sintagmas/README.md`](src/sintagmas/README.md) |
 
 Em todos os parsers, toda aresta guarda o trecho do texto que a sustenta, o gatilho léxico e os offsets. Isso permite auditar cada relação no texto original:
 
