@@ -1,0 +1,12 @@
+{
+  "mentions_processed": 40,
+  "raw_nodes": 33,
+  "normalized_nodes": 32,
+  "labels_changed": 7,
+  "nodes_merged": 1,
+  "case_id": "PMC5137649_01",
+  "acronyms": {
+    "CEA": "carcinoembryonic antigen",
+    "CA": "carbohydrate antigen"
+  }
+}
