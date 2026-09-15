@@ -1,0 +1,5 @@
+case_id,edge_id,source_id,target_id,relation,attributes
+PMC7086412_02,e1,P1,D1,DIAGNOSED_WITH,evidence_text=diagnosed with intrauterine fetal demise as previously described; trigger=diagnosed with; char_start=1333; char_end=1397
+PMC7086412_02,e2,P1,E1,UNDERWENT_EXAM,evidence_text=underwent an induction of labor with serial doses of misoprostol followed by Pitocin augmentation and artificial rupture of membranes; trigger=underwent; char_start=1594; char_end=1727
+PMC7086412_02,e3,P1,M1,TREATED_WITH,evidence_text=weighing 3590 g; trigger=dose pattern; char_start=3063; char_end=3078
+PMC7086412_02,e4,D1,C1,SAME_AS,strategy=longest

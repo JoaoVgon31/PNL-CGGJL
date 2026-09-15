@@ -1,0 +1,3 @@
+case_id,node_id,type,label,attributes
+PMC9532611_02,P1,Patient,case PMC9532611_02,article_id=PMC9532611; age=6.0; age_unit=years; gender=Female
+PMC9532611_02,E1,Exam,surgical exploration,

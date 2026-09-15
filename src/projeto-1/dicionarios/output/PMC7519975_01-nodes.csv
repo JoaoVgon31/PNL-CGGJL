@@ -1,0 +1,14 @@
+case_id,node_id,type,label,attributes
+PMC7519975_01,P1,Patient,case PMC7519975_01,article_id=PMC7519975; age=33.0; age_unit=years; gender=Female
+PMC7519975_01,E1,Exam,externalization of her VP shunt at the neck,
+PMC7519975_01,E2,Exam,reexploration,
+PMC7519975_01,M1,Medication,creatinine,dose_value=0.4; dose_unit=mg
+PMC7519975_01,M2,Medication,glucose,dose_value=125; dose_unit=mg
+PMC7519975_01,M3,Medication,calcium,dose_value=8.2; dose_unit=mg
+PMC7519975_01,M4,Medication,transaminase,dose_value=32; dose_unit=units
+PMC7519975_01,M5,Medication,transaminase,dose_value=43; dose_unit=units
+PMC7519975_01,O1,Outcome,died,type=death; polarity=present
+PMC7519975_01,C1,Concept,Creatinine,vocabulary=MeSH; code=D003404; preferred_term=Creatinine
+PMC7519975_01,C2,Concept,Glucose,vocabulary=MeSH; code=D005947; preferred_term=Glucose
+PMC7519975_01,C3,Concept,Calcium,vocabulary=MeSH; code=D002118; preferred_term=Calcium
+PMC7519975_01,C4,Concept,Transaminases,vocabulary=MeSH; code=D000637; preferred_term=Transaminases

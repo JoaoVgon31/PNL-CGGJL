@@ -1,0 +1,15 @@
+case_id,node_id,type,label,attributes
+PMC12832199_01,P1,Patient,case PMC12832199_01,article_id=PMC12832199; age=57.0; age_unit=years; gender=Female
+PMC12832199_01,H1,History,Buerger's disease,subject=patient; polarity=present
+PMC12832199_01,H2,History,which resulted in bilateral below-knee amputations,subject=patient; polarity=present
+PMC12832199_01,H3,History,central adrenal insufficiency managed with corticosteroids,subject=patient; polarity=present
+PMC12832199_01,H4,History,multiple abdominal surgeries,subject=patient; polarity=present
+PMC12832199_01,D1,Diagnosis,aspiration pneumonia was observed,certainty=confirmed; polarity=present; role=principal
+PMC12832199_01,E1,Exam,left hemicolectomy,
+PMC12832199_01,T1,Treatment,laparoscopic Sugarbaker repair 18 days after admission,type=surgery; status=performed
+PMC12832199_01,T2,Treatment,"Therefore, after confirming clinical stability, elective parastomal hernia repair",type=surgery; status=planned
+PMC12832199_01,O1,Outcome,discharged,type=discharge; polarity=present
+PMC12832199_01,C1,Concept,Thromboangiitis Obliterans,vocabulary=MeSH; code=D013919; preferred_term=Thromboangiitis Obliterans
+PMC12832199_01,C2,Concept,Adrenal Insufficiency,vocabulary=MeSH; code=D000309; preferred_term=Adrenal Insufficiency
+PMC12832199_01,C3,Concept,"Pneumonia, Aspiration","vocabulary=MeSH; code=D011015; preferred_term=Pneumonia, Aspiration"
+PMC12832199_01,C4,Concept,Herniorrhaphy,vocabulary=MeSH; code=D059685; preferred_term=Herniorrhaphy

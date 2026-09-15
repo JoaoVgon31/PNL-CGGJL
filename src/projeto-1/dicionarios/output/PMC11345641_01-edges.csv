@@ -1,0 +1,4 @@
+case_id,edge_id,source_id,target_id,relation,attributes
+PMC11345641_01,e1,P1,D1,DIAGNOSED_WITH,evidence_text=consistent with a uterine fibroid; trigger=consistent with; char_start=910; char_end=943
+PMC11345641_01,e2,P1,O1,HAS_OUTCOME,"evidence_text=However, the patient chose to discontinue treatment for personal reasons and was discharged, resulting in unsuccessful follow-up; trigger=discharged; char_start=4577; char_end=4706"
+PMC11345641_01,e3,D1,C1,SAME_AS,strategy=longest

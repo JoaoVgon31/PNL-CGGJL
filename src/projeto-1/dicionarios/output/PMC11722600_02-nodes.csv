@@ -1,0 +1,11 @@
+case_id,node_id,type,label,attributes
+PMC11722600_02,P1,Patient,case PMC11722600_02,article_id=PMC11722600; age=44.0; age_unit=years; gender=Female
+PMC11722600_02,S1,Symptom,abdominal pain for 72 h,polarity=present
+PMC11722600_02,S2,Symptom,initially in the epigastrium,polarity=present
+PMC11722600_02,S3,Symptom,later localized in RIF,polarity=present
+PMC11722600_02,S4,Symptom,oral intolerance,polarity=present
+PMC11722600_02,D1,Diagnosis,advanced appendicitis,certainty=confirmed; polarity=present; role=principal
+PMC11722600_02,O1,Outcome,discharged,type=discharge; polarity=present
+PMC11722600_02,O2,Outcome,discharged,type=discharge; polarity=present
+PMC11722600_02,C1,Concept,Abdominal Pain,vocabulary=MeSH; code=D015746; preferred_term=Abdominal Pain
+PMC11722600_02,C2,Concept,Appendicitis,vocabulary=MeSH; code=D001064; preferred_term=Appendicitis

@@ -1,0 +1,14 @@
+case_id,edge_id,source_id,target_id,relation,attributes
+PMC7519975_01,e1,P1,E1,UNDERWENT_EXAM,evidence_text=underwent externalization of her VP shunt at the neck; trigger=underwent; char_start=868; char_end=921
+PMC7519975_01,e2,P1,E2,UNDERWENT_EXAM,evidence_text=underwent reexploration; trigger=underwent; char_start=4118; char_end=4141
+PMC7519975_01,e3,P1,M1,TREATED_WITH,evidence_text=creatinine 0.4 mg; trigger=dose pattern; char_start=1728; char_end=1745
+PMC7519975_01,e4,P1,M2,TREATED_WITH,evidence_text=glucose 125 mg; trigger=dose pattern; char_start=1763; char_end=1777
+PMC7519975_01,e5,P1,M3,TREATED_WITH,evidence_text=calcium 8.2 mg; trigger=dose pattern; char_start=1795; char_end=1809
+PMC7519975_01,e6,P1,M4,TREATED_WITH,evidence_text=transaminase 32 units; trigger=dose pattern; char_start=1859; char_end=1880
+PMC7519975_01,e7,P1,M5,TREATED_WITH,evidence_text=transaminase 43 units; trigger=dose pattern; char_start=1904; char_end=1925
+PMC7519975_01,e8,P1,O1,HAS_OUTCOME,"evidence_text=Considering the patient's poor prognosis, the patient was provided comfort care and died on postoperative day 7; trigger=died; char_start=4634; char_end=4746"
+PMC7519975_01,e9,M1,C1,SAME_AS,strategy=exact
+PMC7519975_01,e10,M2,C2,SAME_AS,strategy=exact
+PMC7519975_01,e11,M3,C3,SAME_AS,strategy=exact
+PMC7519975_01,e12,M4,C4,SAME_AS,strategy=exact
+PMC7519975_01,e13,M5,C4,SAME_AS,strategy=exact

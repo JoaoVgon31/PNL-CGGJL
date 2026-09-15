@@ -1,0 +1,6 @@
+case_id,node_id,type,label,attributes
+PMC11723754_01,P1,Patient,case PMC11723754_01,article_id=PMC11723754; age=0.0; age_unit=years; gender=Male
+PMC11723754_01,D1,Diagnosis,septicaemia with septic shock,certainty=confirmed; polarity=present; role=principal
+PMC11723754_01,T1,Treatment,PRBC transfusion in view of low Hb 7g/dl,type=surgery; status=performed
+PMC11723754_01,O1,Outcome,discharged,type=discharge; polarity=present
+PMC11723754_01,C1,Concept,"Shock, Septic","vocabulary=MeSH; code=D012772; preferred_term=Shock, Septic"

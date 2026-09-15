@@ -1,0 +1,9 @@
+case_id,edge_id,source_id,target_id,relation,attributes
+PMC3437073_01,e1,P1,S1,HAS_SYMPTOM,evidence_text=presented with a gradually increasing mass on the left lateral lower chest and upper abdomen over a period of one year; trigger=presented with; char_start=19; char_end=137
+PMC3437073_01,e2,P1,S2,HAS_SYMPTOM,evidence_text=presented with a gradually increasing mass on the left lateral lower chest and upper abdomen over a period of one year; trigger=presented with; char_start=19; char_end=137
+PMC3437073_01,e3,P1,M1,TREATED_WITH,evidence_text=Rifampin 600 mg; trigger=dose pattern; char_start=1875; char_end=1890
+PMC3437073_01,e4,P1,M2,TREATED_WITH,evidence_text=Ethambutol 600 mg; trigger=dose pattern; char_start=1895; char_end=1912
+PMC3437073_01,e5,P1,M3,TREATED_WITH,evidence_text=Pyrazinamide 500 mg; trigger=dose pattern; char_start=1920; char_end=1939
+PMC3437073_01,e6,M1,C1,SAME_AS,strategy=exact
+PMC3437073_01,e7,M2,C2,SAME_AS,strategy=exact
+PMC3437073_01,e8,M3,C3,SAME_AS,strategy=exact

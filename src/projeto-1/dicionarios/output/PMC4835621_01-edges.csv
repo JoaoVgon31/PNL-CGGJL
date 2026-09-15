@@ -1,0 +1,15 @@
+case_id,edge_id,source_id,target_id,relation,attributes
+PMC4835621_01,e1,P1,S1,HAS_SYMPTOM,evidence_text=complained of recurrent headaches on a daily basis and profound fatigue and malaise during the past month; trigger=complained of; char_start=167; char_end=272
+PMC4835621_01,e2,P1,S2,HAS_SYMPTOM,evidence_text=complained of recurrent headaches on a daily basis and profound fatigue and malaise during the past month; trigger=complained of; char_start=167; char_end=272
+PMC4835621_01,e3,P1,S3,HAS_SYMPTOM,evidence_text=complained of recurrent headaches on a daily basis and profound fatigue and malaise during the past month; trigger=complained of; char_start=167; char_end=272
+PMC4835621_01,e4,P1,H1,HAS_HISTORY,evidence_text=past medical history was significant for hypertension and osteoporosis; trigger=past medical history; char_start=618; char_end=688
+PMC4835621_01,e5,P1,H2,HAS_HISTORY,evidence_text=past medical history was significant for hypertension and osteoporosis; trigger=past medical history; char_start=618; char_end=688
+PMC4835621_01,e6,P1,D1,DIAGNOSED_WITH,evidence_text=A diagnosis of TTP was made and the patient was started on plasmapheresis via a femoral catheter; trigger=A diagnosis of; char_start=2437; char_end=2533
+PMC4835621_01,e7,P1,D2,DIAGNOSED_WITH,evidence_text=consistent with gastritis; trigger=consistent with; char_start=3387; char_end=3412
+PMC4835621_01,e8,P1,M1,TREATED_WITH,evidence_text=versus 182 IU; trigger=dose pattern; char_start=3934; char_end=3947
+PMC4835621_01,e9,P1,M2,TREATED_WITH,evidence_text=from 31.2 mg; trigger=dose pattern; char_start=4073; char_end=4085
+PMC4835621_01,e10,S1,C1,SAME_AS,strategy=exact
+PMC4835621_01,e11,S2,C2,SAME_AS,strategy=exact
+PMC4835621_01,e12,H1,C3,SAME_AS,strategy=exact
+PMC4835621_01,e13,H2,C4,SAME_AS,strategy=exact
+PMC4835621_01,e14,D2,C5,SAME_AS,strategy=exact

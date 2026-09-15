@@ -1,0 +1,6 @@
+case_id,edge_id,source_id,target_id,relation,attributes
+PMC11259348_01,e1,P1,S1,HAS_SYMPTOM,"evidence_text=admitted with fever, loose stools, and dark color urine was diagnosed with PCH after having positive Donath-Landsteiner test; trigger=admitted with; char_start=8; char_end=132"
+PMC11259348_01,e2,P1,S2,HAS_SYMPTOM,"evidence_text=admitted with fever, loose stools, and dark color urine was diagnosed with PCH after having positive Donath-Landsteiner test; trigger=admitted with; char_start=8; char_end=132"
+PMC11259348_01,e3,P1,S3,HAS_SYMPTOM,"evidence_text=admitted with fever, loose stools, and dark color urine was diagnosed with PCH after having positive Donath-Landsteiner test; trigger=admitted with; char_start=8; char_end=132"
+PMC11259348_01,e4,P1,D1,DIAGNOSED_WITH,evidence_text=diagnosed with PCH after having positive Donath-Landsteiner test; trigger=diagnosed with; char_start=68; char_end=132
+PMC11259348_01,e5,S1,C1,SAME_AS,strategy=exact

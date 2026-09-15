@@ -1,0 +1,14 @@
+case_id,edge_id,source_id,target_id,relation,attributes
+PMC12832199_01,e1,P1,H1,HAS_HISTORY,"evidence_text=medical history of Buerger's disease, which resulted in bilateral below-knee amputations, central adrenal insufficiency managed with corticosteroids, and multiple abdominal surgeries; trigger=medical history; char_start=259; char_end=441"
+PMC12832199_01,e2,P1,H2,HAS_HISTORY,"evidence_text=medical history of Buerger's disease, which resulted in bilateral below-knee amputations, central adrenal insufficiency managed with corticosteroids, and multiple abdominal surgeries; trigger=medical history; char_start=259; char_end=441"
+PMC12832199_01,e3,P1,H3,HAS_HISTORY,"evidence_text=medical history of Buerger's disease, which resulted in bilateral below-knee amputations, central adrenal insufficiency managed with corticosteroids, and multiple abdominal surgeries; trigger=medical history; char_start=259; char_end=441"
+PMC12832199_01,e4,P1,H4,HAS_HISTORY,"evidence_text=medical history of Buerger's disease, which resulted in bilateral below-knee amputations, central adrenal insufficiency managed with corticosteroids, and multiple abdominal surgeries; trigger=medical history; char_start=259; char_end=441"
+PMC12832199_01,e5,P1,D1,DIAGNOSED_WITH,evidence_text=consistent with aspiration pneumonia was observed; trigger=consistent with; char_start=1328; char_end=1377
+PMC12832199_01,e6,P1,E1,UNDERWENT_EXAM,evidence_text=underwent a left hemicolectomy with transverse colostomy for ischemic colitis; trigger=underwent; char_start=468; char_end=545
+PMC12832199_01,e7,P1,T1,TREATED_WITH,evidence_text=underwent laparoscopic Sugarbaker repair 18 days after admission; trigger=underwent; char_start=2689; char_end=2753
+PMC12832199_01,e8,P1,T2,TREATED_WITH,"evidence_text=Therefore, after confirming clinical stability, elective parastomal hernia repair was planned; trigger=was planned; char_start=2038; char_end=2132"
+PMC12832199_01,e9,P1,O1,HAS_OUTCOME,"evidence_text=Postoperative course was uneventful, and the patient was discharged on POD 12; trigger=discharged; char_start=4063; char_end=4141"
+PMC12832199_01,e10,H1,C1,SAME_AS,strategy=longest
+PMC12832199_01,e11,H3,C2,SAME_AS,strategy=longest
+PMC12832199_01,e12,D1,C3,SAME_AS,strategy=longest
+PMC12832199_01,e13,T2,C4,SAME_AS,strategy=longest

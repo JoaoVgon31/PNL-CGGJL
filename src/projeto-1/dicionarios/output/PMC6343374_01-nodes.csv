@@ -1,0 +1,10 @@
+case_id,node_id,type,label,attributes
+PMC6343374_01,P1,Patient,case PMC6343374_01,article_id=PMC6343374; age=0.0; age_unit=years; gender=Male
+PMC6343374_01,S1,Symptom,to have lower incidence of edge tears,polarity=present
+PMC6343374_01,S2,Symptom,which is related to less thromboembolic events,polarity=present
+PMC6343374_01,S3,Symptom,in the journal,polarity=present
+PMC6343374_01,T1,Treatment,self-expandable stent insertion at the proximal side of the right PA at 2 months after surgery,type=surgery; status=performed
+PMC6343374_01,E1,Exam,stent removal,
+PMC6343374_01,E2,Exam,surgical removal of the stent,
+PMC6343374_01,M1,Medication,weighing,dose_value=2760; dose_unit=g
+PMC6343374_01,O1,Outcome,discharged,type=discharge; polarity=present

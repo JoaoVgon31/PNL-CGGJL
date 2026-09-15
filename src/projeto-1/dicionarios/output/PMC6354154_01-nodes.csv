@@ -1,0 +1,7 @@
+case_id,node_id,type,label,attributes
+PMC6354154_01,P1,Patient,case PMC6354154_01,article_id=PMC6354154; age=30.0; age_unit=years; gender=Female
+PMC6354154_01,H1,History,his semen analysis was normal,subject=patient; polarity=present
+PMC6354154_01,D1,Diagnosis,ovarian steroid cell tumor NOS,certainty=confirmed; polarity=present; role=principal
+PMC6354154_01,O1,Outcome,evidence of recurrence,type=recurrence; polarity=absent
+PMC6354154_01,O2,Outcome,evidence of recurrence,type=recurrence; polarity=absent
+PMC6354154_01,C1,Concept,Neoplasms,vocabulary=MeSH; code=D009369; preferred_term=Neoplasms

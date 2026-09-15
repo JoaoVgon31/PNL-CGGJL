@@ -1,0 +1,16 @@
+case_id,node_id,type,label,attributes
+PMC4835621_01,P1,Patient,case PMC4835621_01,article_id=PMC4835621; age=81.0; age_unit=years; gender=Female
+PMC4835621_01,S1,Symptom,recurrent headaches on a daily basis,polarity=present
+PMC4835621_01,S2,Symptom,profound fatigue,polarity=present
+PMC4835621_01,S3,Symptom,malaise during the past month,polarity=present
+PMC4835621_01,H1,History,was significant for hypertension,subject=patient; polarity=present
+PMC4835621_01,H2,History,osteoporosis,subject=patient; polarity=present
+PMC4835621_01,D1,Diagnosis,TTP was made and the patient was started on plasmapheresis via a femoral catheter,certainty=confirmed; polarity=present; role=principal
+PMC4835621_01,D2,Diagnosis,gastritis,certainty=confirmed; polarity=present; role=principal
+PMC4835621_01,M1,Medication,versus,dose_value=182; dose_unit=IU
+PMC4835621_01,M2,Medication,from,dose_value=31.2; dose_unit=mg
+PMC4835621_01,C1,Concept,Headache,vocabulary=MeSH; code=D006261; preferred_term=Headache
+PMC4835621_01,C2,Concept,Fatigue,vocabulary=MeSH; code=D005221; preferred_term=Fatigue
+PMC4835621_01,C3,Concept,Hypertension,vocabulary=MeSH; code=D006973; preferred_term=Hypertension
+PMC4835621_01,C4,Concept,Osteoporosis,vocabulary=MeSH; code=D010024; preferred_term=Osteoporosis
+PMC4835621_01,C5,Concept,Gastritis,vocabulary=MeSH; code=D005756; preferred_term=Gastritis

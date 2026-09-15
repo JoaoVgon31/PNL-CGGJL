@@ -1,0 +1,9 @@
+case_id,edge_id,source_id,target_id,relation,attributes
+PMC6343374_01,e1,P1,S1,HAS_SYMPTOM,"evidence_text=reported to have lower incidence of edge tears, which is related to less thromboembolic events; trigger=reported; char_start=3596; char_end=3690"
+PMC6343374_01,e2,P1,S2,HAS_SYMPTOM,"evidence_text=reported to have lower incidence of edge tears, which is related to less thromboembolic events; trigger=reported; char_start=3596; char_end=3690"
+PMC6343374_01,e3,P1,S3,HAS_SYMPTOM,evidence_text=reported in the journal; trigger=reported; char_start=5415; char_end=5438
+PMC6343374_01,e4,P1,E1,UNDERWENT_EXAM,evidence_text=underwent stent removal and PA repair under cardiopulmonary bypass; trigger=underwent; char_start=1601; char_end=1667
+PMC6343374_01,e5,P1,E2,UNDERWENT_EXAM,evidence_text=underwent surgical removal of the stent and PA repair; trigger=underwent; char_start=4592; char_end=4645
+PMC6343374_01,e6,P1,T1,TREATED_WITH,"evidence_text=underwent self-expandable stent insertion at the proximal side of the right PA at 2 months after surgery, but this caused progressive narrowing of the left main bronchus; trigger=underwent; char_start=1396; char_end=1565"
+PMC6343374_01,e7,P1,M1,TREATED_WITH,evidence_text=weighing 2760 g; trigger=dose pattern; char_start=29; char_end=44
+PMC6343374_01,e8,P1,O1,HAS_OUTCOME,evidence_text=The patient was discharged from the hospital after 54-day hospital stay; trigger=discharged; char_start=1777; char_end=1849

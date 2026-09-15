@@ -1,0 +1,6 @@
+case_id,node_id,type,label,attributes
+PMC3859158_01,P1,Patient,case PMC3859158_01,article_id=PMC3859158; age=44.0; age_unit=years; gender=Male
+PMC3859158_01,S1,Symptom,vague epigastric pain,polarity=present; duration=4 months
+PMC3859158_01,H1,History,were unremarkable,subject=family; polarity=present
+PMC3859158_01,T1,Treatment,surgical resection of pancreatic tail,type=surgery; status=performed
+PMC3859158_01,C1,Concept,Pain,vocabulary=MeSH; code=D010146; preferred_term=Pain

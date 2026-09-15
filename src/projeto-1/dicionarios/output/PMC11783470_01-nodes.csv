@@ -1,0 +1,15 @@
+case_id,node_id,type,label,attributes
+PMC11783470_01,P1,Patient,case PMC11783470_01,article_id=PMC11783470; age=22.0; age_unit=years; gender=Female
+PMC11783470_01,H1,History,gastrointestinal malignancy,subject=family; polarity=present
+PMC11783470_01,D1,Diagnosis,OGA,certainty=confirmed; polarity=present; role=principal
+PMC11783470_01,D2,Diagnosis,known diagnosis of OGA (Image 2,certainty=confirmed; polarity=present; role=principal
+PMC11783470_01,E1,Exam,esophagogastroduodenoscopy (EGD,
+PMC11783470_01,E2,Exam,repeat EGD,
+PMC11783470_01,E3,Exam,repeat EGD after 3 months,
+PMC11783470_01,M1,Medication,hemoglobin,dose_value=11.5; dose_unit=g
+PMC11783470_01,M2,Medication,iron,dose_value=76; dose_unit=mcg
+PMC11783470_01,O1,Outcome,evidence of recurrence,type=recurrence; polarity=absent
+PMC11783470_01,C1,Concept,Neoplasms,vocabulary=MeSH; code=D009369; preferred_term=Neoplasms
+PMC11783470_01,C2,Concept,"Endoscopy, Digestive System","vocabulary=MeSH; code=D016145; preferred_term=Endoscopy, Digestive System"
+PMC11783470_01,C3,Concept,Hemoglobins,vocabulary=MeSH; code=D006454; preferred_term=Hemoglobins
+PMC11783470_01,C4,Concept,Iron,vocabulary=MeSH; code=D007501; preferred_term=Iron

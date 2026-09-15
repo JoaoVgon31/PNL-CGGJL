@@ -1,0 +1,15 @@
+case_id,node_id,type,label,attributes
+PMC10106591_01,P1,Patient,case PMC10106591_01,article_id=PMC10106591; age=44.0; age_unit=years; gender=Female
+PMC10106591_01,S1,Symptom,that the chest pain that started 2 weeks before she attended the ER involved intermittent retrosternal pain occurring at midnight at rest,polarity=present
+PMC10106591_01,S2,Symptom,tightness in her throat without shortness of breath,polarity=present
+PMC10106591_01,S3,Symptom,palpitations,polarity=present
+PMC10106591_01,S4,Symptom,diaphoresis,polarity=present
+PMC10106591_01,S5,Symptom,abnormal glucose tolerance for the past year,polarity=present
+PMC10106591_01,S6,Symptom,symptoms,polarity=present
+PMC10106591_01,H1,History,included hypertension for 7 years,subject=patient; polarity=present
+PMC10106591_01,H2,History,noncompliance with antihypertensives (irbesartan,subject=patient; polarity=present
+PMC10106591_01,H3,History,150 mg/day,subject=patient; polarity=present
+PMC10106591_01,D1,Diagnosis,CAS was made,certainty=confirmed; polarity=present; role=principal
+PMC10106591_01,C1,Concept,Chest Pain,vocabulary=MeSH; code=D002637; preferred_term=Chest Pain
+PMC10106591_01,C2,Concept,Dyspnea,vocabulary=MeSH; code=D004417; preferred_term=Dyspnea
+PMC10106591_01,C3,Concept,Hypertension,vocabulary=MeSH; code=D006973; preferred_term=Hypertension

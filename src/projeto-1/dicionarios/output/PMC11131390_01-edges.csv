@@ -1,0 +1,8 @@
+case_id,edge_id,source_id,target_id,relation,attributes
+PMC11131390_01,e1,P1,S1,HAS_SYMPTOM,"evidence_text=presented with 4 kg weight gain (67-71 kg) and severe biochemical hypothyroidism, TSH = 73; trigger=presented with; char_start=1619; char_end=1709"
+PMC11131390_01,e2,P1,S2,HAS_SYMPTOM,"evidence_text=presented with 4 kg weight gain (67-71 kg) and severe biochemical hypothyroidism, TSH = 73; trigger=presented with; char_start=1619; char_end=1709"
+PMC11131390_01,e3,P1,S3,HAS_SYMPTOM,"evidence_text=presented with 4 kg weight gain (67-71 kg) and severe biochemical hypothyroidism, TSH = 73; trigger=presented with; char_start=1619; char_end=1709"
+PMC11131390_01,e4,P1,D1,DIAGNOSED_WITH,evidence_text=a diagnosis of GD: TRAbs = 16; trigger=a diagnosis of; char_start=458; char_end=487
+PMC11131390_01,e5,P1,D2,DIAGNOSED_WITH,evidence_text=consistent with a diagnosis of GD: TRAbs = 16; trigger=consistent with; char_start=442; char_end=487
+PMC11131390_01,e6,S1,C1,SAME_AS,strategy=longest
+PMC11131390_01,e7,S2,C2,SAME_AS,strategy=exact

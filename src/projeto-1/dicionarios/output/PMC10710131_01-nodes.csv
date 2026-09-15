@@ -1,0 +1,3 @@
+case_id,node_id,type,label,attributes
+PMC10710131_01,P1,Patient,case PMC10710131_01,article_id=PMC10710131; age=26.0; age_unit=years; gender=Female
+PMC10710131_01,E1,Exam,second bone augmentation simultaneously,

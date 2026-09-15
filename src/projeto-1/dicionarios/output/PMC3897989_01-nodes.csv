@@ -1,0 +1,15 @@
+case_id,node_id,type,label,attributes
+PMC3897989_01,P1,Patient,case PMC3897989_01,article_id=PMC3897989; age=65.0; age_unit=years; gender=Male
+PMC3897989_01,H1,History,revealed atrial fibrillation,subject=patient; polarity=present
+PMC3897989_01,H2,History,patient was on intermittent aspirin therapy,subject=patient; polarity=present
+PMC3897989_01,H3,History,was negative,subject=family; polarity=present
+PMC3897989_01,D1,Diagnosis,PBC and UDCA (250 mg,certainty=confirmed; polarity=present; role=principal
+PMC3897989_01,D2,Diagnosis,herpes zoster and treated with acyclovir (500 mg twice a day) for 9 days,certainty=confirmed; polarity=present; role=principal
+PMC3897989_01,D3,Diagnosis,pulmonary abscess and was treated effectively with moxifloxacin (Figure 1,certainty=confirmed; polarity=present; role=principal
+PMC3897989_01,D4,Diagnosis,and meropenem (0,certainty=suspected; polarity=present; role=principal
+PMC3897989_01,D5,Diagnosis,of suffering from AIP,certainty=suspected; polarity=present; role=principal
+PMC3897989_01,T1,Treatment,acyclovir (500 mg twice a day) for 9 days,type=supportive; status=performed
+PMC3897989_01,O1,Outcome,discharged,type=discharge; polarity=present
+PMC3897989_01,C1,Concept,Atrial Fibrillation,vocabulary=MeSH; code=D001281; preferred_term=Atrial Fibrillation
+PMC3897989_01,C2,Concept,Herpes Zoster,vocabulary=MeSH; code=D006562; preferred_term=Herpes Zoster
+PMC3897989_01,C3,Concept,Lung Abscess,vocabulary=MeSH; code=D008169; preferred_term=Lung Abscess

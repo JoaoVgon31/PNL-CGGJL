@@ -1,0 +1,17 @@
+case_id,node_id,type,label,attributes
+PMC4782471_01,P1,Patient,case PMC4782471_01,article_id=PMC4782471; age=10.0; age_unit=years; gender=Female
+PMC4782471_01,S1,Symptom,perimembranous VSD measuring 5 mm,polarity=present
+PMC4782471_01,S2,Symptom,no aortic regurgitation,polarity=present
+PMC4782471_01,S3,Symptom,mild left ventricular dilatation,polarity=present
+PMC4782471_01,S4,Symptom,no pulmonary hypertension,polarity=present
+PMC4782471_01,S5,Symptom,breathlessness on exertion,polarity=present
+PMC4782471_01,S6,Symptom,were advised that the defect was unlikely to close spontaneously at her age,polarity=present
+PMC4782471_01,D1,Diagnosis,infective endocarditis and started empirically on the sensitivity results showed resistance to ceftazidime and sensitive to ciprofloxacin,certainty=confirmed; polarity=present; role=principal
+PMC4782471_01,E1,Exam,"device closure using a 10 x 6 ""PFM NiT-Occlud"" device under general anesthesia following procedural guidelines",
+PMC4782471_01,E2,Exam,surgical intervention on cardiopulmonary bypass,
+PMC4782471_01,M1,Medication,given,dose_value=50; dose_unit=mg
+PMC4782471_01,O1,Outcome,died,type=death; polarity=present
+PMC4782471_01,C1,Concept,Aortic Valve Insufficiency,vocabulary=MeSH; code=D001022; preferred_term=Aortic Valve Insufficiency
+PMC4782471_01,C2,Concept,"Hypertension, Pulmonary","vocabulary=MeSH; code=D006976; preferred_term=Hypertension, Pulmonary"
+PMC4782471_01,C3,Concept,Dyspnea,vocabulary=MeSH; code=D004417; preferred_term=Dyspnea
+PMC4782471_01,C4,Concept,Endocarditis,vocabulary=MeSH; code=D004696; preferred_term=Endocarditis

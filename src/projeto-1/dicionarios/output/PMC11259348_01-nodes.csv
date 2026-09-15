@@ -1,0 +1,7 @@
+case_id,node_id,type,label,attributes
+PMC11259348_01,P1,Patient,case PMC11259348_01,article_id=PMC11259348; gender=Female
+PMC11259348_01,S1,Symptom,fever,polarity=present
+PMC11259348_01,S2,Symptom,loose stools,polarity=present
+PMC11259348_01,S3,Symptom,dark color urine was diagnosed with PCH after having positive Donath-Landsteiner test,polarity=present
+PMC11259348_01,D1,Diagnosis,PCH after having positive Donath-Landsteiner test,certainty=confirmed; polarity=present; role=principal
+PMC11259348_01,C1,Concept,Fever,vocabulary=MeSH; code=D005334; preferred_term=Fever

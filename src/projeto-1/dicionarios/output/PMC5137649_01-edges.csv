@@ -1,0 +1,20 @@
+case_id,edge_id,source_id,target_id,relation,attributes
+PMC5137649_01,e1,P1,S1,HAS_SYMPTOM,evidence_text=presented with a 3-day history of right flank and lower quadrant abdominal pain associated with nausea and constipation; trigger=presented with; char_start=20; char_end=139
+PMC5137649_01,e2,P1,S2,HAS_SYMPTOM,evidence_text=presented with a 3-day history of right flank and lower quadrant abdominal pain associated with nausea and constipation; trigger=presented with; char_start=20; char_end=139
+PMC5137649_01,e3,P1,S3,HAS_SYMPTOM,evidence_text=presented with a 3-day history of right flank and lower quadrant abdominal pain associated with nausea and constipation; trigger=presented with; char_start=20; char_end=139
+PMC5137649_01,e4,P1,S4,HAS_SYMPTOM,evidence_text=presented with a 3-day history of right flank and lower quadrant abdominal pain associated with nausea and constipation; trigger=presented with; char_start=20; char_end=139
+PMC5137649_01,e5,P1,D1,DIAGNOSED_WITH,evidence_text=suggesting the diagnosis of a mucinous pancreatic cystic neoplasm; trigger=suggesting the diagnosis of; char_start=845; char_end=910
+PMC5137649_01,e6,P1,D2,DIAGNOSED_WITH,evidence_text=consistent with a GDC (Figs 3-5); trigger=consistent with; char_start=2130; char_end=2162
+PMC5137649_01,e7,P1,E1,UNDERWENT_EXAM,"evidence_text=underwent contrast enhanced computed tomography, demonstrating a 6cm cystic lesion between the stomach and body/tail of the pancreas (Fig 1); trigger=underwent; char_start=272; char_end=412"
+PMC5137649_01,e8,P1,E2,UNDERWENT_EXAM,"evidence_text=underwent EUS-FNA, which revealed normal pancreatic echotexture and a cyst measuring 6cm x 9cm that was free of internal septations or associated masses (Fig 2) but compressed the stomach; trigger=underwent; char_start=431; char_end=618"
+PMC5137649_01,e9,P1,T1,TREATED_WITH,evidence_text=A laparoscopic distal pancreatectomy was planned; trigger=was planned; char_start=970; char_end=1022
+PMC5137649_01,e10,P1,T2,TREATED_WITH,evidence_text=converted to an open resection; trigger=converted to; char_start=1539; char_end=1569
+PMC5137649_01,e11,P1,O1,HAS_OUTCOME,"evidence_text=The patient was discharged home on postoperative day 4, doing well and tolerating a regular diet without any complications; trigger=discharged; char_start=2163; char_end=2286"
+PMC5137649_01,e12,P1,O2,HAS_OUTCOME,"evidence_text=On follow-up, she had complete resolution of her pain and nausea, and a return to regular bowel function and activity; trigger=resolution of; char_start=2287; char_end=2405"
+PMC5137649_01,e13,S2,C1,SAME_AS,strategy=longest
+PMC5137649_01,e14,S3,C2,SAME_AS,strategy=exact
+PMC5137649_01,e15,S4,C3,SAME_AS,strategy=exact
+PMC5137649_01,e16,D1,C4,SAME_AS,strategy=longest
+PMC5137649_01,e17,E1,C5,SAME_AS,strategy=exact
+PMC5137649_01,e18,E2,C6,SAME_AS,strategy=exact
+PMC5137649_01,e19,T1,C7,SAME_AS,strategy=exact

@@ -1,0 +1,4 @@
+case_id,node_id,type,label,attributes
+PMC6083636_01,P1,Patient,case PMC6083636_01,article_id=PMC6083636; age=9.0; age_unit=years; gender=Male
+PMC6083636_01,S1,Symptom,"that glasses were first prescribed at age 4 due to ""poor vision""",polarity=present
+PMC6083636_01,M1,Medication,Cicloplegicedol,dose_value=10; dose_unit=mg

@@ -1,0 +1,9 @@
+case_id,edge_id,source_id,target_id,relation,attributes
+PMC10405809_01,e1,P1,S1,HAS_SYMPTOM,evidence_text=presented with progressive dysphagia to solids and lost 10 kg weight over two years; trigger=presented with; char_start=21; char_end=104
+PMC10405809_01,e2,P1,S2,HAS_SYMPTOM,evidence_text=presented with progressive dysphagia to solids and lost 10 kg weight over two years; trigger=presented with; char_start=21; char_end=104
+PMC10405809_01,e3,P1,D1,DIAGNOSED_WITH,"evidence_text=suspected gastroesophageal reflux disease (GERD) with peptic stricture of the esophagus; however, we wanted to rule out underlying malignancy because of profound weight loss and anemia; trigger=suspected; char_start=1063; char_end=1247"
+PMC10405809_01,e4,P1,E1,UNDERWENT_EXAM,evidence_text=underwent three CRE balloon dilatation sessions from 12 to 15 mm at 4-weeks intervals; trigger=underwent; char_start=2434; char_end=2519
+PMC10405809_01,e5,P1,M1,TREATED_WITH,evidence_text=omeprazole 20 mg twice daily; trigger=dose pattern; char_start=2565; char_end=2593
+PMC10405809_01,e6,S1,C1,SAME_AS,strategy=exact
+PMC10405809_01,e7,D1,C2,SAME_AS,strategy=longest
+PMC10405809_01,e8,M1,C3,SAME_AS,strategy=exact

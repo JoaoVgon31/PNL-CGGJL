@@ -1,0 +1,5 @@
+case_id,node_id,type,label,attributes
+PMC6949661_01,P1,Patient,case PMC6949661_01,article_id=PMC6949661; age=23.0; age_unit=years; gender=Male
+PMC6949661_01,T1,Treatment,diagnostic laparoscopy that did not show any abnormality in the jejunal loops externally,type=surgery; status=performed
+PMC6949661_01,M1,Medication,transfused,dose_value=2; dose_unit=units
+PMC6949661_01,C1,Concept,Laparoscopy,vocabulary=MeSH; code=D010535; preferred_term=Laparoscopy

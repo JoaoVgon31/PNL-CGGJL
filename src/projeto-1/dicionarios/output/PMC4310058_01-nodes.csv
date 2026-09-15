@@ -1,0 +1,3 @@
+case_id,node_id,type,label,attributes
+PMC4310058_01,P1,Patient,case PMC4310058_01,article_id=PMC4310058; age=16.0; age_unit=years; gender=Male
+PMC4310058_01,O1,Outcome,discharged,type=discharge; polarity=present

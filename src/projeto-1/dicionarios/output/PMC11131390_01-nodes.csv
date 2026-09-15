@@ -1,0 +1,9 @@
+case_id,node_id,type,label,attributes
+PMC11131390_01,P1,Patient,case PMC11131390_01,article_id=PMC11131390; gender=Male
+PMC11131390_01,S1,Symptom,4 kg weight gain (67-71 kg,polarity=present
+PMC11131390_01,S2,Symptom,severe biochemical hypothyroidism,polarity=present
+PMC11131390_01,S3,Symptom,TSH = 73,polarity=present
+PMC11131390_01,D1,Diagnosis,GD: TRAbs = 16,certainty=confirmed; polarity=present; role=principal
+PMC11131390_01,D2,Diagnosis,diagnosis of GD: TRAbs = 16,certainty=confirmed; polarity=present; role=principal
+PMC11131390_01,C1,Concept,Weight Gain,vocabulary=MeSH; code=D015430; preferred_term=Weight Gain
+PMC11131390_01,C2,Concept,Hypothyroidism,vocabulary=MeSH; code=D007037; preferred_term=Hypothyroidism

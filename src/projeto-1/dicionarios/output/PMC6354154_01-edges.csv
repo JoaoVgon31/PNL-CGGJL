@@ -1,0 +1,6 @@
+case_id,edge_id,source_id,target_id,relation,attributes
+PMC6354154_01,e1,P1,H1,HAS_HISTORY,evidence_text=past medical history and his semen analysis was normal; trigger=past medical history; char_start=859; char_end=913
+PMC6354154_01,e2,P1,D1,DIAGNOSED_WITH,evidence_text=consistent with ovarian steroid cell tumor NOS; trigger=consistent with; char_start=1882; char_end=1928
+PMC6354154_01,e3,P1,O1,HAS_OUTCOME,"evidence_text=At 24 months, she had no evidence of recurrence and began follow-up in reproductive medicine consultation; trigger=evidence of recurrence; char_start=2066; char_end=2172"
+PMC6354154_01,e4,P1,O2,HAS_OUTCOME,"evidence_text=At 36 months postoperatively, she is still not pregnant and no evidence of recurrence too; trigger=evidence of recurrence; char_start=2328; char_end=2418"
+PMC6354154_01,e5,D1,C1,SAME_AS,strategy=exact

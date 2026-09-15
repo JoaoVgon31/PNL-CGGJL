@@ -1,0 +1,5 @@
+case_id,edge_id,source_id,target_id,relation,attributes
+PMC3950436_01,e1,P1,S1,HAS_SYMPTOM,evidence_text=reported that her daughter is absolutely refusing IV cannulation and she expressed her fear of pain perception during the tracheostomy procedure; trigger=reported; char_start=1062; char_end=1206
+PMC3950436_01,e2,P1,S2,HAS_SYMPTOM,evidence_text=reported that her daughter is absolutely refusing IV cannulation and she expressed her fear of pain perception during the tracheostomy procedure; trigger=reported; char_start=1062; char_end=1206
+PMC3950436_01,e3,P1,M1,TREATED_WITH,evidence_text=EMLA 5 g; trigger=dose pattern; char_start=1808; char_end=1816
+PMC3950436_01,e4,S2,C1,SAME_AS,strategy=exact

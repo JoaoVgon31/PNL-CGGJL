@@ -1,0 +1,8 @@
+case_id,edge_id,source_id,target_id,relation,attributes
+PMC9529523_01,e1,P1,D1,DIAGNOSED_WITH,evidence_text=consistent with malignant hypertension and chronic thrombotic microangiopathy (TMA); trigger=consistent with; char_start=2804; char_end=2887
+PMC9529523_01,e2,P1,D2,DIAGNOSED_WITH,evidence_text=consistent with hydroxychloroquine-induced cardiomyopathy on electron microscopy; trigger=consistent with; char_start=4972; char_end=5052
+PMC9529523_01,e3,P1,M1,TREATED_WITH,evidence_text=hydroxychloroquine 300 mg; trigger=dose pattern; char_start=1676; char_end=1701
+PMC9529523_01,e4,P1,M2,TREATED_WITH,evidence_text=yielded 860 ml; trigger=dose pattern; char_start=4533; char_end=4547
+PMC9529523_01,e5,D1,C1,SAME_AS,strategy=longest
+PMC9529523_01,e6,D2,C2,SAME_AS,strategy=exact
+PMC9529523_01,e7,M1,C3,SAME_AS,strategy=exact

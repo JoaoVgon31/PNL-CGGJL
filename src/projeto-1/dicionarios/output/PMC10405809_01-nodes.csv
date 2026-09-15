@@ -1,0 +1,10 @@
+case_id,node_id,type,label,attributes
+PMC10405809_01,P1,Patient,case PMC10405809_01,article_id=PMC10405809; age=55.0; age_unit=years; gender=Female
+PMC10405809_01,S1,Symptom,progressive dysphagia to solids,polarity=present
+PMC10405809_01,S2,Symptom,lost 10 kg weight over two years,polarity=present
+PMC10405809_01,D1,Diagnosis,gastroesophageal reflux disease (GERD) with peptic stricture of the esophagus; however,certainty=suspected; polarity=present; role=principal
+PMC10405809_01,E1,Exam,three CRE balloon dilatation sessions from 12 to 15 mm at 4-weeks intervals,
+PMC10405809_01,M1,Medication,omeprazole,dose_value=20; dose_unit=mg; frequency=twice daily
+PMC10405809_01,C1,Concept,Deglutition Disorders,vocabulary=MeSH; code=D003680; preferred_term=Deglutition Disorders
+PMC10405809_01,C2,Concept,Gastroesophageal Reflux,vocabulary=MeSH; code=D005764; preferred_term=Gastroesophageal Reflux
+PMC10405809_01,C3,Concept,Omeprazole,vocabulary=MeSH; code=D009853; preferred_term=Omeprazole

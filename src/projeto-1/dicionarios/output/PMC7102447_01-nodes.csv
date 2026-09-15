@@ -1,0 +1,11 @@
+case_id,node_id,type,label,attributes
+PMC7102447_01,P1,Patient,case PMC7102447_01,article_id=PMC7102447; age=65.0; age_unit=years; gender=Male
+PMC7102447_01,S1,Symptom,severe respiratory distress requiring emergent intubation,polarity=present
+PMC7102447_01,H1,History,hypertension,subject=patient; polarity=present
+PMC7102447_01,H2,History,asthma,subject=patient; polarity=present
+PMC7102447_01,H3,History,minimally invasive bioprosthetic mitral valve replacement with a 33 mm mosaic mitral porcine valve one year prior presented with severe respiratory distress requiring emergent intubation,subject=patient; polarity=present
+PMC7102447_01,D1,Diagnosis,thrombosis,certainty=confirmed; polarity=present; role=principal
+PMC7102447_01,T1,Treatment,emergent redo mitral valve surgery utilizing a 33 mm St,type=surgery; status=performed
+PMC7102447_01,C1,Concept,Hypertension,vocabulary=MeSH; code=D006973; preferred_term=Hypertension
+PMC7102447_01,C2,Concept,Asthma,vocabulary=MeSH; code=D001249; preferred_term=Asthma
+PMC7102447_01,C3,Concept,Thrombosis,vocabulary=MeSH; code=D013927; preferred_term=Thrombosis

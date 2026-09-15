@@ -1,0 +1,6 @@
+case_id,node_id,type,label,attributes
+PMC3950436_01,P1,Patient,case PMC3950436_01,article_id=PMC3950436; age=19.0; age_unit=years; gender=Female
+PMC3950436_01,S1,Symptom,that her daughter is absolutely refusing IV cannulation,polarity=present
+PMC3950436_01,S2,Symptom,she expressed her fear of pain perception during the tracheostomy procedure,polarity=present
+PMC3950436_01,M1,Medication,EMLA,dose_value=5; dose_unit=g
+PMC3950436_01,C1,Concept,Pain,vocabulary=MeSH; code=D010146; preferred_term=Pain

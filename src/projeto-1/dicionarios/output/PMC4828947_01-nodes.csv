@@ -1,0 +1,18 @@
+case_id,node_id,type,label,attributes
+PMC4828947_01,P1,Patient,case PMC4828947_01,article_id=PMC4828947; age=61.0; age_unit=years; gender=Male
+PMC4828947_01,S1,Symptom,chronic drug-resistant seizures since the age of four,polarity=present
+PMC4828947_01,H1,History,was negative for epilepsy-associated risk factors such as febrile seizures,subject=patient; polarity=present
+PMC4828947_01,H2,History,meningitis,subject=patient; polarity=present
+PMC4828947_01,H3,History,head trauma,subject=patient; polarity=present
+PMC4828947_01,H4,History,was negative with regard to epilepsy,subject=family; polarity=present
+PMC4828947_01,T1,Treatment,oxcarbazepine 1200 mg/day,type=supportive; status=performed
+PMC4828947_01,T2,Treatment,valproic acid 1500 mg/day,type=supportive; status=performed
+PMC4828947_01,M1,Medication,oxcarbazepine,dose_value=1200; dose_unit=mg
+PMC4828947_01,M2,Medication,acid,dose_value=1500; dose_unit=mg
+PMC4828947_01,C1,Concept,Seizures,vocabulary=MeSH; code=D012640; preferred_term=Seizures
+PMC4828947_01,C2,Concept,"Seizures, Febrile","vocabulary=MeSH; code=D003294; preferred_term=Seizures, Febrile"
+PMC4828947_01,C3,Concept,Meningitis,vocabulary=MeSH; code=D008581; preferred_term=Meningitis
+PMC4828947_01,C4,Concept,Craniocerebral Trauma,vocabulary=MeSH; code=D006259; preferred_term=Craniocerebral Trauma
+PMC4828947_01,C5,Concept,Epilepsy,vocabulary=MeSH; code=D004827; preferred_term=Epilepsy
+PMC4828947_01,C6,Concept,Oxcarbazepine,vocabulary=MeSH; code=D000078330; preferred_term=Oxcarbazepine
+PMC4828947_01,C7,Concept,Acids,vocabulary=MeSH; code=D000143; preferred_term=Acids

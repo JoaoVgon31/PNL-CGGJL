@@ -1,0 +1,14 @@
+case_id,edge_id,source_id,target_id,relation,attributes
+PMC11783470_01,e1,P1,H1,HAS_HISTORY,evidence_text=family history of gastrointestinal malignancy; trigger=family history; char_start=78; char_end=123
+PMC11783470_01,e2,P1,D1,DIAGNOSED_WITH,evidence_text=consistent with an OGA; trigger=consistent with; char_start=1003; char_end=1025
+PMC11783470_01,e3,P1,D2,DIAGNOSED_WITH,evidence_text=consistent with the known diagnosis of OGA (Image 2); trigger=consistent with; char_start=1350; char_end=1402
+PMC11783470_01,e4,P1,E1,UNDERWENT_EXAM,evidence_text=underwent esophagogastroduodenoscopy (EGD) and colonoscopy at a different institution for evaluation of IDA; trigger=underwent; char_start=619; char_end=726
+PMC11783470_01,e5,P1,E2,UNDERWENT_EXAM,evidence_text=underwent repeat EGD and endoscopic resection was performed successfully; trigger=underwent; char_start=1251; char_end=1323
+PMC11783470_01,e6,P1,E3,UNDERWENT_EXAM,"evidence_text=underwent repeat EGD after 3 months, and no evidence of recurrence of the OGA was found; trigger=underwent; char_start=1633; char_end=1720"
+PMC11783470_01,e7,P1,M1,TREATED_WITH,evidence_text=hemoglobin 11.5 g; trigger=dose pattern; char_start=408; char_end=425
+PMC11783470_01,e8,P1,M2,TREATED_WITH,evidence_text=iron 76 mcg; trigger=dose pattern; char_start=484; char_end=495
+PMC11783470_01,e9,P1,O1,HAS_OUTCOME,"evidence_text=Patient underwent repeat EGD after 3 months, and no evidence of recurrence of the OGA was found; trigger=evidence of recurrence; char_start=1624; char_end=1720"
+PMC11783470_01,e10,H1,C1,SAME_AS,strategy=exact
+PMC11783470_01,e11,E1,C2,SAME_AS,strategy=exact
+PMC11783470_01,e12,M1,C3,SAME_AS,strategy=exact
+PMC11783470_01,e13,M2,C4,SAME_AS,strategy=exact

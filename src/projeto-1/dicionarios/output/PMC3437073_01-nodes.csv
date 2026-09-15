@@ -1,0 +1,10 @@
+case_id,node_id,type,label,attributes
+PMC3437073_01,P1,Patient,case PMC3437073_01,article_id=PMC3437073; age=55.0; age_unit=years; gender=Male
+PMC3437073_01,S1,Symptom,gradually increasing mass on the left lateral lower chest,polarity=present
+PMC3437073_01,S2,Symptom,upper abdomen over a period of one year,polarity=present
+PMC3437073_01,M1,Medication,Rifampin,dose_value=600; dose_unit=mg
+PMC3437073_01,M2,Medication,Ethambutol,dose_value=600; dose_unit=mg
+PMC3437073_01,M3,Medication,Pyrazinamide,dose_value=500; dose_unit=mg
+PMC3437073_01,C1,Concept,Rifampin,vocabulary=MeSH; code=D012293; preferred_term=Rifampin
+PMC3437073_01,C2,Concept,Ethambutol,vocabulary=MeSH; code=D004977; preferred_term=Ethambutol
+PMC3437073_01,C3,Concept,Pyrazinamide,vocabulary=MeSH; code=D011718; preferred_term=Pyrazinamide

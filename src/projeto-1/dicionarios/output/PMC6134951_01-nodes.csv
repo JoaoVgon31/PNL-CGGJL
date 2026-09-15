@@ -1,0 +1,9 @@
+case_id,node_id,type,label,attributes
+PMC6134951_01,P1,Patient,case PMC6134951_01,article_id=PMC6134951; age=49.0; age_unit=years; gender=Female
+PMC6134951_01,D1,Diagnosis,TTF1-positive pulmonary adenocarcinoma,certainty=confirmed; polarity=present; role=principal
+PMC6134951_01,D2,Diagnosis,drug eruption (delayed type IV hypersensitivity,certainty=confirmed; polarity=present; role=principal
+PMC6134951_01,M1,Medication,alectinib,dose_value=600; dose_unit=mg
+PMC6134951_01,M2,Medication,diphenhydramine,dose_value=50; dose_unit=mg
+PMC6134951_01,C1,Concept,Adenocarcinoma,vocabulary=MeSH; code=D000230; preferred_term=Adenocarcinoma
+PMC6134951_01,C2,Concept,"Hypersensitivity, Delayed","vocabulary=MeSH; code=D006968; preferred_term=Hypersensitivity, Delayed"
+PMC6134951_01,C3,Concept,Diphenhydramine,vocabulary=MeSH; code=D004155; preferred_term=Diphenhydramine

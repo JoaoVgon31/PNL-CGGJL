@@ -1,0 +1,5 @@
+case_id,node_id,type,label,attributes
+PMC3917415_01,P1,Patient,case PMC3917415_01,article_id=PMC3917415; age=47.0; age_unit=years; gender=Female
+PMC3917415_01,D1,Diagnosis,ruptured aneurysm,certainty=confirmed; polarity=present; role=principal
+PMC3917415_01,O1,Outcome,discharged,type=discharge; polarity=present
+PMC3917415_01,C1,Concept,"Aneurysm, Ruptured","vocabulary=MeSH; code=D017542; preferred_term=Aneurysm, Ruptured"

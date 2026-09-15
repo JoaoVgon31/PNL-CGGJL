@@ -1,0 +1,5 @@
+case_id,node_id,type,label,attributes
+PMC7086412_01,P1,Patient,case PMC7086412_01,article_id=PMC7086412; age=34.0; age_unit=years; gender=Female
+PMC7086412_01,D1,Diagnosis,intrauterine fetal demise,certainty=confirmed; polarity=present; role=principal
+PMC7086412_01,E1,Exam,induction of labor,
+PMC7086412_01,C1,Concept,Fetal Death,vocabulary=MeSH; code=D005313; preferred_term=Fetal Death

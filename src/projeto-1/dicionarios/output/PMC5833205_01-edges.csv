@@ -1,0 +1,8 @@
+case_id,edge_id,source_id,target_id,relation,attributes
+PMC5833205_01,e1,P1,S1,HAS_SYMPTOM,"evidence_text=reported that the swelling had progressed steadily over time, eventually resulting in worsening abdominal distension and bilateral lower extremity edema; trigger=reported; char_start=179; char_end=331"
+PMC5833205_01,e2,P1,S2,HAS_SYMPTOM,"evidence_text=reported that the swelling had progressed steadily over time, eventually resulting in worsening abdominal distension and bilateral lower extremity edema; trigger=reported; char_start=179; char_end=331"
+PMC5833205_01,e3,P1,S3,HAS_SYMPTOM,"evidence_text=reported that the swelling had progressed steadily over time, eventually resulting in worsening abdominal distension and bilateral lower extremity edema; trigger=reported; char_start=179; char_end=331"
+PMC5833205_01,e4,P1,D1,DIAGNOSED_WITH,evidence_text=consistent with a microcytic anemia (hemoglobin of 6; trigger=consistent with; char_start=858; char_end=910
+PMC5833205_01,e5,P1,T1,TREATED_WITH,evidence_text=was treated with oral iron replacement at a dose of 6 mg/kg of elemental iron/day; trigger=treated with; char_start=1744; char_end=1825
+PMC5833205_01,e6,S3,C1,SAME_AS,strategy=exact
+PMC5833205_01,e7,D1,C2,SAME_AS,strategy=exact

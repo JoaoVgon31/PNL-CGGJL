@@ -1,0 +1,14 @@
+case_id,edge_id,source_id,target_id,relation,attributes
+PMC10106591_01,e1,P1,S1,HAS_SYMPTOM,"evidence_text=reported that the chest pain that started 2 weeks before she attended the ER involved intermittent retrosternal pain occurring at midnight at rest, accompanied by tightness in her throat without shortness of breath, palpitations, or diaphoresis; trigger=reported; char_start=194; char_end=438"
+PMC10106591_01,e2,P1,S2,HAS_SYMPTOM,"evidence_text=reported that the chest pain that started 2 weeks before she attended the ER involved intermittent retrosternal pain occurring at midnight at rest, accompanied by tightness in her throat without shortness of breath, palpitations, or diaphoresis; trigger=reported; char_start=194; char_end=438"
+PMC10106591_01,e3,P1,S3,HAS_SYMPTOM,"evidence_text=reported that the chest pain that started 2 weeks before she attended the ER involved intermittent retrosternal pain occurring at midnight at rest, accompanied by tightness in her throat without shortness of breath, palpitations, or diaphoresis; trigger=reported; char_start=194; char_end=438"
+PMC10106591_01,e4,P1,S4,HAS_SYMPTOM,"evidence_text=reported that the chest pain that started 2 weeks before she attended the ER involved intermittent retrosternal pain occurring at midnight at rest, accompanied by tightness in her throat without shortness of breath, palpitations, or diaphoresis; trigger=reported; char_start=194; char_end=438"
+PMC10106591_01,e5,P1,S5,HAS_SYMPTOM,evidence_text=reported abnormal glucose tolerance for the past year; trigger=reported; char_start=708; char_end=761
+PMC10106591_01,e6,P1,S6,HAS_SYMPTOM,evidence_text=reported symptoms; trigger=reported; char_start=4260; char_end=4277
+PMC10106591_01,e7,P1,H1,HAS_HISTORY,"evidence_text=medical history included hypertension for 7 years and noncompliance with antihypertensives (irbesartan, 150 mg/day); trigger=medical history; char_start=582; char_end=697"
+PMC10106591_01,e8,P1,H2,HAS_HISTORY,"evidence_text=medical history included hypertension for 7 years and noncompliance with antihypertensives (irbesartan, 150 mg/day); trigger=medical history; char_start=582; char_end=697"
+PMC10106591_01,e9,P1,H3,HAS_HISTORY,"evidence_text=medical history included hypertension for 7 years and noncompliance with antihypertensives (irbesartan, 150 mg/day); trigger=medical history; char_start=582; char_end=697"
+PMC10106591_01,e10,P1,D1,DIAGNOSED_WITH,evidence_text=a diagnosis of CAS was made; trigger=a diagnosis of; char_start=3721; char_end=3748
+PMC10106591_01,e11,S1,C1,SAME_AS,strategy=longest
+PMC10106591_01,e12,S2,C2,SAME_AS,strategy=longest
+PMC10106591_01,e13,H1,C3,SAME_AS,strategy=exact

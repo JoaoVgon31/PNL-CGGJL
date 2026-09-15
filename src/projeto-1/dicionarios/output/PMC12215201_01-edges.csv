@@ -1,0 +1,22 @@
+case_id,edge_id,source_id,target_id,relation,attributes
+PMC12215201_01,e1,P1,H1,HAS_HISTORY,"evidence_text=past medical history originally presented to the emergency department with complaints of 2 months of fatigue, swollen abdomen, decreased appetite, and weight loss; trigger=past medical history; char_start=40; char_end=202"
+PMC12215201_01,e2,P1,H2,HAS_HISTORY,"evidence_text=past medical history originally presented to the emergency department with complaints of 2 months of fatigue, swollen abdomen, decreased appetite, and weight loss; trigger=past medical history; char_start=40; char_end=202"
+PMC12215201_01,e3,P1,H3,HAS_HISTORY,"evidence_text=past medical history originally presented to the emergency department with complaints of 2 months of fatigue, swollen abdomen, decreased appetite, and weight loss; trigger=past medical history; char_start=40; char_end=202"
+PMC12215201_01,e4,P1,H4,HAS_HISTORY,"evidence_text=past medical history originally presented to the emergency department with complaints of 2 months of fatigue, swollen abdomen, decreased appetite, and weight loss; trigger=past medical history; char_start=40; char_end=202"
+PMC12215201_01,e5,P1,H5,HAS_HISTORY,evidence_text=family history was noncontributory; trigger=family history; char_start=560; char_end=594
+PMC12215201_01,e6,P1,E1,UNDERWENT_EXAM,"evidence_text=underwent CT of the abdomen and pelvis with intravenous contrast, which exhibited multiple hypodense lesions in the liver and spleen with the peripheral enhancement of the contrast (Fig; trigger=underwent; char_start=1288; char_end=1473"
+PMC12215201_01,e7,P1,E2,UNDERWENT_EXAM,evidence_text=underwent paracentesis twice with removal of 5; trigger=underwent; char_start=1850; char_end=1896
+PMC12215201_01,e8,P1,E3,UNDERWENT_EXAM,"evidence_text=underwent liver biopsy, which showed small aggregates of anastomosing vascular channels with highly atypical cells suggestive of angiosarcoma (Fig; trigger=underwent; char_start=2636; char_end=2782"
+PMC12215201_01,e9,P1,E4,UNDERWENT_EXAM,evidence_text=underwent Pleurx catheter placement for palliative support; trigger=underwent; char_start=2892; char_end=2950
+PMC12215201_01,e10,P1,M1,TREATED_WITH,evidence_text=hemoglobin 6.1 g; trigger=dose pattern; char_start=838; char_end=854
+PMC12215201_01,e11,P1,M2,TREATED_WITH,evidence_text=bilirubin 3.2 mg; trigger=dose pattern; char_start=894; char_end=910
+PMC12215201_01,e12,P1,M3,TREATED_WITH,evidence_text=phosphatase 315 IU; trigger=dose pattern; char_start=924; char_end=942
+PMC12215201_01,e13,P1,M4,TREATED_WITH,evidence_text=albumin 2.6 g; trigger=dose pattern; char_start=978; char_end=991
+PMC12215201_01,e14,H1,C1,SAME_AS,strategy=exact
+PMC12215201_01,e15,H4,C2,SAME_AS,strategy=longest
+PMC12215201_01,e16,E2,C3,SAME_AS,strategy=exact
+PMC12215201_01,e17,E3,C4,SAME_AS,strategy=exact
+PMC12215201_01,e18,M1,C5,SAME_AS,strategy=exact
+PMC12215201_01,e19,M2,C6,SAME_AS,strategy=exact
+PMC12215201_01,e20,M3,C7,SAME_AS,strategy=exact
+PMC12215201_01,e21,M4,C8,SAME_AS,strategy=exact

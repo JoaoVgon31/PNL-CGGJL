@@ -1,0 +1,10 @@
+case_id,edge_id,source_id,target_id,relation,attributes
+PMC7102447_01,e1,P1,S1,HAS_SYMPTOM,evidence_text=presented with severe respiratory distress requiring emergent intubation; trigger=presented with; char_start=203; char_end=275
+PMC7102447_01,e2,P1,H1,HAS_HISTORY,"evidence_text=past medical history significant for hypertension, asthma, and minimally invasive bioprosthetic mitral valve replacement with a 33 mm mosaic mitral porcine valve one year prior presented with severe respiratory distress requiring emergent intubation; trigger=past medical history; char_start=26; char_end=275"
+PMC7102447_01,e3,P1,H2,HAS_HISTORY,"evidence_text=past medical history significant for hypertension, asthma, and minimally invasive bioprosthetic mitral valve replacement with a 33 mm mosaic mitral porcine valve one year prior presented with severe respiratory distress requiring emergent intubation; trigger=past medical history; char_start=26; char_end=275"
+PMC7102447_01,e4,P1,H3,HAS_HISTORY,"evidence_text=past medical history significant for hypertension, asthma, and minimally invasive bioprosthetic mitral valve replacement with a 33 mm mosaic mitral porcine valve one year prior presented with severe respiratory distress requiring emergent intubation; trigger=past medical history; char_start=26; char_end=275"
+PMC7102447_01,e5,P1,D1,DIAGNOSED_WITH,evidence_text=consistent with thrombosis; trigger=consistent with; char_start=1654; char_end=1680
+PMC7102447_01,e6,P1,T1,TREATED_WITH,evidence_text=underwent emergent redo mitral valve surgery utilizing a 33 mm St; trigger=underwent; char_start=1423; char_end=1488
+PMC7102447_01,e7,H1,C1,SAME_AS,strategy=exact
+PMC7102447_01,e8,H2,C2,SAME_AS,strategy=exact
+PMC7102447_01,e9,D1,C3,SAME_AS,strategy=exact

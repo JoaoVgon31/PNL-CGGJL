@@ -1,0 +1,22 @@
+case_id,node_id,type,label,attributes
+PMC10488652_01,P1,Patient,case PMC10488652_01,article_id=PMC10488652; age=22.0; age_unit=years; gender=Female
+PMC10488652_01,H1,History,was admitted to the emergency room of a third-level clinic for clinical symptoms that began 10 days before admission,subject=patient; polarity=present
+PMC10488652_01,H2,History,including intermittent fever up to 39 C,subject=patient; polarity=present
+PMC10488652_01,H3,History,general malaise,subject=patient; polarity=present
+PMC10488652_01,H4,History,headache,subject=patient; polarity=present
+PMC10488652_01,H5,History,myalgia,subject=patient; polarity=present
+PMC10488652_01,H6,History,mild self-limiting rash episode,subject=patient; polarity=present
+PMC10488652_01,H7,History,diarrhea,subject=patient; polarity=present
+PMC10488652_01,H8,History,occasional emesis,subject=patient; polarity=present
+PMC10488652_01,D1,Diagnosis,class II mesangial lupus nephritis,certainty=confirmed; polarity=present; role=principal
+PMC10488652_01,M1,Medication,hemoglobin,dose_value=6.2; dose_unit=g
+PMC10488652_01,O1,Outcome,discharged,type=discharge; polarity=present
+PMC10488652_01,C1,Concept,Emergencies,vocabulary=MeSH; code=D004630; preferred_term=Emergencies
+PMC10488652_01,C2,Concept,Fever,vocabulary=MeSH; code=D005334; preferred_term=Fever
+PMC10488652_01,C3,Concept,Headache,vocabulary=MeSH; code=D006261; preferred_term=Headache
+PMC10488652_01,C4,Concept,Myalgia,vocabulary=MeSH; code=D063806; preferred_term=Myalgia
+PMC10488652_01,C5,Concept,Exanthema,vocabulary=MeSH; code=D005076; preferred_term=Exanthema
+PMC10488652_01,C6,Concept,Diarrhea,vocabulary=MeSH; code=D003967; preferred_term=Diarrhea
+PMC10488652_01,C7,Concept,Vomiting,vocabulary=MeSH; code=D014839; preferred_term=Vomiting
+PMC10488652_01,C8,Concept,Lupus Nephritis,vocabulary=MeSH; code=D008181; preferred_term=Lupus Nephritis
+PMC10488652_01,C9,Concept,Hemoglobins,vocabulary=MeSH; code=D006454; preferred_term=Hemoglobins

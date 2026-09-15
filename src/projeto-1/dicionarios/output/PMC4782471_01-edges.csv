@@ -1,0 +1,16 @@
+case_id,edge_id,source_id,target_id,relation,attributes
+PMC4782471_01,e1,P1,S1,HAS_SYMPTOM,"evidence_text=presented with perimembranous VSD measuring 5 mm, no aortic regurgitation, mild left ventricular dilatation, and no pulmonary hypertension; trigger=presented with; char_start=29; char_end=167"
+PMC4782471_01,e2,P1,S2,HAS_SYMPTOM,"evidence_text=presented with perimembranous VSD measuring 5 mm, no aortic regurgitation, mild left ventricular dilatation, and no pulmonary hypertension; trigger=presented with; char_start=29; char_end=167"
+PMC4782471_01,e3,P1,S3,HAS_SYMPTOM,"evidence_text=presented with perimembranous VSD measuring 5 mm, no aortic regurgitation, mild left ventricular dilatation, and no pulmonary hypertension; trigger=presented with; char_start=29; char_end=167"
+PMC4782471_01,e4,P1,S4,HAS_SYMPTOM,"evidence_text=presented with perimembranous VSD measuring 5 mm, no aortic regurgitation, mild left ventricular dilatation, and no pulmonary hypertension; trigger=presented with; char_start=29; char_end=167"
+PMC4782471_01,e5,P1,S5,HAS_SYMPTOM,evidence_text=reported breathlessness on exertion and were advised that the defect was unlikely to close spontaneously at her age; trigger=reported; char_start=224; char_end=339
+PMC4782471_01,e6,P1,S6,HAS_SYMPTOM,evidence_text=reported breathlessness on exertion and were advised that the defect was unlikely to close spontaneously at her age; trigger=reported; char_start=224; char_end=339
+PMC4782471_01,e7,P1,D1,DIAGNOSED_WITH,evidence_text=diagnosed with infective endocarditis and started empirically on the sensitivity results showed resistance to ceftazidime and sensitive to ciprofloxacin; trigger=diagnosed with; char_start=1992; char_end=2144
+PMC4782471_01,e8,P1,E1,UNDERWENT_EXAM,"evidence_text=underwent device closure using a 10 x 6 ""PFM NiT-Occlud"" device under general anesthesia following procedural guidelines; trigger=underwent; char_start=453; char_end=573"
+PMC4782471_01,e9,P1,E2,UNDERWENT_EXAM,evidence_text=underwent surgical intervention on cardiopulmonary bypass; trigger=underwent; char_start=2457; char_end=2514
+PMC4782471_01,e10,P1,M1,TREATED_WITH,evidence_text=given 50 mg; trigger=dose pattern; char_start=665; char_end=676
+PMC4782471_01,e11,P1,O1,HAS_OUTCOME,evidence_text=She died 2 days after surgery; trigger=died; char_start=3239; char_end=3269
+PMC4782471_01,e12,S2,C1,SAME_AS,strategy=longest
+PMC4782471_01,e13,S4,C2,SAME_AS,strategy=longest
+PMC4782471_01,e14,S5,C3,SAME_AS,strategy=exact
+PMC4782471_01,e15,D1,C4,SAME_AS,strategy=longest

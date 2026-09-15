@@ -1,0 +1,9 @@
+case_id,node_id,type,label,attributes
+PMC3557982_01,P1,Patient,case PMC3557982_01,article_id=PMC3557982; age=1.0; age_unit=years; gender=Female
+PMC3557982_01,S1,Symptom,clinical data on HAdV-14 infection,polarity=present
+PMC3557982_01,S2,Symptom,apparently enhanced virulence of this strain,polarity=present
+PMC3557982_01,D1,Diagnosis,previously reported clinical data on HAdV-14 infection and the apparently enhanced virulence of this strain,certainty=confirmed; polarity=present; role=principal
+PMC3557982_01,O1,Outcome,died,type=death; polarity=present
+PMC3557982_01,O2,Outcome,died,type=death; polarity=present
+PMC3557982_01,C1,Concept,Infections,vocabulary=MeSH; code=D007239; preferred_term=Infections
+PMC3557982_01,C2,Concept,Sprains and Strains,vocabulary=MeSH; code=D013180; preferred_term=Sprains and Strains

@@ -1,0 +1,10 @@
+case_id,edge_id,source_id,target_id,relation,attributes
+PMC11722600_02,e1,P1,S1,HAS_SYMPTOM,"evidence_text=presented with abdominal pain for 72 h, initially in the epigastrium and later localized in RIF, associated with oral intolerance; trigger=presented with; char_start=219; char_end=348"
+PMC11722600_02,e2,P1,S2,HAS_SYMPTOM,"evidence_text=presented with abdominal pain for 72 h, initially in the epigastrium and later localized in RIF, associated with oral intolerance; trigger=presented with; char_start=219; char_end=348"
+PMC11722600_02,e3,P1,S3,HAS_SYMPTOM,"evidence_text=presented with abdominal pain for 72 h, initially in the epigastrium and later localized in RIF, associated with oral intolerance; trigger=presented with; char_start=219; char_end=348"
+PMC11722600_02,e4,P1,S4,HAS_SYMPTOM,"evidence_text=presented with abdominal pain for 72 h, initially in the epigastrium and later localized in RIF, associated with oral intolerance; trigger=presented with; char_start=219; char_end=348"
+PMC11722600_02,e5,P1,D1,DIAGNOSED_WITH,"evidence_text=a diagnosis of advanced appendicitis, non-operative treatment with intravenous antibiotics was initially indicated; trigger=a diagnosis of; char_start=1036; char_end=1150"
+PMC11722600_02,e6,P1,O1,HAS_OUTCOME,"evidence_text=The patient improved and was discharged after 7 days of admisison; before this a control CT was performed to ensure complete drainage of the periappendiceal collection, as this case presented an atypical scenario for our team; trigger=discharged; char_start=1732; char_end=1958"
+PMC11722600_02,e7,P1,O2,HAS_OUTCOME,evidence_text=She was discharged on the third postoperative day without complications; trigger=discharged; char_start=2583; char_end=2655
+PMC11722600_02,e8,S1,C1,SAME_AS,strategy=longest
+PMC11722600_02,e9,D1,C2,SAME_AS,strategy=exact

@@ -1,0 +1,21 @@
+case_id,edge_id,source_id,target_id,relation,attributes
+PMC10488652_01,e1,P1,H1,HAS_HISTORY,"evidence_text=medical history was admitted to the emergency room of a third-level clinic for clinical symptoms that began 10 days before admission, including intermittent fever up to 39 C, general malaise, headache, myalgia, a mild self-limiting rash episode, diarrhea, and occasional emesis; trigger=medical history; char_start=46; char_end=323"
+PMC10488652_01,e2,P1,H2,HAS_HISTORY,"evidence_text=medical history was admitted to the emergency room of a third-level clinic for clinical symptoms that began 10 days before admission, including intermittent fever up to 39 C, general malaise, headache, myalgia, a mild self-limiting rash episode, diarrhea, and occasional emesis; trigger=medical history; char_start=46; char_end=323"
+PMC10488652_01,e3,P1,H3,HAS_HISTORY,"evidence_text=medical history was admitted to the emergency room of a third-level clinic for clinical symptoms that began 10 days before admission, including intermittent fever up to 39 C, general malaise, headache, myalgia, a mild self-limiting rash episode, diarrhea, and occasional emesis; trigger=medical history; char_start=46; char_end=323"
+PMC10488652_01,e4,P1,H4,HAS_HISTORY,"evidence_text=medical history was admitted to the emergency room of a third-level clinic for clinical symptoms that began 10 days before admission, including intermittent fever up to 39 C, general malaise, headache, myalgia, a mild self-limiting rash episode, diarrhea, and occasional emesis; trigger=medical history; char_start=46; char_end=323"
+PMC10488652_01,e5,P1,H5,HAS_HISTORY,"evidence_text=medical history was admitted to the emergency room of a third-level clinic for clinical symptoms that began 10 days before admission, including intermittent fever up to 39 C, general malaise, headache, myalgia, a mild self-limiting rash episode, diarrhea, and occasional emesis; trigger=medical history; char_start=46; char_end=323"
+PMC10488652_01,e6,P1,H6,HAS_HISTORY,"evidence_text=medical history was admitted to the emergency room of a third-level clinic for clinical symptoms that began 10 days before admission, including intermittent fever up to 39 C, general malaise, headache, myalgia, a mild self-limiting rash episode, diarrhea, and occasional emesis; trigger=medical history; char_start=46; char_end=323"
+PMC10488652_01,e7,P1,H7,HAS_HISTORY,"evidence_text=medical history was admitted to the emergency room of a third-level clinic for clinical symptoms that began 10 days before admission, including intermittent fever up to 39 C, general malaise, headache, myalgia, a mild self-limiting rash episode, diarrhea, and occasional emesis; trigger=medical history; char_start=46; char_end=323"
+PMC10488652_01,e8,P1,H8,HAS_HISTORY,"evidence_text=medical history was admitted to the emergency room of a third-level clinic for clinical symptoms that began 10 days before admission, including intermittent fever up to 39 C, general malaise, headache, myalgia, a mild self-limiting rash episode, diarrhea, and occasional emesis; trigger=medical history; char_start=46; char_end=323"
+PMC10488652_01,e9,P1,D1,DIAGNOSED_WITH,evidence_text=consistent with class II mesangial lupus nephritis; trigger=consistent with; char_start=806; char_end=856
+PMC10488652_01,e10,P1,M1,TREATED_WITH,evidence_text=hemoglobin 6.2 g; trigger=dose pattern; char_start=995; char_end=1011
+PMC10488652_01,e11,P1,O1,HAS_OUTCOME,"evidence_text=The patient was discharged from the hospital after receiving outpatient treatment with prednisone at a dose of 5 mg daily orally, hydroxychloroquine at a dose of 200 mg daily orally and mycophenolate mofetil at a dose of 500 mg every 12 hours for one week and thereafter at a dose of 500 mg every 8 hours; trigger=discharged; char_start=1653; char_end=1958"
+PMC10488652_01,e12,H1,C1,SAME_AS,strategy=exact
+PMC10488652_01,e13,H2,C2,SAME_AS,strategy=exact
+PMC10488652_01,e14,H4,C3,SAME_AS,strategy=exact
+PMC10488652_01,e15,H5,C4,SAME_AS,strategy=exact
+PMC10488652_01,e16,H6,C5,SAME_AS,strategy=exact
+PMC10488652_01,e17,H7,C6,SAME_AS,strategy=exact
+PMC10488652_01,e18,H8,C7,SAME_AS,strategy=exact
+PMC10488652_01,e19,D1,C8,SAME_AS,strategy=longest
+PMC10488652_01,e20,M1,C9,SAME_AS,strategy=exact

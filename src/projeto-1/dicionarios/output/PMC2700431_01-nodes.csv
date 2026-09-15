@@ -1,0 +1,3 @@
+case_id,node_id,type,label,attributes
+PMC2700431_01,P1,Patient,case PMC2700431_01,article_id=PMC2700431; age=35.0; age_unit=years; gender=Male
+PMC2700431_01,O1,Outcome,expired,type=death; polarity=present

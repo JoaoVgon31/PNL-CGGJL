@@ -1,0 +1,4 @@
+case_id,node_id,type,label,attributes
+PMC11722600_01,P1,Patient,case PMC11722600_01,article_id=PMC11722600; age=41.0; age_unit=years; gender=Female
+PMC11722600_01,D1,Diagnosis,one of the characteristic features of endometriotic tissue,certainty=confirmed; polarity=present; role=principal
+PMC11722600_01,O1,Outcome,discharged,type=discharge; polarity=present

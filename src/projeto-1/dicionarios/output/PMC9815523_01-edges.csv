@@ -1,0 +1,26 @@
+case_id,edge_id,source_id,target_id,relation,attributes
+PMC9815523_01,e1,P1,D1,DIAGNOSED_WITH,"evidence_text=diagnosed with vTOS, four (8; trigger=diagnosed with; char_start=807; char_end=835"
+PMC9815523_01,e2,P1,E1,UNDERWENT_EXAM,evidence_text=underwent a redo TOD; two because of an insufficiently removed first rib and one because of an accidental second rib removal during primary intervention; trigger=underwent; char_start=3613; char_end=3765
+PMC9815523_01,e3,P1,E2,UNDERWENT_EXAM,"evidence_text=underwent dedicated diagnostic imaging (CTv, MRv or angiography) to confirm VTOS, after which TOD was performed; trigger=underwent; char_start=5138; char_end=5249"
+PMC9815523_01,e4,P1,E3,UNDERWENT_EXAM,"evidence_text=underwent additional reinterventions leading to full symptom resolution in two patients, and 13 symptom free patients in total (48; trigger=underwent; char_start=5559; char_end=5689"
+PMC9815523_01,e5,P1,T1,TREATED_WITH,"evidence_text=were treated with antithrombotics; 25 DOAC, 18 vitamin K antagonist, one antiplatelet therapy; trigger=treated with; char_start=1202; char_end=1295"
+PMC9815523_01,e6,P1,T2,TREATED_WITH,"evidence_text=were treated with antithrombotics; 25 DOAC, 18 vitamin K antagonist, one antiplatelet therapy; trigger=treated with; char_start=1202; char_end=1295"
+PMC9815523_01,e7,P1,T3,TREATED_WITH,"evidence_text=were treated with antithrombotics; 25 DOAC, 18 vitamin K antagonist, one antiplatelet therapy; trigger=treated with; char_start=1202; char_end=1295"
+PMC9815523_01,e8,P1,T4,TREATED_WITH,evidence_text=treated with physical therapy; trigger=treated with; char_start=2298; char_end=2327
+PMC9815523_01,e9,P1,T5,TREATED_WITH,"evidence_text=were treated with surgery; 31 patients (58%) with CDT followed by TOD, 14 patients (26%) with anticoagulant therapy followed by staged TOD, and five patients (9%) with TOD only; trigger=treated with; char_start=2511; char_end=2687"
+PMC9815523_01,e10,P1,T6,TREATED_WITH,"evidence_text=were treated with surgery; 31 patients (58%) with CDT followed by TOD, 14 patients (26%) with anticoagulant therapy followed by staged TOD, and five patients (9%) with TOD only; trigger=treated with; char_start=2511; char_end=2687"
+PMC9815523_01,e11,P1,T7,TREATED_WITH,"evidence_text=were treated with surgery; 31 patients (58%) with CDT followed by TOD, 14 patients (26%) with anticoagulant therapy followed by staged TOD, and five patients (9%) with TOD only; trigger=treated with; char_start=2511; char_end=2687"
+PMC9815523_01,e12,P1,T8,TREATED_WITH,evidence_text=treated with CDT was relieved of symptoms after TOD; trigger=treated with; char_start=3789; char_end=3840
+PMC9815523_01,e13,P1,T9,TREATED_WITH,evidence_text=were treated with TOD and PTA leading to full symptom resolution; trigger=treated with; char_start=3912; char_end=3976
+PMC9815523_01,e14,P1,T10,TREATED_WITH,evidence_text=were treated with TOD and PTA leading to full symptom resolution; trigger=treated with; char_start=3912; char_end=3976
+PMC9815523_01,e15,P1,T11,TREATED_WITH,"evidence_text=treated with a pectoralis minor release and finally a subclavian vein bypass, but remained symptomatic; trigger=treated with; char_start=4131; char_end=4233"
+PMC9815523_01,e16,P1,T12,TREATED_WITH,"evidence_text=treated with a pectoralis minor release and finally a subclavian vein bypass, but remained symptomatic; trigger=treated with; char_start=4131; char_end=4233"
+PMC9815523_01,e17,P1,T13,TREATED_WITH,"evidence_text=treated with a pectoralis minor release and finally a subclavian vein bypass, but remained symptomatic; trigger=treated with; char_start=4131; char_end=4233"
+PMC9815523_01,e18,P1,T14,TREATED_WITH,"evidence_text=were treated with vitamin K antagonists and six with a DOAC, for a median duration of 13 months prior to surgical intervention; trigger=treated with; char_start=4997; char_end=5123"
+PMC9815523_01,e19,P1,T15,TREATED_WITH,"evidence_text=were treated with vitamin K antagonists and six with a DOAC, for a median duration of 13 months prior to surgical intervention; trigger=treated with; char_start=4997; char_end=5123"
+PMC9815523_01,e20,P1,T16,TREATED_WITH,"evidence_text=were treated with vitamin K antagonists and six with a DOAC, for a median duration of 13 months prior to surgical intervention; trigger=treated with; char_start=4997; char_end=5123"
+PMC9815523_01,e21,P1,T17,TREATED_WITH,evidence_text=was treated with a chest drain; trigger=treated with; char_start=5948; char_end=5978
+PMC9815523_01,e22,E2,C1,SAME_AS,strategy=longest
+PMC9815523_01,e23,T3,C2,SAME_AS,strategy=exact
+PMC9815523_01,e24,T4,C3,SAME_AS,strategy=longest
+PMC9815523_01,e25,T6,C2,SAME_AS,strategy=exact

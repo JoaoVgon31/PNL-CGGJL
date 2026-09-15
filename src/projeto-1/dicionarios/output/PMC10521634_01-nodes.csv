@@ -1,0 +1,4 @@
+case_id,node_id,type,label,attributes
+PMC10521634_01,P1,Patient,case PMC10521634_01,article_id=PMC10521634; age=38.0; age_unit=years; gender=Male
+PMC10521634_01,E1,Exam,CT scan,modality=imaging
+PMC10521634_01,O1,Outcome,discharged,type=discharge; polarity=present

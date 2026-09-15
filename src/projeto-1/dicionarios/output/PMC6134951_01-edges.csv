@@ -1,0 +1,8 @@
+case_id,edge_id,source_id,target_id,relation,attributes
+PMC6134951_01,e1,P1,D1,DIAGNOSED_WITH,evidence_text=consistent with TTF1-positive pulmonary adenocarcinoma; trigger=consistent with; char_start=258; char_end=312
+PMC6134951_01,e2,P1,D2,DIAGNOSED_WITH,"evidence_text=consistent with drug eruption (delayed type IV hypersensitivity, Figure 1B); trigger=consistent with; char_start=1535; char_end=1610"
+PMC6134951_01,e3,P1,M1,TREATED_WITH,evidence_text=alectinib 600 mg; trigger=dose pattern; char_start=1067; char_end=1083
+PMC6134951_01,e4,P1,M2,TREATED_WITH,evidence_text=diphenhydramine 50 mg; trigger=dose pattern; char_start=2177; char_end=2198
+PMC6134951_01,e5,D1,C1,SAME_AS,strategy=exact
+PMC6134951_01,e6,D2,C2,SAME_AS,strategy=longest
+PMC6134951_01,e7,M2,C3,SAME_AS,strategy=exact

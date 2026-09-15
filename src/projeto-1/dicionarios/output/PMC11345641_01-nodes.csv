@@ -1,0 +1,5 @@
+case_id,node_id,type,label,attributes
+PMC11345641_01,P1,Patient,case PMC11345641_01,article_id=PMC11345641; age=48.0; age_unit=years; gender=Female
+PMC11345641_01,D1,Diagnosis,uterine fibroid,certainty=confirmed; polarity=present; role=principal
+PMC11345641_01,O1,Outcome,discharged,type=discharge; polarity=present
+PMC11345641_01,C1,Concept,Leiomyoma,vocabulary=MeSH; code=D007889; preferred_term=Leiomyoma

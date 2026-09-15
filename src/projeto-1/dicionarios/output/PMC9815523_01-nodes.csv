@@ -1,0 +1,26 @@
+case_id,node_id,type,label,attributes
+PMC9815523_01,P1,Patient,case PMC9815523_01,article_id=PMC9815523; age=40.0; age_unit=years; gender=Unknown
+PMC9815523_01,D1,Diagnosis,vTOS,certainty=confirmed; polarity=present; role=principal
+PMC9815523_01,E1,Exam,redo TOD,
+PMC9815523_01,E2,Exam,dedicated diagnostic imaging (CTv,
+PMC9815523_01,E3,Exam,additional reinterventions leading to full symptom resolution in two patients,
+PMC9815523_01,T1,Treatment,antithrombotics; 25 DOAC,type=supportive; status=performed
+PMC9815523_01,T2,Treatment,18 vitamin K antagonist,type=supportive; status=performed
+PMC9815523_01,T3,Treatment,one antiplatelet therapy,type=supportive; status=performed
+PMC9815523_01,T4,Treatment,physical therapy,type=supportive; status=performed
+PMC9815523_01,T5,Treatment,surgery; 31 patients (58%) with CDT followed by TOD,type=supportive; status=performed
+PMC9815523_01,T6,Treatment,14 patients (26%) with anticoagulant therapy followed by staged TOD,type=supportive; status=performed
+PMC9815523_01,T7,Treatment,five patients (9%) with TOD only,type=supportive; status=performed
+PMC9815523_01,T8,Treatment,CDT was relieved of symptoms after TOD,type=supportive; status=performed
+PMC9815523_01,T9,Treatment,TOD,type=supportive; status=performed
+PMC9815523_01,T10,Treatment,PTA leading to full symptom resolution,type=supportive; status=performed
+PMC9815523_01,T11,Treatment,pectoralis minor release,type=supportive; status=performed
+PMC9815523_01,T12,Treatment,finally a subclavian vein bypass,type=supportive; status=performed
+PMC9815523_01,T13,Treatment,but remained symptomatic,type=supportive; status=performed
+PMC9815523_01,T14,Treatment,vitamin K antagonists,type=supportive; status=performed
+PMC9815523_01,T15,Treatment,six with a DOAC,type=supportive; status=performed
+PMC9815523_01,T16,Treatment,for a median duration of 13 months prior to surgical intervention,type=supportive; status=performed
+PMC9815523_01,T17,Treatment,chest drain,type=supportive; status=performed
+PMC9815523_01,C1,Concept,Diagnostic Imaging,vocabulary=MeSH; code=D003952; preferred_term=Diagnostic Imaging
+PMC9815523_01,C2,Concept,Therapeutics,vocabulary=MeSH; code=D013812; preferred_term=Therapeutics
+PMC9815523_01,C3,Concept,Physical Therapy Modalities,vocabulary=MeSH; code=D026741; preferred_term=Physical Therapy Modalities

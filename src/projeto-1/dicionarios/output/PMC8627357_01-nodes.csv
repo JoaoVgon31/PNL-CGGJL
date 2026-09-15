@@ -1,0 +1,4 @@
+case_id,node_id,type,label,attributes
+PMC8627357_01,P1,Patient,case PMC8627357_01,article_id=PMC8627357; age=36.0; age_unit=years; gender=Male
+PMC8627357_01,O1,Outcome,discharged,type=discharge; polarity=present
+PMC8627357_01,O2,Outcome,resolution of,type=resolution; polarity=present

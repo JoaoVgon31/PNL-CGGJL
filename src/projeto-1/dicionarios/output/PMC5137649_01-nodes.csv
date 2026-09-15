@@ -1,0 +1,21 @@
+case_id,node_id,type,label,attributes
+PMC5137649_01,P1,Patient,case PMC5137649_01,article_id=PMC5137649; age=44.0; age_unit=years; gender=Female
+PMC5137649_01,S1,Symptom,right flank,polarity=present; duration=3 days
+PMC5137649_01,S2,Symptom,lower quadrant abdominal pain,polarity=present; duration=3 days
+PMC5137649_01,S3,Symptom,nausea,polarity=present
+PMC5137649_01,S4,Symptom,constipation,polarity=present
+PMC5137649_01,D1,Diagnosis,mucinous pancreatic cystic neoplasm,certainty=suspected; polarity=present; role=principal
+PMC5137649_01,D2,Diagnosis,GDC (Figs 3-5,certainty=confirmed; polarity=present; role=principal
+PMC5137649_01,E1,Exam,contrast enhanced computed tomography,modality=imaging
+PMC5137649_01,E2,Exam,EUS-FNA,modality=pathology
+PMC5137649_01,T1,Treatment,laparoscopic distal pancreatectomy,type=surgery; status=planned
+PMC5137649_01,T2,Treatment,open resection,type=surgery; status=converted
+PMC5137649_01,O1,Outcome,discharged,type=discharge; polarity=present
+PMC5137649_01,O2,Outcome,resolution of,type=resolution; polarity=present
+PMC5137649_01,C1,Concept,Abdominal Pain,vocabulary=MeSH; code=D015746; preferred_term=Abdominal Pain
+PMC5137649_01,C2,Concept,Nausea,vocabulary=MeSH; code=D009325; preferred_term=Nausea
+PMC5137649_01,C3,Concept,Constipation,vocabulary=MeSH; code=D003248; preferred_term=Constipation
+PMC5137649_01,C4,Concept,"Neoplasms, Cystic, Mucinous, and Serous","vocabulary=MeSH; code=D018297; preferred_term=Neoplasms, Cystic, Mucinous, and Serous"
+PMC5137649_01,C5,Concept,Tomography,vocabulary=MeSH; code=D014054; preferred_term=Tomography
+PMC5137649_01,C6,Concept,Endoscopic Ultrasound-Guided Fine Needle Aspiration,vocabulary=MeSH; code=D061765; preferred_term=Endoscopic Ultrasound-Guided Fine Needle Aspiration
+PMC5137649_01,C7,Concept,Pancreatectomy,vocabulary=MeSH; code=D010180; preferred_term=Pancreatectomy

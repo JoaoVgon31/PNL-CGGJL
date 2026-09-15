@@ -1,0 +1,5 @@
+case_id,edge_id,source_id,target_id,relation,attributes
+PMC3859158_01,e1,P1,S1,HAS_SYMPTOM,evidence_text=presented with a 4-month history of vague epigastric pain; trigger=presented with; char_start=18; char_end=75
+PMC3859158_01,e2,P1,H1,HAS_HISTORY,evidence_text=family history were unremarkable; trigger=family history; char_start=456; char_end=488
+PMC3859158_01,e3,P1,T1,TREATED_WITH,"evidence_text=underwent surgical resection of pancreatic tail, splenectomy, and celiac lymph node dissections; trigger=underwent; char_start=1382; char_end=1477"
+PMC3859158_01,e4,S1,C1,SAME_AS,strategy=exact

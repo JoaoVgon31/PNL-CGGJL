@@ -1,0 +1,12 @@
+case_id,edge_id,source_id,target_id,relation,attributes
+PMC7718649_01,e1,P1,S1,HAS_SYMPTOM,evidence_text=presented with mild coughing; trigger=presented with; char_start=2402; char_end=2430
+PMC7718649_01,e2,P1,D1,DIAGNOSED_WITH,evidence_text=suspected COVID-19 patients; trigger=suspected; char_start=377; char_end=404
+PMC7718649_01,e3,P1,M1,TREATED_WITH,evidence_text=oseltamivir 75 mg twice daily; trigger=dose pattern; char_start=826; char_end=855
+PMC7718649_01,e4,P1,M2,TREATED_WITH,evidence_text=arbidol 0.3 g twice daily; trigger=dose pattern; char_start=857; char_end=882
+PMC7718649_01,e5,P1,M3,TREATED_WITH,evidence_text=moxifloxacin 0.4 g once daily; trigger=dose pattern; char_start=884; char_end=913
+PMC7718649_01,e6,P1,M4,TREATED_WITH,evidence_text=capsules 1.4 g three times daily; trigger=dose pattern; char_start=933; char_end=965
+PMC7718649_01,e7,P1,O1,HAS_OUTCOME,"evidence_text=Since the patient met the criteria of discharge (temperature came back to normal for over 3 days, respiratory symptoms significantly improved, thoracic radiology showed obvious improvement in acute exudative lesions and negative results of rRT-PCR of SARS-CoV-2 for two nasal pharyngeal swabs over 24 h), she was discharged on March 4, 2020; trigger=discharged; char_start=5573; char_end=5914"
+PMC7718649_01,e8,D1,C1,SAME_AS,strategy=exact
+PMC7718649_01,e9,M1,C2,SAME_AS,strategy=exact
+PMC7718649_01,e10,M3,C3,SAME_AS,strategy=exact
+PMC7718649_01,e11,M4,C4,SAME_AS,strategy=exact

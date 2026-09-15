@@ -1,0 +1,9 @@
+case_id,node_id,type,label,attributes
+PMC5833205_01,P1,Patient,case PMC5833205_01,article_id=PMC5833205; age=0.0; age_unit=years; gender=Male
+PMC5833205_01,S1,Symptom,that the swelling had progressed steadily over time,polarity=present
+PMC5833205_01,S2,Symptom,eventually resulting in worsening abdominal distension,polarity=present
+PMC5833205_01,S3,Symptom,bilateral lower extremity edema,polarity=present
+PMC5833205_01,D1,Diagnosis,microcytic anemia (hemoglobin of 6,certainty=confirmed; polarity=present; role=principal
+PMC5833205_01,T1,Treatment,oral iron replacement at a dose of 6 mg/kg of elemental iron/day,type=supportive; status=performed
+PMC5833205_01,C1,Concept,Edema,vocabulary=MeSH; code=D004487; preferred_term=Edema
+PMC5833205_01,C2,Concept,Anemia,vocabulary=MeSH; code=D000740; preferred_term=Anemia

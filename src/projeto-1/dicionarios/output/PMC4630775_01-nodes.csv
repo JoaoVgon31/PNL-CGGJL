@@ -1,0 +1,6 @@
+case_id,node_id,type,label,attributes
+PMC4630775_01,P1,Patient,case PMC4630775_01,article_id=PMC4630775; age=39.0; age_unit=years; gender=Female
+PMC4630775_01,S1,Symptom,desquamation of the palm,polarity=present
+PMC4630775_01,S2,Symptom,leathery appearance of the skin to the right dorsal hand,polarity=present
+PMC4630775_01,S3,Symptom,circumferential forearm with frank ischemia to the thumb,polarity=present
+PMC4630775_01,C1,Concept,Ischemia,vocabulary=MeSH; code=D007511; preferred_term=Ischemia

@@ -1,0 +1,17 @@
+case_id,edge_id,source_id,target_id,relation,attributes
+PMC4828947_01,e1,P1,S1,HAS_SYMPTOM,evidence_text=presented with chronic drug-resistant seizures since the age of four; trigger=presented with; char_start=18; char_end=86
+PMC4828947_01,e2,P1,H1,HAS_HISTORY,"evidence_text=medical history was negative for epilepsy-associated risk factors such as febrile seizures, meningitis, and head trauma; trigger=medical history; char_start=726; char_end=845"
+PMC4828947_01,e3,P1,H2,HAS_HISTORY,"evidence_text=medical history was negative for epilepsy-associated risk factors such as febrile seizures, meningitis, and head trauma; trigger=medical history; char_start=726; char_end=845"
+PMC4828947_01,e4,P1,H3,HAS_HISTORY,"evidence_text=medical history was negative for epilepsy-associated risk factors such as febrile seizures, meningitis, and head trauma; trigger=medical history; char_start=726; char_end=845"
+PMC4828947_01,e5,P1,H4,HAS_HISTORY,evidence_text=family history was negative with regard to epilepsy; trigger=family history; char_start=851; char_end=902
+PMC4828947_01,e6,P1,T1,TREATED_WITH,evidence_text=were treated with oxcarbazepine 1200 mg/day and valproic acid 1500 mg/day; trigger=treated with; char_start=647; char_end=720
+PMC4828947_01,e7,P1,T2,TREATED_WITH,evidence_text=were treated with oxcarbazepine 1200 mg/day and valproic acid 1500 mg/day; trigger=treated with; char_start=647; char_end=720
+PMC4828947_01,e8,P1,M1,TREATED_WITH,evidence_text=oxcarbazepine 1200 mg; trigger=dose pattern; char_start=665; char_end=686
+PMC4828947_01,e9,P1,M2,TREATED_WITH,evidence_text=acid 1500 mg; trigger=dose pattern; char_start=704; char_end=716
+PMC4828947_01,e10,S1,C1,SAME_AS,strategy=exact
+PMC4828947_01,e11,H1,C2,SAME_AS,strategy=longest
+PMC4828947_01,e12,H2,C3,SAME_AS,strategy=exact
+PMC4828947_01,e13,H3,C4,SAME_AS,strategy=longest
+PMC4828947_01,e14,H4,C5,SAME_AS,strategy=exact
+PMC4828947_01,e15,M1,C6,SAME_AS,strategy=exact
+PMC4828947_01,e16,M2,C7,SAME_AS,strategy=exact

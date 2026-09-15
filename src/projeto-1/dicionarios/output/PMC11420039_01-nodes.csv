@@ -1,0 +1,27 @@
+case_id,node_id,type,label,attributes
+PMC11420039_01,P1,Patient,case PMC11420039_01,article_id=PMC11420039; age=74.0; age_unit=years; gender=Female
+PMC11420039_01,S1,Symptom,widespread erythematous patches,polarity=present
+PMC11420039_01,S2,Symptom,vesicles on the limbs,polarity=present
+PMC11420039_01,S3,Symptom,which had appeared successively over a period of 2 weeks,polarity=present
+PMC11420039_01,S4,Symptom,"had previously been diagnosed as ""eczema"" at another hospital",polarity=present
+PMC11420039_01,S5,Symptom,by the patient's family over the past two months,polarity=present
+PMC11420039_01,H1,History,revealed noticeable symptoms of dry eyes,subject=patient; polarity=present
+PMC11420039_01,H2,History,dry mouth reported by the patient's family over the past two months,subject=patient; polarity=present
+PMC11420039_01,D1,Diagnosis,BP,certainty=confirmed; polarity=present; role=principal
+PMC11420039_01,D2,Diagnosis,viral septicemia and treated with acyclovir for antiviral therapy,certainty=confirmed; polarity=present; role=principal
+PMC11420039_01,D3,Diagnosis,Secondary Sjogren's Syndrome,certainty=confirmed; polarity=present; role=principal
+PMC11420039_01,D4,Diagnosis,HE staining,certainty=confirmed; polarity=present; role=principal
+PMC11420039_01,T1,Treatment,methylprednisolone 40 mg orally per day,type=supportive; status=performed
+PMC11420039_01,T2,Treatment,which was adjusted to methylprednisolone tablets orally after one week,type=supportive; status=performed
+PMC11420039_01,T3,Treatment,with a dose of 20 mg in the morning,type=supportive; status=performed
+PMC11420039_01,T4,Treatment,16 mg in the evening,type=supportive; status=performed
+PMC11420039_01,T5,Treatment,acyclovir for antiviral therapy,type=supportive; status=performed
+PMC11420039_01,M1,Medication,methylprednisolone,dose_value=40; dose_unit=mg
+PMC11420039_01,O1,Outcome,discharged,type=discharge; polarity=present
+PMC11420039_01,O2,Outcome,discharged,type=discharge; polarity=present
+PMC11420039_01,C1,Concept,Eczema,vocabulary=MeSH; code=D004485; preferred_term=Eczema
+PMC11420039_01,C2,Concept,Dry Eye Syndromes,vocabulary=MeSH; code=D015352; preferred_term=Dry Eye Syndromes
+PMC11420039_01,C3,Concept,Sepsis,vocabulary=MeSH; code=D018805; preferred_term=Sepsis
+PMC11420039_01,C4,Concept,Sjogren's Syndrome,vocabulary=MeSH; code=D012859; preferred_term=Sjogren's Syndrome
+PMC11420039_01,C5,Concept,Therapeutics,vocabulary=MeSH; code=D013812; preferred_term=Therapeutics
+PMC11420039_01,C6,Concept,Methylprednisolone,vocabulary=MeSH; code=D008775; preferred_term=Methylprednisolone

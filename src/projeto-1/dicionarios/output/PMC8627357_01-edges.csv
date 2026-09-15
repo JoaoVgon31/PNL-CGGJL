@@ -1,0 +1,3 @@
+case_id,edge_id,source_id,target_id,relation,attributes
+PMC8627357_01,e1,P1,O1,HAS_OUTCOME,evidence_text=The patient was subsequently discharged to a rehabilitation facility; trigger=discharged; char_start=2867; char_end=2936
+PMC8627357_01,e2,P1,O2,HAS_OUTCOME,"evidence_text=Following the initial placement of the surgical chest tube, a subsequent PTX (see Figure 3) occurred, requiring an additional surgical chest tube to be placed with the resolution of the PTX; trigger=resolution of; char_start=2120; char_end=2310"

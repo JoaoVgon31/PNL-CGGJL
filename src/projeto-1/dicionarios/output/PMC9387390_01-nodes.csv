@@ -1,0 +1,17 @@
+case_id,node_id,type,label,attributes
+PMC9387390_01,P1,Patient,case PMC9387390_01,article_id=PMC9387390; age=57.0; age_unit=years; gender=Male
+PMC9387390_01,S1,Symptom,postprandial abdominal fullness,polarity=present
+PMC9387390_01,S2,Symptom,diarrhea,polarity=present
+PMC9387390_01,D1,Diagnosis,invasive moderately to poorly differentiated adenocarcinoma,certainty=confirmed; polarity=present; role=principal
+PMC9387390_01,D2,Diagnosis,gastroduodenal outlet obstruction secondary to the pancreatic mass (Figure 1,certainty=confirmed; polarity=present; role=principal
+PMC9387390_01,E1,Exam,CT guided biopsy of the mass,modality=pathology
+PMC9387390_01,T1,Treatment,laparoscopic gastrojejunostomy (GJ) for palliative bypass by an outside surgeon,type=surgery; status=performed
+PMC9387390_01,T2,Treatment,relaparoscopy,type=surgery; status=performed
+PMC9387390_01,O1,Outcome,discharged,type=discharge; polarity=present
+PMC9387390_01,O2,Outcome,discharged,type=discharge; polarity=present
+PMC9387390_01,O3,Outcome,discharged,type=discharge; polarity=present
+PMC9387390_01,C1,Concept,Diarrhea,vocabulary=MeSH; code=D003967; preferred_term=Diarrhea
+PMC9387390_01,C2,Concept,Adenocarcinoma,vocabulary=MeSH; code=D000230; preferred_term=Adenocarcinoma
+PMC9387390_01,C3,Concept,Biopsy,vocabulary=MeSH; code=D001706; preferred_term=Biopsy
+PMC9387390_01,C4,Concept,Gastric Bypass,vocabulary=MeSH; code=D015390; preferred_term=Gastric Bypass
+PMC9387390_01,C5,Concept,Laparoscopy,vocabulary=MeSH; code=D010535; preferred_term=Laparoscopy

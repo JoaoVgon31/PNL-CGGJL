@@ -1,0 +1,4 @@
+case_id,node_id,type,label,attributes
+PMC9650410_01,P1,Patient,case PMC9650410_01,article_id=PMC9650410; age=67.0; age_unit=years; gender=Female
+PMC9650410_01,D1,Diagnosis,cancer,certainty=confirmed; polarity=present; role=principal
+PMC9650410_01,C1,Concept,Neoplasms,vocabulary=MeSH; code=D009369; preferred_term=Neoplasms

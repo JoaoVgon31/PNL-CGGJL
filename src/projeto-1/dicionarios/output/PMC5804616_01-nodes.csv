@@ -1,0 +1,10 @@
+case_id,node_id,type,label,attributes
+PMC5804616_01,P1,Patient,case PMC5804616_01,article_id=PMC5804616; age=77.0; age_unit=years; gender=Male
+PMC5804616_01,T1,Treatment,Esophageal bypass surgery with gastric tube,type=surgery; status=planned
+PMC5804616_01,T2,Treatment,One-lung ventilation with this tube,type=surgery; status=planned
+PMC5804616_01,T3,Treatment,PPV as soon as feasible after closing both the proximal and distal stumps of the esophagus,type=surgery; status=converted
+PMC5804616_01,M1,Medication,administering,dose_value=35; dose_unit=mg
+PMC5804616_01,M2,Medication,that,dose_value=650; dose_unit=ml
+PMC5804616_01,O1,Outcome,discharged,type=discharge; polarity=present
+PMC5804616_01,C1,Concept,One-Lung Ventilation,vocabulary=MeSH; code=D061810; preferred_term=One-Lung Ventilation
+PMC5804616_01,C2,Concept,Tacrine,vocabulary=MeSH; code=D013619; preferred_term=Tacrine

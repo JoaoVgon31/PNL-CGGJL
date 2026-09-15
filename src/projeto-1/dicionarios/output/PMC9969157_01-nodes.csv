@@ -1,0 +1,15 @@
+case_id,node_id,type,label,attributes
+PMC9969157_01,P1,Patient,case PMC9969157_01,article_id=PMC9969157; age=7.0; age_unit=years; gender=Male
+PMC9969157_01,H1,History,sibling with LCHADD,subject=family; polarity=present
+PMC9969157_01,H2,History,maternal HELLP syndrome frequently seen in mothers with gestations complicated by LCHADD,subject=family; polarity=present
+PMC9969157_01,H3,History,our patient was transported to our level IV NICU for metabolic consultation,subject=family; polarity=present
+PMC9969157_01,H4,History,further evaluation,subject=family; polarity=present
+PMC9969157_01,H5,History,management,subject=family; polarity=present
+PMC9969157_01,H6,History,in conjunction with biochemical,subject=family; polarity=present
+PMC9969157_01,H7,History,molecular studies (Table 1,subject=family; polarity=present
+PMC9969157_01,D1,Diagnosis,NEC (modified Bell Stage IIa,certainty=confirmed; polarity=present; role=principal
+PMC9969157_01,D2,Diagnosis,LCHADD given elevation of C16-OH and C18-OH levels with the ultimate diagnosis based on perinatal and family history in conjunction with biochemical and molecular studies (Table 1,certainty=confirmed; polarity=present; role=principal
+PMC9969157_01,M1,Medication,advanced,dose_value=0.5; dose_unit=g
+PMC9969157_01,M2,Medication,with,dose_value=4; dose_unit=g
+PMC9969157_01,O1,Outcome,discharged,type=discharge; polarity=present
+PMC9969157_01,C1,Concept,HELLP Syndrome,vocabulary=MeSH; code=D017359; preferred_term=HELLP Syndrome

@@ -1,0 +1,13 @@
+case_id,node_id,type,label,attributes
+PMC7718649_01,P1,Patient,case PMC7718649_01,article_id=PMC7718649; age=65.0; age_unit=years; gender=Female
+PMC7718649_01,S1,Symptom,mild coughing,polarity=present
+PMC7718649_01,D1,Diagnosis,COVID-19 patients,certainty=suspected; polarity=present; role=principal
+PMC7718649_01,M1,Medication,oseltamivir,dose_value=75; dose_unit=mg; frequency=twice daily
+PMC7718649_01,M2,Medication,arbidol,dose_value=0.3; dose_unit=g; frequency=twice daily
+PMC7718649_01,M3,Medication,moxifloxacin,dose_value=0.4; dose_unit=g; frequency=once daily
+PMC7718649_01,M4,Medication,capsules,dose_value=1.4; dose_unit=g; frequency=three times daily
+PMC7718649_01,O1,Outcome,discharged,type=discharge; polarity=present
+PMC7718649_01,C1,Concept,COVID-19,vocabulary=MeSH; code=D000086382; preferred_term=COVID-19
+PMC7718649_01,C2,Concept,Oseltamivir,vocabulary=MeSH; code=D053139; preferred_term=Oseltamivir
+PMC7718649_01,C3,Concept,Moxifloxacin,vocabulary=MeSH; code=D000077266; preferred_term=Moxifloxacin
+PMC7718649_01,C4,Concept,Capsules,vocabulary=MeSH; code=D002214; preferred_term=Capsules

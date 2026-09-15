@@ -1,0 +1,16 @@
+case_id,edge_id,source_id,target_id,relation,attributes
+PMC9387390_01,e1,P1,S1,HAS_SYMPTOM,evidence_text=presented with postprandial abdominal fullness and diarrhea; trigger=presented with; char_start=81; char_end=140
+PMC9387390_01,e2,P1,S2,HAS_SYMPTOM,evidence_text=presented with postprandial abdominal fullness and diarrhea; trigger=presented with; char_start=81; char_end=140
+PMC9387390_01,e3,P1,D1,DIAGNOSED_WITH,"evidence_text=consistent with invasive moderately to poorly differentiated adenocarcinoma, thought to have arisen from the upper gastrointestinal tract and/or pancreaticobiliary tract; trigger=consistent with; char_start=588; char_end=757"
+PMC9387390_01,e4,P1,D2,DIAGNOSED_WITH,evidence_text=consistent with gastroduodenal outlet obstruction secondary to the pancreatic mass (Figure 1); trigger=consistent with; char_start=997; char_end=1090
+PMC9387390_01,e5,P1,E1,UNDERWENT_EXAM,"evidence_text=underwent CT guided biopsy of the mass; this was consistent with invasive moderately to poorly differentiated adenocarcinoma, thought to have arisen from the upper gastrointestinal tract and/or pancreaticobiliary tract; trigger=underwent; char_start=539; char_end=757"
+PMC9387390_01,e6,P1,T1,TREATED_WITH,evidence_text=underwent laparoscopic gastrojejunostomy (GJ) for palliative bypass by an outside surgeon; trigger=underwent; char_start=1104; char_end=1193
+PMC9387390_01,e7,P1,T2,TREATED_WITH,evidence_text=underwent relaparoscopy; trigger=underwent; char_start=1275; char_end=1298
+PMC9387390_01,e8,P1,O1,HAS_OUTCOME,evidence_text=The patient was discharged two days post-procedure (POD 23); trigger=discharged; char_start=2560; char_end=2620
+PMC9387390_01,e9,P1,O2,HAS_OUTCOME,evidence_text=The patient was discharged with gastric decompression and NJ feeds; trigger=discharged; char_start=3377; char_end=3444
+PMC9387390_01,e10,P1,O3,HAS_OUTCOME,"evidence_text=The patient was discharged home, tolerating gastric tube feeds and oral liquids; trigger=discharged; char_start=4202; char_end=4282"
+PMC9387390_01,e11,S2,C1,SAME_AS,strategy=exact
+PMC9387390_01,e12,D1,C2,SAME_AS,strategy=exact
+PMC9387390_01,e13,E1,C3,SAME_AS,strategy=exact
+PMC9387390_01,e14,T1,C4,SAME_AS,strategy=exact
+PMC9387390_01,e15,T2,C5,SAME_AS,strategy=fuzzy; score=91.66666666666666

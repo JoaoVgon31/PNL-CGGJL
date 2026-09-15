@@ -1,0 +1,4 @@
+case_id,node_id,type,label,attributes
+PMC10434843_01,P1,Patient,case PMC10434843_01,article_id=PMC10434843; age=49.0; age_unit=years; gender=Male
+PMC10434843_01,S1,Symptom,an increasing weakness of the right hand in the preceding months,polarity=present
+PMC10434843_01,S2,Symptom,a clinical improvement in his daily activities as he was now able to open drawers again,polarity=present

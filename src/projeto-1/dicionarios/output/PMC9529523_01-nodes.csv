@@ -1,0 +1,9 @@
+case_id,node_id,type,label,attributes
+PMC9529523_01,P1,Patient,case PMC9529523_01,article_id=PMC9529523; age=41.0; age_unit=years; gender=Female
+PMC9529523_01,D1,Diagnosis,malignant hypertension and chronic thrombotic microangiopathy (TMA,certainty=confirmed; polarity=present; role=principal
+PMC9529523_01,D2,Diagnosis,hydroxychloroquine-induced cardiomyopathy on electron microscopy,certainty=confirmed; polarity=present; role=principal
+PMC9529523_01,M1,Medication,hydroxychloroquine,dose_value=300; dose_unit=mg
+PMC9529523_01,M2,Medication,yielded,dose_value=860; dose_unit=ml
+PMC9529523_01,C1,Concept,"Hypertension, Malignant","vocabulary=MeSH; code=D006974; preferred_term=Hypertension, Malignant"
+PMC9529523_01,C2,Concept,Cardiomyopathies,vocabulary=MeSH; code=D009202; preferred_term=Cardiomyopathies
+PMC9529523_01,C3,Concept,Hydroxychloroquine,vocabulary=MeSH; code=D006886; preferred_term=Hydroxychloroquine

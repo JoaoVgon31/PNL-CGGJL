@@ -1,0 +1,9 @@
+case_id,edge_id,source_id,target_id,relation,attributes
+PMC5804616_01,e1,P1,T1,TREATED_WITH,evidence_text=Esophageal bypass surgery with gastric tube was planned; trigger=was planned; char_start=0; char_end=55
+PMC5804616_01,e2,P1,T2,TREATED_WITH,evidence_text=One-lung ventilation with this tube was planned; trigger=was planned; char_start=1614; char_end=1662
+PMC5804616_01,e3,P1,T3,TREATED_WITH,evidence_text=converted to PPV as soon as feasible after closing both the proximal and distal stumps of the esophagus; trigger=converted to; char_start=8115; char_end=8218
+PMC5804616_01,e4,P1,M1,TREATED_WITH,evidence_text=administering 35 mg; trigger=dose pattern; char_start=1299; char_end=1318
+PMC5804616_01,e5,P1,M2,TREATED_WITH,evidence_text=that 650 ml; trigger=dose pattern; char_start=4390; char_end=4401
+PMC5804616_01,e6,P1,O1,HAS_OUTCOME,"evidence_text=The chest tube in the right thoracic cavity was withdrawn on POD 1, and the patient was discharged from hospital on POD 18; trigger=discharged; char_start=4493; char_end=4616"
+PMC5804616_01,e7,T2,C1,SAME_AS,strategy=longest
+PMC5804616_01,e8,M2,C2,SAME_AS,strategy=fuzzy; score=85.71428571428572

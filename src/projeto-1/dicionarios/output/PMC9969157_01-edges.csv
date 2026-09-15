@@ -1,0 +1,14 @@
+case_id,edge_id,source_id,target_id,relation,attributes
+PMC9969157_01,e1,P1,H1,HAS_HISTORY,evidence_text=family history significant for a sibling with LCHADD; trigger=family history; char_start=279; char_end=331
+PMC9969157_01,e2,P1,H2,HAS_HISTORY,"evidence_text=family history and the maternal HELLP syndrome frequently seen in mothers with gestations complicated by LCHADD, our patient was transported to our level IV NICU for metabolic consultation and further evaluation and management; trigger=family history; char_start=1002; char_end=1228"
+PMC9969157_01,e3,P1,H3,HAS_HISTORY,"evidence_text=family history and the maternal HELLP syndrome frequently seen in mothers with gestations complicated by LCHADD, our patient was transported to our level IV NICU for metabolic consultation and further evaluation and management; trigger=family history; char_start=1002; char_end=1228"
+PMC9969157_01,e4,P1,H4,HAS_HISTORY,"evidence_text=family history and the maternal HELLP syndrome frequently seen in mothers with gestations complicated by LCHADD, our patient was transported to our level IV NICU for metabolic consultation and further evaluation and management; trigger=family history; char_start=1002; char_end=1228"
+PMC9969157_01,e5,P1,H5,HAS_HISTORY,"evidence_text=family history and the maternal HELLP syndrome frequently seen in mothers with gestations complicated by LCHADD, our patient was transported to our level IV NICU for metabolic consultation and further evaluation and management; trigger=family history; char_start=1002; char_end=1228"
+PMC9969157_01,e6,P1,H6,HAS_HISTORY,evidence_text=family history in conjunction with biochemical and molecular studies (Table 1); trigger=family history; char_start=1394; char_end=1472
+PMC9969157_01,e7,P1,H7,HAS_HISTORY,evidence_text=family history in conjunction with biochemical and molecular studies (Table 1); trigger=family history; char_start=1394; char_end=1472
+PMC9969157_01,e8,P1,D1,DIAGNOSED_WITH,evidence_text=diagnosed with NEC (modified Bell Stage IIa); trigger=diagnosed with; char_start=2480; char_end=2524
+PMC9969157_01,e9,P1,D2,DIAGNOSED_WITH,evidence_text=consistent with LCHADD given elevation of C16-OH and C18-OH levels with the ultimate diagnosis based on perinatal and family history in conjunction with biochemical and molecular studies (Table 1); trigger=consistent with; char_start=1276; char_end=1472
+PMC9969157_01,e10,P1,M1,TREATED_WITH,evidence_text=advanced 0.5 g; trigger=dose pattern; char_start=1721; char_end=1735
+PMC9969157_01,e11,P1,M2,TREATED_WITH,evidence_text=with 4 g; trigger=dose pattern; char_start=2709; char_end=2717
+PMC9969157_01,e12,P1,O1,HAS_OUTCOME,evidence_text=He recovered uneventfully and was discharged home on day 33 of life; trigger=discharged; char_start=3060; char_end=3128
+PMC9969157_01,e13,H2,C1,SAME_AS,strategy=longest

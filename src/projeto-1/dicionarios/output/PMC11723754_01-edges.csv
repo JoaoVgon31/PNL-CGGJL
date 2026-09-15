@@ -1,0 +1,5 @@
+case_id,edge_id,source_id,target_id,relation,attributes
+PMC11723754_01,e1,P1,D1,DIAGNOSED_WITH,evidence_text=diagnosed with septicaemia with septic shock; trigger=diagnosed with; char_start=1006; char_end=1050
+PMC11723754_01,e2,P1,T1,TREATED_WITH,evidence_text=underwent PRBC transfusion in view of low Hb 7g/dl; trigger=underwent; char_start=1055; char_end=1105
+PMC11723754_01,e3,P1,O1,HAS_OUTCOME,"evidence_text=Patient was discharged with stable vitals, healthy pressure injuries having granulation tissue and a decreased surface area; trigger=discharged; char_start=1824; char_end=1948"
+PMC11723754_01,e4,D1,C1,SAME_AS,strategy=longest

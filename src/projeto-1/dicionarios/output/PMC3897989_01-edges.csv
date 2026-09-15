@@ -1,0 +1,14 @@
+case_id,edge_id,source_id,target_id,relation,attributes
+PMC3897989_01,e1,P1,H1,HAS_HISTORY,evidence_text=Past medical history revealed atrial fibrillation and the patient was on intermittent aspirin therapy; trigger=Past medical history; char_start=136; char_end=237
+PMC3897989_01,e2,P1,H2,HAS_HISTORY,evidence_text=Past medical history revealed atrial fibrillation and the patient was on intermittent aspirin therapy; trigger=Past medical history; char_start=136; char_end=237
+PMC3897989_01,e3,P1,H3,HAS_HISTORY,evidence_text=family history was negative; trigger=family history; char_start=247; char_end=274
+PMC3897989_01,e4,P1,D1,DIAGNOSED_WITH,"evidence_text=diagnosed with PBC and UDCA (250 mg, three times per day) was initiated immediately after nasobiliary drainage, which partially improved the patient's liver function (Figure 2); trigger=diagnosed with; char_start=2193; char_end=2369"
+PMC3897989_01,e5,P1,D2,DIAGNOSED_WITH,evidence_text=diagnosed with herpes zoster and treated with acyclovir (500 mg twice a day) for 9 days; trigger=diagnosed with; char_start=4024; char_end=4111
+PMC3897989_01,e6,P1,D3,DIAGNOSED_WITH,evidence_text=diagnosed with pulmonary abscess and was treated effectively with moxifloxacin (Figure 1); trigger=diagnosed with; char_start=4372; char_end=4461
+PMC3897989_01,e7,P1,D4,DIAGNOSED_WITH,evidence_text=suspected and meropenem (0; trigger=suspected; char_start=1984; char_end=2010
+PMC3897989_01,e8,P1,D5,DIAGNOSED_WITH,"evidence_text=suspected of suffering from AIP, the following examinations were conducted; trigger=suspected; char_start=2398; char_end=2472"
+PMC3897989_01,e9,P1,T1,TREATED_WITH,evidence_text=treated with acyclovir (500 mg twice a day) for 9 days; trigger=treated with; char_start=4057; char_end=4111
+PMC3897989_01,e10,P1,O1,HAS_OUTCOME,evidence_text=The patient was discharged and followed up at the clinic with MEP tapered off weekly by 5 mg; trigger=discharged; char_start=3716; char_end=3809
+PMC3897989_01,e11,H1,C1,SAME_AS,strategy=longest
+PMC3897989_01,e12,D2,C2,SAME_AS,strategy=longest
+PMC3897989_01,e13,D3,C3,SAME_AS,strategy=longest

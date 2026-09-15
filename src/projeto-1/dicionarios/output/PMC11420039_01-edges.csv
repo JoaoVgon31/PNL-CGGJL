@@ -1,0 +1,26 @@
+case_id,edge_id,source_id,target_id,relation,attributes
+PMC11420039_01,e1,P1,S1,HAS_SYMPTOM,"evidence_text=presented with widespread erythematous patches and vesicles on the limbs, which had appeared successively over a period of 2 weeks, and had previously been diagnosed as ""eczema"" at another hospital; trigger=presented with; char_start=20; char_end=217"
+PMC11420039_01,e2,P1,S2,HAS_SYMPTOM,"evidence_text=presented with widespread erythematous patches and vesicles on the limbs, which had appeared successively over a period of 2 weeks, and had previously been diagnosed as ""eczema"" at another hospital; trigger=presented with; char_start=20; char_end=217"
+PMC11420039_01,e3,P1,S3,HAS_SYMPTOM,"evidence_text=presented with widespread erythematous patches and vesicles on the limbs, which had appeared successively over a period of 2 weeks, and had previously been diagnosed as ""eczema"" at another hospital; trigger=presented with; char_start=20; char_end=217"
+PMC11420039_01,e4,P1,S4,HAS_SYMPTOM,"evidence_text=presented with widespread erythematous patches and vesicles on the limbs, which had appeared successively over a period of 2 weeks, and had previously been diagnosed as ""eczema"" at another hospital; trigger=presented with; char_start=20; char_end=217"
+PMC11420039_01,e5,P1,S5,HAS_SYMPTOM,evidence_text=reported by the patient's family over the past two months; trigger=reported; char_start=3676; char_end=3733
+PMC11420039_01,e6,P1,H1,HAS_HISTORY,evidence_text=medical history revealed noticeable symptoms of dry eyes and dry mouth reported by the patient's family over the past two months; trigger=medical history; char_start=3605; char_end=3733
+PMC11420039_01,e7,P1,H2,HAS_HISTORY,evidence_text=medical history revealed noticeable symptoms of dry eyes and dry mouth reported by the patient's family over the past two months; trigger=medical history; char_start=3605; char_end=3733
+PMC11420039_01,e8,P1,D1,DIAGNOSED_WITH,evidence_text=a diagnosis of BP; trigger=a diagnosis of; char_start=1238; char_end=1255
+PMC11420039_01,e9,P1,D2,DIAGNOSED_WITH,evidence_text=diagnosed with viral septicemia and treated with acyclovir for antiviral therapy; trigger=diagnosed with; char_start=3035; char_end=3115
+PMC11420039_01,e10,P1,D3,DIAGNOSED_WITH,evidence_text=diagnosed with Secondary Sjogren's Syndrome; trigger=diagnosed with; char_start=3877; char_end=3920
+PMC11420039_01,e11,P1,D4,DIAGNOSED_WITH,"evidence_text=consistent with HE staining, and significant infiltration of eosinophils ( Figures 3A, B ); trigger=consistent with; char_start=1087; char_end=1177"
+PMC11420039_01,e12,P1,T1,TREATED_WITH,"evidence_text=was treated with methylprednisolone 40 mg orally per day, which was adjusted to methylprednisolone tablets orally after one week, with a dose of 20 mg in the morning and 16 mg in the evening; trigger=treated with; char_start=1269; char_end=1459"
+PMC11420039_01,e13,P1,T2,TREATED_WITH,"evidence_text=was treated with methylprednisolone 40 mg orally per day, which was adjusted to methylprednisolone tablets orally after one week, with a dose of 20 mg in the morning and 16 mg in the evening; trigger=treated with; char_start=1269; char_end=1459"
+PMC11420039_01,e14,P1,T3,TREATED_WITH,"evidence_text=was treated with methylprednisolone 40 mg orally per day, which was adjusted to methylprednisolone tablets orally after one week, with a dose of 20 mg in the morning and 16 mg in the evening; trigger=treated with; char_start=1269; char_end=1459"
+PMC11420039_01,e15,P1,T4,TREATED_WITH,"evidence_text=was treated with methylprednisolone 40 mg orally per day, which was adjusted to methylprednisolone tablets orally after one week, with a dose of 20 mg in the morning and 16 mg in the evening; trigger=treated with; char_start=1269; char_end=1459"
+PMC11420039_01,e16,P1,T5,TREATED_WITH,evidence_text=treated with acyclovir for antiviral therapy; trigger=treated with; char_start=3071; char_end=3115
+PMC11420039_01,e17,P1,M1,TREATED_WITH,evidence_text=methylprednisolone 40 mg; trigger=dose pattern; char_start=1286; char_end=1310
+PMC11420039_01,e18,P1,O1,HAS_OUTCOME,"evidence_text=The patient's overall skin condition significantly improved, and she was discharged after two weeks; trigger=discharged; char_start=1460; char_end=1560"
+PMC11420039_01,e19,P1,O2,HAS_OUTCOME,"evidence_text=The patient was discharged after a week of hospitalization and continued to take methylprednisolone tablets orally at the original dosage regimen, with regular subcutaneous injections of dupilumab; trigger=discharged; char_start=2115; char_end=2312"
+PMC11420039_01,e20,S4,C1,SAME_AS,strategy=exact
+PMC11420039_01,e21,H1,C2,SAME_AS,strategy=longest
+PMC11420039_01,e22,D2,C3,SAME_AS,strategy=exact
+PMC11420039_01,e23,D3,C4,SAME_AS,strategy=longest
+PMC11420039_01,e24,T5,C5,SAME_AS,strategy=exact
+PMC11420039_01,e25,M1,C6,SAME_AS,strategy=exact
