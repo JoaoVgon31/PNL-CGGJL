@@ -37,4 +37,4 @@ python -m unittest discover `
   -t project1/src `
   -p "test_*.py"
 ```
-Mais informações em: [DOCS - Normalização](../../docs/04-normalizacao.md)
+Mais informações em: [DOCS - Normalização](../../docs/normalizacao.md)

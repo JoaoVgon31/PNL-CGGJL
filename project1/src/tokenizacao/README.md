@@ -58,4 +58,4 @@ python3 -m unittest discover -s project1/src/tokenizacao/tests -v
 ```
 
 A explicação completa do algoritmo, das decisões, dos resultados e das falhas
-está em [`docs/03-tokenizacao.md`](../../docs/03-tokenizacao.md).
+está em [`docs/tokenizacao.md`](../../docs/tokenizacao.md).

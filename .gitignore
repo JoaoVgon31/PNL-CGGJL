@@ -17,3 +17,10 @@ __pycache__/
 *$py.class
 # Amostra da disciplina — não versionada
 sample/
+# macOS — arquivos de metadados do Finder
+.DS_Store
+.DS_Store?
+._.DS_Store
+._*
+.AppleDouble
+.LSOverride

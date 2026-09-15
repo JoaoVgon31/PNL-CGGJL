@@ -2,7 +2,7 @@
 
 Pipeline `case_text` → grafo de conhecimento (issue #5), e o experimento que decide se, onde e com
 qual lista aplicar remoção de stop-words. Ver a decisão completa, com os números do experimento, em
-[docs/05-stopwords.md](../../docs/05-stopwords.md). Este README é sobre como
+[docs/stopwords.md](../../docs/stopwords.md). Este README é sobre como
 rodar o código; aquele documento é sobre por que a decisão foi essa.
 
 ## O que foi feito
@@ -128,4 +128,4 @@ quebra:
   `polarity_changed` — os números de 14/21 citados acima estão subestimados, não superestimados.
 
 Detalhes, números completos e a decisão final (aplicar remoção só via `GUARDED_LABEL`, com a lista
-do NLTK) estão em [docs/05-stopwords.md](../../docs/05-stopwords.md).
+do NLTK) estão em [docs/stopwords.md](../../docs/stopwords.md).

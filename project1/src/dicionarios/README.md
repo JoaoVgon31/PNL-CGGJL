@@ -2,7 +2,7 @@
 
 Parser de caso clínico → grafo de conhecimento, com as entidades **ligadas a vocabulário controlado** (MeSH + um gazetteer próprio de `AnatomicalSite`).
 
-> Documentação detalhada — decisões, licença do MeSH, calibração dos thresholds, resultados e discussão — em [`docs/06-dicionarios.md`](../../docs/06-dicionarios.md). Este README é só o manual de uso.
+> Documentação detalhada — decisões, licença do MeSH, calibração dos thresholds, resultados e discussão — em [`docs/dicionarios.md`](../../docs/dicionarios.md). Este README é só o manual de uso.
 
 ## O que foi feito, e para que serve
 
