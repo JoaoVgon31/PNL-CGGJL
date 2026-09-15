@@ -1,0 +1,13 @@
+case_id,node_id,type,label,attributes
+PMC7086412_02,P1,Patient,patient,case_id=PMC7086412_02; article_id=PMC7086412; gender=Female; age=25; age_unit=weeks_gestational
+PMC7086412_02,F1,Finding,undergone hemoglobin A1c measurement 50-gram glucose tolerance test first obstetric appointment (nine weeks gestational age) per institutional protocol due elevated prepregnancy body mass index 34,polarity=present; certainty=confirmed
+PMC7086412_02,E1,Exam,fasting,
+PMC7086412_02,E2,Exam,induction labor serial doses misoprostol followed Pitocin augmentation,modality=imaging
+PMC7086412_02,R1,ExamResult,three-hour values,"value=86,; interpretation=decreased; raw_text=and three-hour values of 86,"
+PMC7086412_02,D1,Diagnosis,glucose intolerance made due single elevated value per Carpenter Coustan criteria,certainty=confirmed; polarity=absent; role=principal
+PMC7086412_02,D2,Diagnosis,glucose intolerance made due single elevated value,certainty=confirmed; polarity=absent; role=principal
+PMC7086412_02,D3,Diagnosis,intrauterine fetal demise previously described,certainty=confirmed; polarity=present; role=principal
+PMC7086412_02,T1,Treatment,induction labor serial doses misoprostol followed Pitocin augmentation,type=procedure; status=performed
+PMC7086412_02,M1,Medication,at,dose_value=160; dose_unit=mg
+PMC7086412_02,M2,Medication,and,dose_value=135; dose_unit=mg
+PMC7086412_02,M3,Medication,weighing,dose_value=3590; dose_unit=g

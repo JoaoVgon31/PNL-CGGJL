@@ -1,0 +1,28 @@
+case_id,node_id,type,label,attributes
+PMC11783470_01,P1,Patient,patient,case_id=PMC11783470_01; article_id=PMC11783470; gender=Female; age=22; age_unit=years
+PMC11783470_01,S1,Symptom,menorrhagia,polarity=absent
+PMC11783470_01,S2,Symptom,family history gastrointestinal malignancy,polarity=absent
+PMC11783470_01,S3,Symptom,dysphagia,polarity=absent
+PMC11783470_01,S4,Symptom,odynophagia,polarity=absent
+PMC11783470_01,S5,Symptom,heartburn,polarity=absent
+PMC11783470_01,S6,Symptom,nausea,polarity=absent
+PMC11783470_01,S7,Symptom,vomiting,polarity=absent
+PMC11783470_01,S8,Symptom,abdominal pain,polarity=absent
+PMC11783470_01,S9,Symptom,altered bowel habits,polarity=absent
+PMC11783470_01,S10,Symptom,melena,polarity=absent
+PMC11783470_01,S11,Symptom,hematochezia,polarity=absent
+PMC11783470_01,S12,Symptom,unintentional weight loss,polarity=absent
+PMC11783470_01,H1,History,gastrointestinal malignancy,subject=family; polarity=present; category=condition
+PMC11783470_01,F1,Finding,exception mild conjunctival pallor,source=imaging; polarity=present; certainty=confirmed
+PMC11783470_01,F2,Finding,well-circumscribed proliferation chief cells arranged small,source=pathology; polarity=present; certainty=probable
+PMC11783470_01,E1,Exam,esophagogastroduodenoscopy (EGD),abbreviation=EGD
+PMC11783470_01,E2,Exam,repeat EGD,
+PMC11783470_01,E3,Exam,repeat EGD 3 months,
+PMC11783470_01,D1,Diagnosis,OGA,certainty=probable; polarity=present; role=principal
+PMC11783470_01,D2,Diagnosis,known diagnosis OGA (Image 2),certainty=probable; polarity=present; role=principal
+PMC11783470_01,T1,Treatment,esophagogastroduodenoscopy (EGD),type=procedure; status=performed
+PMC11783470_01,T2,Treatment,repeat EGD,type=procedure; status=performed
+PMC11783470_01,T3,Treatment,repeat EGD 3 months,type=procedure; status=performed
+PMC11783470_01,M1,Medication,hemoglobin,dose_value=11.5; dose_unit=g
+PMC11783470_01,M2,Medication,iron,dose_value=76; dose_unit=mcg
+PMC11783470_01,O1,Outcome,recurrence,type=recurrence; polarity=absent; timing=3 months

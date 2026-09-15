@@ -1,0 +1,12 @@
+case_id,node_id,type,label,attributes
+PMC6354154_01,P1,Patient,patient,case_id=PMC6354154_01; article_id=PMC6354154; gender=Female; age=30; age_unit=years
+PMC6354154_01,H1,History,previous surgeries,subject=patient; polarity=present; category=condition
+PMC6354154_01,H2,History,infertility type gynecologic cancer,subject=patient; polarity=present; category=condition
+PMC6354154_01,H3,History,semen analysis normal,subject=patient; polarity=present; category=condition
+PMC6354154_01,F1,Finding,normed uterus ovaries slightly enlarged polycystic small echogenic mass right ovary 15 millimeters,polarity=present; certainty=confirmed
+PMC6354154_01,F2,Finding,diffuse marking calretinin,polarity=present; certainty=confirmed
+PMC6354154_01,E1,Exam,revealing normed uterus,
+PMC6354154_01,D1,Diagnosis,ovarian steroid cell tumor NOS,certainty=probable; polarity=present; role=principal
+PMC6354154_01,A1,AnatomicalSite,uterus,
+PMC6354154_01,A2,AnatomicalSite,ovary,laterality=right
+PMC6354154_01,O1,Outcome,recurrence,type=recurrence; polarity=absent; timing=24 months

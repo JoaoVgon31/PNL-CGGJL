@@ -1,0 +1,33 @@
+case_id,node_id,type,label,attributes
+PMC11420039_01,P1,Patient,patient,case_id=PMC11420039_01; article_id=PMC11420039; gender=Female; age=74; age_unit=years
+PMC11420039_01,S1,Symptom,widespread erythematous patches,polarity=present
+PMC11420039_01,S2,Symptom,vesicles limbs,polarity=present
+PMC11420039_01,S3,Symptom,appeared successively period 2 weeks,polarity=present
+PMC11420039_01,S4,Symptom,"previously diagnosed ""eczema"" another hospital",polarity=present
+PMC11420039_01,H1,History,allergies,subject=patient; polarity=absent; category=condition
+PMC11420039_01,H2,History,no,subject=patient; polarity=absent; category=condition
+PMC11420039_01,H3,History,medication use,subject=patient; polarity=absent; category=medication
+PMC11420039_01,H4,History,exposure harmful substances,subject=patient; polarity=present; category=exposure
+PMC11420039_01,F1,Finding,significant abnormalities,source=lab; polarity=absent; certainty=confirmed
+PMC11420039_01,F2,Finding,patchy changes ( Figure 4 ),source=imaging; polarity=absent; certainty=confirmed
+PMC11420039_01,F3,Finding,noticeable symptoms dry eyes dry mouth reported patient's family past two months,polarity=present; certainty=confirmed
+PMC11420039_01,F4,Finding,positive result,polarity=present; certainty=confirmed
+PMC11420039_01,F5,Finding,no significant changes,source=imaging; polarity=absent; certainty=confirmed
+PMC11420039_01,F6,Finding,Enterococcus human herpesvirus 7 cerebrospinal fluid,source=imaging; polarity=present; certainty=confirmed
+PMC11420039_01,E1,Exam,skin lesions,abbreviation=DIF
+PMC11420039_01,R1,ExamResult,Serum anti-bp180 antibody testing,value=positive; interpretation=positive; raw_text=Serum anti-bp180 antibody testing was positive
+PMC11420039_01,R2,ExamResult,dose,value=20; raw_text=with a dose of 20
+PMC11420039_01,R3,ExamResult,initial dose,value=600; interpretation=decreased; raw_text=with an initial dose of 600
+PMC11420039_01,R4,ExamResult,daily subcutaneous injection,value=1.6; raw_text=with a daily subcutaneous injection of 1.6
+PMC11420039_01,D1,Diagnosis,staining,certainty=probable; polarity=present; role=principal
+PMC11420039_01,D2,Diagnosis,BP,certainty=confirmed; polarity=present; role=principal
+PMC11420039_01,D3,Diagnosis,viral septicemia treated acyclovir antiviral therapy,certainty=confirmed; polarity=present; role=principal
+PMC11420039_01,D4,Diagnosis,Secondary Sjogren's Syndrome,certainty=confirmed; polarity=present; role=principal
+PMC11420039_01,T1,Treatment,acyclovir antiviral therapy,type=procedure; status=performed
+PMC11420039_01,M1,Medication,methylprednisolone,dose_value=40; dose_unit=mg; route=oral
+PMC11420039_01,M2,Medication,and,dose_value=16; dose_unit=mg; route=oral
+PMC11420039_01,M3,Medication,to,dose_value=16; dose_unit=mg; route=intravenous
+PMC11420039_01,M4,Medication,by,dose_value=300; dose_unit=mg; route=subcutaneous
+PMC11420039_01,A1,AnatomicalSite,lung,
+PMC11420039_01,O1,Outcome,discharged,type=discharge; polarity=present
+PMC11420039_01,O2,Outcome,improved,type=improvement; polarity=present

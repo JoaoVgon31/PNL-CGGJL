@@ -1,0 +1,13 @@
+case_id,node_id,type,label,attributes
+PMC9969157_01,P1,Patient,patient,case_id=PMC9969157_01; article_id=PMC9969157; gender=Male; age=33; age_unit=weeks_gestational
+PMC9969157_01,F1,Finding,small patent ductus arteriosus patent foramen ovale,source=imaging; polarity=present; certainty=confirmed
+PMC9969157_01,F2,Finding,pneumatosis intestinalis subsequently diagnosed NEC (modified Bell Stage IIa),polarity=present; certainty=confirmed
+PMC9969157_01,R1,ExamResult,birth weight,value=2.46; raw_text=The birth weight was 2.46
+PMC9969157_01,D1,Diagnosis,LCHADD given elevation C16-OH C18-OH levels ultimate diagnosis,certainty=probable; polarity=present; role=principal
+PMC9969157_01,D2,Diagnosis,NEC (modified Bell Stage IIa),certainty=confirmed; polarity=present; role=principal
+PMC9969157_01,M1,Medication,at,dose_value=150; dose_unit=ml; route=intravenous
+PMC9969157_01,M2,Medication,advanced,dose_value=0.5; dose_unit=g
+PMC9969157_01,M3,Medication,to,dose_value=23; dose_unit=ml
+PMC9969157_01,M4,Medication,with,dose_value=4; dose_unit=g
+PMC9969157_01,M5,Medication,and,dose_value=2; dose_unit=g
+PMC9969157_01,O1,Outcome,discharged,type=discharge; polarity=present

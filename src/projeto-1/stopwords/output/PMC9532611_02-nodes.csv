@@ -1,0 +1,10 @@
+case_id,node_id,type,label,attributes
+PMC9532611_02,P1,Patient,patient,case_id=PMC9532611_02; article_id=PMC9532611; gender=Female; age=6; age_unit=years
+PMC9532611_02,F1,Finding,child vulva,polarity=absent; certainty=confirmed
+PMC9532611_02,F2,Finding,vagina absent right left masses confirmed testes,polarity=present; certainty=confirmed
+PMC9532611_02,E1,Exam,surgical exploration,
+PMC9532611_02,E2,Exam,according standard methods,
+PMC9532611_02,E3,Exam,probands,abbreviation=NGS
+PMC9532611_02,R1,ExamResult,minimum,value=3; raw_text=A minimum of 3
+PMC9532611_02,R2,ExamResult,generate paired-end reads,value=150; raw_text=to generate paired-end reads of 150
+PMC9532611_02,T1,Treatment,surgical exploration,type=procedure; status=performed

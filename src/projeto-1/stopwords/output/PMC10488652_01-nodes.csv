@@ -1,0 +1,13 @@
+case_id,node_id,type,label,attributes
+PMC10488652_01,P1,Patient,patient,case_id=PMC10488652_01; article_id=PMC10488652; gender=Female; age=22; age_unit=years
+PMC10488652_01,F1,Finding,cold agglutinin titer Positive dilution 1/128 4 C,source=imaging; polarity=absent; certainty=confirmed
+PMC10488652_01,F2,Finding,pancytopenia,polarity=present; certainty=confirmed
+PMC10488652_01,F3,Finding,clinical improvement hematological recovery without need blood transfusions,polarity=absent; certainty=confirmed
+PMC10488652_01,E1,Exam,(Table 1),
+PMC10488652_01,E2,Exam,according ethical,
+PMC10488652_01,D1,Diagnosis,class II mesangial lupus nephritis,certainty=probable; polarity=present; role=principal
+PMC10488652_01,D2,Diagnosis,cold agglutinin syndrome,certainty=confirmed; polarity=absent; role=principal
+PMC10488652_01,M1,Medication,hemoglobin,dose_value=6.2; dose_unit=g
+PMC10488652_01,A1,AnatomicalSite,kidney,
+PMC10488652_01,O1,Outcome,improvement,type=improvement; polarity=absent; timing=4 days
+PMC10488652_01,O2,Outcome,discharged,type=discharge; polarity=present

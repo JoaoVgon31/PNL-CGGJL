@@ -1,0 +1,32 @@
+case_id,node_id,type,label,attributes
+PMC9387390_01,P1,Patient,patient,case_id=PMC9387390_01; article_id=PMC9387390; gender=Male; age=57; age_unit=years
+PMC9387390_01,S1,Symptom,postprandial abdominal fullness,polarity=present
+PMC9387390_01,S2,Symptom,diarrhea,polarity=present
+PMC9387390_01,F1,Finding,nonspecific mesenteric edema,source=imaging; polarity=present; certainty=confirmed
+PMC9387390_01,F2,Finding,central mesenteric mass abutting pancreas,source=imaging; polarity=present; certainty=confirmed
+PMC9387390_01,F3,Finding,loose; reinforced,polarity=present; certainty=confirmed
+PMC9387390_01,F4,Finding,no leak; however,polarity=absent; certainty=confirmed
+PMC9387390_01,F5,Finding,distension stomach proximal small intestine,source=imaging; polarity=present; certainty=confirmed
+PMC9387390_01,F6,Finding,stomach,polarity=present; certainty=confirmed
+PMC9387390_01,F7,Finding,preferential drainage contrast duodenum; no contrast seen traversing GJ,polarity=absent; certainty=confirmed
+PMC9387390_01,F8,Finding,widely patient afferent limb; push enteroscopy showed jejunal limb gastrojejunal tube proximal jejunum,polarity=present; certainty=confirmed
+PMC9387390_01,F9,Finding,sharply angulated thought contributing functional obstruction delayed gastric emptying,source=imaging; polarity=present; certainty=confirmed
+PMC9387390_01,F10,Finding,endoscopy,source=endoscopy; polarity=present; certainty=confirmed
+PMC9387390_01,F11,Finding,stent migration,polarity=present; certainty=confirmed
+PMC9387390_01,F12,Finding,small amount extraluminal air abutting stent,source=imaging; polarity=present; certainty=confirmed
+PMC9387390_01,F13,Finding,markedly improved gastric emptying efferent limb stent,polarity=present; certainty=confirmed
+PMC9387390_01,E1,Exam,CT guided biopsy mass; consistent invasive moderately poorly differentiated adenocarcinoma,modality=imaging
+PMC9387390_01,E2,Exam,laparoscopic gastrojejunostomy (GJ) palliative bypass outside surgeon,abbreviation=GJ
+PMC9387390_01,E3,Exam,relaparoscopy,abbreviation=POD
+PMC9387390_01,E4,Exam,POD 11 (4 days re-operation) showed no leak; however,contrast=true
+PMC9387390_01,D1,Diagnosis,invasive moderately poorly differentiated adenocarcinoma,certainty=probable; polarity=present; role=principal
+PMC9387390_01,D2,Diagnosis,gastroduodenal outlet obstruction secondary pancreatic mass (Figure 1),certainty=probable; polarity=present; role=principal
+PMC9387390_01,T1,Treatment,CT guided biopsy mass; consistent invasive moderately poorly differentiated adenocarcinoma,type=procedure; status=performed
+PMC9387390_01,T2,Treatment,laparoscopic gastrojejunostomy (GJ) palliative bypass outside surgeon,type=surgery; status=performed
+PMC9387390_01,T3,Treatment,relaparoscopy,type=procedure; status=performed
+PMC9387390_01,A1,AnatomicalSite,pancreas,
+PMC9387390_01,A2,AnatomicalSite,duodenum,
+PMC9387390_01,A3,AnatomicalSite,stomach,
+PMC9387390_01,O1,Outcome,improved,type=improvement; polarity=present; timing=7 days
+PMC9387390_01,O2,Outcome,discharged,type=discharge; polarity=present
+PMC9387390_01,O3,Outcome,improvement,type=improvement; polarity=present

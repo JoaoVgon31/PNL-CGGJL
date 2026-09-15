@@ -1,0 +1,32 @@
+case_id,node_id,type,label,attributes
+PMC12832199_01,P1,Patient,patient,case_id=PMC12832199_01; article_id=PMC12832199; gender=Female; age=57; age_unit=years
+PMC12832199_01,H1,History,Buerger's disease,subject=patient; polarity=present; category=condition
+PMC12832199_01,H2,History,resulted bilateral below-knee amputations,subject=patient; polarity=present; category=condition
+PMC12832199_01,H3,History,central adrenal insufficiency managed corticosteroids,subject=patient; polarity=present; category=condition
+PMC12832199_01,H4,History,multiple abdominal surgeries,subject=patient; polarity=present; category=condition
+PMC12832199_01,H5,History,multiple colonic resections stoma prolapse,subject=patient; polarity=present; category=surgery
+PMC12832199_01,H6,History,colonic resection,subject=patient; polarity=present; category=surgery
+PMC12832199_01,H7,History,relocation stoma right side would risked excessive shortening colon,subject=patient; polarity=present; category=condition
+PMC12832199_01,H8,History,potentially leading high-output stoma,subject=patient; polarity=present; category=condition
+PMC12832199_01,F1,Finding,leukocytosis (white blood cell count,source=lab; polarity=present; certainty=confirmed
+PMC12832199_01,F2,Finding,marked gastric distention secondary incarceration within parastomal hernial sac,source=imaging; polarity=present; certainty=confirmed
+PMC12832199_01,F3,Finding,no progression anemia improvement inflammatory markers,source=lab; polarity=absent; certainty=confirmed
+PMC12832199_01,F4,Finding,chronic gastritis linear duodenal ulceration,source=endoscopy; polarity=present; certainty=probable
+PMC12832199_01,F5,Finding,impaired distension,source=imaging; polarity=present; certainty=confirmed
+PMC12832199_01,E1,Exam,left hemicolectomy transverse colostomy ischemic colitis,modality=imaging
+PMC12832199_01,E2,Exam,laparoscopic Sugarbaker repair 18 days admission,
+PMC12832199_01,E3,Exam,point farthest stoma toward bowel side allow fine adjustment tension,
+PMC12832199_01,E4,Exam,using intraperitoneal mesh tailored achieve 5 cm overlap beyond suture line,
+PMC12832199_01,E5,Exam,day 27 revealed chronic gastritis,
+PMC12832199_01,R1,ExamResult,Operative time,value=191; raw_text=Operative time was 191
+PMC12832199_01,D1,Diagnosis,aspiration pneumonia observed,certainty=probable; polarity=present; role=principal
+PMC12832199_01,T1,Treatment,left hemicolectomy transverse colostomy ischemic colitis,type=procedure; status=performed
+PMC12832199_01,T2,Treatment,Therefore,type=procedure; status=planned
+PMC12832199_01,T3,Treatment,laparoscopic Sugarbaker repair 18 days admission,type=surgery; status=performed
+PMC12832199_01,A1,AnatomicalSite,kidney,
+PMC12832199_01,A2,AnatomicalSite,colon,region_qualifier=proximal
+PMC12832199_01,A3,AnatomicalSite,stomach,
+PMC12832199_01,O1,Outcome,improved,type=improvement; polarity=absent
+PMC12832199_01,O2,Outcome,improvement,type=improvement; polarity=absent
+PMC12832199_01,O3,Outcome,discharged,type=discharge; polarity=present
+PMC12832199_01,O4,Outcome,recurrence,type=recurrence; polarity=absent; timing=10 months

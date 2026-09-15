@@ -1,0 +1,21 @@
+case_id,node_id,type,label,attributes
+PMC6134951_01,P1,Patient,patient,case_id=PMC6134951_01; article_id=PMC6134951; gender=Female; age=49; age_unit=years
+PMC6134951_01,H1,History,asthma,subject=patient; polarity=present; category=condition
+PMC6134951_01,H2,History,resected atrial myxoma,subject=patient; polarity=present; category=condition
+PMC6134951_01,H3,History,found left upper lobe perihilar lung nodule,subject=patient; polarity=present; category=condition
+PMC6134951_01,H4,History,mediastinal lymphadenopathy,subject=patient; polarity=present; category=condition
+PMC6134951_01,H5,History,large left pleural effusion,subject=patient; polarity=present; category=condition
+PMC6134951_01,F1,Finding,EGFR wild type,polarity=absent; certainty=confirmed
+PMC6134951_01,F2,Finding,markedly improved pleural effusion tumor response (Figure 1C),polarity=present; certainty=confirmed
+PMC6134951_01,R1,ExamResult,PD-L1 TPS score,value=40; unit=%; raw_text=The PD-L1 TPS score was 40%
+PMC6134951_01,R2,ExamResult,Infectious disease workup,value=negative; interpretation=negative; raw_text=Infectious disease workup was negative
+PMC6134951_01,D1,Diagnosis,TTF1-positive pulmonary adenocarcinoma,certainty=probable; polarity=present; role=principal
+PMC6134951_01,D2,Diagnosis,drug eruption (delayed type IV hypersensitivity,certainty=probable; polarity=present; role=principal
+PMC6134951_01,M1,Medication,alectinib,dose_value=600; dose_unit=mg
+PMC6134951_01,M2,Medication,at,dose_value=30; dose_unit=mg; route=oral
+PMC6134951_01,M3,Medication,to,dose_value=20; dose_unit=mg; route=oral
+PMC6134951_01,M4,Medication,diphenhydramine,dose_value=50; dose_unit=mg; route=oral
+PMC6134951_01,A1,AnatomicalSite,lung,
+PMC6134951_01,O1,Outcome,improvement,type=improvement; polarity=present
+PMC6134951_01,O2,Outcome,resolved,type=resolution; polarity=present; timing=1 day
+PMC6134951_01,O3,Outcome,improved,type=improvement; polarity=present

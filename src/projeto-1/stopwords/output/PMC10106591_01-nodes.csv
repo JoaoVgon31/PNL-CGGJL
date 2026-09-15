@@ -1,0 +1,22 @@
+case_id,node_id,type,label,attributes
+PMC10106591_01,P1,Patient,patient,case_id=PMC10106591_01; article_id=PMC10106591; gender=Female; age=44; age_unit=years
+PMC10106591_01,S1,Symptom,taking medicines,polarity=absent
+PMC10106591_01,F1,Finding,vitals within normal limits: blood pressure 105/51 mmHg (1 mm Hg = 0,source=physical_exam; polarity=present; certainty=confirmed; size=1 mm
+PMC10106591_01,F2,Finding,normal heart sounds without murmur clear lungs auscultation,polarity=absent; certainty=confirmed
+PMC10106591_01,F3,Finding,normal sinus rhythm no significant ST-T changes (Figure 1A); echocardiography completed ER showed mildly thickened ventricular septum left ventricular posterior wall,source=imaging; polarity=absent; certainty=confirmed
+PMC10106591_01,F4,Finding,ST-segment elevation lead II complete AV-B HR 41 beats/min accompanied hypotension (BP 96/51 mmHg) (Figures 2A,polarity=present; certainty=confirmed
+PMC10106591_01,F5,Finding,normal left main branch,polarity=present; certainty=confirmed
+PMC10106591_01,F6,Finding,white blood cell count,source=imaging; polarity=present; certainty=confirmed
+PMC10106591_01,E1,Exam,rest showed normal sinus rhythm no significant ST-T changes (Figure 1A); echocardiography completed ER showed mildly thickened ventricular septum,abbreviation=ECG
+PMC10106591_01,D1,Diagnosis,CAS highly suspected,certainty=confirmed; polarity=present; role=principal
+PMC10106591_01,D2,Diagnosis,CAS,certainty=suspected; polarity=present; role=principal
+PMC10106591_01,D3,Diagnosis,CAS made,certainty=confirmed; polarity=present; role=principal
+PMC10106591_01,T1,Treatment,Since acute coronary syndrome (ACS) cannot excluded,type=procedure; status=refused
+PMC10106591_01,T2,Treatment,possible diagnosis CAS,type=procedure; status=converted
+PMC10106591_01,M1,Medication,on,dose_value=50; dose_unit=mg; route=intravenous
+PMC10106591_01,M2,Medication,at,dose_value=5; dose_unit=ml; route=intravenous
+PMC10106591_01,A1,AnatomicalSite,heart,
+PMC10106591_01,A2,AnatomicalSite,liver,
+PMC10106591_01,A3,AnatomicalSite,thyroid,
+PMC10106591_01,O1,Outcome,recurred,type=recurrence; polarity=present
+PMC10106591_01,O2,Outcome,recurrence,type=recurrence; polarity=absent

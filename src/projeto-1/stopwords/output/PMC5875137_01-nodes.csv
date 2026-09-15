@@ -1,0 +1,11 @@
+case_id,node_id,type,label,attributes
+PMC5875137_01,P1,Patient,patient,case_id=PMC5875137_01; article_id=PMC5875137; gender=Female; age=83; age_unit=years
+PMC5875137_01,F1,Finding,good biventricular systolic function,source=imaging; polarity=present; certainty=confirmed
+PMC5875137_01,F2,Finding,no intracardiac masses,source=imaging; polarity=absent; certainty=confirmed
+PMC5875137_01,E1,Exam,elective replacement ascending aorta 30 mm Hemashield platinum prosthesis,modality=imaging
+PMC5875137_01,E2,Exam,cardiac rehabilitation department,
+PMC5875137_01,E3,Exam,focusing heart,
+PMC5875137_01,T1,Treatment,elective replacement ascending aorta 30 mm Hemashield platinum prosthesis,type=procedure; status=performed
+PMC5875137_01,T2,Treatment,cardiac rehabilitation department,type=procedure; status=performed
+PMC5875137_01,A1,AnatomicalSite,breast,
+PMC5875137_01,A2,AnatomicalSite,heart,

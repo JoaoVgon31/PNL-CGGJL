@@ -1,0 +1,34 @@
+case_id,node_id,type,label,attributes
+PMC3859158_01,P1,Patient,patient,case_id=PMC3859158_01; article_id=PMC3859158; gender=Male; age=44; age_unit=years
+PMC3859158_01,S1,Symptom,vague epigastric pain,polarity=present; duration=4 months
+PMC3859158_01,S2,Symptom,history physical trauma,polarity=absent
+PMC3859158_01,S3,Symptom,gastroesophageal reflux disease,polarity=absent
+PMC3859158_01,S4,Symptom,gastritis,polarity=absent
+PMC3859158_01,S5,Symptom,peptic ulcer disease,polarity=absent
+PMC3859158_01,S6,Symptom,pancreatitis,polarity=absent
+PMC3859158_01,S7,Symptom,hepatobiliary disease,polarity=absent
+PMC3859158_01,S8,Symptom,history constitutional symptoms fever,polarity=absent
+PMC3859158_01,S9,Symptom,night sweating,polarity=absent
+PMC3859158_01,S10,Symptom,weight loss,polarity=absent
+PMC3859158_01,H1,History,physical trauma,subject=patient; polarity=present; category=condition
+PMC3859158_01,H2,History,gastroesophageal reflux disease,subject=patient; polarity=present; category=condition
+PMC3859158_01,H3,History,gastritis,subject=patient; polarity=present; category=condition
+PMC3859158_01,H4,History,peptic ulcer disease,subject=patient; polarity=present; category=condition
+PMC3859158_01,H5,History,pancreatitis,subject=patient; polarity=present; category=condition
+PMC3859158_01,H6,History,hepatobiliary disease,subject=patient; polarity=present; category=condition
+PMC3859158_01,H7,History,constitutional symptoms fever,subject=patient; polarity=present; category=condition
+PMC3859158_01,H8,History,night sweating,subject=patient; polarity=present; category=condition
+PMC3859158_01,H9,History,weight loss,subject=patient; polarity=present; category=condition
+PMC3859158_01,F1,Finding,9,source=imaging; polarity=present; certainty=confirmed
+PMC3859158_01,F2,Finding,mild heterogeneous enhancement central cystic/necrotic area,polarity=present; certainty=confirmed
+PMC3859158_01,F3,Finding,unremarkable pathological findings negative malignant components,source=imaging; polarity=absent; certainty=confirmed
+PMC3859158_01,F4,Finding,solid yellow mass central cystic area,source=imaging; polarity=present; certainty=confirmed
+PMC3859158_01,F5,Finding,(Figure 2(a)),polarity=present; certainty=confirmed
+PMC3859158_01,F6,Finding,(Figure 2(b)),polarity=absent; certainty=confirmed
+PMC3859158_01,F7,Finding,no evidence tumor recurrence,source=imaging; polarity=absent; certainty=confirmed
+PMC3859158_01,E1,Exam,surgical resection pancreatic tail,modality=imaging
+PMC3859158_01,D1,Diagnosis,primary ancient schwannoma pancreatic tail established,certainty=confirmed; polarity=present; role=principal
+PMC3859158_01,T1,Treatment,surgical resection pancreatic tail,type=surgery; status=performed
+PMC3859158_01,A1,AnatomicalSite,pancreas,
+PMC3859158_01,A2,AnatomicalSite,spleen,
+PMC3859158_01,O1,Outcome,recurrence,type=recurrence; polarity=absent
