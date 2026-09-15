@@ -2,14 +2,14 @@
 
 Pipeline `case_text` → grafo de conhecimento (issue #5), e o experimento que decide se, onde e com
 qual lista aplicar remoção de stop-words. Ver a decisão completa, com os números do experimento, em
-[docs/projeto-1/05-stopwords.md](../../../docs/projeto-1/05-stopwords.md). Este README é sobre como
+[docs/stopwords.md](../../docs/stopwords.md). Este README é sobre como
 rodar o código; aquele documento é sobre por que a decisão foi essa.
 
 ## O que foi feito
 
 O pipeline lê o `case_text` de um caso clínico e extrai, por regex e léxico, as 11 entidades e 12
 relações do contrato comum do projeto (docs
-[01](../../../docs/projeto-1/01-dados-a-extrair.md)/[02](../../../docs/projeto-1/02-esquema-grafo.md)):
+[01](../../docs/01-dados-a-extrair.md)/[02](../../docs/02-esquema-grafo.md)):
 sintomas, antecedentes, achados, exames, resultados, diagnósticos, tratamentos, medicamentos,
 sítios anatômicos e desfechos, ligados ao paciente e entre si. A saída são duas tabelas — nós e
 arestas — no formato comum às issues #3–#6.
@@ -33,31 +33,31 @@ detecção de negação, certeza ou relação. É esse ganho — modesto, e não
 
 ## Como usar
 
-A partir da raiz do repositório, entrando em `project1/src/projeto-1` (os módulos são importados como
+A partir da raiz do repositório, entrando em `project1/src` (os módulos são importados como
 `stopwords.*`, então os comandos precisam rodar daqui):
 
 ```bash
-cd project1/src/projeto-1
+cd project1/src
 ```
 
 **Processar um caso e ver as tabelas.** Gera `<case_id>-nodes.csv` e `<case_id>-edges.csv` no
 diretório de saída (padrão: `stopwords/output/`):
 
 ```bash
-python3 -m stopwords --cases ../../sample/cases.csv --case-id PMC5137649_01
+python3 -m stopwords --cases ../sample/cases.csv --case-id PMC5137649_01
 ```
 
 **Processar todos os casos do CSV de uma vez** (usado para gerar o conteúdo hoje versionado em
 `output/`):
 
 ```bash
-python3 -m stopwords --cases ../../sample/cases.csv --all-cases --output stopwords/output
+python3 -m stopwords --cases ../sample/cases.csv --all-cases --output stopwords/output
 ```
 
 **Escolher a condição de remoção de stop-words** (por padrão é `BASELINE`, sem remoção nenhuma):
 
 ```bash
-python3 -m stopwords --cases ../../sample/cases.csv --case-id PMC5137649_01 \
+python3 -m stopwords --cases ../sample/cases.csv --case-id PMC5137649_01 \
   --condition GUARDED_LABEL --wordlist nltk_stopwords
 ```
 
@@ -128,4 +128,4 @@ quebra:
   `polarity_changed` — os números de 14/21 citados acima estão subestimados, não superestimados.
 
 Detalhes, números completos e a decisão final (aplicar remoção só via `GUARDED_LABEL`, com a lista
-do NLTK) estão em [docs/projeto-1/05-stopwords.md](../../../docs/projeto-1/05-stopwords.md).
+do NLTK) estão em [docs/stopwords.md](../../docs/stopwords.md).

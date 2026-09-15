@@ -1,6 +1,6 @@
-project1/src/projeto-1/dicionarios/data/
-project1/src/projeto-1/dicionarios/output_v2/
-project1/src/projeto-1/dicionarios/slides/
+project1/src/dicionarios/data/
+project1/src/dicionarios/output_v2/
+project1/src/dicionarios/slides/
 venv/
 .venv/
 env/
@@ -17,3 +17,10 @@ __pycache__/
 *$py.class
 # Amostra da disciplina — não versionada
 sample/
+# macOS — arquivos de metadados do Finder
+.DS_Store
+.DS_Store?
+._.DS_Store
+._*
+.AppleDouble
+.LSOverride

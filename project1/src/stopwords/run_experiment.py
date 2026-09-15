@@ -9,7 +9,7 @@ from stopwords.case_reader import read_all_case_ids
 from stopwords.experiment.report import summarize, write_summary
 from stopwords.experiment.runner import run_experiment
 
-CASES_PATH = Path(__file__).resolve().parents[3] / "sample" / "cases.csv"
+CASES_PATH = Path(__file__).resolve().parents[2] / "sample" / "cases.csv"
 OUTPUT_DIR = Path(__file__).resolve().parent / "experiment_output"
 
 

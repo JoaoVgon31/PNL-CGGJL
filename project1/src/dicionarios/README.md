@@ -2,7 +2,7 @@
 
 Parser de caso clínico → grafo de conhecimento, com as entidades **ligadas a vocabulário controlado** (MeSH + um gazetteer próprio de `AnatomicalSite`).
 
-> Documentação detalhada — decisões, licença do MeSH, calibração dos thresholds, resultados e discussão — em [`docs/projeto-1/06-dicionarios.md`](../../../docs/projeto-1/06-dicionarios.md). Este README é só o manual de uso.
+> Documentação detalhada — decisões, licença do MeSH, calibração dos thresholds, resultados e discussão — em [`docs/dicionarios.md`](../../docs/dicionarios.md). Este README é só o manual de uso.
 
 ## O que foi feito, e para que serve
 
@@ -28,19 +28,19 @@ Os gazetteers já vêm versionados em `gazetteer/` — **não é preciso baixar 
 **Um caso:**
 
 ```bash
-python project1/src/projeto-1/dicionarios/main.py --cases project1/sample/cases.csv --case-id PMC5137649_01
+python project1/src/dicionarios/main.py --cases project1/sample/cases.csv --case-id PMC5137649_01
 ```
 
 **Todos os casos da amostra, com o relatório de validação cruzada:**
 
 ```bash
-python project1/src/projeto-1/dicionarios/batch.py --cases project1/sample/cases.csv --metadata project1/sample/metadata.csv
+python project1/src/dicionarios/batch.py --cases project1/sample/cases.csv --metadata project1/sample/metadata.csv
 ```
 
 **Regerar o gazetteer próprio de `AnatomicalSite`** (a partir da lista curada em `anatomical_site_terms.py`):
 
 ```bash
-python project1/src/projeto-1/dicionarios/build_anatomical_gazetteer.py
+python project1/src/dicionarios/build_anatomical_gazetteer.py
 ```
 
 Para regerar o gazetteer do MeSH é preciso o `desc2026.xml` da NLM (~313 MB, não versionado) e chamar `mesh_parser.build_gazetteer_rows()`.
