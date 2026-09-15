@@ -5,7 +5,7 @@ import unittest
 from pathlib import Path
 
 
-SOURCE = Path(__file__).parents[3] / "src" / "projeto-1" / "tokenizacao"
+SOURCE = Path(__file__).parents[1]
 sys.path.insert(0, str(SOURCE))
 
 from tokenizers import (  # noqa: E402

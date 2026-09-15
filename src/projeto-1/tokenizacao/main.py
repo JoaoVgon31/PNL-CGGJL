@@ -27,7 +27,7 @@ def build_parser() -> argparse.ArgumentParser:
     )
     parser.add_argument(
         "--output",
-        default="output/tokenizacao",
+        default="src/projeto-1/tokenizacao/output",
         help="diretório de saída",
     )
     parser.add_argument(

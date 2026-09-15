@@ -64,8 +64,8 @@ uma troca escondida nas regras de extração.
 | `main.py` | interface de linha de comando |
 | `requirements.txt` | dependência comparativa do NLTK |
 
-Os testes estão em `tests/projeto-1/tokenizacao/`. As saídas reproduzidas para
-o caso `PMC5137649_01` e para a amostra estão em `output/tokenizacao/`.
+Os testes estão em `src/projeto-1/tokenizacao/tests/`. As saídas reproduzidas para
+o caso `PMC5137649_01` e para a amostra estão em `src/projeto-1/tokenizacao/output/`.
 
 ## 4. O que é um token neste projeto
 
@@ -299,7 +299,7 @@ um falso positivo ou estar ligado ao exame errado. Sem uma anotação humana de
 referência não é correto chamar esses números de precisão, revocação ou F1.
 
 O relatório reproduzível completo está em
-`output/tokenizacao/sample-comparison.json`.
+`src/projeto-1/tokenizacao/output/sample-comparison.json`.
 
 ### 8.3 Caso concreto `PMC5137649_01`
 
@@ -351,7 +351,7 @@ python3 src/projeto-1/tokenizacao/main.py \
   --cases /home/lorhan/Git/nlp2learn/projects/2026/project1/sample/cases.csv \
   --case-id PMC5137649_01 \
   --tokenizer clinical_regex \
-  --output output/tokenizacao
+  --output src/projeto-1/tokenizacao/output
 ```
 
 ### 9.3 Comparar os três tokenizadores no caso
@@ -361,7 +361,7 @@ python3 src/projeto-1/tokenizacao/main.py \
   --cases /home/lorhan/Git/nlp2learn/projects/2026/project1/sample/cases.csv \
   --case-id PMC5137649_01 \
   --compare \
-  --output output/tokenizacao
+  --output src/projeto-1/tokenizacao/output
 ```
 
 ### 9.4 Avaliar toda a amostra
@@ -370,13 +370,13 @@ python3 src/projeto-1/tokenizacao/main.py \
 python3 src/projeto-1/tokenizacao/main.py \
   --cases /home/lorhan/Git/nlp2learn/projects/2026/project1/sample/cases.csv \
   --evaluate-sample \
-  --output output/tokenizacao
+  --output src/projeto-1/tokenizacao/output
 ```
 
 ### 9.5 Executar os testes
 
 ```bash
-python3 -m unittest discover -s tests/projeto-1/tokenizacao -v
+python3 -m unittest discover -s src/projeto-1/tokenizacao/tests -v
 ```
 
 ## 10. Testes automatizados

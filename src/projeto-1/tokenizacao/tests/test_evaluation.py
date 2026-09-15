@@ -4,7 +4,7 @@ from decimal import Decimal
 from pathlib import Path
 
 
-SOURCE = Path(__file__).parents[3] / "src" / "projeto-1" / "tokenizacao"
+SOURCE = Path(__file__).parents[1]
 sys.path.insert(0, str(SOURCE))
 
 from evaluation import evaluate_challenges  # noqa: E402

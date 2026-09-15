@@ -21,7 +21,7 @@ python3 src/projeto-1/tokenizacao/main.py \
   --cases /caminho/para/project1/sample/cases.csv \
   --case-id PMC5137649_01 \
   --tokenizer clinical_regex \
-  --output output/tokenizacao
+  --output src/projeto-1/tokenizacao/output
 ```
 
 Arquivos produzidos:
@@ -54,7 +54,7 @@ python3 src/projeto-1/tokenizacao/main.py \
 ## Testes
 
 ```bash
-python3 -m unittest discover -s tests/projeto-1/tokenizacao -v
+python3 -m unittest discover -s src/projeto-1/tokenizacao/tests -v
 ```
 
 A explicação completa do algoritmo, das decisões, dos resultados e das falhas
