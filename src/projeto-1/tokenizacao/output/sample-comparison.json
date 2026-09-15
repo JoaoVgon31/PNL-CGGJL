@@ -1,0 +1,115 @@
+{
+  "case_count": 56,
+  "tokenizers": {
+    "whitespace": {
+      "available": true,
+      "challenges_passed": 5,
+      "challenges_total": 9,
+      "offset_invariant": true,
+      "totals": {
+        "tokens": 27983,
+        "nodes": 297,
+        "edges": 288
+      },
+      "nodes_by_type": {
+        "AnatomicalSite": 54,
+        "Diagnosis": 6,
+        "Exam": 65,
+        "Finding": 28,
+        "History": 8,
+        "Medication": 6,
+        "Outcome": 24,
+        "Patient": 56,
+        "Symptom": 40,
+        "Treatment": 10
+      },
+      "edges_by_relation": {
+        "DIAGNOSED_WITH": 6,
+        "HAS_FINDING": 39,
+        "HAS_HISTORY": 8,
+        "HAS_OUTCOME": 25,
+        "HAS_SYMPTOM": 46,
+        "LOCATED_IN": 33,
+        "REVEALS": 25,
+        "SUPPORTS": 9,
+        "TREATED_WITH": 16,
+        "UNDERWENT_EXAM": 81
+      }
+    },
+    "treebank": {
+      "available": true,
+      "challenges_passed": 5,
+      "challenges_total": 9,
+      "offset_invariant": true,
+      "totals": {
+        "tokens": 31356,
+        "nodes": 629,
+        "edges": 696
+      },
+      "nodes_by_type": {
+        "AnatomicalSite": 64,
+        "Diagnosis": 6,
+        "Exam": 113,
+        "ExamResult": 235,
+        "Finding": 32,
+        "History": 14,
+        "Medication": 5,
+        "Outcome": 27,
+        "Patient": 56,
+        "Symptom": 65,
+        "Treatment": 12
+      },
+      "edges_by_relation": {
+        "DIAGNOSED_WITH": 6,
+        "HAS_FINDING": 49,
+        "HAS_HISTORY": 14,
+        "HAS_OUTCOME": 31,
+        "HAS_RESULT": 235,
+        "HAS_SYMPTOM": 76,
+        "LOCATED_IN": 36,
+        "REVEALS": 29,
+        "SUPPORTS": 10,
+        "TREATED_WITH": 17,
+        "UNDERWENT_EXAM": 193
+      }
+    },
+    "clinical_regex": {
+      "available": true,
+      "challenges_passed": 9,
+      "challenges_total": 9,
+      "offset_invariant": true,
+      "totals": {
+        "tokens": 32835,
+        "nodes": 755,
+        "edges": 929
+      },
+      "nodes_by_type": {
+        "AnatomicalSite": 68,
+        "Diagnosis": 5,
+        "Exam": 120,
+        "ExamResult": 330,
+        "Finding": 37,
+        "History": 15,
+        "Medication": 4,
+        "Outcome": 30,
+        "Patient": 56,
+        "Symptom": 81,
+        "Treatment": 9
+      },
+      "edges_by_relation": {
+        "DIAGNOSED_WITH": 5,
+        "HAS_FINDING": 75,
+        "HAS_HISTORY": 15,
+        "HAS_OUTCOME": 40,
+        "HAS_RESULT": 330,
+        "HAS_SYMPTOM": 101,
+        "LOCATED_IN": 29,
+        "REVEALS": 17,
+        "SUPPORTS": 10,
+        "TREATED_WITH": 13,
+        "UNDERWENT_EXAM": 294
+      }
+    }
+  },
+  "note": "Contagens medem rendimento estrutural, não precisão clínica."
+}
