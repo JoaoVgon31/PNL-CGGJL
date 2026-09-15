@@ -124,7 +124,7 @@ class TreebankTokenizer(BaseTokenizer):
         except ImportError as error:
             raise RuntimeError(
                 "NLTK is required for the treebank tokenizer; "
-                "install src/projeto-1/tokenizacao/requirements.txt"
+                "install project1/src/tokenizacao/requirements.txt"
             ) from error
 
         tokenizer = TreebankWordTokenizer()

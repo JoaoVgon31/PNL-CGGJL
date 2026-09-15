@@ -8,7 +8,7 @@ MultiCaRe em tokens, nós e arestas.
 ```bash
 python3 -m venv .venv
 source .venv/bin/activate
-python3 -m pip install -r project1/src/projeto-1/tokenizacao/requirements.txt
+python3 -m pip install -r project1/src/tokenizacao/requirements.txt
 ```
 
 O NLTK é usado apenas na abordagem comparativa `treebank`. O tokenizador
@@ -17,11 +17,11 @@ principal `clinical_regex` usa somente a biblioteca padrão do Python.
 ## Gerar tokens e grafo de um caso
 
 ```bash
-python3 project1/src/projeto-1/tokenizacao/main.py \
+python3 project1/src/tokenizacao/main.py \
   --cases project1/sample/cases.csv \
   --case-id PMC5137649_01 \
   --tokenizer clinical_regex \
-  --output project1/src/projeto-1/tokenizacao/output
+  --output project1/src/tokenizacao/output
 ```
 
 Arquivos produzidos:
@@ -37,7 +37,7 @@ Arquivos produzidos:
 No mesmo caso:
 
 ```bash
-python3 project1/src/projeto-1/tokenizacao/main.py \
+python3 project1/src/tokenizacao/main.py \
   --cases project1/sample/cases.csv \
   --case-id PMC5137649_01 \
   --compare
@@ -46,7 +46,7 @@ python3 project1/src/projeto-1/tokenizacao/main.py \
 Em toda a amostra:
 
 ```bash
-python3 project1/src/projeto-1/tokenizacao/main.py \
+python3 project1/src/tokenizacao/main.py \
   --cases project1/sample/cases.csv \
   --evaluate-sample
 ```
@@ -54,8 +54,8 @@ python3 project1/src/projeto-1/tokenizacao/main.py \
 ## Testes
 
 ```bash
-python3 -m unittest discover -s project1/src/projeto-1/tokenizacao/tests -v
+python3 -m unittest discover -s project1/src/tokenizacao/tests -v
 ```
 
 A explicação completa do algoritmo, das decisões, dos resultados e das falhas
-está em [`docs/projeto-1/03-tokenizacao.md`](../../../docs/projeto-1/03-tokenizacao.md).
+está em [`docs/03-tokenizacao.md`](../../docs/03-tokenizacao.md).

@@ -49,7 +49,7 @@ import sys
 
 HERE = os.path.dirname(os.path.abspath(__file__))
 MODEL_PATH = os.path.join(HERE, "model", "hmm_pos.json")
-DEFAULT_CASES = os.path.join(HERE, "..", "..", "..", "sample", "cases.csv")
+DEFAULT_CASES = os.path.join(HERE, "..", "..", "sample", "cases.csv")
 
 csv.field_size_limit(10 ** 7)
 

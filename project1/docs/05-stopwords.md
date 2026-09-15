@@ -1,7 +1,7 @@
 # 05 — Remoção de stop-words: decisão e experimento
 
 > Entregável da [issue #5](https://github.com/caiomelloni/PNL-CGGJL/issues/5) — Projeto 1 (MC896, 2026).
-> Estratégia obrigatória: remoção de stop-words. Código em [`project1/src/projeto-1/stopwords/`](../../src/projeto-1/stopwords/).
+> Estratégia obrigatória: remoção de stop-words. Código em [`project1/src/stopwords/`](../src/stopwords/).
 
 ## Contexto
 
@@ -13,7 +13,7 @@ artigos e pronomes. Este documento não assume essa hipótese — mede.
 
 ## O pipeline e as 4 condições
 
-`project1/src/projeto-1/stopwords/` extrai as 11 entidades e 12 relações do contrato comum (docs
+`project1/src/stopwords/` extrai as 11 entidades e 12 relações do contrato comum (docs
 [01](01-dados-a-extrair.md)/[02](02-esquema-grafo.md)) via regex/léxico, e roda o mesmo conjunto de
 extratores em 4 condições, variando só onde a remoção de stop-words entra:
 
@@ -33,7 +33,7 @@ multi-palavra e relações em vez de blindar o resultado por decisão de projeto
 Cada condição não-baseline roda com 3 listas: `nltk_stopwords` (198 palavras, do repositório
 `nltk/nltk_data`), `spacy_stopwords` (326 palavras, de `explosion/spaCy`) e `custom_clinical`
 (`nltk ∪ spacy − proteção`, 397 palavras). As 4 listas estão versionadas em
-[`project1/src/projeto-1/stopwords/lexicon/data/`](../../src/projeto-1/stopwords/lexicon/data/).
+[`project1/src/stopwords/lexicon/data/`](../src/stopwords/lexicon/data/).
 
 ## Resultado agregado — 56 casos, 560 execuções
 
@@ -49,8 +49,8 @@ Cada condição não-baseline roda com 3 listas: `nltk_stopwords` (198 palavras,
 | `NAIVE_UNPROTECTED` | `nltk_stopwords` | 649 | 398 | **14** | 672 | 472 | `PMC12832199_01` | 3 |
 | `NAIVE_UNPROTECTED` | `spacy_stopwords` | 651 | 399 | **21** | 675 | 474 | `PMC12832199_01` | 3 |
 
-(gerado por `python3 project1/src/projeto-1/stopwords/run_experiment.py`; arquivo completo em
-[`experiment_output/summary.csv`](../../src/projeto-1/stopwords/experiment_output/summary.csv).)
+(gerado por `python3 project1/src/stopwords/run_experiment.py`; arquivo completo em
+[`experiment_output/summary.csv`](../src/stopwords/experiment_output/summary.csv).)
 
 **`NAIVE_UNPROTECTED` — o erro cru.** Rodar a lista pronta (NLTK ou spaCy) direto sobre o texto,
 sem proteção, inverte polaridade de verdade: 14 nós com `polarity` trocada com NLTK, 21 com spaCy —
@@ -110,7 +110,7 @@ casar assim que `of` é mascarado — as 8 menções de antecedente do caso (doe
 amputações, insuficiência adrenal, cirurgias abdominais...) e as 8 arestas `HAS_HISTORY`
 correspondentes somem por completo, não só mudam de rótulo. As tabelas completas (antes/depois,
 nós e arestas) estão em
-[`experiment_output/highlight_case/`](../../src/projeto-1/stopwords/experiment_output/highlight_case/).
+[`experiment_output/highlight_case/`](../src/stopwords/experiment_output/highlight_case/).
 
 ## Decisão
 
@@ -141,14 +141,14 @@ Evidência, não suposição:
    substancial (638–651 nós, 662–675 arestas, em 56 casos) por mascarar preposições de gatilho antes
    da extração — não são candidatos, independente de proteger ou não a negação.
 
-As tabelas finais em [`project1/src/projeto-1/stopwords/output/`](../../src/projeto-1/stopwords/output/) (56
+As tabelas finais em [`project1/src/stopwords/output/`](../src/stopwords/output/) (56
 casos) foram geradas com essa configuração:
-rodando a partir de `project1/src/projeto-1`:
+rodando a partir de `project1/src`:
 `python3 -m stopwords --cases ../../sample/cases.csv --all-cases --condition GUARDED_LABEL --wordlist nltk_stopwords`.
 
 ## Listas versionadas
 
-Em [`project1/src/projeto-1/stopwords/lexicon/data/`](../../src/projeto-1/stopwords/lexicon/data/):
+Em [`project1/src/stopwords/lexicon/data/`](../src/stopwords/lexicon/data/):
 
 - `nltk_stopwords.txt` — cópia exata de `stopwords/english` do repositório `nltk/nltk_data`.
 - `spacy_stopwords.txt` — cópia exata de `STOP_WORDS` em `spacy/lang/en/stop_words.py`, do

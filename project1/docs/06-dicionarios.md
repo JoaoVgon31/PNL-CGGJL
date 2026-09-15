@@ -3,7 +3,7 @@
 **Projeto:** MultiCaRe → grafo de conhecimento · MC896/Unicamp · PNL-CGGJL
 **Estratégia:** ligação a vocabulário controlado (dicionários/tesauros/ontologias)
 **Referência:** issue #6 — Parser caso → grafo · estratégia: dicionários
-**Código:** [`project1/src/projeto-1/dicionarios/`](../../src/projeto-1/dicionarios/) (ver também o [README técnico](../../src/projeto-1/dicionarios/README.md), que documenta o pipeline processo a processo)
+**Código:** [`project1/src/dicionarios/`](../src/dicionarios/) (ver também o [README técnico](../src/dicionarios/README.md), que documenta o pipeline processo a processo)
 
 ## 1. Objetivo
 
@@ -30,7 +30,7 @@ Modelos de linguagem não participam de nenhuma etapa — extração é regra/re
 
 Verificado na fonte oficial antes de implementar:
 
-- **Fonte:** `desc2026.xml`, baixado de `https://nlmpubs.nlm.nih.gov/projects/mesh/MESH_FILES/xmlmesh/desc2026.zip` (NLM/National Library of Medicine, EUA). Arquivo de ~313 MB descompactado; **não versionado no repositório** (fica em `project1/src/projeto-1/dicionarios/data/`, ignorado pelo `.gitignore`) — só por tamanho, não por restrição de licença.
+- **Fonte:** `desc2026.xml`, baixado de `https://nlmpubs.nlm.nih.gov/projects/mesh/MESH_FILES/xmlmesh/desc2026.zip` (NLM/National Library of Medicine, EUA). Arquivo de ~313 MB descompactado; **não versionado no repositório** (fica em `project1/src/dicionarios/data/`, ignorado pelo `.gitignore`) — só por tamanho, não por restrição de licença.
 - **Termos de uso** ([nlm.nih.gov/databases/download/terms_and_conditions_mesh.html](https://www.nlm.nih.gov/databases/download/terms_and_conditions_mesh.html)): uso e redistribuição livres, exigindo apenas (1) atribuição clara à NLM como fonte; (2) não sugerir endosso da NLM; (3) se redistribuído, manter a versão atualizada ou indicar claramente a versão usada; (4) isenção de responsabilidade da NLM por erros nos dados. Sem exigência de registro, licença paga, ou restrição de uso por país.
 - **Consequência prática:** o gazetteer *derivado* do MeSH (ver §4) pôde ser versionado no repositório sem problema de licença — ao contrário do que aconteceria com SNOMED CT ou UMLS, onde a redistribuição de um gazetteer derivado exigiria confirmar a licença específica do vocabulário-fonte antes.
 
@@ -38,7 +38,7 @@ Verificado na fonte oficial antes de implementar:
 
 ## 4. Gazetteer
 
-**Formato de extração.** `project1/src/projeto-1/dicionarios/mesh_parser.py` faz uma única passada em streaming pelo XML (`xml.etree.ElementTree.iterparse`, sem carregar a árvore inteira em memória) e extrai, por `DescriptorRecord`: `DescriptorUI` (código), `DescriptorName` (termo preferido), `TreeNumberList` (posição na hierarquia) e todos os `Term/String` de `ConceptList` (sinônimos/*entry terms*). 31.110 descriptors processados em ~3,6 s.
+**Formato de extração.** `project1/src/dicionarios/mesh_parser.py` faz uma única passada em streaming pelo XML (`xml.etree.ElementTree.iterparse`, sem carregar a árvore inteira em memória) e extrai, por `DescriptorRecord`: `DescriptorUI` (código), `DescriptorName` (termo preferido), `TreeNumberList` (posição na hierarquia) e todos os `Term/String` de `ConceptList` (sinônimos/*entry terms*). 31.110 descriptors processados em ~3,6 s.
 
 **Filtro por categoria.** Em vez de um gazetteer único com o MeSH inteiro (a maioria irrelevante — geografia, organismos, ocupações...), cada descriptor é mantido só nas categorias cujo `TreeNumber` bate com o prefixo relevante:
 
@@ -50,7 +50,7 @@ Verificado na fonte oficial antes de implementar:
 | `treatments` | `E02`+`E04` (Therapeutics / Surgical Procedures) | `Treatment` | 11.076 | 1.236 |
 | `mental_disorders` | `F03` (Mental Disorders) | `Diagnosis` (psiquiátrico) | 3.063 | 235 |
 
-**Persistência: sempre cru, nunca normalizado.** `build_gazetteer_rows()` gera uma linha por `(termo, categoria)` **exatamente como está no MeSH** — sem lowercase, sem strip de pontuação. Essas 174.006 linhas ficam versionadas em `project1/src/projeto-1/dicionarios/gazetteer/mesh_gazetteer.csv` (11 MB). A normalização (§5) é aplicada só no momento de carregar o gazetteer para uso (`rows_to_raw_gazetteer()` + `normalization.build_normalized_gazetteer()`), como uma etapa separada e substituível — decisão deliberada para facilitar integração futura: se o projeto convergir numa normalização compartilhada entre as quatro issues, basta injetar a nova função (`normalize_fn=...`), sem regerar o gazetteer nem precisar do arquivo de 313 MB de novo.
+**Persistência: sempre cru, nunca normalizado.** `build_gazetteer_rows()` gera uma linha por `(termo, categoria)` **exatamente como está no MeSH** — sem lowercase, sem strip de pontuação. Essas 174.006 linhas ficam versionadas em `project1/src/dicionarios/gazetteer/mesh_gazetteer.csv` (11 MB). A normalização (§5) é aplicada só no momento de carregar o gazetteer para uso (`rows_to_raw_gazetteer()` + `normalization.build_normalized_gazetteer()`), como uma etapa separada e substituível — decisão deliberada para facilitar integração futura: se o projeto convergir numa normalização compartilhada entre as quatro issues, basta injetar a nova função (`normalize_fn=...`), sem regerar o gazetteer nem precisar do arquivo de 313 MB de novo.
 
 ### 4.1 Gazetteer próprio: `AnatomicalSite`
 
@@ -65,11 +65,11 @@ Construído sem bootstrap automático no MeSH — decisão deliberada de encarar
 
 **Bug real encontrado ao rodar isso pela primeira vez, que afeta o matching como um todo — não só esta entidade:** o threshold de fuzzy match (85, calibrado em §6 com termos médicos longos) não é seguro para chaves curtas. `fuzz.ratio("had", "head") = 85,7`; o mesmo para `"one"`/`"bone"`, `"fear"`/`"ear"`, `"year"`/`"ear"` — em todos os casos, uma única edição de caractere numa palavra comum do inglês já cruza o limiar, porque a métrica é proporcional ao tamanho total das strings, e strings curtas toleram muito menos edições antes de virarem "diferentes" na prática. Corrigido com `MIN_FUZZY_LENGTH = 5`: fuzzy match não roda mais para tokens/labels com menos de 5 caracteres. A correção também eliminou, de graça, um falso positivo pré-existente em `Medication` (`"that"` casando com `Tacrine`) que não tinha relação com anatomia — só ficou visível porque o novo gazetteer tem muito mais chave curta que o MeSH.
 
-**Resultado nos 56 casos** (comparado antes/depois, `project1/src/projeto-1/dicionarios/output/` vs. `project1/src/projeto-1/dicionarios/output_v2/` — este último **não versionado**, por decisão do autor, pendente de revisão antes de substituir o oficial): **+18 nós `AnatomicalSite`, +18 arestas `LOCATED_IN`, +18 arestas `SAME_AS`** (cobertura de 100% nesta categoria — esperado, já que a própria extração é a varredura do dicionário), e **-1** aresta `SAME_AS` em outro lugar (o falso positivo do `"that"`/`Tacrine` corrigido). Termos encontrados: `abdomen`, `abdominal` (×4), `cardiac`, `chest` (×3), `dorsal`, `esophagus.`, `Esophageal`, `forearm`, `gastric`, `palm`, `pancreatic`, `pulmonary`, `skin`.
+**Resultado nos 56 casos** (comparado antes/depois, `project1/src/dicionarios/output/` vs. `project1/src/dicionarios/output_v2/` — este último **não versionado**, por decisão do autor, pendente de revisão antes de substituir o oficial): **+18 nós `AnatomicalSite`, +18 arestas `LOCATED_IN`, +18 arestas `SAME_AS`** (cobertura de 100% nesta categoria — esperado, já que a própria extração é a varredura do dicionário), e **-1** aresta `SAME_AS` em outro lugar (o falso positivo do `"that"`/`Tacrine` corrigido). Termos encontrados: `abdomen`, `abdominal` (×4), `cardiac`, `chest` (×3), `dorsal`, `esophagus.`, `Esophageal`, `forearm`, `gastric`, `palm`, `pancreatic`, `pulmonary`, `skin`.
 
 ## 5. Normalização
 
-Aplicada igualmente ao texto do caso e às chaves do gazetteer (`project1/src/projeto-1/dicionarios/normalization.py`):
+Aplicada igualmente ao texto do caso e às chaves do gazetteer (`project1/src/dicionarios/normalization.py`):
 
 1. Normalização Unicode (NFKC), antes da tokenização.
 2. Tokenização (`nltk.word_tokenize`).
@@ -82,7 +82,7 @@ A normalização nunca sobrescreve o texto original — só gera a chave de busc
 
 ## 6. Estratégia de casamento
 
-Implementada em `project1/src/projeto-1/dicionarios/matching.py`, três técnicas em ordem de rigor decrescente:
+Implementada em `project1/src/dicionarios/matching.py`, três técnicas em ordem de rigor decrescente:
 
 1. **Exact match** — string idêntica após normalização.
 2. **Longest match** — janela de tokens decrescente (tenta a sequência mais longa primeiro); cobre conceitos multi-palavra. Exact match é, na implementação, só o caso particular de janela de tamanho 1.
@@ -117,13 +117,13 @@ Cogitou-se varrer o `case_text` inteiro direto contra o gazetteer, sem nenhuma e
 3. **O mesmo conceito muda de tipo de entidade pelo contexto, não pelo termo.** `"history of hypertension"` → `History`; `"diagnosed with hypertension"` → `Diagnosis`; o dicionário sozinho não decide isso.
 4. **Risco de falso positivo maior sem uma âncora de contexto** confirmando a intenção da menção.
 
-Por isso o pipeline implementa um NER simples, baseado em gatilho léxico e regex (`project1/src/projeto-1/dicionarios/extractors/`) — no nível do que a issue #4 (normalização) já validou como suficiente, não no nível de sofisticação sintática da issue #5 (POS-tagging), que não é o foco desta entrega. NER aqui é infraestrutura de apoio para chegar ao entregável, não a técnica que este trabalho precisa demonstrar dominar.
+Por isso o pipeline implementa um NER simples, baseado em gatilho léxico e regex (`project1/src/dicionarios/extractors/`) — no nível do que a issue #4 (normalização) já validou como suficiente, não no nível de sofisticação sintática da issue #5 (POS-tagging), que não é o foco desta entrega. NER aqui é infraestrutura de apoio para chegar ao entregável, não a técnica que este trabalho precisa demonstrar dominar.
 
 ## 9. Resultados sobre a amostra (56 casos)
 
-Pipeline completo executado sem exceção nos 56 casos de `project1/sample/cases.csv` (`project1/src/projeto-1/dicionarios/batch.py`). Duas versões das tabelas existem: `project1/src/projeto-1/dicionarios/output/` (versionado, sem `AnatomicalSite`) e `project1/src/projeto-1/dicionarios/output_v2/` (não versionado, já com `AnatomicalSite` e a correção do `MIN_FUZZY_LENGTH` — ver §4.1); a decisão de qual vira a oficial fica pendente de revisão.
+Pipeline completo executado sem exceção nos 56 casos de `project1/sample/cases.csv` (`project1/src/dicionarios/batch.py`). Duas versões das tabelas existem: `project1/src/dicionarios/output/` (versionado, sem `AnatomicalSite`) e `project1/src/dicionarios/output_v2/` (não versionado, já com `AnatomicalSite` e a correção do `MIN_FUZZY_LENGTH` — ver §4.1); a decisão de qual vira a oficial fica pendente de revisão.
 
-**Nós gerados (com `AnatomicalSite`, `project1/src/projeto-1/dicionarios/output_v2/`):** 56 `Patient`, 64 `Symptom`, 48 `History`, 46 `Diagnosis`, 41 `Treatment`, 41 `Medication`, 33 `Outcome`, 30 `Exam`, 18 `AnatomicalSite`, **135 `Concept`**.
+**Nós gerados (com `AnatomicalSite`, `project1/src/dicionarios/output_v2/`):** 56 `Patient`, 64 `Symptom`, 48 `History`, 46 `Diagnosis`, 41 `Treatment`, 41 `Medication`, 33 `Outcome`, 30 `Exam`, 18 `AnatomicalSite`, **135 `Concept`**.
 
 **Cobertura do casamento:** das 288 entidades de tipo ligável (`Symptom`/`History`/`Diagnosis`/`Exam`/`Treatment`/`Medication`/`AnatomicalSite`), **139 geraram aresta `SAME_AS` (48,3%)**. Maior que o achado análogo de um colega usando léxico+POS-tagging (14% dos sintagmas dele tinham tipo no léxico) — plausível, já que aqui o matching já é restrito à categoria certa do vocabulário por tipo de entidade, em vez de comparar contra um léxico genérico. `AnatomicalSite` sozinho tem cobertura de 100% — resultado estrutural, não uma vitória de precisão: como o NER dessa entidade *é* a varredura do dicionário (§4.1), todo nó criado já bateu com uma chave por definição.
 
@@ -145,7 +145,7 @@ Pipeline completo executado sem exceção nos 56 casos de `project1/sample/cases
 ## 11. Referências
 
 - Issue #6 — Parser caso → grafo · estratégia: dicionários.
-- [README técnico do pipeline](../../src/projeto-1/dicionarios/README.md) — descrição processo a processo, com todos os testes e achados intermediários.
+- [README técnico do pipeline](../src/dicionarios/README.md) — descrição processo a processo, com todos os testes e achados intermediários.
 - [Dados a extrair](01-dados-a-extrair.md).
 - [Esquema do grafo](02-esquema-grafo.md).
 - National Library of Medicine — [MeSH XML Data Files](https://www.nlm.nih.gov/mesh/xmlmesh.html), [Terms and Conditions](https://www.nlm.nih.gov/databases/download/terms_and_conditions_mesh.html).
