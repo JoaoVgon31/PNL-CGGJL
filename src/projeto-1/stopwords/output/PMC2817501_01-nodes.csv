@@ -1,0 +1,9 @@
+case_id,node_id,type,label,attributes
+PMC2817501_01,P1,Patient,patient,case_id=PMC2817501_01; article_id=PMC2817501; gender=Male; age=53; age_unit=years
+PMC2817501_01,F1,Finding,left hemiparesis blood pressure 120/80 mmHg,source=physical_exam; polarity=present; certainty=confirmed
+PMC2817501_01,F2,Finding,4/6 systolic murmur rales heard base lungs,polarity=present; certainty=confirmed
+PMC2817501_01,F3,Finding,functioning Starr-Edwards caged ball mechanical prosthesis 30 mmHg gradient rheumatic mitral valve disease peak transmitral gradient 20 mmHg valve area 1,source=imaging; polarity=present; certainty=confirmed
+PMC2817501_01,F4,Finding,90% stenosis proximal portion LAD well functioning caged ball prosthesis (Figure 1),source=imaging; polarity=present; certainty=confirmed
+PMC2817501_01,E1,Exam,reoperation double valve replacement,
+PMC2817501_01,T1,Treatment,reoperation double valve replacement,type=procedure; status=performed
+PMC2817501_01,A1,AnatomicalSite,heart,

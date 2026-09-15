@@ -1,0 +1,35 @@
+case_id,node_id,type,label,attributes
+PMC3897989_01,P1,Patient,patient,case_id=PMC3897989_01; article_id=PMC3897989; gender=Male; age=65; age_unit=years
+PMC3897989_01,H1,History,revealed atrial fibrillation,subject=patient; polarity=present; category=condition
+PMC3897989_01,H2,History,patient intermittent aspirin therapy,subject=patient; polarity=present; category=medication
+PMC3897989_01,F1,Finding,atrial fibrillation patient intermittent aspirin therapy,polarity=present; certainty=confirmed
+PMC3897989_01,F2,Finding,icteric sclera skin,source=imaging; polarity=present; certainty=confirmed
+PMC3897989_01,F3,Finding,serum levels alanine transaminase (ALT),source=imaging; polarity=present; certainty=confirmed
+PMC3897989_01,F4,Finding,patient positive antimitochondrial antibody (AMA),polarity=present; certainty=confirmed
+PMC3897989_01,F5,Finding,diffusive enlargement pancreas,source=imaging; polarity=present; certainty=confirmed
+PMC3897989_01,F6,Finding,similar findings CT MRI,source=imaging; polarity=present; certainty=confirmed
+PMC3897989_01,F7,Finding,CEA 66,polarity=absent; certainty=confirmed
+PMC3897989_01,F8,Finding,dense lymphoplasmacytic infiltration fibrosis,source=imaging; polarity=present; certainty=confirmed
+PMC3897989_01,F9,Finding,remarkable reduction pancreas,source=imaging; polarity=present; certainty=confirmed
+PMC3897989_01,F10,Finding,multiple nodules right lung,polarity=present; certainty=confirmed
+PMC3897989_01,F11,Finding,neutrophil aggregation fibrous effusion within alveoli,source=imaging; polarity=present; certainty=confirmed
+PMC3897989_01,R1,ExamResult,family history,value=negative; interpretation=negative; raw_text=And the family history was negative
+PMC3897989_01,R2,ExamResult,biliary culture,value=positive; interpretation=positive; raw_text=The biliary culture was positive
+PMC3897989_01,D1,Diagnosis,PBC UDCA (250 mg,certainty=confirmed; polarity=present; role=principal
+PMC3897989_01,D2,Diagnosis,type AIP confirmed accordance diagnostic criteria,certainty=confirmed; polarity=present; role=principal
+PMC3897989_01,D3,Diagnosis,herpes zoster treated acyclovir (500 mg twice day) 9 days,certainty=confirmed; polarity=present; role=principal
+PMC3897989_01,D4,Diagnosis,pulmonary abscess treated effectively moxifloxacin (Figure 1),certainty=confirmed; polarity=present; role=principal
+PMC3897989_01,T1,Treatment,acyclovir (500 mg twice day) 9 days,type=procedure; status=performed
+PMC3897989_01,M1,Medication,and,dose_value=344; dose_unit=mg
+PMC3897989_01,M2,Medication,be,dose_value=44.36; dose_unit=g
+PMC3897989_01,M3,Medication,MEP,dose_value=32; dose_unit=mg; route=oral
+PMC3897989_01,M4,Medication,to,dose_value=32; dose_unit=mg
+PMC3897989_01,M5,Medication,by,dose_value=5; dose_unit=mg
+PMC3897989_01,A1,AnatomicalSite,heart,
+PMC3897989_01,A2,AnatomicalSite,pancreas,
+PMC3897989_01,A3,AnatomicalSite,gallbladder,
+PMC3897989_01,A4,AnatomicalSite,kidney,laterality=right
+PMC3897989_01,A5,AnatomicalSite,liver,
+PMC3897989_01,A6,AnatomicalSite,lung,laterality=right
+PMC3897989_01,O1,Outcome,improved,type=improvement; polarity=present
+PMC3897989_01,O2,Outcome,discharged,type=discharge; polarity=present

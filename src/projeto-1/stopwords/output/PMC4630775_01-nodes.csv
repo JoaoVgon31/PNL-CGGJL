@@ -1,0 +1,5 @@
+case_id,node_id,type,label,attributes
+PMC4630775_01,P1,Patient,patient,case_id=PMC4630775_01; article_id=PMC4630775; gender=Female; age=39; age_unit=weeks
+PMC4630775_01,S1,Symptom,desquamation palm,polarity=present
+PMC4630775_01,S2,Symptom,leathery appearance skin right dorsal hand,polarity=present
+PMC4630775_01,S3,Symptom,circumferential forearm frank ischemia thumb,polarity=present

@@ -1,0 +1,25 @@
+case_id,node_id,type,label,attributes
+PMC9815523_01,P1,Patient,patient,case_id=PMC9815523_01; article_id=PMC9815523; gender=Unknown; age=40; age_unit=years
+PMC9815523_01,E1,Exam,thus no distinction pUEDVT etiology could made,modality=imaging
+PMC9815523_01,E2,Exam,leading full symptom resolution,
+PMC9815523_01,E3,Exam,leading symptom resolution additional five patients (Table 3),
+PMC9815523_01,E4,Exam,redo TOD; two insufficiently removed first rib,
+PMC9815523_01,E5,Exam,dedicated diagnostic imaging (CTv,modality=imaging
+PMC9815523_01,E6,Exam,additional reinterventions leading full symptom resolution two patients,
+PMC9815523_01,R1,ExamResult,total,value=115; raw_text=A total of 115
+PMC9815523_01,R2,ExamResult,median duration,value=13; raw_text=for a median duration of 13
+PMC9815523_01,D1,Diagnosis,vTOS,certainty=confirmed; polarity=present; role=principal
+PMC9815523_01,T1,Treatment,antithrombotics; 25 DOAC,type=procedure; status=performed
+PMC9815523_01,T2,Treatment,physical therapy,type=procedure; status=performed
+PMC9815523_01,T3,Treatment,surgery; 31 patients (58%) CDT followed TOD,type=surgery; status=performed
+PMC9815523_01,T4,Treatment,redo TOD; two insufficiently removed first rib,type=procedure; status=performed
+PMC9815523_01,T5,Treatment,CDT relieved symptoms TOD,type=procedure; status=performed
+PMC9815523_01,T6,Treatment,TOD,type=procedure; status=performed
+PMC9815523_01,T7,Treatment,pectoralis minor release,type=procedure; status=performed
+PMC9815523_01,T8,Treatment,vitamin K antagonists,type=procedure; status=performed
+PMC9815523_01,T9,Treatment,dedicated diagnostic imaging (CTv,type=procedure; status=performed
+PMC9815523_01,T10,Treatment,additional reinterventions leading full symptom resolution two patients,type=procedure; status=performed
+PMC9815523_01,T11,Treatment,chest drain,type=procedure; status=performed
+PMC9815523_01,O1,Outcome,improvement,type=improvement; polarity=absent
+PMC9815523_01,O2,Outcome,resolution,type=resolution; polarity=present
+PMC9815523_01,O3,Outcome,complication,type=complication; polarity=present

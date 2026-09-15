@@ -1,0 +1,10 @@
+case_id,node_id,type,label,attributes
+PMC3950436_01,P1,Patient,patient,case_id=PMC3950436_01; article_id=PMC3950436; gender=Female; age=19; age_unit=years
+PMC3950436_01,F1,Finding,veins apparently exhausted sclerosed chemotherapy no vein could not chosen apply,source=physical_exam; polarity=absent; certainty=confirmed
+PMC3950436_01,R1,ExamResult,dose,value=120; interpretation=normal; raw_text=with a dose of 120
+PMC3950436_01,R2,ExamResult,followed administration,value=80; interpretation=decreased; raw_text=That was followed by administration of 80
+PMC3950436_01,R3,ExamResult,BP,value=105; raw_text=BP was 105
+PMC3950436_01,M1,Medication,in,dose_value=10; dose_unit=ml
+PMC3950436_01,M2,Medication,EMLA,dose_value=5; dose_unit=g
+PMC3950436_01,A1,AnatomicalSite,heart,
+PMC3950436_01,O1,Outcome,recurrence,type=recurrence; polarity=present

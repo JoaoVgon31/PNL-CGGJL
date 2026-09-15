@@ -1,0 +1,6 @@
+case_id,node_id,type,label,attributes
+PMC6083636_03,P1,Patient,patient,case_id=PMC6083636_03; article_id=PMC6083636; gender=Unknown
+PMC6083636_03,F1,Finding,total error score 127 106 LE,source=imaging; polarity=present; certainty=confirmed
+PMC6083636_03,F2,Finding,intermittent exotropia shown Figure 1; horizontal nystagmus manifest extreme positions gaze,polarity=present; certainty=probable
+PMC6083636_03,R1,ExamResult,Best corrected visual acuity,value=0.50; raw_text=Best corrected visual acuity was 0.50
+PMC6083636_03,R2,ExamResult,patient identified correctly 14,value=15; raw_text=The patient identified correctly 14 out of 15

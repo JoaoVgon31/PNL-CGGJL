@@ -1,0 +1,13 @@
+case_id,node_id,type,label,attributes
+PMC3557982_01,P1,Patient,patient,case_id=PMC3557982_01; article_id=PMC3557982; gender=Female; age=1; age_unit=years
+PMC3557982_01,F1,Finding,cytopathic effect 6 days incubation,source=imaging; polarity=present; certainty=confirmed
+PMC3557982_01,F2,Finding,dark purple,polarity=present; certainty=confirmed
+PMC3557982_01,F3,Finding,diffuse alveolar damage,polarity=present; certainty=confirmed
+PMC3557982_01,F4,Finding,epithelial cells cytoplasmic granular nuclear positivity,polarity=present; certainty=confirmed
+PMC3557982_01,F5,Finding,isolates Canada,polarity=present; certainty=confirmed
+PMC3557982_01,E1,Exam,Provincial Laboratory Viral Illnesses,modality=laboratory
+PMC3557982_01,E2,Exam,nucleotide sequencing E1A,
+PMC3557982_01,E3,Exam,3 isolates Canada; however,
+PMC3557982_01,D1,Diagnosis,previously reported clinical data HAdV-14 infection apparently enhanced virulence strain,certainty=probable; polarity=present; role=principal
+PMC3557982_01,A1,AnatomicalSite,lung,laterality=right
+PMC3557982_01,O1,Outcome,died,type=death; polarity=present

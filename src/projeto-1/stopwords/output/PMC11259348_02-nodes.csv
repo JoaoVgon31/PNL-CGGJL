@@ -1,0 +1,6 @@
+case_id,node_id,type,label,attributes
+PMC11259348_02,P1,Patient,patient,case_id=PMC11259348_02; article_id=PMC11259348; gender=Unknown
+PMC11259348_02,E1,Exam,follows,
+PMC11259348_02,R1,ExamResult,nine volumes,value=37; raw_text=nine volumes of 37
+PMC11259348_02,R2,ExamResult,Positive control - Nine volumes,value=37; interpretation=positive; raw_text=Positive control - Nine volumes of 37
+PMC11259348_02,R3,ExamResult,Negative control - Nine volumes,value=37; interpretation=negative; raw_text=Negative control - Nine volumes of 37

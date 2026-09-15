@@ -1,0 +1,35 @@
+case_id,node_id,type,label,attributes
+PMC9529523_01,P1,Patient,patient,case_id=PMC9529523_01; article_id=PMC9529523; gender=Female; age=41; age_unit=years
+PMC9529523_01,S1,Symptom,shortness breath,polarity=present
+PMC9529523_01,S2,Symptom,dyspnea exertion,polarity=present
+PMC9529523_01,F1,Finding,scattered microocclusion bilateral fingers; flow not respond nitroglycerin,source=imaging; polarity=absent; certainty=confirmed
+PMC9529523_01,F2,Finding,normal C3 C4 complements negative anti-dsDNA anti-RNA polymerase III,polarity=present; certainty=confirmed
+PMC9529523_01,F3,Finding,progressive alopecia hypopigmented rash across chest,source=physical_exam; polarity=present; certainty=confirmed
+PMC9529523_01,F4,Finding,progressive rise serum creatinine 2,polarity=present; certainty=confirmed
+PMC9529523_01,F5,Finding,low C3 (61 mg/dL),polarity=present; certainty=confirmed; size=90 mm
+PMC9529523_01,F6,Finding,vascular changes consistent malignant hypertension chronic thrombotic microangiopathy (TMA),source=imaging; polarity=present; certainty=probable
+PMC9529523_01,F7,Finding,forced vital capacity (FVC) 78%,source=imaging; polarity=present; certainty=confirmed
+PMC9529523_01,F8,Finding,low,source=imaging; polarity=present; certainty=confirmed
+PMC9529523_01,F9,Finding,ADAMTS 13 activity <5%,source=imaging; polarity=present; certainty=confirmed
+PMC9529523_01,F10,Finding,no abnormalities,source=imaging; polarity=absent; certainty=confirmed
+PMC9529523_01,F11,Finding,no interstitial changes noted new,source=imaging; polarity=absent; certainty=confirmed
+PMC9529523_01,F12,Finding,missing 1,polarity=present; certainty=confirmed
+PMC9529523_01,F13,Finding,normal sinus rhythm QT prolongation,source=imaging; polarity=absent; certainty=confirmed
+PMC9529523_01,F14,Finding,no features myocarditis demonstrated occasional curvilinear bodies myelin figures enlarged mitochondria (Figures 1(a) 1(b)) consistent hydroxychloroquine-induced cardiomyopathy electron microscopy,source=imaging; polarity=absent; certainty=probable
+PMC9529523_01,R1,ExamResult,baseline ejection fraction,value=30; raw_text=baseline ejection fraction of 30
+PMC9529523_01,R2,ExamResult,vasculitis workup,value=negative; interpretation=negative; raw_text=The vasculitis workup was negative
+PMC9529523_01,R3,ExamResult,dL baseline,value=1.0; unit=mg/dl; raw_text=dL from a baseline of 1.0 mg/dL
+PMC9529523_01,R4,ExamResult,serum hydroxychloroquine level,value=1232.1; unit=ng/ml; raw_text=The serum hydroxychloroquine level was 1232.1 ng/ml
+PMC9529523_01,R5,ExamResult,FVC,value=107; unit=%; raw_text=FVC of 107%
+PMC9529523_01,R6,ExamResult,C3,value=67; raw_text=C3 was 67
+PMC9529523_01,D1,Diagnosis,SLE,certainty=confirmed; polarity=present; role=principal
+PMC9529523_01,D2,Diagnosis,malignant hypertension chronic thrombotic microangiopathy (TMA),certainty=probable; polarity=present; role=principal
+PMC9529523_01,D3,Diagnosis,hydroxychloroquine-induced cardiomyopathy electron microscopy,certainty=probable; polarity=absent; role=principal
+PMC9529523_01,M1,Medication,hydroxychloroquine,dose_value=300; dose_unit=mg
+PMC9529523_01,M2,Medication,to,dose_value=2.14; dose_unit=mg
+PMC9529523_01,M3,Medication,yielded,dose_value=860; dose_unit=ml
+PMC9529523_01,A1,AnatomicalSite,kidney,
+PMC9529523_01,A2,AnatomicalSite,lung,
+PMC9529523_01,A3,AnatomicalSite,heart,laterality=right
+PMC9529523_01,O1,Outcome,resolution,type=resolution; polarity=absent
+PMC9529523_01,O2,Outcome,improvement,type=improvement; polarity=present

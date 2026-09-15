@@ -1,0 +1,19 @@
+case_id,node_id,type,label,attributes
+PMC11368112_01,P1,Patient,patient,case_id=PMC11368112_01; article_id=PMC11368112; gender=Male; age=35; age_unit=years
+PMC11368112_01,F1,Finding,temperature 38,source=physical_exam; polarity=absent; certainty=confirmed
+PMC11368112_01,F2,Finding,thrombosis common femoral vein,source=imaging; polarity=present; certainty=confirmed
+PMC11368112_01,F3,Finding,3 x 3 cm cystic mass containing yellow cloudy fluid coronary sinus right atrium,polarity=present; certainty=confirmed; size=3 x 3 cm
+PMC11368112_01,F4,Finding,multiple ulcers (0,source=physical_exam; polarity=present; certainty=confirmed
+PMC11368112_01,F5,Finding,epidermal ulceration lipofuscinosis (Figure 2c),source=pathology; polarity=present; certainty=confirmed
+PMC11368112_01,E1,Exam,surgery remove intracardiac mass,
+PMC11368112_01,E2,Exam,skin biopsy,modality=pathology
+PMC11368112_01,R1,ExamResult,physical examination revealed temperature,value=38.7; interpretation=normal; raw_text=His physical examination revealed a temperature of 38.7
+PMC11368112_01,R2,ExamResult,reaching peak,value=39.8; raw_text=reaching a peak of 39.8
+PMC11368112_01,D1,Diagnosis,pulmonary embolism (PE),certainty=confirmed; polarity=present; role=principal
+PMC11368112_01,T1,Treatment,surgery remove intracardiac mass,type=surgery; status=performed
+PMC11368112_01,T2,Treatment,skin biopsy,type=procedure; status=performed
+PMC11368112_01,M1,Medication,at,dose_value=80; dose_unit=mg
+PMC11368112_01,M2,Medication,with,dose_value=60; dose_unit=mg
+PMC11368112_01,M3,Medication,by,dose_value=5; dose_unit=mg
+PMC11368112_01,M4,Medication,reach,dose_value=5; dose_unit=mg
+PMC11368112_01,O1,Outcome,discharged,type=discharge; polarity=absent; timing=14 days; length_of_stay=14 days

@@ -1,0 +1,21 @@
+case_id,node_id,type,label,attributes
+PMC12832199_01,P1,Patient,patient,case_id=PMC12832199_01; article_id=PMC12832199; gender=Female; age=57; age_unit=years
+PMC12832199_01,F1,Finding,leukocytosis (white blood cell count,source=lab; polarity=present; certainty=confirmed
+PMC12832199_01,F2,Finding,marked gastric distention secondary incarceration parastomal hernial sac,source=imaging; polarity=present; certainty=confirmed
+PMC12832199_01,F3,Finding,progression anemia improvement inflammatory markers,source=lab; polarity=present; certainty=confirmed
+PMC12832199_01,F4,Finding,chronic gastritis linear duodenal ulceration,source=endoscopy; polarity=present; certainty=probable
+PMC12832199_01,F5,Finding,impaired distension,source=imaging; polarity=present; certainty=confirmed
+PMC12832199_01,E1,Exam,left hemicolectomy transverse colostomy ischemic colitis,modality=imaging
+PMC12832199_01,E2,Exam,laparoscopic Sugarbaker repair 18 days admission,
+PMC12832199_01,E3,Exam,point farthest stoma bowel allow fine adjustment tension,
+PMC12832199_01,E4,Exam,intraperitoneal mesh tailored achieve 5 cm overlap suture line stoma opening,
+PMC12832199_01,E5,Exam,day 27 revealed chronic gastritis linear duodenal ulceration,
+PMC12832199_01,T1,Treatment,left hemicolectomy transverse colostomy ischemic colitis,type=procedure; status=performed
+PMC12832199_01,T2,Treatment,laparoscopic Sugarbaker repair 18 days admission,type=surgery; status=performed
+PMC12832199_01,A1,AnatomicalSite,kidney,
+PMC12832199_01,A2,AnatomicalSite,colon,region_qualifier=proximal
+PMC12832199_01,A3,AnatomicalSite,stomach,
+PMC12832199_01,O1,Outcome,improved,type=improvement; polarity=present
+PMC12832199_01,O2,Outcome,improvement,type=improvement; polarity=present
+PMC12832199_01,O3,Outcome,discharged,type=discharge; polarity=present
+PMC12832199_01,O4,Outcome,recurrence,type=recurrence; polarity=present; timing=10 months

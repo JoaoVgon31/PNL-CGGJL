@@ -1,0 +1,6 @@
+case_id,edge_id,source_id,target_id,relation,attributes
+PMC3950436_01,e1,P1,O1,HAS_OUTCOME,evidence_text=The patient had a recurrence of the tumor after surgical intervention and multiple courses of chemo and radiotherapy; trigger=recurrence; certainty=asserted; char_start=467; char_end=477
+PMC3950436_01,e2,P1,F1,HAS_FINDING,"evidence_text=The patient absolutely refused any trial to insert an intravenous (IV) cannula as she had a low threshold for pain and on examination, her veins were apparently exhausted and sclerosed from chemotherapy and no vein could not be chosen to apply, EMLA cream; trigger=on examination,; certainty=asserted; char_start=702; char_end=810"
+PMC3950436_01,e3,P1,M1,TREATED_WITH,"evidence_text=Ketamine (Tekam, Hikma, Jordan) with a dose of 120 mg (3 mg/kg) diluted in 10 ml normal saline was administered through the gastrostomy tube; trigger=in 10 ml; certainty=asserted; char_start=1585; char_end=1587"
+PMC3950436_01,e4,P1,M1,TREATED_WITH,"evidence_text=, Lake Forest, IL, USA) diluted in 10 ml normal saline; trigger=in 10 ml; certainty=asserted; char_start=1784; char_end=1786"
+PMC3950436_01,e5,P1,M2,TREATED_WITH,"evidence_text=EMLA 5 g cream 5% (Astra Pharma, Inc; trigger=EMLA 5 g; certainty=asserted; char_start=1808; char_end=1812"

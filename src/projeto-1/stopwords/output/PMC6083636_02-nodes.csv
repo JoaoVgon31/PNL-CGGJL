@@ -1,0 +1,7 @@
+case_id,node_id,type,label,attributes
+PMC6083636_02,P1,Patient,patient,case_id=PMC6083636_02; article_id=PMC6083636; gender=Unknown
+PMC6083636_02,F1,Finding,blunt foveal reflex,polarity=present; certainty=confirmed
+PMC6083636_02,F2,Finding,significantly thicker macula compared age gender matched control (Figure 2),polarity=present; certainty=confirmed
+PMC6083636_02,F3,Finding,axial length case 23,polarity=present; certainty=confirmed
+PMC6083636_02,E1,Exam,Sonomed PacScan 300A biometer,
+PMC6083636_02,R1,ExamResult,thickness control,value=227; raw_text=The thickness of the control was 227
