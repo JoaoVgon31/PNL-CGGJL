@@ -1,0 +1,3 @@
+case_id,edge_id,source_id,target_id,relation,attributes
+PMC11259348_02,e1,P1,E1,UNDERWENT_EXAM,"evidence_text=Since P-negative red cells were not available, only test control was performed as follows; trigger=performed; certainty=asserted; char_start=1558; char_end=1568"
+PMC11259348_02,e2,P1,E1,UNDERWENT_EXAM,evidence_text=Procedure was performed as follows; trigger=performed; certainty=asserted; char_start=2062; char_end=2072

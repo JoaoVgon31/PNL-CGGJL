@@ -1,0 +1,14 @@
+case_id,node_id,type,label,attributes
+PMC11131390_01,P1,Patient,patient,case_id=PMC11131390_01; article_id=PMC11131390; gender=Male; age=64; age_unit=years
+PMC11131390_01,S1,Symptom,4 kg weight gain (67-71 kg),polarity=present
+PMC11131390_01,S2,Symptom,severe biochemical hypothyroidism,polarity=present
+PMC11131390_01,S3,Symptom,TSH = 73.5 microIU/L,polarity=present
+PMC11131390_01,S4,Symptom,free T4 = 0.35 ng/dL,polarity=present
+PMC11131390_01,S5,Symptom,repeatedly confirmed,polarity=present
+PMC11131390_01,S6,Symptom,TSH = 48.9 microIU/L,polarity=present
+PMC11131390_01,S7,Symptom,free T4 = 0.66 ng/dL (Figure 1),polarity=present
+PMC11131390_01,F1,Finding,mild overt hyperthyroidism: TSH = 0,source=imaging; polarity=present; certainty=confirmed
+PMC11131390_01,R1,ExamResult,TRAbs,value=3.3; interpretation=decreased; raw_text=and TRAbs was 3.3
+PMC11131390_01,R2,ExamResult,and it,value=negative; interpretation=negative; raw_text=and it was negative
+PMC11131390_01,D1,Diagnosis,diagnosis GD: TRAbs = 16,certainty=probable; polarity=present; role=principal
+PMC11131390_01,A1,AnatomicalSite,thyroid,

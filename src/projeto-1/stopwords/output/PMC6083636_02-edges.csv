@@ -1,0 +1,5 @@
+case_id,edge_id,source_id,target_id,relation,attributes
+PMC6083636_02,e1,P1,E1,UNDERWENT_EXAM,"evidence_text=Biometry, performed with a Sonomed PacScan 300A biometer, revealed and axial length in our case of 23.5 mm in both eyes; trigger=performed; certainty=asserted; char_start=1188; char_end=1224"
+PMC6083636_02,e2,P1,F1,HAS_FINDING,"evidence_text=Slit-lamp examination of the anterior segment was unremarkable, but the fundus examination revealed a blunt foveal reflex; trigger=revealed; certainty=asserted; char_start=100; char_end=121"
+PMC6083636_02,e3,P1,F2,HAS_FINDING,evidence_text=Our patient showed a significantly thicker macula when compared with an age and gender matched control (Figure 2); trigger=showed; certainty=asserted; char_start=741; char_end=835
+PMC6083636_02,e4,E1,F3,REVEALS,"evidence_text=Biometry, performed with a Sonomed PacScan 300A biometer, revealed and axial length in our case of 23.5 mm in both eyes; trigger=revealed; certainty=asserted; char_start=1235; char_end=1269"

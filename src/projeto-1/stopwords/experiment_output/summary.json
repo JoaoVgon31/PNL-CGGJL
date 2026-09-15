@@ -1,0 +1,101 @@
+[
+  {
+    "condition": "GUARDED_GLOBAL",
+    "wordlist": "custom_clinical",
+    "nodes_lost": 641,
+    "nodes_gained": 389,
+    "polarity_changed": 0,
+    "edges_lost": 664,
+    "edges_gained": 463,
+    "worst_case_id": "PMC5137649_01",
+    "worst_case_polarity_changed": 0
+  },
+  {
+    "condition": "GUARDED_GLOBAL",
+    "wordlist": "nltk_stopwords",
+    "nodes_lost": 638,
+    "nodes_gained": 387,
+    "polarity_changed": 0,
+    "edges_lost": 662,
+    "edges_gained": 462,
+    "worst_case_id": "PMC5137649_01",
+    "worst_case_polarity_changed": 0
+  },
+  {
+    "condition": "GUARDED_GLOBAL",
+    "wordlist": "spacy_stopwords",
+    "nodes_lost": 640,
+    "nodes_gained": 388,
+    "polarity_changed": 0,
+    "edges_lost": 663,
+    "edges_gained": 462,
+    "worst_case_id": "PMC5137649_01",
+    "worst_case_polarity_changed": 0
+  },
+  {
+    "condition": "GUARDED_LABEL",
+    "wordlist": "custom_clinical",
+    "nodes_lost": 494,
+    "nodes_gained": 492,
+    "polarity_changed": 0,
+    "edges_lost": 539,
+    "edges_gained": 537,
+    "worst_case_id": "PMC5137649_01",
+    "worst_case_polarity_changed": 0
+  },
+  {
+    "condition": "GUARDED_LABEL",
+    "wordlist": "nltk_stopwords",
+    "nodes_lost": 486,
+    "nodes_gained": 485,
+    "polarity_changed": 0,
+    "edges_lost": 536,
+    "edges_gained": 536,
+    "worst_case_id": "PMC5137649_01",
+    "worst_case_polarity_changed": 0
+  },
+  {
+    "condition": "GUARDED_LABEL",
+    "wordlist": "spacy_stopwords",
+    "nodes_lost": 492,
+    "nodes_gained": 490,
+    "polarity_changed": 0,
+    "edges_lost": 538,
+    "edges_gained": 536,
+    "worst_case_id": "PMC5137649_01",
+    "worst_case_polarity_changed": 0
+  },
+  {
+    "condition": "NAIVE_UNPROTECTED",
+    "wordlist": "custom_clinical",
+    "nodes_lost": 641,
+    "nodes_gained": 389,
+    "polarity_changed": 0,
+    "edges_lost": 664,
+    "edges_gained": 463,
+    "worst_case_id": "PMC5137649_01",
+    "worst_case_polarity_changed": 0
+  },
+  {
+    "condition": "NAIVE_UNPROTECTED",
+    "wordlist": "nltk_stopwords",
+    "nodes_lost": 649,
+    "nodes_gained": 398,
+    "polarity_changed": 14,
+    "edges_lost": 672,
+    "edges_gained": 472,
+    "worst_case_id": "PMC12832199_01",
+    "worst_case_polarity_changed": 3
+  },
+  {
+    "condition": "NAIVE_UNPROTECTED",
+    "wordlist": "spacy_stopwords",
+    "nodes_lost": 651,
+    "nodes_gained": 399,
+    "polarity_changed": 21,
+    "edges_lost": 675,
+    "edges_gained": 474,
+    "worst_case_id": "PMC12832199_01",
+    "worst_case_polarity_changed": 3
+  }
+]

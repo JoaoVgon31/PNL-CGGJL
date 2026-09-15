@@ -1,0 +1,14 @@
+case_id,node_id,type,label,attributes
+PMC3917415_01,P1,Patient,patient,case_id=PMC3917415_01; article_id=PMC3917415; gender=Female; age=47; age_unit=years
+PMC3917415_01,H1,History,SLE sudden onset severe headache,subject=patient; polarity=present; category=condition
+PMC3917415_01,H2,History,referred hospital,subject=patient; polarity=present; category=condition
+PMC3917415_01,F1,Finding,hypocomplementemia (complement C3: 66mg/dL,source=lab; polarity=present; certainty=confirmed
+PMC3917415_01,F2,Finding,SAH right Sylvian fissure (Figure 1a),source=imaging; polarity=present; certainty=confirmed
+PMC3917415_01,F3,Finding,fenestration M1 portion right MCA small saccular aneurysm proximal end fenestration (Figure 1c,polarity=present; certainty=confirmed
+PMC3917415_01,E1,Exam,using 1,
+PMC3917415_01,E2,Exam,(Figure 1c,abbreviation=VR
+PMC3917415_01,E3,Exam,clip neck aneurysm day,
+PMC3917415_01,D1,Diagnosis,ruptured aneurysm,certainty=probable; polarity=present; role=principal
+PMC3917415_01,A1,AnatomicalSite,kidney,
+PMC3917415_01,A2,AnatomicalSite,sylvian fissure,laterality=right
+PMC3917415_01,O1,Outcome,discharged,type=discharge; polarity=present

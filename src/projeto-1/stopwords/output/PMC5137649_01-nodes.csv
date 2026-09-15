@@ -1,0 +1,27 @@
+case_id,node_id,type,label,attributes
+PMC5137649_01,P1,Patient,patient,case_id=PMC5137649_01; article_id=PMC5137649; gender=Female; age=44; age_unit=years
+PMC5137649_01,S1,Symptom,right flank,polarity=present; duration=3 days
+PMC5137649_01,S2,Symptom,lower quadrant abdominal pain,polarity=present; duration=3 days
+PMC5137649_01,S3,Symptom,nausea,polarity=present; duration=3 days
+PMC5137649_01,S4,Symptom,constipation,polarity=present; duration=3 days
+PMC5137649_01,F1,Finding,6cm cystic lesion stomach body/tail pancreas (Fig 1),source=imaging; polarity=present; certainty=confirmed; size=6cm
+PMC5137649_01,F2,Finding,normal pancreatic echotexture cyst measuring 6cm x 9cm free internal septations associated masses (Fig 2) compressed stomach,polarity=absent; certainty=confirmed; size=6cm
+PMC5137649_01,F3,Finding,no evidence malignancy show presence extracellular mucin well carcinoembryonic antigen (CEA) level 12,polarity=absent; certainty=suspected
+PMC5137649_01,F4,Finding,tightly adherent stomach pancreas,polarity=present; certainty=confirmed
+PMC5137649_01,F5,Finding,arising posterior wall,polarity=present; certainty=confirmed
+PMC5137649_01,F6,Finding,presence intact staple line posterior stomach wall no evidence bleeding leak,source=imaging; polarity=absent; certainty=confirmed
+PMC5137649_01,F7,Finding,9,source=pathology; polarity=present; certainty=probable
+PMC5137649_01,E1,Exam,contrast enhanced computed tomography,modality=imaging; contrast=true
+PMC5137649_01,E2,Exam,EUS-FNA,
+PMC5137649_01,E3,Exam,no mucosal abnormalities stomach noted,
+PMC5137649_01,R1,ExamResult,level,"value=12,476.5; unit=ng/ml; raw_text=level of 12,476.5ng/ml"
+PMC5137649_01,D1,Diagnosis,mucinous pancreatic cystic neoplasm,certainty=suspected; polarity=absent; role=principal
+PMC5137649_01,D2,Diagnosis,9,certainty=probable; polarity=present; role=principal
+PMC5137649_01,T1,Treatment,contrast enhanced computed tomography,type=procedure; status=performed
+PMC5137649_01,T2,Treatment,EUS-FNA,type=procedure; status=performed
+PMC5137649_01,T3,Treatment,laparoscopic distal pancreatectomy,type=surgery; status=planned
+PMC5137649_01,T4,Treatment,mobilisation,type=procedure; status=converted
+PMC5137649_01,A1,AnatomicalSite,stomach,region_qualifier=posterior
+PMC5137649_01,A2,AnatomicalSite,pancreas,region_qualifier=body/tail
+PMC5137649_01,O1,Outcome,discharged,type=discharge; polarity=absent; timing=postoperative day 4; length_of_stay=postoperative day 4
+PMC5137649_01,O2,Outcome,resolution,type=resolution; polarity=present

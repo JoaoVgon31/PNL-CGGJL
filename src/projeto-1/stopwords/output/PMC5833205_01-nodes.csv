@@ -1,0 +1,17 @@
+case_id,node_id,type,label,attributes
+PMC5833205_01,P1,Patient,patient,case_id=PMC5833205_01; article_id=PMC5833205; gender=Male; age=20; age_unit=months
+PMC5833205_01,F1,Finding,shortly edema noted,polarity=present; certainty=confirmed
+PMC5833205_01,F2,Finding,boy routinely drank 28 ounces cow milk per day,polarity=present; certainty=confirmed
+PMC5833205_01,F3,Finding,albumin 1,source=lab; polarity=absent; certainty=confirmed
+PMC5833205_01,F4,Finding,grossly normal appearing mucosa lining upper lower gastrointestinal tract,source=imaging; polarity=present; certainty=confirmed
+PMC5833205_01,F5,Finding,mild increase number eosinophils gastric antrum otherwise normal-appearing mucosa without presence acute chronic inflammation esophagus,source=imaging; polarity=absent; certainty=confirmed
+PMC5833205_01,R1,ExamResult,office revealed albumin,value=1.8; unit=g/dl; interpretation=negative; raw_text=s office revealed an albumin of 1.8 g/dL
+PMC5833205_01,R2,ExamResult,hemoglobin,value=6.4; unit=mg/dl; raw_text=hemoglobin of 6.4 mg/dL
+PMC5833205_01,R3,ExamResult,dL ferritin,value=29.4; raw_text=dL and his ferritin was 29.4
+PMC5833205_01,D1,Diagnosis,microcytic anemia (hemoglobin 6,certainty=probable; polarity=present; role=principal
+PMC5833205_01,M1,Medication,to,dose_value=11.8; dose_unit=g; route=oral
+PMC5833205_01,A1,AnatomicalSite,esophagus,
+PMC5833205_01,A2,AnatomicalSite,duodenum,
+PMC5833205_01,A3,AnatomicalSite,colon,
+PMC5833205_01,A4,AnatomicalSite,rectum,
+PMC5833205_01,O1,Outcome,resolved,type=resolution; polarity=absent; timing=1 week

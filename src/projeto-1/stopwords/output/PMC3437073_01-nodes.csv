@@ -1,0 +1,18 @@
+case_id,node_id,type,label,attributes
+PMC3437073_01,P1,Patient,patient,case_id=PMC3437073_01; article_id=PMC3437073; gender=Male; age=55; age_unit=years
+PMC3437073_01,S1,Symptom,gradually increasing mass left lateral lower chest,polarity=present
+PMC3437073_01,S2,Symptom,upper abdomen period one year,polarity=present
+PMC3437073_01,H1,History,contact tuberculous patient,subject=patient; polarity=present; category=condition
+PMC3437073_01,F1,Finding,lobulated subcutaneous mass measuring 7 cm diameter,source=physical_exam; polarity=absent; certainty=confirmed; size=7 cm
+PMC3437073_01,F2,Finding,calcified lesion near hilum right lung suggestive old pulmonary tuberculosis,polarity=present; certainty=suspected
+PMC3437073_01,F3,Finding,calcified lesions left upper quadrant (Figure 1),polarity=present; certainty=confirmed
+PMC3437073_01,F4,Finding,splenic abscess communicating another subcutaneous abscess lower chest wall (Figure 2),source=imaging; polarity=present; certainty=confirmed
+PMC3437073_01,F5,Finding,characteristic tuberculoid granuloma epithelioid cells,source=imaging; polarity=present; certainty=confirmed
+PMC3437073_01,F6,Finding,good clinical progress one-year follow-up,polarity=present; certainty=confirmed
+PMC3437073_01,E1,Exam,simultaneously,
+PMC3437073_01,M1,Medication,Rifampin,dose_value=600; dose_unit=mg
+PMC3437073_01,M2,Medication,Ethambutol,dose_value=600; dose_unit=mg
+PMC3437073_01,M3,Medication,Pyrazinamide,dose_value=500; dose_unit=mg
+PMC3437073_01,A1,AnatomicalSite,spleen,
+PMC3437073_01,A2,AnatomicalSite,lung,laterality=right
+PMC3437073_01,O1,Outcome,improved,type=improvement; polarity=present

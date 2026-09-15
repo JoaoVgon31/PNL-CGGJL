@@ -1,0 +1,20 @@
+case_id,node_id,type,label,attributes
+PMC6343374_01,P1,Patient,patient,case_id=PMC6343374_01; article_id=PMC6343374; gender=Male; age=6; age_unit=days
+PMC6343374_01,F1,Finding,no pressure gradient homograft site,polarity=absent; certainty=confirmed
+PMC6343374_01,F2,Finding,progressive worsening pressure gradient across proximal right PA (peak PG 70 mmHg),polarity=present; certainty=confirmed
+PMC6343374_01,F3,Finding,almost no right PA stenosis,source=imaging; polarity=absent; certainty=confirmed
+PMC6343374_01,F4,Finding,12,polarity=present; certainty=confirmed
+PMC6343374_01,F5,Finding,no mortality among 9 patients,polarity=absent; certainty=confirmed
+PMC6343374_01,F6,Finding,minimum stent area self-expandable stent increased 33% 6 months,source=imaging; polarity=absent; certainty=confirmed
+PMC6343374_01,E1,Exam,day 6 median sternotomy,
+PMC6343374_01,E2,Exam,self-expandable stent insertion proximal side right PA 2 months surgery,
+PMC6343374_01,E3,Exam,stent removal,
+PMC6343374_01,E4,Exam,surgical removal stent,
+PMC6343374_01,D1,Diagnosis,TAC 4A,certainty=confirmed; polarity=present; role=principal
+PMC6343374_01,T1,Treatment,self-expandable stent insertion proximal side right PA 2 months surgery,type=surgery; status=performed
+PMC6343374_01,T2,Treatment,stent removal,type=procedure; status=performed
+PMC6343374_01,T3,Treatment,surgical removal stent,type=procedure; status=performed
+PMC6343374_01,M1,Medication,weighing,dose_value=2760; dose_unit=g
+PMC6343374_01,A1,AnatomicalSite,heart,
+PMC6343374_01,O1,Outcome,discharged,type=discharge; polarity=present
+PMC6343374_01,O2,Outcome,complication,type=complication; polarity=present

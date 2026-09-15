@@ -1,0 +1,8 @@
+case_id,node_id,type,label,attributes
+PMC9532611_01,P1,Patient,patient,case_id=PMC9532611_01; article_id=PMC9532611; gender=Female; age=12; age_unit=years
+PMC9532611_01,S1,Symptom,hypokalemic (1.8 mmol/l) weakness accompanied hypertension (138/94 mmHg),polarity=present
+PMC9532611_01,H1,History,hypertension,subject=patient; polarity=present; category=condition
+PMC9532611_01,H2,History,periodic paralysis,subject=patient; polarity=present; category=condition
+PMC9532611_01,F1,Finding,(Table 1),source=physical_exam; polarity=present; certainty=confirmed
+PMC9532611_01,R1,ExamResult,height,value=142; raw_text=Her height was 142
+PMC9532611_01,R2,ExamResult,age,value=4; raw_text=At the age of 4
