@@ -1,0 +1,33 @@
+case_id,node_id,type,label,attributes
+PMC5137649_01,P1,Patient,case PMC5137649_01,article_id=PMC5137649; age=44; age_unit=years; gender=Female
+PMC5137649_01,S1,Symptom,lower quadrant abdominal pain,polarity=present
+PMC5137649_01,S2,Symptom,nausea,polarity=present
+PMC5137649_01,S3,Symptom,constipation,polarity=present
+PMC5137649_01,S4,Symptom,pain,polarity=present
+PMC5137649_01,E1,Exam,contrast enhanced computed tomography,modality=imaging
+PMC5137649_01,E2,Exam,EUS-FNA,modality=endoscopy
+PMC5137649_01,E3,Exam,carcinoembryonic antigen,modality=laboratory
+PMC5137649_01,E4,Exam,carbohydrate antigen,modality=laboratory
+PMC5137649_01,E5,Exam,endoscopy,modality=endoscopy
+PMC5137649_01,E6,Exam,oesophagogastroduodenoscopy,modality=endoscopy
+PMC5137649_01,E7,Exam,pathology,modality=pathology
+PMC5137649_01,F1,Finding,cystic lesion,polarity=present; certainty=confirmed; size=6 cm
+PMC5137649_01,F2,Finding,cyst,polarity=present; certainty=confirmed; size=9.5 cm x 4.5 cm x 2.0 cm
+PMC5137649_01,F3,Finding,lesion,polarity=present; certainty=confirmed
+PMC5137649_01,F4,Finding,abnormalities,polarity=absent; certainty=confirmed
+PMC5137649_01,D1,Diagnosis,malignancy,certainty=excluded; polarity=absent; role=differential
+PMC5137649_01,D2,Diagnosis,mucinous pancreatic cystic neoplasm,certainty=suspected; polarity=present; role=differential
+PMC5137649_01,T1,Treatment,laparoscopic distal pancreatectomy,type=surgery; status=planned
+PMC5137649_01,T2,Treatment,resection,type=surgery; status=performed
+PMC5137649_01,A1,AnatomicalSite,lower quadrant,
+PMC5137649_01,A2,AnatomicalSite,stomach,
+PMC5137649_01,A3,AnatomicalSite,body/tail,
+PMC5137649_01,A4,AnatomicalSite,pancreas,
+PMC5137649_01,A5,AnatomicalSite,posterior wall of the stomach,
+PMC5137649_01,A6,AnatomicalSite,coeliac axis,
+PMC5137649_01,O1,Outcome,discharged home,type=discharge; polarity=present
+PMC5137649_01,O2,Outcome,doing well,type=improvement; polarity=present
+PMC5137649_01,O3,Outcome,without any complications,type=complication; polarity=absent
+PMC5137649_01,O4,Outcome,complete resolution,type=resolution; polarity=present
+PMC5137649_01,R1,ExamResult,12476.5 ng/mL,"value=12476.5; unit=ng/mL; raw_text=12,476.5ng/ml"
+PMC5137649_01,R2,ExamResult,6 IU/mL,value=6; unit=IU/mL; raw_text=6iu/ml

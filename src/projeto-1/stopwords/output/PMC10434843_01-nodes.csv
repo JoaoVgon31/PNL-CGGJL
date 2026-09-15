@@ -1,0 +1,20 @@
+case_id,node_id,type,label,attributes
+PMC10434843_01,P1,Patient,patient,case_id=PMC10434843_01; article_id=PMC10434843; gender=Male; age=49; age_unit=years
+PMC10434843_01,F1,Finding,no abnormalities initial treatments physiotherapy oral cortisone performed,source=imaging; polarity=absent; certainty=confirmed
+PMC10434843_01,F2,Finding,paresis dominantly right distal arm no atrophy,polarity=absent; certainty=confirmed
+PMC10434843_01,F3,Finding,deficits right side,source=imaging; polarity=present; certainty=confirmed
+PMC10434843_01,F4,Finding,normal cell count slightly increased total protein levels (603 mg/l) blood-CSF barrier dysfunction quantified albumin quotient,source=imaging; polarity=absent; certainty=confirmed
+PMC10434843_01,F5,Finding,increase activated HLA-DR expressing CD4+ cells (33,source=imaging; polarity=present; certainty=confirmed
+PMC10434843_01,F6,Finding,negative Immunoglobulin (Ig)G antibodies borderline positive result IgM antibodies GM3 GQ1b serum,polarity=present; certainty=confirmed
+PMC10434843_01,F7,Finding,motor nerve conduction block Erb's point-axilla area reduction >50% (Table 2) right ulnar nerve,source=imaging; polarity=present; certainty=confirmed
+PMC10434843_01,F8,Finding,normal values median ulnar nerve,source=imaging; polarity=present; certainty=confirmed
+PMC10434843_01,F9,Finding,normal functions,source=imaging; polarity=present; certainty=confirmed
+PMC10434843_01,F10,Finding,chronic neurogenic changes abductor pollicis brevis muscle,source=imaging; polarity=absent; certainty=confirmed
+PMC10434843_01,F11,Finding,enlargement cross-sectional areas right median nerve discontinuous swelling individual fascicles right median ulnar nerve upper arm supporting MMN-like phenotype,source=imaging; polarity=present; certainty=confirmed
+PMC10434843_01,F12,Finding,normal neurocognitive performance profile no indication autoimmune encephalitis profile,polarity=absent; certainty=confirmed
+PMC10434843_01,F13,Finding,no indication tumor,source=imaging; polarity=absent; certainty=confirmed
+PMC10434843_01,F14,Finding,signs additional deficits left side,polarity=present; certainty=confirmed
+PMC10434843_01,F15,Finding,no indication common diseases associated CASPR2 antibodies,polarity=absent; certainty=confirmed
+PMC10434843_01,A1,AnatomicalSite,brain,
+PMC10434843_01,A2,AnatomicalSite,thyroid,
+PMC10434843_01,O1,Outcome,improvement,type=improvement; polarity=absent

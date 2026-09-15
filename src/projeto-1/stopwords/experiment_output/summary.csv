@@ -1,0 +1,10 @@
+condition,wordlist,nodes_lost,nodes_gained,polarity_changed,edges_lost,edges_gained,worst_case_id,worst_case_polarity_changed
+GUARDED_GLOBAL,custom_clinical,641,389,0,664,463,PMC5137649_01,0
+GUARDED_GLOBAL,nltk_stopwords,638,387,0,662,462,PMC5137649_01,0
+GUARDED_GLOBAL,spacy_stopwords,640,388,0,663,462,PMC5137649_01,0
+GUARDED_LABEL,custom_clinical,494,492,0,539,537,PMC5137649_01,0
+GUARDED_LABEL,nltk_stopwords,486,485,0,536,536,PMC5137649_01,0
+GUARDED_LABEL,spacy_stopwords,492,490,0,538,536,PMC5137649_01,0
+NAIVE_UNPROTECTED,custom_clinical,641,389,0,664,463,PMC5137649_01,0
+NAIVE_UNPROTECTED,nltk_stopwords,649,398,14,672,472,PMC12832199_01,3
+NAIVE_UNPROTECTED,spacy_stopwords,651,399,21,675,474,PMC12832199_01,3

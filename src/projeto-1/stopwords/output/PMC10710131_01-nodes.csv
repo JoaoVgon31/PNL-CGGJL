@@ -1,0 +1,6 @@
+case_id,node_id,type,label,attributes
+PMC10710131_01,P1,Patient,patient,case_id=PMC10710131_01; article_id=PMC10710131; gender=Female; age=26; age_unit=years
+PMC10710131_01,F1,Finding,good oral hygiene normal smile line (Figs,polarity=present; certainty=confirmed
+PMC10710131_01,F2,Finding,severely vertical horizontal bone defect bladed alveolar crest (Fig,source=imaging; polarity=present; certainty=confirmed
+PMC10710131_01,E1,Exam,second bone augmentation simultaneously dental implant placement T2,
+PMC10710131_01,T1,Treatment,second bone augmentation simultaneously dental implant placement T2,type=procedure; status=performed

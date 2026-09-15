@@ -1,0 +1,44 @@
+case_id,node_id,type,label,attributes
+PMC4835621_01,P1,Patient,patient,case_id=PMC4835621_01; article_id=PMC4835621; gender=Female; age=81; age_unit=years
+PMC4835621_01,S1,Symptom,recurrent headaches daily basis,polarity=present
+PMC4835621_01,S2,Symptom,profound fatigue,polarity=present
+PMC4835621_01,S3,Symptom,malaise past month,polarity=present
+PMC4835621_01,S4,Symptom,fever,polarity=absent
+PMC4835621_01,S5,Symptom,recent change regular medications,polarity=absent
+PMC4835621_01,S6,Symptom,use herbal,polarity=absent
+PMC4835621_01,S7,Symptom,over-the-counter medications,polarity=absent
+PMC4835621_01,S8,Symptom,dietary changes,polarity=absent
+PMC4835621_01,S9,Symptom,recent travel,polarity=absent
+PMC4835621_01,S10,Symptom,recent loss weight,polarity=absent
+PMC4835621_01,S11,Symptom,night sweats,polarity=absent
+PMC4835621_01,S12,Symptom,hematuria,polarity=absent
+PMC4835621_01,S13,Symptom,diarrhea,polarity=absent
+PMC4835621_01,S14,Symptom,nausea,polarity=absent
+PMC4835621_01,S15,Symptom,vomiting,polarity=absent
+PMC4835621_01,S16,Symptom,epistaxis,polarity=absent
+PMC4835621_01,H1,History,petechial rash upper,subject=patient; polarity=present; category=condition
+PMC4835621_01,H2,History,lower extremities,subject=patient; polarity=present; category=condition
+PMC4835621_01,H3,History,significant hypertension,subject=patient; polarity=present; category=condition
+PMC4835621_01,H4,History,osteoporosis,subject=patient; polarity=present; category=condition
+PMC4835621_01,F1,Finding,no melena hematochezia found rectal exam,source=imaging; polarity=absent; certainty=confirmed
+PMC4835621_01,F2,Finding,white blood cell count 6100 per microliter 73% neutrophils,source=lab; polarity=present; certainty=confirmed
+PMC4835621_01,F3,Finding,normal creatinine liver function tests,source=imaging; polarity=present; certainty=confirmed
+PMC4835621_01,F4,Finding,slightly hypercellular marrow patient's age,source=pathology; polarity=absent; certainty=confirmed
+PMC4835621_01,F5,Finding,intraluminal thickening 3,source=imaging; polarity=present; certainty=confirmed
+PMC4835621_01,F6,Finding,unusual thickening gastric cardia hypermetabolic activity distal third esophagus,source=imaging; polarity=present; certainty=suspected
+PMC4835621_01,F7,Finding,normal esophagus erosions antrum stomach consistent gastritis,polarity=present; certainty=probable
+PMC4835621_01,F8,Finding,no significant findings,polarity=absent; certainty=confirmed
+PMC4835621_01,E1,Exam,showed intraluminal thickening 3,abbreviation=CT
+PMC4835621_01,R1,ExamResult,Noncontrast enhanced head CT,value=negative; interpretation=negative; raw_text=Noncontrast enhanced head CT was negative
+PMC4835621_01,D1,Diagnosis,TTP made patient started plasmapheresis via femoral catheter,certainty=confirmed; polarity=present; role=principal
+PMC4835621_01,D2,Diagnosis,gastritis,certainty=probable; polarity=present; role=principal
+PMC4835621_01,M1,Medication,at,dose_value=405; dose_unit=iu
+PMC4835621_01,M2,Medication,and,dose_value=302; dose_unit=iu
+PMC4835621_01,M3,Medication,versus,dose_value=182; dose_unit=iu
+PMC4835621_01,M4,Medication,from,dose_value=31.2; dose_unit=mg
+PMC4835621_01,M5,Medication,to,dose_value=99.3; dose_unit=mg
+PMC4835621_01,A1,AnatomicalSite,heart,
+PMC4835621_01,A2,AnatomicalSite,liver,
+PMC4835621_01,A3,AnatomicalSite,stomach,
+PMC4835621_01,A4,AnatomicalSite,esophagus,region_qualifier=distal
+PMC4835621_01,O1,Outcome,improvement,type=improvement; polarity=absent

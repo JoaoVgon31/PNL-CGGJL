@@ -1,0 +1,33 @@
+case_id,node_id,type,label,attributes
+PMC5137649_01,P1,Patient,case PMC5137649_01,article_id=PMC5137649; age=44; age_unit=years; gender=Female
+PMC5137649_01,S1,Symptom,right flank and lower quadrant abdominal pain,polarity=present; duration=3 days
+PMC5137649_01,S2,Symptom,nausea,polarity=present
+PMC5137649_01,S3,Symptom,constipation,polarity=present
+PMC5137649_01,E1,Exam,computed tomography,modality=imaging
+PMC5137649_01,E2,Exam,endoscopic ultrasound,modality=endoscopy; abbreviation=EUS
+PMC5137649_01,E3,Exam,fine-needle aspiration,modality=pathology; abbreviation=FNA
+PMC5137649_01,E4,Exam,endoscopy,modality=endoscopy
+PMC5137649_01,E5,Exam,a carcinoembryonic antigen,modality=laboratory
+PMC5137649_01,R1,ExamResult,12476.5 ng/ml,"value=12476.5; unit=ng/mL; raw_text=12,476.5ng/ml"
+PMC5137649_01,E6,Exam,a carbohydrate antigen 19-9,modality=laboratory
+PMC5137649_01,R2,ExamResult,6 iu/ml,value=6; unit=IU/mL; raw_text=6iu/ml
+PMC5137649_01,A1,AnatomicalSite,stomach,region_qualifier=posterior
+PMC5137649_01,A2,AnatomicalSite,pancreas,
+PMC5137649_01,F1,Finding,pancreatic echotexture and a cyst,source=pathology; polarity=present; certainty=confirmed
+PMC5137649_01,F2,Finding,fna of the cyst,source=pathology; polarity=present; certainty=confirmed
+PMC5137649_01,F3,Finding,malignancy,source=pathology; polarity=absent; certainty=confirmed
+PMC5137649_01,F4,Finding,lesion,source=lab; polarity=present; certainty=confirmed
+PMC5137649_01,F5,Finding,performed and no mucosal abnormalities,source=endoscopy; polarity=present; certainty=confirmed
+PMC5137649_01,F6,Finding,and the gastric duplication cyst,source=lab; polarity=present; certainty=confirmed
+PMC5137649_01,F7,Finding,and bleeding,source=lab; polarity=absent; certainty=confirmed
+PMC5137649_01,F8,Finding,or leak,source=lab; polarity=absent; certainty=confirmed
+PMC5137649_01,F9,Finding,cyst,source=pathology; polarity=present; certainty=confirmed; size=2.0cm
+PMC5137649_01,F10,Finding,with a smooth internal cyst,source=pathology; polarity=present; certainty=confirmed; size=2.0cm
+PMC5137649_01,D1,Diagnosis,mucinous pancreatic cystic neoplasm,certainty=suspected; polarity=present; role=principal
+PMC5137649_01,D2,Diagnosis,gdc (figs 3-5,certainty=confirmed; polarity=present; role=principal
+PMC5137649_01,M1,Medication,level of,dose_value=6; dose_unit=iu; dose_change=initial
+PMC5137649_01,T1,Treatment,laparoscopic distal pancreatectomy,type=surgery; status=planned
+PMC5137649_01,T2,Treatment,open resection,type=surgery; status=converted
+PMC5137649_01,O1,Outcome,discharged home,type=discharge; timing=postoperative day 4; length_of_stay=4 days; polarity=present
+PMC5137649_01,O2,Outcome,symptom resolution,type=resolution; polarity=present
+PMC5137649_01,O3,Outcome,complication,type=complication; timing=postoperative day 4; polarity=present

@@ -1,0 +1,15 @@
+case_id,node_id,type,label,attributes
+PMC4828947_01,P1,Patient,patient,case_id=PMC4828947_01; article_id=PMC4828947; gender=Male; age=61; age_unit=years
+PMC4828947_01,S1,Symptom,chronic drug-resistant seizures since age four,polarity=present
+PMC4828947_01,F1,Finding,no abnormalities,polarity=absent; certainty=confirmed
+PMC4828947_01,F2,Finding,cortical lesion medial superior temporal gyrus anterior left temporal lobe,source=imaging; polarity=present; certainty=confirmed
+PMC4828947_01,F3,Finding,epileptiform focus left temporal lobe,source=imaging; polarity=present; certainty=confirmed
+PMC4828947_01,F4,Finding,no elevated proliferative activity,source=imaging; polarity=absent; certainty=confirmed
+PMC4828947_01,F5,Finding,large polymorph ganglion cells fibrillary matrix glial cells perivascular lymphocytic infiltrates,polarity=present; certainty=confirmed
+PMC4828947_01,R1,ExamResult,medical history,value=negative; interpretation=negative; raw_text=The medical history was negative
+PMC4828947_01,R2,ExamResult,family history,value=negative; interpretation=negative; raw_text=The family history was negative
+PMC4828947_01,R3,ExamResult,but,value=negative; interpretation=positive; raw_text=but was negative
+PMC4828947_01,R4,ExamResult,Ki-67-staining,value=negative; interpretation=positive; raw_text=and Ki-67-staining was negative
+PMC4828947_01,D1,Diagnosis,DNET,certainty=confirmed; polarity=present; role=principal
+PMC4828947_01,M1,Medication,oxcarbazepine,dose_value=1200; dose_unit=mg
+PMC4828947_01,M2,Medication,acid,dose_value=1500; dose_unit=mg

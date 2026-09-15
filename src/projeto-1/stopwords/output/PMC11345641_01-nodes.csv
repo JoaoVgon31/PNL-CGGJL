@@ -1,0 +1,17 @@
+case_id,node_id,type,label,attributes
+PMC11345641_01,P1,Patient,patient,case_id=PMC11345641_01; article_id=PMC11345641; gender=Female; age=48; age_unit=years
+PMC11345641_01,F1,Finding,endometrial thickening 15mm,polarity=present; certainty=confirmed; size=15mm
+PMC11345641_01,F2,Finding,mass leiomyoma,source=imaging; polarity=present; certainty=confirmed
+PMC11345641_01,F3,Finding,no abnormalities,polarity=absent; certainty=confirmed
+PMC11345641_01,F4,Finding,multiple abnormal signal shadows involving vaginal stump,source=imaging; polarity=present; certainty=confirmed
+PMC11345641_01,F5,Finding,significant abdominal distention large,source=physical_exam; polarity=present; certainty=confirmed
+PMC11345641_01,F6,Finding,right colon,polarity=present; certainty=confirmed
+PMC11345641_01,E1,Exam,total laparoscopic hysterectomy,modality=imaging
+PMC11345641_01,E2,Exam,exploratory laparotomy,
+PMC11345641_01,D1,Diagnosis,uterine fibroid,certainty=probable; polarity=present; role=principal
+PMC11345641_01,A1,AnatomicalSite,uterus,
+PMC11345641_01,A2,AnatomicalSite,rectum,
+PMC11345641_01,A3,AnatomicalSite,colon,laterality=right
+PMC11345641_01,A4,AnatomicalSite,appendix,
+PMC11345641_01,O1,Outcome,improved,type=improvement; polarity=present
+PMC11345641_01,O2,Outcome,discharged,type=discharge; polarity=present

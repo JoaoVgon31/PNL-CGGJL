@@ -1,0 +1,30 @@
+case_id,node_id,type,label,attributes
+PMC7519975_01,P1,Patient,patient,case_id=PMC7519975_01; article_id=PMC7519975; gender=Female; age=33; age_unit=years
+PMC7519975_01,H1,History,diabetes mellitus insulin home,subject=patient; polarity=present; category=condition
+PMC7519975_01,H2,History,craniotomy meningioma status post ventriculoperitoneal (VP) shunt placement,subject=patient; polarity=present; category=condition
+PMC7519975_01,H3,History,presented hospital one-day,subject=patient; polarity=present; category=condition
+PMC7519975_01,H4,History,drowsiness,subject=patient; polarity=present; category=condition
+PMC7519975_01,H5,History,emesis,subject=patient; polarity=present; category=condition
+PMC7519975_01,F1,Finding,several loops small bowel right side abdomen thickening immediately adjacent VP shunt concerning inflammation bowel (Figure 1),source=imaging; polarity=present; certainty=confirmed
+PMC7519975_01,F2,Finding,areas acute infarct seen involving brain stem well cerebellar hemispheres moderate enlargement ventricular system left-sided intraventricular hemorrhage (Figures 2 3),source=imaging; polarity=present; certainty=confirmed
+PMC7519975_01,F3,Finding,mean arterial blood pressure ranging 60 65 mmHg,polarity=present; certainty=confirmed
+PMC7519975_01,F4,Finding,normal sinus rhythm no acute ST-T wave changes (Figure 4),source=imaging; polarity=absent; certainty=confirmed
+PMC7519975_01,F5,Finding,operating room staff,polarity=present; certainty=confirmed
+PMC7519975_01,F6,Finding,60 mmHg without vasopressor agents heart rate 62 bpm,polarity=absent; certainty=confirmed
+PMC7519975_01,E1,Exam,externalization VP shunt neck,
+PMC7519975_01,E2,Exam,reexploration,
+PMC7519975_01,R1,ExamResult,temperature,value=98.4; interpretation=normal; raw_text=the temperature was 98.4
+PMC7519975_01,R2,ExamResult,preoperative risk,value=3; raw_text=for preoperative risk was 3
+PMC7519975_01,R3,ExamResult,oxygen saturation,value=88; raw_text=She had an oxygen saturation of 88
+PMC7519975_01,T1,Treatment,externalization VP shunt neck,type=procedure; status=performed
+PMC7519975_01,T2,Treatment,reexploration,type=procedure; status=performed
+PMC7519975_01,M1,Medication,BUN,dose_value=17; dose_unit=mg
+PMC7519975_01,M2,Medication,creatinine,dose_value=0.4; dose_unit=mg
+PMC7519975_01,M3,Medication,glucose,dose_value=125; dose_unit=mg
+PMC7519975_01,M4,Medication,calcium,dose_value=8.2; dose_unit=mg
+PMC7519975_01,M5,Medication,transaminase,dose_value=32; dose_unit=units
+PMC7519975_01,A1,AnatomicalSite,brain,
+PMC7519975_01,A2,AnatomicalSite,heart,
+PMC7519975_01,A3,AnatomicalSite,colon,laterality=right
+PMC7519975_01,O1,Outcome,death,type=death; polarity=present; timing=30 days
+PMC7519975_01,O2,Outcome,died,type=death; polarity=present; timing=postoperative day 7

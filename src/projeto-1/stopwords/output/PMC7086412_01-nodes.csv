@@ -1,0 +1,8 @@
+case_id,node_id,type,label,attributes
+PMC7086412_01,P1,Patient,patient,case_id=PMC7086412_01; article_id=PMC7086412; gender=Female; age=25; age_unit=weeks_gestational
+PMC7086412_01,F1,Finding,standard 50-gram one-hour glucose tolerance testing (GTT) deferred favor one day monitoring fasting postprandial blood glucose levels approximately 25 weeks gestational age,polarity=present; certainty=confirmed
+PMC7086412_01,E1,Exam,pregnant,
+PMC7086412_01,E2,Exam,induction labor serial doses misoprostol followed Pitocin augmentation,modality=imaging
+PMC7086412_01,D1,Diagnosis,intrauterine fetal demise,certainty=confirmed; polarity=present; role=principal
+PMC7086412_01,T1,Treatment,induction labor serial doses misoprostol followed Pitocin augmentation,type=procedure; status=performed
+PMC7086412_01,A1,AnatomicalSite,thyroid,

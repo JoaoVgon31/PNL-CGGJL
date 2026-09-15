@@ -1,0 +1,14 @@
+case_id,node_id,type,label,attributes
+PMC4073451_01,P1,Patient,patient,case_id=PMC4073451_01; article_id=PMC4073451; gender=Female; age=14; age_unit=years
+PMC4073451_01,F1,Finding,slight swelling region right mandible intraoral examination showed no alterations oral mucosa,polarity=absent; certainty=confirmed
+PMC4073451_01,F2,Finding,hypodense expansive lesion buccal lingual cortical expansion pushed mandibular canal base,source=imaging; polarity=present; certainty=confirmed
+PMC4073451_01,F3,Finding,cystic lesion,source=pathology; polarity=present; certainty=confirmed
+PMC4073451_01,F4,Finding,small radiolucent lesion radiopaque borders region keratocystic odontogenic tumor [Figure 1b],source=imaging; polarity=present; certainty=confirmed
+PMC4073451_01,F5,Finding,hypodense lesion caused expansion cortical bone suggesting bone repair,source=imaging; polarity=present; certainty=suspected
+PMC4073451_01,F6,Finding,ascendant bifurcation mandibular canal nearly angle superior border mandible,source=imaging; polarity=present; certainty=suspected
+PMC4073451_01,E1,Exam,define extension lesion,abbreviation=CT
+PMC4073451_01,E2,Exam,local anesthesia revealing cystic lesion,
+PMC4073451_01,E3,Exam,revealed ascendant bifurcation mandibular canal nearly angle superior border mandible,
+PMC4073451_01,R1,ExamResult,April,"value=2008,; raw_text=In April of 2008,"
+PMC4073451_01,R2,ExamResult,June,"value=2009,; raw_text=In June of 2009,"
+PMC4073451_01,O1,Outcome,recurrence,type=recurrence; polarity=present

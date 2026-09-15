@@ -1,0 +1,4 @@
+case_id,node_id,type,label,attributes
+PMC11259348_01,P1,Patient,patient,case_id=PMC11259348_01; article_id=PMC11259348; gender=Female
+PMC11259348_01,R1,ExamResult,Since hemoglobin level,value=4; unit=g/dl; raw_text=Since hemoglobin level was 4 g/dL
+PMC11259348_01,D1,Diagnosis,PCH,certainty=confirmed; polarity=present; role=principal
