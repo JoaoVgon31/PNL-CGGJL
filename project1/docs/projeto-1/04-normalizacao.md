@@ -6,9 +6,9 @@
 
 ## 1. Objetivo
 
-A issue 4 exige um programa independente que receba um `case_id`, leia o relato clínico em `sample/cases.csv` e gere duas tabelas: uma de nós e outra de arestas. A característica obrigatória desta solução é uma camada explícita de normalização entre o texto extraído e o `label` final dos nós.
+A issue 4 exige um programa independente que receba um `case_id`, leia o relato clínico em `project1/sample/cases.csv` e gere duas tabelas: uma de nós e outra de arestas. A característica obrigatória desta solução é uma camada explícita de normalização entre o texto extraído e o `label` final dos nós.
 
-A implementação está em `src/projeto-1/normalizacao/` e usa regras, expressões regulares e dicionários. Modelos de linguagem não participam da extração dos dados, em conformidade com a restrição do projeto.
+A implementação está em `project1/src/projeto-1/normalizacao/` e usa regras, expressões regulares e dicionários. Modelos de linguagem não participam da extração dos dados, em conformidade com a restrição do projeto.
 
 ## 2. Principais implementações
 

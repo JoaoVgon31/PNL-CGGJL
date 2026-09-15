@@ -64,8 +64,8 @@ uma troca escondida nas regras de extração.
 | `main.py` | interface de linha de comando |
 | `requirements.txt` | dependência comparativa do NLTK |
 
-Os testes estão em `src/projeto-1/tokenizacao/tests/`. As saídas reproduzidas para
-o caso `PMC5137649_01` e para a amostra estão em `src/projeto-1/tokenizacao/output/`.
+Os testes estão em `project1/src/projeto-1/tokenizacao/tests/`. As saídas reproduzidas para
+o caso `PMC5137649_01` e para a amostra estão em `project1/src/projeto-1/tokenizacao/output/`.
 
 ## 4. O que é um token neste projeto
 
@@ -299,7 +299,7 @@ um falso positivo ou estar ligado ao exame errado. Sem uma anotação humana de
 referência não é correto chamar esses números de precisão, revocação ou F1.
 
 O relatório reproduzível completo está em
-`src/projeto-1/tokenizacao/output/sample-comparison.json`.
+`project1/src/projeto-1/tokenizacao/output/sample-comparison.json`.
 
 ### 8.3 Caso concreto `PMC5137649_01`
 
@@ -341,42 +341,42 @@ Na raiz do repositório:
 ```bash
 python3 -m venv .venv
 source .venv/bin/activate
-python3 -m pip install -r src/projeto-1/tokenizacao/requirements.txt
+python3 -m pip install -r project1/src/projeto-1/tokenizacao/requirements.txt
 ```
 
 ### 9.2 Gerar o grafo de um caso
 
 ```bash
-python3 src/projeto-1/tokenizacao/main.py \
-  --cases /home/lorhan/Git/nlp2learn/projects/2026/project1/sample/cases.csv \
+python3 project1/src/projeto-1/tokenizacao/main.py \
+  --cases project1/sample/cases.csv \
   --case-id PMC5137649_01 \
   --tokenizer clinical_regex \
-  --output src/projeto-1/tokenizacao/output
+  --output project1/src/projeto-1/tokenizacao/output
 ```
 
 ### 9.3 Comparar os três tokenizadores no caso
 
 ```bash
-python3 src/projeto-1/tokenizacao/main.py \
-  --cases /home/lorhan/Git/nlp2learn/projects/2026/project1/sample/cases.csv \
+python3 project1/src/projeto-1/tokenizacao/main.py \
+  --cases project1/sample/cases.csv \
   --case-id PMC5137649_01 \
   --compare \
-  --output src/projeto-1/tokenizacao/output
+  --output project1/src/projeto-1/tokenizacao/output
 ```
 
 ### 9.4 Avaliar toda a amostra
 
 ```bash
-python3 src/projeto-1/tokenizacao/main.py \
-  --cases /home/lorhan/Git/nlp2learn/projects/2026/project1/sample/cases.csv \
+python3 project1/src/projeto-1/tokenizacao/main.py \
+  --cases project1/sample/cases.csv \
   --evaluate-sample \
-  --output src/projeto-1/tokenizacao/output
+  --output project1/src/projeto-1/tokenizacao/output
 ```
 
 ### 9.5 Executar os testes
 
 ```bash
-python3 -m unittest discover -s src/projeto-1/tokenizacao/tests -v
+python3 -m unittest discover -s project1/src/projeto-1/tokenizacao/tests -v
 ```
 
 ## 10. Testes automatizados
