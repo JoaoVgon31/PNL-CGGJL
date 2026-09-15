@@ -1,0 +1,13 @@
+__pycache__/
+*.py[cod]
+.venv/
+
+# Materiais locais usados apenas para preparar a apresentação.
+docs/projeto-1/03-tokenizacao-roteiro-apresentacao.md
+docs/projeto-1/03-tokenizacao-caso-completo.md
+
+# Manter no PR somente as saídas que documentam o contrato e a avaliação.
+output/tokenizacao/*
+!output/tokenizacao/PMC5137649_01-nodes.csv
+!output/tokenizacao/PMC5137649_01-edges.csv
+!output/tokenizacao/sample-comparison.json
