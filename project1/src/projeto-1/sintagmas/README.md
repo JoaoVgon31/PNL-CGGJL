@@ -1,6 +1,6 @@
 # Sintagmas — POS tagging e codificação BIO
 
-Recebe um `case_id` de `sample/cases.csv` e devolve o caso anotado em CoNLL.
+Recebe um `case_id` de `project1/sample/cases.csv` e devolve o caso anotado em CoNLL.
 
 ```bash
 python3 pos_bio.py --case-id PMC5137649_01
