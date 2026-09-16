@@ -125,12 +125,16 @@ HTML/JS puro, Cytoscape.js vendorizado (um arquivo local, sem bundler nem CDN). 
 
 ## Codificação visual
 
-- Cor por tipo de nó: paleta categórica de ordem fixa, validada com `scripts/validate_palette.js`
-  do skill `dataviz` (12 categorias — as 11 entidades clínicas + `Concept` — o que passa do
-  conjunto de 8 cores validado por padrão; complementar validado à parte durante a implementação).
-  Cor nunca é o único sinal de tipo: todo nó mostra o nome do tipo no rótulo/tooltip, e `Concept`
-  (âncora de vocabulário controlado, não entidade clínica) usa uma forma distinta (losango) em vez
-  de círculo, reduzindo a dependência só de cor mesmo com 12 categorias.
+- Cor por tipo de nó: as 8 cores categóricas validadas por padrão pelo
+  `scripts/validate_palette.js` do skill `dataviz` (ordem fixa; adjacent-pair PASS em claro e
+  escuro). Para as 12 categorias reais do contrato (11 entidades clínicas + `Concept`), inventar
+  4 cores extras não passou de forma robusta na validação (ΔE de visão normal ficou na borda do
+  piso, 14–16 contra o mínimo de 15, em várias tentativas) — em vez disso, a identidade combina
+  **cor + forma**: 8 tipos com cor única (elipse), 3 tipos reaproveitam a cor de um tipo
+  clinicamente relacionado mas em forma de retângulo (`History`↔`Symptom`, `ExamResult`↔`Exam`,
+  `AnatomicalSite`↔`Finding`), e `Concept` (âncora de vocabulário controlado, não entidade
+  clínica) fica em cinza neutro + losango, fora da paleta categórica. Cor nunca é o único sinal:
+  todo nó também mostra o tipo como texto no rótulo/tooltip.
 - Arestas em cinza neutro, sem cor por relação. O nome da relação só aparece sob interação
   (hover/click) — não há legenda de cor para aresta.
 - Tema claro/escuro do site segue o esquema do sistema do professor (`prefers-color-scheme`), sem
