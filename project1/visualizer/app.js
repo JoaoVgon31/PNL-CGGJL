@@ -85,6 +85,7 @@ async function init() {
   const caseSelect = document.getElementById("case-select");
   caseSelect.addEventListener("change", onCaseChange);
   document.getElementById("drawer-close").addEventListener("click", closeDrawer);
+  initDrawerResize();
   window
     .matchMedia("(prefers-color-scheme: dark)")
     .addEventListener("change", () => {
@@ -310,6 +311,42 @@ function openDrawer(html) {
 
 function closeDrawer() {
   document.getElementById("drawer").hidden = true;
+}
+
+const DRAWER_MIN_HEIGHT = 120;
+const DRAWER_MAX_HEIGHT_RATIO = 0.7;
+
+function initDrawerResize() {
+  const handle = document.getElementById("drawer-handle");
+  const drawer = document.getElementById("drawer");
+  let dragging = false;
+  let startY = 0;
+  let startHeight = 0;
+
+  const onMove = (event) => {
+    if (!dragging) return;
+    const delta = startY - event.clientY;
+    const maxHeight = window.innerHeight * DRAWER_MAX_HEIGHT_RATIO;
+    const newHeight = Math.min(maxHeight, Math.max(DRAWER_MIN_HEIGHT, startHeight + delta));
+    drawer.style.height = `${newHeight}px`;
+  };
+
+  const stopDragging = () => {
+    if (!dragging) return;
+    dragging = false;
+    document.body.style.userSelect = "";
+  };
+
+  handle.addEventListener("mousedown", (event) => {
+    dragging = true;
+    startY = event.clientY;
+    startHeight = drawer.getBoundingClientRect().height;
+    document.body.style.userSelect = "none";
+    event.preventDefault();
+  });
+
+  window.addEventListener("mousemove", onMove);
+  window.addEventListener("mouseup", stopDragging);
 }
 
 function escapeHtml(value) {
