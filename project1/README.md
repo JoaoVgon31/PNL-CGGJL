@@ -29,7 +29,7 @@ O trabalho foi feito em duas fases:
 | Tokenização | Gabriel Lorhan Rodrigues Dourado | [#3](https://github.com/caiomelloni/PNL-CGGJL/issues/3) | Onde ficam as fronteiras dos tokens em texto clínico, como `12,476.5ng/ml`? | [`src/tokenizacao`](src/tokenizacao/) | [`docs/tokenizacao.md`](docs/tokenizacao.md) |
 | Normalização | George Henrique de Lima Sá | [#4](https://github.com/caiomelloni/PNL-CGGJL/issues/4) | Como fazer menções diferentes convergirem para o mesmo `label`? | [`src/normalizacao`](src/normalizacao/) | [`docs/normalizacao.md`](docs/normalizacao.md) |
 | Remoção de stop-words | João Vitor Gonçalves Oliveira | [#5](https://github.com/caiomelloni/PNL-CGGJL/issues/5) | A remoção deve ser feita? Se sim, onde e com qual lista? | [`src/stopwords`](src/stopwords/) | [`docs/stopwords.md`](docs/stopwords.md) |
-| Dicionários e ontologias | Lucas Guarnieri | [#6](https://github.com/caiomelloni/PNL-CGGJL/issues/6) | Como ligar menções a conceitos com código estável (MeSH)? | [`src/dicionarios`](src/dicionarios/) | [`docs/dicionarios.md`](docs/dicionarios.md) |
+| Dicionários e ontologias | Lucas Guarnieri | [#6](https://github.com/caiomelloni/PNL-CGGJL/issues/6) | Como ligar menções a conceitos com código estável — vocabulário pronto (MeSH) e vocabulário construído do zero (`AnatomicalSite`)? | [`src/dicionarios`](src/dicionarios/) | [`docs/dicionarios.md`](docs/dicionarios.md) |
 | POS tagging e sintagmas | Caio Melloni | [#9](https://github.com/caiomelloni/PNL-CGGJL/issues/9) | Como a sintaxe separa candidatos a nó (sintagmas nominais) de candidatos a aresta (verbos)? | [`src/sintagmas`](src/sintagmas/) | [`src/sintagmas/README.md`](src/sintagmas/README.md) |
 
 Em todos os parsers, toda aresta guarda o trecho do texto que a sustenta, o gatilho léxico e os offsets. Isso permite auditar cada relação no texto original — trecho de evidência localizado no `case_text` original (span exato para `combinado`/`tokenizacao`; para as demais estratégias, `evidence_text` pode ser um trecho mais amplo, por exemplo a sentença inteira em `stopwords` — a gaveta de detalhes do visualizador mostra os dois quando divergem):
@@ -59,6 +59,8 @@ FIGURE_REF → NUM_HYPHEN_WORD → NUMBER_RANGE → NUMBER → UNIT → OPERATOR
 ~~~python
 exact → longest (janela multi-palavra) → fuzzy (rapidfuzz, threshold 85, MIN_FUZZY_LENGTH = 5)
 ~~~
+
+Duas fontes de vocabulário: o MeSH, pronto, filtrado por categoria; e um gazetteer próprio para `AnatomicalSite`, construído do zero, com código interno (`ANAT001`, ...) — aqui o NER é a própria varredura do dicionário, sem gatilho léxico, já que o vocabulário é pequeno e fechado.
 
 **Sintagmas.** Um HMM bigrama de 12 etiquetas, treinado no Penn Treebank e decodificado por Viterbi, faz o POS tagging. Restrições são fixadas antes da decodificação (unidade, sigla, pontuação) e regras de reparo corrigem a sequência. Os sintagmas nominais `NP := DET? (NUM UNIT?)? MOD* NOUN+` são tipados pelo léxico e exportados em IOB2 no formato CoNLL.
 
@@ -95,6 +97,7 @@ Grafo de propriedades com 11 tipos de entidade clínica mais o nó `Concept` de 
 | spaCy | Apenas a lista `STOP_WORDS`, copiada e versionada; nenhum modelo spaCy é carregado |
 | rapidfuzz | `fuzz.ratio` no casamento aproximado contra o gazetteer |
 | MeSH 2026 (NLM) | Vocabulário controlado; gazetteer derivado com 174.006 termos em 5 categorias |
+| Gazetteer próprio (`AnatomicalSite`) | Vocabulário construído à mão, 50 conceitos, sem fonte externa — código interno (`ANAT001`, ...) |
 | Mermaid | Esquema do grafo e visualização do grafo de cada caso nos slides |
 | Cytoscape.js + GitHub Pages | Visualizador interativo do grafo de conhecimento por caso, publicado via GitHub Actions ([`project1/visualizer/`](visualizer/)) |
 | `unittest` | Suítes automatizadas (151 testes na normalização, 14 na tokenização, 15 em `project1/tools/` para o visualizador) |
@@ -132,7 +135,9 @@ Esses números medem rendimento estrutural, não precisão: sem anotação human
 
 Desses resultados, nota-se que NAIVE_UNPROTECTED sem aplicar proteção gera inversão de polaridade, 14 nós com nltk e 21 nós com spacy, devido a diferenças no conjunto de palavras. Já o NAIVE_UNPROTECTED com lista custom_clinical apresenta os mesmos resultados que GUARDED_GLOBAL com lista custom_clinical, pois com lista customizada a proteção se torna redundante. No geral apesar dos casos de GUARDED_GLOBAL e até mesmo NAIVE_UNPROTECTED com lista customizada não apresentarem inversão de polaridade, destaca-se aqui a diferença entre nós/arestas perdidos e nós/arestas ganhos, que ocorre pois termos como `with`, `of` e `to` ficam fora da proteção e eles são importantes como gatilhos de entidades em frases, definindo uma relação no grafo. Enfim, ao analisar GUARDED_LABEL vemos que esses valores são muito mais próximos entre eles, isso porque a aplicação do stop-words aqui ocorre direto na label, portanto um nó removido deveria ter um equivalente sem o stop-word adicionado novamente. E entre os três casos de testes, o de melhor resultado foi usando nltk em que as arestas são equivalentes e teve um nó perdido, que na verdade foi uma deduplicação.
 
-**Dicionários: quase metade das entidades ligáveis ganhou código.** 139 de 288 (48,3%) geraram `SAME_AS`, com 135 nós `Concept`. Na validação cruzada com os `mesh_terms` do artigo, `Diagnosis`, `Treatment` e `Exam` têm sobreposição de 8–17%, e `Symptom` e `History` ficam em 0%, o que confirma que o MeSH do artigo indexa o tema, não cada sintoma. Ao construir o gazetteer anatômico, encontramos um falso positivo sistemático do fuzzy match em chaves curtas (`"had"` ≈ `"head"`, 85,7), corrigido com um comprimento mínimo de 5 caracteres.
+**Dicionários: quase metade das entidades ligáveis ganhou código.** 122 de 270 (45,2%) geraram `SAME_AS`, com 119 nós `Concept`. Na validação cruzada com os `mesh_terms` do artigo, `Diagnosis`, `Treatment` e `Exam` têm sobreposição de 8–17%, e `Symptom` e `History` ficam em 0%, o que confirma que o MeSH do artigo indexa o tema, não cada sintoma. Há ambiguidade real no vocabulário: a chave `"anemia hypoplastic congenital"` aponta para dois conceitos MeSH distintos (`D029502`/`D029503`), resolvida preferindo o termo cujo nome oficial bate exatamente com a chave.
+
+> **Gazetteer de `AnatomicalSite` (ainda não versionado).** Rende +18 nós, +18 `SAME_AS`, 100% de cobertura nessa categoria — esperado, já que o NER dela é a própria varredura do dicionário. Ao construí-lo, encontramos um falso positivo sistemático do fuzzy match em chaves curtas (`"had"` ≈ `"head"`, 85,7), corrigido com um comprimento mínimo de 5 caracteres — a correção também eliminou um falso positivo equivalente já existente em `Medication`.
 
 **Normalização.** Em `PMC5137649_01`, 40 menções geraram 33 chaves brutas e 32 nós finais: 7 rótulos mudaram e 1 par de nós foi fundido. A inspeção revelou erros que continuam em aberto, como negação não capturada em *"no mucosal abnormalities"* e a medida `9.5cm x 4.5cm x 2.0cm` reduzida a `2.0cm`.
 
@@ -144,7 +149,7 @@ Desses resultados, nota-se que NAIVE_UNPROTECTED sem aplicar proteção gera inv
 
 Modelos de linguagem **não** foram usados na extração de entidades, relações ou atributos, conforme a restrição do enunciado: todos os parsers são baseados em regras, regex, léxicos e dicionários.
 
-Eles foram usados como assistentes de programação e de documentação. O histórico do repositório registra commits coautorados por Claude (Sonnet 5 e Opus 5).
+Eles foram usados como assistentes de programação e de documentação, e também para pesquisa na internet — no parser de dicionários, para levantar os termos de licença do MeSH e as referências de terminologia anatômica usadas na curadoria do gazetteer próprio de `AnatomicalSite`. O histórico do repositório registra commits coautorados por Claude (Sonnet 5 e Opus 5).
 
 ## Referências Bibliográficas
 
