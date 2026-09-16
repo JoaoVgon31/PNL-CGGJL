@@ -53,7 +53,7 @@ body {
   gap: 8px;
 }
 
-.case-picker input {
+.case-picker select {
   padding: 6px 10px;
   border: 1px solid var(--border);
   border-radius: 4px;

@@ -83,12 +83,7 @@ async function init() {
   state.manifest = await fetchJson(`${DATA_BASE}/manifest.json`);
   populateCaseOptions();
   const caseSelect = document.getElementById("case-select");
-  // "change" sozinho é pouco confiável para <input list>: em vários
-  // navegadores só dispara após o input perder o foco. "input" dispara
-  // assim que uma opção do datalist é escolhida (ou o texto passa a bater
-  // exatamente com um case_id), então cobrimos os dois.
   caseSelect.addEventListener("change", onCaseChange);
-  caseSelect.addEventListener("input", onCaseChange);
   document.getElementById("drawer-close").addEventListener("click", closeDrawer);
   window
     .matchMedia("(prefers-color-scheme: dark)")
@@ -105,12 +100,13 @@ async function init() {
 }
 
 function populateCaseOptions() {
-  const datalist = document.getElementById("case-options");
-  datalist.innerHTML = "";
+  const select = document.getElementById("case-select");
+  select.innerHTML = "";
   for (const entry of state.manifest.cases) {
     const option = document.createElement("option");
     option.value = entry.case_id;
-    datalist.appendChild(option);
+    option.textContent = entry.case_id;
+    select.appendChild(option);
   }
 }
 
