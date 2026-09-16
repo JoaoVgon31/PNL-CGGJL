@@ -67,6 +67,10 @@ function edgeLabelColor() {
   return prefersDark() ? "#b0b0b0" : "#666666";
 }
 
+function surfaceColor() {
+  return prefersDark() ? "#232322" : "#ffffff";
+}
+
 async function fetchJson(path) {
   const response = await fetch(path);
   if (!response.ok) {
@@ -78,7 +82,13 @@ async function fetchJson(path) {
 async function init() {
   state.manifest = await fetchJson(`${DATA_BASE}/manifest.json`);
   populateCaseOptions();
-  document.getElementById("case-select").addEventListener("change", onCaseChange);
+  const caseSelect = document.getElementById("case-select");
+  // "change" sozinho é pouco confiável para <input list>: em vários
+  // navegadores só dispara após o input perder o foco. "input" dispara
+  // assim que uma opção do datalist é escolhida (ou o texto passa a bater
+  // exatamente com um case_id), então cobrimos os dois.
+  caseSelect.addEventListener("change", onCaseChange);
+  caseSelect.addEventListener("input", onCaseChange);
   document.getElementById("drawer-close").addEventListener("click", closeDrawer);
   window
     .matchMedia("(prefers-color-scheme: dark)")
@@ -106,6 +116,7 @@ function populateCaseOptions() {
 
 async function onCaseChange(event) {
   const caseId = event.target.value.trim();
+  if (caseId === state.currentCase) return;
   const known = state.manifest.cases.some((entry) => entry.case_id === caseId);
   if (!known) return;
   try {
@@ -132,18 +143,15 @@ async function loadCase(caseId) {
 function renderTabs() {
   const nav = document.getElementById("tabs");
   nav.innerHTML = "";
-  for (const key of STRATEGY_ORDER) {
-    const available = Boolean(state.currentCasePayload.graphs[key]);
+  const availableKeys = STRATEGY_ORDER.filter((key) => state.currentCasePayload.graphs[key]);
+  for (const key of availableKeys) {
     const button = document.createElement("button");
     button.textContent = STRATEGY_LABELS[key];
     button.className = "tab";
-    button.disabled = !available;
     button.setAttribute("role", "tab");
     button.dataset.strategy = key;
     button.setAttribute("aria-selected", "false");
-    if (available) {
-      button.addEventListener("click", () => selectStrategy(key));
-    }
+    button.addEventListener("click", () => selectStrategy(key));
     nav.appendChild(button);
   }
 }
@@ -204,6 +212,10 @@ function renderGraph(graph) {
           color: (el) => labelColor(),
           "text-valign": "bottom",
           "text-margin-y": 4,
+          "text-background-color": (el) => surfaceColor(),
+          "text-background-opacity": 0.85,
+          "text-background-shape": "roundrectangle",
+          "text-background-padding": "2px",
         },
       },
       {
@@ -217,6 +229,11 @@ function renderGraph(graph) {
           label: "data(relation)",
           "font-size": 7,
           color: (el) => edgeLabelColor(),
+          "text-rotation": "autorotate",
+          "text-background-color": (el) => surfaceColor(),
+          "text-background-opacity": 0.85,
+          "text-background-shape": "roundrectangle",
+          "text-background-padding": "2px",
         },
       },
       {
@@ -224,7 +241,27 @@ function renderGraph(graph) {
         style: { display: "none" },
       },
     ],
-    layout: { name: "cose", animate: false },
+    layout: {
+      name: "cose",
+      animate: false,
+      fit: true,
+      padding: 30,
+      randomize: true,
+      // Sem isso, o layout mede só o círculo/retângulo do nó (28x28) e
+      // ignora o texto abaixo dele (menção + tipo, 2 linhas) — os nós não
+      // se sobrepõem, mas os rótulos sim.
+      nodeDimensionsIncludeLabels: true,
+      idealEdgeLength: 120,
+      nodeRepulsion: 12000,
+      nodeOverlap: 20,
+      edgeElasticity: 100,
+      nestingFactor: 5,
+      gravity: 50,
+      numIter: 2000,
+      initialTemp: 250,
+      coolingFactor: 0.95,
+      minTemp: 1.0,
+    },
   });
 
   state.cy.on("tap", "node", (event) => showNodeDetails(event.target.data()));

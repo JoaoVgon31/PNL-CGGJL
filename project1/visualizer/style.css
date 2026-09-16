@@ -157,6 +157,14 @@ body {
   text-align: center;
 }
 
+/* Sem isso, o display:flex acima vence o "display:none" padrão do atributo
+   hidden (CSS de autor tem prioridade sobre CSS de user-agent, mesmo com
+   especificidade "igual") — o elemento fica sempre visível e cobrindo #cy
+   inteiro, interceptando todo clique destinado ao grafo. */
+.empty-state[hidden] {
+  display: none;
+}
+
 .drawer {
   border-top: 1px solid var(--border);
   max-height: 40vh;
