@@ -8,7 +8,7 @@ const NODE_STYLE = {
   Exam: { color: "#1baf7a", colorDark: "#199e70", shape: "ellipse" },
   Finding: { color: "#eda100", colorDark: "#c98500", shape: "ellipse" },
   Diagnosis: { color: "#e87ba4", colorDark: "#d55181", shape: "ellipse" },
-  Treatment: { color: "#008300", colorDark: "#008300", shape: "ellipse" },
+  Treatment: { color: "#008300", colorDark: "#4caf50", shape: "ellipse" },
   Medication: { color: "#4a3aa7", colorDark: "#9085e9", shape: "ellipse" },
   Outcome: { color: "#e34948", colorDark: "#e66767", shape: "ellipse" },
   History: { color: "#eb6834", colorDark: "#d95926", shape: "rectangle" },
@@ -59,6 +59,14 @@ function nodeShape(type) {
   return style ? style.shape : "ellipse";
 }
 
+function labelColor() {
+  return prefersDark() ? "#f0f0f0" : "#1a1a1a";
+}
+
+function edgeLabelColor() {
+  return prefersDark() ? "#b0b0b0" : "#666666";
+}
+
 async function fetchJson(path) {
   const response = await fetch(path);
   if (!response.ok) {
@@ -100,7 +108,12 @@ async function onCaseChange(event) {
   const caseId = event.target.value.trim();
   const known = state.manifest.cases.some((entry) => entry.case_id === caseId);
   if (!known) return;
-  await loadCase(caseId);
+  try {
+    await loadCase(caseId);
+  } catch (error) {
+    console.error(error);
+    showEmptyState(true, "Erro ao carregar caso: " + error.message);
+  }
 }
 
 async function loadCase(caseId) {
@@ -182,13 +195,13 @@ function renderGraph(graph) {
         style: {
           "background-color": (el) => nodeColor(el.data("type")),
           shape: (el) => nodeShape(el.data("type")),
-          label: "data(label)",
+          label: (el) => `${el.data("label")}\n(${el.data("type")})`,
           "font-size": 9,
           "text-wrap": "wrap",
-          "text-max-width": "80px",
+          "text-max-width": "100px",
           width: 28,
           height: 28,
-          color: "#1a1a1a",
+          color: (el) => labelColor(),
           "text-valign": "bottom",
           "text-margin-y": 4,
         },
@@ -203,7 +216,7 @@ function renderGraph(graph) {
           "curve-style": "bezier",
           label: "data(relation)",
           "font-size": 7,
-          color: "#666666",
+          color: (el) => edgeLabelColor(),
         },
       },
       {
@@ -285,10 +298,44 @@ function showNodeDetails(data) {
   `);
 }
 
+function getEvidenceSpanInfo(attrs, caseText) {
+  const start = Number.parseInt(attrs.char_start, 10);
+  const end = Number.parseInt(attrs.char_end, 10);
+  const hasSpan =
+    Boolean(caseText) &&
+    start >= 0 &&
+    Number.isFinite(start) &&
+    Number.isFinite(end) &&
+    end > start &&
+    end <= caseText.length;
+
+  if (!hasSpan) {
+    return { hasSpan: false, matchesEvidenceText: false };
+  }
+
+  const spanText = caseText.slice(start, end);
+  const evidenceText = attrs.evidence_text || "";
+  const matchesEvidenceText = spanText.trim() === evidenceText.trim();
+  return { hasSpan: true, start, end, matchesEvidenceText };
+}
+
 function showEdgeDetails(data) {
   const attrs = data.attributes || {};
+  const caseText = state.currentCasePayload.case_text;
+  const spanInfo = getEvidenceSpanInfo(attrs, caseText);
+  // Só escondemos evidence_text da tabela quando ela é redundante com o trecho
+  // destacado abaixo (combinado/tokenizacao). Quando o span diverge de
+  // evidence_text (ex.: stopwords, onde o offset é da menção mas
+  // evidence_text é a sentença inteira), mantemos a linha visível — nada fica
+  // escondido.
+  const hideEvidenceText = spanInfo.hasSpan && spanInfo.matchesEvidenceText;
+
   const rows = Object.entries(attrs)
-    .filter(([key]) => !["evidence_text", "char_start", "char_end"].includes(key))
+    .filter(([key]) => {
+      if (key === "char_start" || key === "char_end") return false;
+      if (key === "evidence_text") return !hideEvidenceText;
+      return true;
+    })
     .map(([key, value]) => `<tr><th>${escapeHtml(key)}</th><td>${escapeHtml(value)}</td></tr>`)
     .join("");
 
@@ -296,24 +343,22 @@ function showEdgeDetails(data) {
     <h2>${escapeHtml(data.relation)}</h2>
     <table class="attr-table"><tbody>${rows}</tbody></table>
     <h3>Evidência</h3>
-    ${buildEvidenceHtml(attrs)}
+    ${buildEvidenceHtml(attrs, caseText, spanInfo)}
   `);
 }
 
-function buildEvidenceHtml(attrs) {
-  const caseText = state.currentCasePayload.case_text;
-  const start = Number.parseInt(attrs.char_start, 10);
-  const end = Number.parseInt(attrs.char_end, 10);
-  const hasSpan =
-    caseText && Number.isFinite(start) && Number.isFinite(end) && end > start && end <= caseText.length;
-
-  if (!hasSpan) {
-    return `<p class="evidence-snippet">"${escapeHtml(attrs.evidence_text || "")}"</p>`;
+function buildEvidenceHtml(attrs, caseText, spanInfo) {
+  if (!spanInfo.hasSpan) {
+    const evidenceText = attrs.evidence_text || "";
+    if (!evidenceText) {
+      return `<p class="evidence-snippet">Aresta sem evidência textual (normalização).</p>`;
+    }
+    return `<p class="evidence-snippet">"${escapeHtml(evidenceText)}"</p>`;
   }
 
-  const before = escapeHtml(caseText.slice(0, start));
-  const span = escapeHtml(caseText.slice(start, end));
-  const after = escapeHtml(caseText.slice(end));
+  const before = escapeHtml(caseText.slice(0, spanInfo.start));
+  const span = escapeHtml(caseText.slice(spanInfo.start, spanInfo.end));
+  const after = escapeHtml(caseText.slice(spanInfo.end));
   return `<p class="case-text">${before}<mark id="evidence-mark">${span}</mark>${after}</p>`;
 }
 
