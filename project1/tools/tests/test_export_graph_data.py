@@ -8,6 +8,7 @@ from pathlib import Path
 sys.path.insert(0, str(Path(__file__).resolve().parent.parent))
 
 from export_graph_data import build_case_payload, build_manifest, discover_cases, export_all
+from graph_csv import EDGE_COLUMNS, NODE_COLUMNS
 
 
 def _write_csv(path: Path, columns: tuple, rows: list[dict]) -> None:
@@ -16,10 +17,6 @@ def _write_csv(path: Path, columns: tuple, rows: list[dict]) -> None:
         writer = csv.DictWriter(handle, fieldnames=columns)
         writer.writeheader()
         writer.writerows(rows)
-
-
-NODE_COLUMNS = ("case_id", "node_id", "type", "label", "attributes")
-EDGE_COLUMNS = ("case_id", "edge_id", "source_id", "target_id", "relation", "attributes")
 
 
 def _write_case_graph(directory: Path, case_id: str) -> None:
