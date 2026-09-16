@@ -1,0 +1,35 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Visualizador de Grafos — PNL-CGGJL</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <header class="topbar">
+    <h1>Grafo de Conhecimento — Casos Clínicos</h1>
+    <div class="case-picker">
+      <label for="case-select">Caso</label>
+      <input id="case-select" list="case-options" placeholder="Buscar case_id…" autocomplete="off">
+      <datalist id="case-options"></datalist>
+    </div>
+  </header>
+
+  <nav class="tabs" id="tabs" role="tablist" aria-label="Estratégia"></nav>
+
+  <main class="canvas-wrap">
+    <div id="cy"></div>
+    <aside class="legend" id="legend" aria-label="Legenda e filtro de tipos"></aside>
+    <p class="empty-state" id="empty-state" hidden></p>
+  </main>
+
+  <section class="drawer" id="drawer" hidden>
+    <button class="drawer-close" id="drawer-close" aria-label="Fechar detalhes">×</button>
+    <div class="drawer-body" id="drawer-body"></div>
+  </section>
+
+  <script src="vendor/cytoscape.min.js"></script>
+  <script src="app.js"></script>
+</body>
+</html>
