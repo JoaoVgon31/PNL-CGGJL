@@ -4,6 +4,12 @@
 
 [Apresentação do Projeto 1 (PDF)](assets/slides/CGGJL.pdf)
 
+## Visualizador
+
+[Grafos interativos por caso](https://caiomelloni.github.io/PNL-CGGJL/) — combinado e
+por estratégia, com auditoria de evidência contra o `case_text` original
+([`project1/visualizer/`](visualizer/)).
+
 ## Metodologia
 
 O projeto converte o `case_text` de cada caso clínico da amostra do MultiCaRe (56 casos de 50 artigos) em um grafo representado por duas tabelas: nós (`case_id`, `node_id`, `type`, `label`, `attributes`) e arestas (`case_id`, `edge_id`, `source_id`, `target_id`, `relation`, `attributes`). Nenhum modelo de linguagem participa da extração: só regras, expressões regulares, léxicos e dicionários.
