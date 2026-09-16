@@ -214,6 +214,9 @@ function renderGraph(graph) {
     layout: { name: "cose", animate: false },
   });
 
+  state.cy.on("tap", "node", (event) => showNodeDetails(event.target.data()));
+  state.cy.on("tap", "edge", (event) => showEdgeDetails(event.target.data()));
+
   renderLegend(graph.nodes);
 }
 
@@ -269,6 +272,49 @@ function escapeHtml(value) {
     .replaceAll("<", "&lt;")
     .replaceAll(">", "&gt;")
     .replaceAll('"', "&quot;");
+}
+
+function showNodeDetails(data) {
+  const rows = Object.entries(data.attributes || {})
+    .map(([key, value]) => `<tr><th>${escapeHtml(key)}</th><td>${escapeHtml(value)}</td></tr>`)
+    .join("");
+  openDrawer(`
+    <h2>${escapeHtml(data.type)}</h2>
+    <p class="drawer-label">${escapeHtml(data.label)}</p>
+    <table class="attr-table"><tbody>${rows}</tbody></table>
+  `);
+}
+
+function showEdgeDetails(data) {
+  const attrs = data.attributes || {};
+  const rows = Object.entries(attrs)
+    .filter(([key]) => !["evidence_text", "char_start", "char_end"].includes(key))
+    .map(([key, value]) => `<tr><th>${escapeHtml(key)}</th><td>${escapeHtml(value)}</td></tr>`)
+    .join("");
+
+  openDrawer(`
+    <h2>${escapeHtml(data.relation)}</h2>
+    <table class="attr-table"><tbody>${rows}</tbody></table>
+    <h3>Evidência</h3>
+    ${buildEvidenceHtml(attrs)}
+  `);
+}
+
+function buildEvidenceHtml(attrs) {
+  const caseText = state.currentCasePayload.case_text;
+  const start = Number.parseInt(attrs.char_start, 10);
+  const end = Number.parseInt(attrs.char_end, 10);
+  const hasSpan =
+    caseText && Number.isFinite(start) && Number.isFinite(end) && end > start && end <= caseText.length;
+
+  if (!hasSpan) {
+    return `<p class="evidence-snippet">"${escapeHtml(attrs.evidence_text || "")}"</p>`;
+  }
+
+  const before = escapeHtml(caseText.slice(0, start));
+  const span = escapeHtml(caseText.slice(start, end));
+  const after = escapeHtml(caseText.slice(end));
+  return `<p class="case-text">${before}<mark id="evidence-mark">${span}</mark>${after}</p>`;
 }
 
 init().catch((error) => {
