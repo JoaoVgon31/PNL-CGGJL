@@ -12,12 +12,10 @@ on:
 
 permissions:
   contents: read
-  pages: write
-  id-token: write
 
 concurrency:
   group: pages
-  cancel-in-progress: true
+  cancel-in-progress: false
 
 jobs:
   build:
@@ -29,6 +27,9 @@ jobs:
           python-version: "3.11"
       - name: Gerar dados do visualizador
         run: python3 project1/tools/export_graph_data.py
+      - name: Verifica que o manifesto não está vazio
+        run: |
+          python3 -c "import json,sys; m=json.load(open('project1/visualizer/data/manifest.json')); sys.exit(0 if m['cases'] else 1)"
       - uses: actions/upload-pages-artifact@v3
         with:
           path: project1/visualizer
@@ -36,6 +37,9 @@ jobs:
   deploy:
     needs: build
     runs-on: ubuntu-latest
+    permissions:
+      pages: write
+      id-token: write
     environment:
       name: github-pages
       url: ${{ steps.deployment.outputs.page_url }}
