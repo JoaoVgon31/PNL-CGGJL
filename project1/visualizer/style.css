@@ -107,6 +107,8 @@ body {
   position: absolute;
   top: 12px;
   right: 12px;
+  width: 190px;
+  box-sizing: border-box;
   display: flex;
   flex-direction: column;
   gap: 4px;
@@ -116,6 +118,15 @@ body {
   border-radius: 6px;
   max-height: 60vh;
   overflow-y: auto;
+  /* Sem largura fixa, uma caixa overflow:auto com largura "shrink-to-fit"
+     pode entrar num ciclo: a barra de rolagem (que ocupa espaço de verdade
+     no Windows, ao contrário do macOS) estreita o conteúdo, o texto quebra
+     diferente, a altura muda, e isso liga/desliga a rolagem repetidamente —
+     visto como um "piscar". scrollbar-gutter reserva o espaço da barra
+     sempre, mesmo sem overflow, então a largura útil do conteúdo nunca
+     muda — o ciclo não tem como começar.
+   */
+  scrollbar-gutter: stable;
   font-size: 12px;
 }
 
@@ -170,6 +181,7 @@ body {
   min-height: 120px;
   max-height: 70vh;
   overflow-y: auto;
+  scrollbar-gutter: stable;
   padding: 4px 16px 12px;
   background: var(--surface);
 }
