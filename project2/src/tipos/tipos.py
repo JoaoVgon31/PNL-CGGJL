@@ -3,6 +3,7 @@
     python project2/src/tipos/tipos.py resumo        # menções por tipo no silver e no gabarito
     python project2/src/tipos/tipos.py treinar       # regressão logística no silver
     python project2/src/tipos/tipos.py tipar [--modo M] [--entrada CSV]   # gera mencoes_tipadas.csv
+    python project2/src/tipos/tipos.py comparar      # os 4 modos no gabarito -> data/resultados/tipos*.csv
 
 Recebe a tabela de menções da etapa 2 (case_id, id, start, end, texto) e completa cada linha
 com tipo, mesh e confiança. O classificador vê três coisas de cada menção: os N-gramas de
@@ -25,7 +26,7 @@ from sklearn.pipeline import Pipeline
 
 # Entregas de outras etapas ainda em mock: troque estes imports quando #29 e #32 publicarem.
 from mock import avaliar as avaliacao
-from mock.comum import DADOS_MOCK, REPO, ler_casos
+from mock.comum import DADOS_MOCK, REPO, casos_gold, ler_casos
 from mock.silver import ler_silver
 
 import lexico
@@ -33,6 +34,7 @@ import lexico
 GOLD = DADOS_MOCK / "gold" / "mencoes.csv"
 MENCOES = REPO / "project2" / "data" / "mencoes.csv"
 TIPADAS = REPO / "project2" / "data" / "mencoes_tipadas.csv"
+RESULTADOS = REPO / "project2" / "data" / "resultados"
 MODELO = REPO / "project2" / "models" / "tipos" / "classificador.pkl"
 TIPOS = ("Symptom", "History", "Exam", "ExamResult", "Finding",
          "Diagnosis", "Medication", "Treatment", "Outcome", "AnatomicalSite")
@@ -230,6 +232,60 @@ def gravar_tipadas(linhas: list[dict], caminho: Path = TIPADAS) -> None:
         writer.writerows(linhas)
 
 
+# ================================================================== comparação ==
+def _gravar_csv(caminho: Path, linhas: list[dict]) -> None:
+    caminho.parent.mkdir(parents=True, exist_ok=True)
+    with open(caminho, "w", encoding="utf-8", newline="") as handle:
+        writer = csv.DictWriter(handle, fieldnames=list(linhas[0]))
+        writer.writeheader()
+        writer.writerows(linhas)
+
+
+def comparar() -> list[dict]:
+    """Retreina e mede os 4 modos no gabarito, em duas entradas:
+
+    gabarito  as fronteiras do gabarito: mede só a tipagem (casamento exato, os pares são perfeitos)
+    crf       as menções da etapa 2 (data/mencoes.csv): ponta a ponta, exato e por sobreposição
+
+    Grava em data/resultados/: tipos.csv (uma linha por sistema), tipos_confusao.csv e
+    tipos_por_mencao.csv (o tipo de cada modo lado a lado, nas fronteiras do gabarito).
+    """
+    print("treino:", treinar())
+    textos = ler_casos()
+    gold = ler_mencoes(GOLD)
+    entradas = {"gabarito": (gold, (True,))}
+    if MENCOES.is_file():
+        ids = casos_gold()
+        entradas["crf"] = ([m for m in ler_mencoes(MENCOES) if m["case_id"] in ids], (True, False))
+    else:
+        print(f"{MENCOES.relative_to(REPO)} não existe: rode `entidades.py prever` para a linha ponta a ponta")
+
+    linhas, confusao, por_modo = [], [], {}
+    for entrada, (mencoes, casamentos) in entradas.items():
+        for modo in MODOS:
+            tipadas = tipar(mencoes, textos, modo)
+            if entrada == "gabarito":
+                por_modo[modo] = tipadas
+            for exato in casamentos:
+                m = avaliacao.avaliar_tipos(tipadas, gold, exato)
+                casamento = "exato" if exato else "sobreposicao"
+                linhas.append({"sistema": modo, "entrada": entrada, "casamento": casamento,
+                               "cobertura": round(m["cobertura"], 4), "acuracia": round(m["acuracia"], 4),
+                               "macro_f1": round(m["macro_f1"], 4), "n_pred": m["n_pred"], "n_gold": m["n_gold"],
+                               **{f"f1_{t}": round(m["por_tipo"][t]["f1"], 4) for t in TIPOS if t in m["por_tipo"]}})
+                confusao += [{"sistema": modo, "entrada": entrada, "casamento": casamento,
+                              "gold": g, "previsto": p or "(sem tipo)", "n": n}
+                             for (g, p), n in sorted(m["confusao"].items())]
+
+    lado_a_lado = [{"case_id": g["case_id"], "start": g["start"], "end": g["end"], "texto": g["texto"],
+                    "gabarito": g["tipo"], **{modo: por_modo[modo][k]["tipo"] for modo in MODOS}}
+                   for k, g in enumerate(gold)]
+    _gravar_csv(RESULTADOS / "tipos.csv", linhas)
+    _gravar_csv(RESULTADOS / "tipos_confusao.csv", confusao)
+    _gravar_csv(RESULTADOS / "tipos_por_mencao.csv", lado_a_lado)
+    return linhas
+
+
 def main() -> None:
     parser = argparse.ArgumentParser(description=__doc__.splitlines()[0])
     sub = parser.add_subparsers(dest="comando", required=True)
@@ -240,6 +296,7 @@ def main() -> None:
     p_tipar.add_argument("--entrada", type=Path, default=MENCOES,
                          help="tabela de menções (padrão: saída da etapa 2; use o gabarito para as fronteiras dele)")
     p_tipar.add_argument("--saida", type=Path, default=TIPADAS)
+    sub.add_parser("comparar", help="retreina e mede os 4 modos no gabarito; grava data/resultados/tipos*.csv")
     args = parser.parse_args()
 
     if args.comando == "resumo":
@@ -256,6 +313,11 @@ def main() -> None:
         gravar_tipadas(linhas, args.saida)
         fontes = Counter(linha["fonte"] or "sem tipo" for linha in linhas)
         print(f"{args.saida}: {len(linhas)} menções, {dict(fontes)}")
+    else:
+        print(f"{'sistema':22}{'entrada':10}{'casamento':14}{'cobertura':>10}{'acuracia':>10}{'macro_f1':>10}")
+        for linha in comparar():
+            print(f"{linha['sistema']:22}{linha['entrada']:10}{linha['casamento']:14}"
+                  f"{linha['cobertura']:>10.2f}{linha['acuracia']:>10.2f}{linha['macro_f1']:>10.2f}")
 
 
 if __name__ == "__main__":
