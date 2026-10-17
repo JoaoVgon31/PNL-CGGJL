@@ -1,6 +1,5 @@
 # Guia Rápido de Anotação Manual do Gabarito Ouro (Gold Standard)
 
-**Projeto 2 · Processamento de Linguagem Natural (MC896 / 2026.2)**  
 Este guia estabelece os critérios padronizados de anotação manual para os casos clínicos de teste do **Projeto 2**. Todas as estações utilizam este gabarito como verdade fundamental (*Ground Truth*).
 
 ---
