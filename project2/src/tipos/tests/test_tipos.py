@@ -3,6 +3,8 @@ import sys
 import unittest
 from pathlib import Path
 
+import numpy as np
+
 MODULO = Path(__file__).resolve().parents[1]
 sys.path.insert(0, str(MODULO))
 import lexico  # noqa: E402
@@ -80,6 +82,34 @@ class AvaliarTests(unittest.TestCase):
         self.assertEqual(avaliar.avaliar_tipos(pred, self.GOLD[:1], exato=True)["acuracia"], 0.0)
         m = avaliar.avaliar_tipos(pred, self.GOLD[:1], exato=False)
         self.assertEqual((m["acuracia"], m["por_tipo"]["Symptom"]["precisao"]), (1.0, 0.5))
+
+
+class ClassificadorTests(unittest.TestCase):
+    TEXTO = "She presented with nausea and constipation."
+
+    def test_contexto_marca_o_lado(self):
+        mencao = {"case_id": "c", "start": 19, "end": 25, "texto": "nausea"}
+        linha = tipos.pistas([mencao], {"c": self.TEXTO}).iloc[0]
+        self.assertEqual(linha["mencao"], "nausea")
+        self.assertEqual(linha["contexto"], "E:she E:presented E:with D:and D:constipation")
+
+    def test_separar_nao_divide_um_caso(self):
+        linhas = [{"case_id": f"c{k % 7}"} for k in range(30)]
+        treino, validacao = tipos.separar(linhas)
+        self.assertFalse({x["case_id"] for x in treino} & {x["case_id"] for x in validacao})
+        self.assertEqual(len(treino) + len(validacao), 30)
+
+    def test_limiar_deixa_sem_tipo(self):
+        probabilidades = np.array([[0.7, 0.3], [0.45, 0.55]])
+        self.assertEqual(tipos.aplicar_limiar(probabilidades, ["Exam", "Symptom"], 0.6),
+                         [("Exam", 0.7), ("", 0.55)])
+
+    def test_classificador_aprende_com_o_contexto(self):
+        mencoes = [{"case_id": "c", "start": 19, "end": 25, "texto": "nausea", "tipo": "Symptom"},
+                   {"case_id": "c", "start": 30, "end": 42, "texto": "constipation", "tipo": "Finding"}]
+        clf = tipos.novo_classificador(1.0, None).fit(tipos.pistas(mencoes, {"c": self.TEXTO}),
+                                                      [m["tipo"] for m in mencoes])
+        self.assertEqual(list(clf.predict(tipos.pistas(mencoes, {"c": self.TEXTO}))), ["Symptom", "Finding"])
 
 
 if __name__ == "__main__":
