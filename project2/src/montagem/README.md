@@ -1,6 +1,5 @@
 # Montagem · Estação 5: Dados, Avaliação e Montagem
 
-**Projeto 2 · Processamento de Linguagem Natural (MC896 / 2026.2)**  
 Módulo responsável pelo hub de dados de treino/validação/teste (*Silver Standard*), curadoria do gabarito ouro (*Gold Standard*), métrica comum de avaliação experimental e esteira de clustering hierárquico e montagem do grafo clínico consolidado por caso.
 
 ---
