@@ -30,3 +30,11 @@ sample/
 .superpowers/
 project1/visualizer/data/
 .vscode/
+
+# Projeto 2 · saídas geradas pelos scripts (ver o README de cada módulo)
+project2/models/
+project2/data/mock/silver/
+project2/data/mock/regras/
+project2/data/mock/termos.csv
+project2/data/mencoes.csv
+project2/data/resultados/
