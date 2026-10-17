@@ -7,6 +7,7 @@ MODULO = Path(__file__).resolve().parents[1]
 sys.path.insert(0, str(MODULO))
 import lexico  # noqa: E402
 import tipos  # noqa: E402
+from mock import avaliar  # noqa: E402
 from mock.comum import casos_gold  # noqa: E402
 from mock.silver import SILVER, ler_silver  # noqa: E402
 
@@ -54,6 +55,31 @@ class LimpezaTests(unittest.TestCase):
         limpas = tipos.limpar_silver(linhas)
         self.assertEqual([(x["start"], x["end"], x["texto"]) for x in limpas],
                          [(100, 108, "Rifampin"), (300, 306, "nausea")])
+
+
+def _m(inicio, fim, tipo, caso="c"):
+    return {"case_id": caso, "start": inicio, "end": fim, "tipo": tipo}
+
+
+class AvaliarTests(unittest.TestCase):
+    GOLD = [_m(0, 5, "Symptom"), _m(10, 15, "Exam"), _m(20, 25, "Exam"), _m(30, 35, "Finding")]
+
+    def test_metricas_contadas_a_mao(self):
+        pred = [_m(0, 5, "Symptom"), _m(10, 15, "Exam"), _m(20, 25, "Finding"), _m(30, 35, ""),
+                _m(40, 45, "Exam")]  # a última não está no gabarito (falso positivo da etapa 2)
+        m = avaliar.avaliar_tipos(pred, self.GOLD)
+        self.assertEqual((m["cobertura"], m["acuracia"]), (0.75, 0.5))
+        self.assertEqual(m["por_tipo"]["Exam"]["precisao"], 0.5)   # 1 acerto em 2 Exam preditos
+        self.assertEqual(m["por_tipo"]["Exam"]["revocacao"], 0.5)  # 1 acerto em 2 Exam no gabarito
+        self.assertEqual(m["por_tipo"]["Finding"]["f1"], 0.0)
+        self.assertAlmostEqual(m["macro_f1"], (1.0 + 0.5 + 0.0) / 3)
+        self.assertEqual(m["confusao"][("Finding", "")], 1)
+
+    def test_sobreposicao_pareia_um_para_um(self):
+        pred = [_m(0, 3, "Symptom"), _m(2, 5, "Symptom")]
+        self.assertEqual(avaliar.avaliar_tipos(pred, self.GOLD[:1], exato=True)["acuracia"], 0.0)
+        m = avaliar.avaliar_tipos(pred, self.GOLD[:1], exato=False)
+        self.assertEqual((m["acuracia"], m["por_tipo"]["Symptom"]["precisao"]), (1.0, 0.5))
 
 
 if __name__ == "__main__":
