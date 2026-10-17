@@ -4,7 +4,7 @@ Este módulo gerencia a partição dos casos clínicos, a geração de dados por
 
 ---
 
-## 🚀 Como Executar
+## Como Executar
 
 ### 1. Partição Determinística de Casos (`splits.py`)
 Gera a divisão reprodutível dos 56 casos clínicos da amostra com garantia de **zero data leakage** ($\text{Treino} \cap \text{Val} = \text{Treino} \cap \text{Teste} = \emptyset$):
