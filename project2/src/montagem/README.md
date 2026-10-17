@@ -5,7 +5,7 @@ Módulo responsável pelo hub de dados de treino/validação/teste (*Silver Stan
 
 ---
 
-## 📁 Estrutura do Pacote
+## Estrutura do Pacote
 
 - `data/`: partição determinística de casos (`splits.py`), supervisão fraca (`weak_supervision.py`) e consolidação do gabarito ouro (`gold_manager.py`);
 - `evaluation/`: framework de métricas formais de avaliação (`metrics.py`) e CLI unificado para todas as estações (`evaluate.py`);
@@ -15,7 +15,7 @@ Módulo responsável pelo hub de dados de treino/validação/teste (*Silver Stan
 
 ---
 
-## 🚀 Execução
+## Execução
 
 A partir da raiz do repositório:
 
@@ -45,7 +45,7 @@ python -m project2.src.montagem.evaluation.evaluate --compare
 
 ---
 
-## 🧪 Testes Automatizados
+## Testes Automatizados
 
 Para executar os 23 testes unitários do módulo:
 
