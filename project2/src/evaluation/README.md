@@ -4,7 +4,7 @@ Este módulo é o **árbitro experimental oficial** do Projeto 2. Ele implementa
 
 ---
 
-## 🚀 Como Avaliar Cada Estação
+## Como Avaliar Cada Estação
 
 Cada membro do grupo avalia suas predições contra o gabarito ouro usando um único comando:
 
@@ -31,7 +31,7 @@ python -m project2.src.evaluation.evaluate --task relations --pred caminho/para/
 
 ---
 
-## 🏆 Confronto Experimental Oficial (Projeto 1 vs. Projeto 2)
+## Confronto Experimental Oficial (Projeto 1 vs. Projeto 2)
 
 Para comparar o ganho dos modelos de Machine Learning sobre as regras do Projeto 1:
 
