@@ -1,9 +1,0 @@
-case_id,edge_id,source_id,target_id,relation,attributes
-PMC11783470_01,e1,E5,F1,REVEALS,certainty=asserted
-PMC11783470_01,e2,F1,D1,SUPPORTS,certainty=asserted
-PMC11783470_01,e3,F1,D3,SUPPORTS,certainty=asserted
-PMC11783470_01,e4,F1,D2,SUPPORTS,certainty=asserted
-PMC11783470_01,e5,F1,D4,SUPPORTS,certainty=asserted
-PMC11783470_01,e6,E5,C1,SAME_AS,
-PMC11783470_01,e7,M1,C2,SAME_AS,
-PMC11783470_01,e8,M2,C3,SAME_AS,

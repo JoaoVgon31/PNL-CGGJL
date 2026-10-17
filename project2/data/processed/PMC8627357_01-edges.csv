@@ -1,3 +1,0 @@
-case_id,edge_id,source_id,target_id,relation,attributes
-PMC8627357_01,e1,E1,C1,SAME_AS,
-PMC8627357_01,e2,F1,C2,SAME_AS,

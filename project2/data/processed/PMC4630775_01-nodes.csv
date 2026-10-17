@@ -1,9 +1,0 @@
-case_id,node_id,type,label,attributes
-PMC4630775_01,S1,Symptom,desquamation,mentions=t9
-PMC4630775_01,S2,Symptom,palm,mentions=t10
-PMC4630775_01,S3,Symptom,leathery appearance,mentions=t11
-PMC4630775_01,S4,Symptom,skin,mentions=t12
-PMC4630775_01,S5,Symptom,right dorsal hand,mentions=t13
-PMC4630775_01,S6,Symptom,circumferential forearm,mentions=t14
-PMC4630775_01,S7,Symptom,frank ischemia,mentions=t15
-PMC4630775_01,S8,Symptom,thumb,mentions=t16

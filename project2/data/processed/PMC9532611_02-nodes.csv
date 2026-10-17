@@ -1,5 +1,0 @@
-case_id,node_id,type,label,attributes
-PMC9532611_02,A1,AnatomicalSite,bone age,mentions=t11
-PMC9532611_02,P1,Patient,P,mentions=t61
-PMC9532611_02,P2,Patient,CA,mentions=t111
-PMC9532611_02,T1,Treatment,child underwent surgical exploration,mentions=t21

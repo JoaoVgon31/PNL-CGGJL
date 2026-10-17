@@ -1,9 +1,0 @@
-case_id,node_id,type,label,attributes
-PMC11259348_01,E1,Exam,having positive Donath-Landsteiner test,mentions=t6
-PMC11259348_01,E2,Exam,hemoglobin level,mentions=t7
-PMC11259348_01,S1,Symptom,fever,mentions=t2
-PMC11259348_01,S2,Symptom,loose stools,mentions=t3
-PMC11259348_01,S3,Symptom,dark color urine,mentions=t4
-PMC11259348_01,S4,Symptom,PCH,mentions=t5
-PMC11259348_01,T1,Treatment,each blood transfusion,mentions=t16
-PMC11259348_01,C1,Concept,each blood transfusion,code=D001803

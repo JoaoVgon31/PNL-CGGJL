@@ -1,9 +1,0 @@
-case_id,node_id,type,label,attributes
-PMC7086412_01,A1,AnatomicalSite,thyroid stimulating hormone,mentions=t46
-PMC7086412_01,A2,AnatomicalSite,fetal head,mentions=t83|t90|t108
-PMC7086412_01,D1,Diagnosis,intrauterine fetal demise,mentions=t9|t39
-PMC7086412_01,D2,Diagnosis,American Diabetes Association,mentions=t61|t63
-PMC7086412_01,E1,Exam,No prepregnancy hemoglobin A1c,mentions=t30|t31|t45|t60|t64
-PMC7086412_01,E2,Exam,complete blood count,mentions=t41
-PMC7086412_01,P1,Patient,s,mentions=t119
-PMC7086412_01,C1,Concept,intrauterine fetal demise,code=D005313

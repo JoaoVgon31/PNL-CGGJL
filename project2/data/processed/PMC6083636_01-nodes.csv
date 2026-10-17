@@ -1,5 +1,0 @@
-case_id,node_id,type,label,attributes
-PMC6083636_01,S1,Symptom,glasses,mentions=t23
-PMC6083636_01,S2,Symptom,age,mentions=t24
-PMC6083636_01,S3,Symptom,poor vision,mentions=t25
-PMC6083636_01,S4,Symptom,RE,mentions=t29

@@ -1,4 +1,0 @@
-case_id,edge_id,source_id,target_id,relation,attributes
-PMC7086412_01,e1,P1,D1,DIAGNOSED_WITH,certainty=asserted
-PMC7086412_01,e2,P1,E1,UNDERWENT_EXAM,certainty=asserted
-PMC7086412_01,e3,D1,C1,SAME_AS,
