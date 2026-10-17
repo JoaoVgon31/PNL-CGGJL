@@ -19,3 +19,6 @@ Este diretório reúne os relatórios técnicos e a documentação interna da ar
   4. **Qualidade de Código e Testes Automatizados** (23 testes unitários)
   5. **Resultados Quantitativos e Métricas Experimentais**
   6. **Conclusões e Próximos Passos**
+
+* **[Guia Rápido de Anotação Manual do Gabarito Ouro](guia-anotacao.md)**  
+  Critérios oficiais de fronteira de menções, classes clínicas, polaridade, certeza e formato de entrega para o gabarito ouro da equipe.

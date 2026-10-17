@@ -51,6 +51,8 @@ Processou os 56 casos clínicos combinando o analisador sintático com HMM (`pos
 * **Mocks Universais:** `entidades.csv`, `entidades_tipadas.csv` e `relacoes.csv` consolidando os dados silver para permitir desacoplamento total da equipe.
 
 ### 2.3. Gestão e Validação do Gabarito Ouro (`gold_manager.py`)
+* **Lista de Casos do Gabarito (`casos.txt`):** Disponibilizado em `project2/data/gold/casos.txt` com a relação explícita dos 8 casos de teste que **nunca** devem entrar no treino dos modelos de ML.
+* **Guia de Anotação Oficial:** Elaborado o [`guia-anotacao.md`](guia-anotacao.md) (1 página) com as regras padronizadas de boundaries, classes, polaridade e certeza para a equipe.
 * **Starter Packs:** Gerou em `project2/data/gold/cases/<case_id>/` o texto bruto com guias e CSVs pré-preenchidos a partir do *silver* para os 8 casos de teste, evitando anotação manual de offsets do zero.
 * **Validador Estrito:** Audita automaticamente se `case_text[char_start:char_end] == texto`, valida se os IDs de origem e destino das relações existem em entidades e checa o vocabulário restrito de tipos, relações, polaridade e certeza.
 * **Curadoria:** Foram auditados e curados com 100% de conformidade (0 erros) os dois casos atribuídos ao George:
@@ -67,6 +69,12 @@ Processou os 56 casos clínicos combinando o analisador sintático com HMM (`pos
 * **Normalização e Extração de Atributos:** Normalização Unicode NFKC, strip de determinantes iniciais e extração de medidas em atributos estruturados (ex: `6cm cystic lesion` $\rightarrow$ label `cystic lesion`, atributo `size=6 cm`).
 * **Clustering de Menções Coreferentes:** Vetorização por TF-IDF de N-gramas de caracteres (`char_wb`, n-grams 2 a 4) combinada com *stem matching*. Menções do mesmo tipo clínico são agrupadas hierarquicamente (Union-Find conexo) em um único nó canônico, preservando os identificadores originais no atributo `mentions=t2|t7`.
 * **Construção do Grafo:** Atribuição de identificadores canônicos (`P1`, `S1`, `E1`...), instanciação de nós `Concept` (`C1`, `C2`...) apenas para códigos MeSH válidos, e mapeamento de arestas clínicas traduzindo IDs de entidades para IDs de nós (removendo auto-loops e duplicatas).
+
+### 2.6. Documentação Descentralizada dos Submódulos
+Para atender aos critérios da issue e facilitar o uso independente por outros membros da equipe:
+* [`project2/src/data/README.md`](../data/README.md): Instruções de splits, geração do silver v0 e auditoria do gabarito.
+* [`project2/src/evaluation/README.md`](../evaluation/README.md): Guia com os comandos exatos de avaliação para cada membro (Caio, Lucas e João).
+* [`project2/src/assembly/README.md`](../assembly/README.md): Instruções de execução do pipeline de montagem e consolidação de grafos.
 
 ---
 
