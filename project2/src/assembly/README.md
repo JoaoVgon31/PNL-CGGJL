@@ -4,7 +4,7 @@ Este módulo implementa a consolidação, agrupamento hierárquico e montagem em
 
 ---
 
-## 🚀 Como Executar
+## Como Executar
 
 ### 1. Montagem em Lote dos Grafos Clínicos (`pipeline.py`)
 
@@ -25,7 +25,7 @@ python -m project2.src.assembly.pipeline \
 
 ---
 
-## 📁 Arquivos Gerados em `project2/data/processed/`
+## Arquivos Gerados em `project2/data/processed/`
 
 * `<case_id>-nodes.csv`: Nós consolidados e deduplicados por similaridade de N-gramas (TF-IDF + Jaro-Winkler), com dimensões clínicas extraídas em atributos estruturados (ex: `size=6 cm`, `mentions=t2|t5`).
 * `<case_id>-edges.csv`: Relações clínicas entre entidades mapeadas para nós canônicos, com polaridade e certeza.
