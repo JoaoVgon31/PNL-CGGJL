@@ -2,6 +2,7 @@
 
     python project2/src/tipos/tipos.py resumo        # menções por tipo no silver e no gabarito
     python project2/src/tipos/tipos.py treinar       # regressão logística no silver
+    python project2/src/tipos/tipos.py tipar [--modo M] [--entrada CSV]   # gera mencoes_tipadas.csv
 
 Recebe a tabela de menções da etapa 2 (case_id, id, start, end, texto) e completa cada linha
 com tipo, mesh e confiança. O classificador vê três coisas de cada menção: os N-gramas de
@@ -30,12 +31,22 @@ from mock.silver import ler_silver
 import lexico
 
 GOLD = DADOS_MOCK / "gold" / "mencoes.csv"
+MENCOES = REPO / "project2" / "data" / "mencoes.csv"
+TIPADAS = REPO / "project2" / "data" / "mencoes_tipadas.csv"
 MODELO = REPO / "project2" / "models" / "tipos" / "classificador.pkl"
 TIPOS = ("Symptom", "History", "Exam", "ExamResult", "Finding",
          "Diagnosis", "Medication", "Treatment", "Outcome", "AnatomicalSite")
 CONTEXTO = 3  # palavras de cada lado
 GRADE = [(c, peso) for c in (0.3, 1.0, 3.0, 10.0) for peso in (None, "balanced")]
 LIMIARES = [k / 20 for k in range(0, 20)]
+# Quem dá o tipo em cada sistema comparado; o código (mesh) vem sempre do léxico.
+MODOS = {
+    "lexico": "só o léxico",
+    "lexico+classificador": "o léxico; o classificador tipa o que o léxico não conhece",
+    "ambiguas": "como o anterior, mas o classificador decide também em diseases/drugs do MeSH",
+    "classificador": "só o classificador",
+}
+COLUNAS = ["case_id", "id", "start", "end", "texto", "tipo", "mesh", "confianca", "fonte"]
 
 
 # ======================================================================= dados ==
@@ -182,11 +193,53 @@ def classificar(mencoes: list[dict], textos: dict[str, str]) -> list[tuple[str, 
     return aplicar_limiar(clf.predict_proba(pistas(mencoes, textos)), clf.classes_, salvo["limiar"])
 
 
+# =================================================================== tipagem ==
+def tipar(mencoes: list[dict], textos: dict[str, str], modo: str = "lexico+classificador") -> list[dict]:
+    """As mesmas menções com tipo, mesh, confianca e fonte (lexico | classificador | "").
+
+    O léxico responde com confiança 1. No modo `ambiguas`, se o classificador ficar abaixo do limiar
+    numa menção de categoria ambígua, o tipo do léxico é mantido: a variante não perde cobertura.
+    """
+    if modo not in MODOS:
+        raise ValueError(f"modo {modo!r}; use um de {sorted(MODOS)}")
+    respostas = [lexico.consultar(m["texto"]) for m in mencoes]
+    saida = [{**m, "tipo": r.tipo, "mesh": r.mesh, "confianca": 1.0 if r.tipo else 0.0,
+              "fonte": "lexico" if r.tipo else ""} for m, r in zip(mencoes, respostas)]
+    if modo == "lexico":
+        return saida
+
+    def precisa(r: lexico.Resposta) -> bool:
+        if modo == "classificador":
+            return True
+        return not r.tipo or (modo == "ambiguas" and r.categoria in lexico.AMBIGUAS)
+
+    indices = [k for k, r in enumerate(respostas) if precisa(r)]
+    for k, (tipo, confianca) in zip(indices, classificar([mencoes[k] for k in indices], textos)):
+        if tipo:
+            saida[k].update(tipo=tipo, confianca=round(confianca, 4), fonte="classificador")
+        elif modo == "classificador":
+            saida[k].update(tipo="", confianca=round(confianca, 4), fonte="")
+    return saida
+
+
+def gravar_tipadas(linhas: list[dict], caminho: Path = TIPADAS) -> None:
+    caminho.parent.mkdir(parents=True, exist_ok=True)
+    with open(caminho, "w", encoding="utf-8", newline="") as handle:
+        writer = csv.DictWriter(handle, fieldnames=COLUNAS, extrasaction="ignore")
+        writer.writeheader()
+        writer.writerows(linhas)
+
+
 def main() -> None:
     parser = argparse.ArgumentParser(description=__doc__.splitlines()[0])
     sub = parser.add_subparsers(dest="comando", required=True)
     sub.add_parser("resumo", help="menções por tipo no silver (antes e depois da limpeza) e no gabarito")
     sub.add_parser("treinar", help="treina a regressão logística no silver")
+    p_tipar = sub.add_parser("tipar", help="completa uma tabela de menções com tipo e mesh")
+    p_tipar.add_argument("--modo", choices=sorted(MODOS), default="lexico+classificador")
+    p_tipar.add_argument("--entrada", type=Path, default=MENCOES,
+                         help="tabela de menções (padrão: saída da etapa 2; use o gabarito para as fronteiras dele)")
+    p_tipar.add_argument("--saida", type=Path, default=TIPADAS)
     args = parser.parse_args()
 
     if args.comando == "resumo":
@@ -196,6 +249,13 @@ def main() -> None:
             print(f"{chave:16}" + "".join(f"{tabela[nome][chave]:>10}" for nome in tabela))
     elif args.comando == "treinar":
         print(treinar())
+    elif args.comando == "tipar":
+        if not args.entrada.is_file():
+            raise SystemExit(f"{args.entrada} não existe: rode `entidades.py prever` ou passe --entrada")
+        linhas = tipar(ler_mencoes(args.entrada), ler_casos(), args.modo)
+        gravar_tipadas(linhas, args.saida)
+        fontes = Counter(linha["fonte"] or "sem tipo" for linha in linhas)
+        print(f"{args.saida}: {len(linhas)} menções, {dict(fontes)}")
 
 
 if __name__ == "__main__":

@@ -2,6 +2,7 @@
 import sys
 import unittest
 from pathlib import Path
+from unittest import mock as patch
 
 import numpy as np
 
@@ -110,6 +111,44 @@ class ClassificadorTests(unittest.TestCase):
         clf = tipos.novo_classificador(1.0, None).fit(tipos.pistas(mencoes, {"c": self.TEXTO}),
                                                       [m["tipo"] for m in mencoes])
         self.assertEqual(list(clf.predict(tipos.pistas(mencoes, {"c": self.TEXTO}))), ["Symptom", "Finding"])
+
+
+class TiparTests(unittest.TestCase):
+    """O classificador é trocado por um falso que diz Finding (0.9) a tudo, menos a `xyzzy` (sem tipo)."""
+    TEXTO = "nausea, xyzzy, rifampin and cystic lesion"
+    MENCOES = [{"case_id": "c", "id": "m1", "start": 0, "end": 6, "texto": "nausea"},
+               {"case_id": "c", "id": "m2", "start": 8, "end": 13, "texto": "xyzzy"},
+               {"case_id": "c", "id": "m3", "start": 15, "end": 23, "texto": "rifampin"}]
+
+    @staticmethod
+    def _falso(mencoes, textos):
+        return [("", 0.1) if m["texto"] == "xyzzy" else ("Finding", 0.9) for m in mencoes]
+
+    def _tipos(self, modo):
+        with patch.patch.object(tipos, "classificar", side_effect=self._falso):
+            return [(x["tipo"], x["fonte"]) for x in tipos.tipar(self.MENCOES, {"c": self.TEXTO}, modo)]
+
+    def test_lexico(self):
+        self.assertEqual(self._tipos("lexico"), [("Symptom", "lexico"), ("", ""), ("Medication", "lexico")])
+
+    def test_classificador_so_no_que_o_lexico_nao_conhece(self):
+        # xyzzy: o classificador ficou abaixo do limiar, então segue sem tipo.
+        self.assertEqual(self._tipos("lexico+classificador"),
+                         [("Symptom", "lexico"), ("", ""), ("Medication", "lexico")])
+
+    def test_ambiguas_passam_pelo_classificador(self):
+        # rifampin é `drugs` no MeSH (categoria ambígua): o classificador decide.
+        self.assertEqual(self._tipos("ambiguas"),
+                         [("Symptom", "lexico"), ("", ""), ("Finding", "classificador")])
+
+    def test_so_classificador(self):
+        self.assertEqual(self._tipos("classificador"),
+                         [("Finding", "classificador"), ("", ""), ("Finding", "classificador")])
+
+    def test_mesh_vem_sempre_do_lexico(self):
+        with patch.patch.object(tipos, "classificar", side_effect=self._falso):
+            linhas = tipos.tipar(self.MENCOES, {"c": self.TEXTO}, "classificador")
+        self.assertEqual(linhas[0]["mesh"], "D009325")
 
 
 if __name__ == "__main__":
