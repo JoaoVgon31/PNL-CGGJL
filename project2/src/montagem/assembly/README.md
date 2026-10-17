@@ -1,4 +1,4 @@
-# Módulo de Montagem do Grafo Final (`project2/src/assembly/`)
+# Módulo de Montagem do Grafo Final (`project2/src/montagem/assembly/`)
 
 Este módulo implementa a consolidação, agrupamento hierárquico e montagem em lote dos grafos clínicos do Projeto 2.
 
@@ -11,12 +11,12 @@ Este módulo implementa a consolidação, agrupamento hierárquico e montagem em
 Para processar todos os 56 casos da amostra e gerar os nós e arestas canônicos:
 
 ```bash
-python -m project2.src.assembly.pipeline
+python -m project2.src.montagem.assembly.pipeline
 ```
 
 ### 2. Opções Customizadas do CLI
 ```bash
-python -m project2.src.assembly.pipeline \
+python -m project2.src.montagem.assembly.pipeline \
     --entities project2/data/silver/entidades_tipadas.csv \
     --relations project2/data/silver/relacoes.csv \
     --output project2/data/processed \

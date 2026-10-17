@@ -23,13 +23,13 @@ from typing import Any, Dict, List, Optional, Set, Tuple
 import pandas as pd
 
 # Garante acesso aos modulos do projeto 1
-REPO_ROOT = Path(__file__).resolve().parents[3]
+REPO_ROOT = Path(__file__).resolve().parents[4]
 SINTAGMAS_DIR = REPO_ROOT / "project1" / "src" / "sintagmas"
 if str(SINTAGMAS_DIR) not in sys.path:
     sys.path.insert(0, str(SINTAGMAS_DIR))
 
 try:
-    import pos_bio
+    import pos_bio  # type: ignore
 except ImportError:
     pos_bio = None
 

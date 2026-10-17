@@ -16,7 +16,7 @@ from typing import Any, Dict, List, Optional, Set, Tuple
 
 import pandas as pd
 
-from project2.src.assembly.clustering import (
+from project2.src.montagem.assembly.clustering import (
     HierarchicalMentionClusterer,
     extract_attributes_from_mention,
 )

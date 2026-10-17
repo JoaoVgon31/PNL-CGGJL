@@ -3,16 +3,16 @@
 
 Uso:
   # Avaliar deteccao de entidades (Estacao 2 - Caio)
-  python -m project2.src.evaluation.evaluate --task entities --pred entidades.csv --gold gold_entidades.csv
+  python -m project2.src.montagem.evaluation.evaluate --task entities --pred entidades.csv --gold gold_entidades.csv
 
   # Avaliar classificacao de tipos e MeSH (Estacao 3 - Lucas)
-  python -m project2.src.evaluation.evaluate --task types --pred entidades_tipadas.csv --gold gold_entidades.csv
+  python -m project2.src.montagem.evaluation.evaluate --task types --pred entidades_tipadas.csv --gold gold_entidades.csv
 
   # Avaliar extracao de relacoes e negacao (Estacao 4 - Joao)
-  python -m project2.src.evaluation.evaluate --task relations --pred relacoes.csv --gold gold_relacoes.csv
+  python -m project2.src.montagem.evaluation.evaluate --task relations --pred relacoes.csv --gold gold_relacoes.csv
 
   # Confronto Experimental: Comparar P2 vs P1 (Regra 5)
-  python -m project2.src.evaluation.evaluate --task entities --pred entidades_p2.csv --baseline entidades_p1.csv --gold gold_entidades.csv
+  python -m project2.src.montagem.evaluation.evaluate --task entities --pred entidades_p2.csv --baseline entidades_p1.csv --gold gold_entidades.csv
 """
 
 from __future__ import annotations
@@ -29,7 +29,7 @@ if hasattr(sys.stdout, "reconfigure"):
 
 import pandas as pd
 
-from project2.src.evaluation.metrics import (
+from project2.src.montagem.evaluation.metrics import (
     compare_experiments,
     evaluate_entities,
     evaluate_relations,

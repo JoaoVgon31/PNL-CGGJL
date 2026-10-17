@@ -8,7 +8,7 @@ from pathlib import Path
 
 import pandas as pd
 
-from project2.src.data.weak_supervision import (
+from project2.src.montagem.data.weak_supervision import (
     WeakSupervisionGenerator,
     clean_entity_text_and_offsets,
     parse_attributes,

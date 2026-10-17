@@ -78,5 +78,5 @@ Para cada caso em `project2/data/gold/cases/<case_id>/`:
    ```
 Valide seus arquivos executando o consolidador oficial:
 ```bash
-python -m project2.src.data.gold_manager
+python -m project2.src.montagem.data.gold_manager
 ```

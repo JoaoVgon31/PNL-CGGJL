@@ -72,9 +72,10 @@ Processou os 56 casos clínicos combinando o analisador sintático com HMM (`pos
 
 ### 2.6. Documentação Descentralizada dos Submódulos
 Para atender aos critérios da issue e facilitar o uso independente por outros membros da equipe:
-* [`project2/src/data/README.md`](../data/README.md): Instruções de splits, geração do silver v0 e auditoria do gabarito.
-* [`project2/src/evaluation/README.md`](../evaluation/README.md): Guia com os comandos exatos de avaliação para cada membro (Caio, Lucas e João).
-* [`project2/src/assembly/README.md`](../assembly/README.md): Instruções de execução do pipeline de montagem e consolidação de grafos.
+* [`project2/src/montagem/README.md`](../README.md): Visão geral do módulo da Estação 5.
+* [`project2/src/montagem/data/README.md`](../data/README.md): Instruções de splits, geração do silver v0 e auditoria do gabarito.
+* [`project2/src/montagem/evaluation/README.md`](../evaluation/README.md): Guia com os comandos exatos de avaliação para cada membro (Caio, Lucas e João).
+* [`project2/src/montagem/assembly/README.md`](../assembly/README.md): Instruções de execução do pipeline de montagem e consolidação de grafos.
 
 ---
 
@@ -84,7 +85,7 @@ Para atender aos critérios da issue e facilitar o uso independente por outros m
 Para executar a montagem e deduplicação em lote de todos os 56 casos clínicos da amostra:
 
 ```bash
-python -m project2.src.assembly.pipeline
+python -m project2.src.montagem.assembly.pipeline
 ```
 
 Ao final da execução, a pipeline imprimirá um relatório sumarizado no terminal:
@@ -105,7 +106,7 @@ Resumo consolidado salvo em: project2\data\processed\_resumo.csv
 É possível passar argumentos opcionais para alterar os arquivos de entrada, diretório de saída ou filtrar casos específicos:
 
 ```bash
-python -m project2.src.assembly.pipeline \
+python -m project2.src.montagem.assembly.pipeline \
     --entities project2/data/silver/entidades_tipadas.csv \
     --relations project2/data/silver/relacoes.csv \
     --output project2/data/processed \
@@ -137,19 +138,19 @@ A execução produzirá:
 
 * **Regenerar Splits de Casos (`splits.json`):**
   ```bash
-  python -m project2.src.data.splits
+  python -m project2.src.montagem.data.splits
   ```
 * **Regenerar Datasets Silver (Supervisão Fraca):**
   ```bash
-  python -m project2.src.data.weak_supervision
+  python -m project2.src.montagem.data.weak_supervision
   ```
 * **Executar Avaliação Oficial das Predições contra o Gabarito Ouro:**
   ```bash
-  python -m project2.src.evaluation.evaluate
+  python -m project2.src.montagem.evaluation.evaluate
   ```
 * **Executar Confronto Experimental Oficial (Projeto 1 vs. Projeto 2):**
   ```bash
-  python -m project2.src.evaluation.evaluate --compare
+  python -m project2.src.montagem.evaluation.evaluate --compare
   ```
 
 ---
@@ -212,5 +213,5 @@ Utilizando o framework do `evaluate.py` para comparar o baseline de regras contr
 2. **Qualidade do Agrupamento Hierárquico:** O algoritmo de clustering desenvolvido para o `graph_builder.py` resolveu com elegância o problema de "um nó por coisa", agrupando coreferências textuais (ex: *"cystic lesion"*, *"the lesion"*, *"6cm cystic lesion"*) em um único nó canônico sem perda de atributos clínicos.
 3. **Ponto de Partida Forte para o Projeto 2:** Os resultados do baseline comprovam que os modelos de Machine Learning têm margem clara para superar as regras principalmente na **Precisão de fronteira** (eliminando ruídos com CRF) e na **Vinculação Conceitual MeSH** (generalizando além do matching exato de strings).
 4. **Fechamento Final (Fase 5):** A Estação 5 está **100% pronta e testada**. Assim que os demais integrantes finalizarem suas predições (`entidades.csv`, `entidades_tipadas.csv` e `relacoes.csv`), bastará:
-   * Executar `python -m project2.src.assembly.pipeline` apontando para as predições de ML para gerar o grafo final do Projeto 2 em `project2/data/processed/`.
-   * Executar `python -m project2.src.evaluation.evaluate --compare` para emitir o confronto experimental definitivo para o relatório final do grupo.
+   * Executar `python -m project2.src.montagem.assembly.pipeline` apontando para as predições de ML para gerar o grafo final do Projeto 2 em `project2/data/processed/`.
+   * Executar `python -m project2.src.montagem.evaluation.evaluate --compare` para emitir o confronto experimental definitivo para o relatório final do grupo.

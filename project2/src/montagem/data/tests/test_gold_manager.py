@@ -8,7 +8,7 @@ from pathlib import Path
 
 import pandas as pd
 
-from project2.src.data.gold_manager import (
+from project2.src.montagem.data.gold_manager import (
     GoldValidationError,
     consolidate_gold,
     generate_starter_packs,

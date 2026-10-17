@@ -17,7 +17,7 @@ from typing import Any, Dict, List, Optional, Set, Tuple
 
 import pandas as pd
 
-REPO_ROOT = Path(__file__).resolve().parents[3]
+REPO_ROOT = Path(__file__).resolve().parents[4]
 DEFAULT_CASE_TEXTS = REPO_ROOT / "project1" / "data" / "case_texts.csv"
 DEFAULT_SPLITS_PATH = REPO_ROOT / "project2" / "data" / "splits.json"
 DEFAULT_SILVER_DIR = REPO_ROOT / "project2" / "data" / "silver"

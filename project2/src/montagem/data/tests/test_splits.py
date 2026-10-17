@@ -6,7 +6,7 @@ import tempfile
 import unittest
 from pathlib import Path
 
-from project2.src.data.splits import create_case_splits, load_splits, save_splits
+from project2.src.montagem.data.splits import create_case_splits, load_splits, save_splits
 
 
 class TestSplits(unittest.TestCase):

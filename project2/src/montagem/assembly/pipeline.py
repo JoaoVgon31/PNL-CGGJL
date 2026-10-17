@@ -20,7 +20,7 @@ if hasattr(sys.stdout, "reconfigure"):
 
 import pandas as pd
 
-from project2.src.assembly.graph_builder import CaseGraphBuilder
+from project2.src.montagem.assembly.graph_builder import CaseGraphBuilder
 
 DEFAULT_ENTITIES_PATH = Path("project2/data/silver/entidades_tipadas.csv")
 DEFAULT_RELATIONS_PATH = Path("project2/data/silver/relacoes.csv")

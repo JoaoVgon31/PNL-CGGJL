@@ -4,7 +4,7 @@
 import unittest
 import pandas as pd
 
-from project2.src.evaluation.metrics import (
+from project2.src.montagem.evaluation.metrics import (
     compare_experiments,
     evaluate_entities,
     evaluate_relations,

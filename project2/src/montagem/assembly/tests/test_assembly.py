@@ -7,13 +7,13 @@ from pathlib import Path
 
 import pandas as pd
 
-from project2.src.assembly.clustering import (
+from project2.src.montagem.assembly.clustering import (
     HierarchicalMentionClusterer,
     extract_attributes_from_mention,
     normalize_label,
 )
-from project2.src.assembly.graph_builder import CaseGraphBuilder
-from project2.src.assembly.pipeline import BatchGraphPipeline
+from project2.src.montagem.assembly.graph_builder import CaseGraphBuilder
+from project2.src.montagem.assembly.pipeline import BatchGraphPipeline
 
 
 class TestAssembly(unittest.TestCase):
