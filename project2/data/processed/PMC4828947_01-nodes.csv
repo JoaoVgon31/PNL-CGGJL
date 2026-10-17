@@ -1,0 +1,20 @@
+case_id,node_id,type,label,attributes
+PMC4828947_01,A1,AnatomicalSite,nonversive head,mentions=t10|t34
+PMC4828947_01,D1,Diagnosis,meningitis,mentions=t33
+PMC4828947_01,D2,Diagnosis,mixed ganglioglioma-DNET,mentions=t68
+PMC4828947_01,D3,Diagnosis,WHO Grade,mentions=t69|t89
+PMC4828947_01,D4,Diagnosis,DNET,mentions=t88
+PMC4828947_01,E1,Exam,3-Tesla magnetic resonance imaging,mentions=t39
+PMC4828947_01,F1,Finding,no abnormalities,mentions=t38
+PMC4828947_01,F2,Finding,gross-total lesionectomy,mentions=t42|t59|t66|t71|t78|t86|t91|t106
+PMC4828947_01,F3,Finding,cyst wall,mentions=t46|t51
+PMC4828947_01,F4,Finding,calcification,mentions=t49
+PMC4828947_01,N1,History,medical history,mentions=t30
+PMC4828947_01,N2,History,family history,mentions=t35
+PMC4828947_01,S1,Symptom,chronic drug-resistant seizures,mentions=t2|t9|t23|t27
+PMC4828947_01,S2,Symptom,age,mentions=t3
+PMC4828947_01,S3,Symptom,manipulation-induced edema,mentions=t111
+PMC4828947_01,T1,Treatment,surgery,mentions=t21
+PMC4828947_01,T2,Treatment,awake craniotomy,mentions=t62
+PMC4828947_01,C1,Concept,3-Tesla magnetic resonance imaging,code=D008279
+PMC4828947_01,C2,Concept,no abnormalities,code=D005124

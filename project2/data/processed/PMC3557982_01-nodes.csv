@@ -1,0 +1,11 @@
+case_id,node_id,type,label,attributes
+PMC3557982_01,A1,AnatomicalSite,right lung,mentions=t47
+PMC3557982_01,D1,Diagnosis,severe pneumonia,mentions=t97|t105
+PMC3557982_01,D2,Diagnosis,reported clinical data,mentions=t115
+PMC3557982_01,F1,Finding,necrosis,mentions=t56
+PMC3557982_01,P1,Patient,case,mentions=t33|t90|t96
+PMC3557982_01,S1,Symptom,clinical data,mentions=t87
+PMC3557982_01,S2,Symptom,infection,mentions=t102|t116
+PMC3557982_01,S3,Symptom,enhanced virulence,mentions=t117
+PMC3557982_01,S4,Symptom,strain,mentions=t118
+PMC3557982_01,C1,Concept,clinical data,code=D013180

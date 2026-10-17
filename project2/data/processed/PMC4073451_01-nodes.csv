@@ -1,0 +1,14 @@
+case_id,node_id,type,label,attributes
+PMC4073451_01,A1,AnatomicalSite,cortical bone suggesting bone repair,mentions=t50|t62
+PMC4073451_01,E1,Exam,Oral Pathology,mentions=t5
+PMC4073451_01,E2,Exam,Incisional biopsy,mentions=t26
+PMC4073451_01,E3,Exam,oblique mandibular radiograph,mentions=t40
+PMC4073451_01,E4,Exam,panoramic radiograph,mentions=t45
+PMC4073451_01,E5,Exam,multislice CT scan,mentions=t47|t58
+PMC4073451_01,F1,Finding,multilocular radiolucent lesion involving body,mentions=t6|t21|t22|t28|t35|t41|t48
+PMC4073451_01,F2,Finding,keratocystic odontogenic tumor,mentions=t31|t44
+PMC4073451_01,O1,Outcome,possible recurrence,mentions=t64
+PMC4073451_01,S1,Symptom,extraoral view showed slight swelling,mentions=t9
+PMC4073451_01,T1,Treatment,Surgery,mentions=t4
+PMC4073451_01,C1,Concept,cortical bone suggesting bone repair,code=ANAT019
+PMC4073451_01,C2,Concept,Incisional biopsy,code=D001706

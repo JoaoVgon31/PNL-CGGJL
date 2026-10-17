@@ -1,0 +1,880 @@
+case_id,ent_id,char_start,char_end,texto,type,concept_code,confianca
+PMC7102447_01,t1,2,18,65-year-old male,,,0.0
+PMC7102447_01,t2,26,46,past medical history,History,,1.0
+PMC7102447_01,t3,63,75,hypertension,History,,1.0
+PMC7102447_01,t4,77,83,asthma,History,,1.0
+PMC7102447_01,t5,99,128,invasive bioprosthetic mitral,History,,1.0
+PMC7102447_01,t6,135,146,replacement,,,0.0
+PMC7102447_01,t7,154,181,33 mm mosaic mitral porcine,,,0.0
+PMC7102447_01,t8,188,196,one year,,,0.0
+PMC7102447_01,t9,218,275,severe respiratory distress requiring emergent intubation,Symptom,,1.0
+PMC7102447_01,t10,277,302,Initial electrocardiogram,Exam,,1.0
+PMC7102447_01,t11,304,307,EKG,,,0.0
+PMC7102447_01,t12,309,330,revealed sinus rhythm,,,0.0
+PMC7102447_01,t13,350,366,fascicular block,,,0.0
+PMC7102447_01,t14,374,393,bundle branch block,,,0.0
+PMC7102447_01,t15,399,407,evidence,,,0.0
+PMC7102447_01,t16,411,434,left atrial enlargement,,,0.0
+PMC7102447_01,t17,436,452,Initial troponin,Exam,,1.0
+PMC7102447_01,t18,483,488,CK-MB,,,0.0
+PMC7102447_01,t19,493,501,total CK,Exam,,1.0
+PMC7102447_01,t20,557,580,Anticoagulation studies,,,0.0
+PMC7102447_01,t21,593,596,INR,,,0.0
+PMC7102447_01,t22,607,610,PTT,,,0.0
+PMC7102447_01,t23,624,626,PT,,,0.0
+PMC7102447_01,t24,662,681,intensive care unit,,,0.0
+PMC7102447_01,t25,687,694,patient,,,0.0
+PMC7102447_01,t26,722,738,heparin infusion,Medication,,1.0
+PMC7102447_01,t27,743,752,suspicion,,,0.0
+PMC7102447_01,t28,756,779,acute coronary syndrome,,,0.0
+PMC7102447_01,t29,781,784,ACS,,,0.0
+PMC7102447_01,t30,787,816,computed tomography angiogram,Exam,D014054,1.0
+PMC7102447_01,t31,818,821,CTA,,,0.0
+PMC7102447_01,t32,830,873,chest revealed moderate patchy ground-glass,AnatomicalSite,ANAT032,1.0
+PMC7102447_01,t33,878,904,nodular airspace opacities,,,0.0
+PMC7102447_01,t34,910,928,interstitial edema,Finding,D004487,1.0
+PMC7102447_01,t35,933,945,cardiomegaly,,,0.0
+PMC7102447_01,t36,947,977,Transesophageal echocardiogram,Exam,,1.0
+PMC7102447_01,t37,979,982,TEE,,,0.0
+PMC7102447_01,t38,1009,1025,acute thrombosis,Diagnosis,D013927,1.0
+PMC7102447_01,t39,1033,1053,bioprosthetic mitral,History,,1.0
+PMC7102447_01,t40,1065,1087,severe mitral stenosis,,,0.0
+PMC7102447_01,t41,1092,1105,regurgitation,,,0.0
+PMC7102447_01,t42,1119,1132,mean gradient,,,0.0
+PMC7102447_01,t43,1156,1160,area,,,0.0
+PMC7102447_01,t44,1188,1192,note,,,0.0
+PMC7102447_01,t45,1198,1205,patient,,,0.0
+PMC7102447_01,t46,1228,1236,6 months,,,0.0
+PMC7102447_01,t47,1240,1255,anticoagulation,,,0.0
+PMC7102447_01,t48,1270,1290,bioprosthetic mitral,History,,1.0
+PMC7102447_01,t49,1297,1308,replacement,,,0.0
+PMC7102447_01,t50,1330,1345,anticoagulation,,,0.0
+PMC7102447_01,t51,1378,1405,complete leaflet immobility,,,0.0
+PMC7102447_01,t52,1423,1453,underwent emergent redo mitral,,,0.0
+PMC7102447_01,t53,1460,1467,surgery,Treatment,,1.0
+PMC7102447_01,t54,1480,1488,33 mm St,,,0.0
+PMC7102447_01,t55,1490,1516,Jude mechanical prosthesis,,,0.0
+PMC7102447_01,t56,1548,1562,massive amount,,,0.0
+PMC7102447_01,t57,1566,1574,material,,,0.0
+PMC7102447_01,t58,1582,1598,ventricular side,,,0.0
+PMC7102447_01,t59,1602,1611,each cusp,,,0.0
+PMC7102447_01,t60,1613,1620,Figures,,,0.0
+PMC7102447_01,t61,1635,1653,pathology findings,Exam,,1.0
+PMC7102447_01,t62,1670,1680,thrombosis,Diagnosis,D013927,1.0
+PMC7102447_01,t63,1698,1709,replacement,,,0.0
+PMC7102447_01,t64,1711,1729,intraoperative TEE,,,0.0
+PMC7102447_01,t65,1746,1772,mitral valve mean gradient,,,0.0
+PMC7102447_01,t66,1801,1810,procedure,,,0.0
+PMC7102447_01,t67,1839,1846,patient,,,0.0
+PMC7102447_01,t68,1894,1902,warfarin,Medication,,1.0
+PMC7102447_01,t69,1907,1922,anticoagulation,,,0.0
+PMC7102447_01,t70,1924,1946,Hypercoagulable workup,,,0.0
+PMC6134951_01,t1,2,22,49-year-old Hispanic,,,0.0
+PMC6134951_01,t2,52,59,history,,,0.0
+PMC6134951_01,t3,63,69,asthma,Diagnosis,,1.0
+PMC6134951_01,t4,74,96,resected atrial myxoma,,,0.0
+PMC6134951_01,t5,118,155,left upper lobe perihilar lung nodule,AnatomicalSite,,1.0
+PMC6134951_01,t6,157,184,mediastinal lymphadenopathy,Finding,,1.0
+PMC6134951_01,t7,192,219,large left pleural effusion,Finding,,1.0
+PMC6134951_01,t8,221,229,Cytology,Exam,,1.0
+PMC6134951_01,t9,237,253,pleural effusion,Finding,,1.0
+PMC6134951_01,t10,274,312,TTF1-positive pulmonary adenocarcinoma,Diagnosis,D000230,1.0
+PMC6134951_01,t11,314,353,Further testing revealed EGFR wild type,,,0.0
+PMC6134951_01,t12,355,375,no ALK rearrangement,,,0.0
+PMC6134951_01,t13,380,392,fluorescence,,,0.0
+PMC6134951_01,t14,396,414,situ hybridization,,,0.0
+PMC6134951_01,t15,421,435,no ROS1 fusion,,,0.0
+PMC6134951_01,t16,441,456,PD-L1 TPS score,Exam,,1.0
+PMC6134951_01,t17,497,508,four cycles,,,0.0
+PMC6134951_01,t18,512,523,carboplatin,,,0.0
+PMC6134951_01,t19,556,568,eight cycles,,,0.0
+PMC6134951_01,t20,572,585,pembrolizumab,,,0.0
+PMC6134951_01,t21,595,606,progression,,,0.0
+PMC6134951_01,t22,610,617,disease,,,0.0
+PMC6134951_01,t23,626,635,same time,,,0.0
+PMC6134951_01,t24,637,652,EML4-ALK fusion,,,0.0
+PMC6134951_01,t25,671,711,NGS-based circulating tumor DNA analysis,Finding,,1.0
+PMC6134951_01,t26,713,726,FoundationACT,,,0.0
+PMC6134951_01,t27,751,768,ALK rearrangement,,,0.0
+PMC6134951_01,t28,793,802,FISH test,,,0.0
+PMC6134951_01,t29,806,823,initial diagnosis,,,0.0
+PMC6134951_01,t30,829,836,quality,,,0.0
+PMC6134951_01,t31,838,846,quantity,,,0.0
+PMC6134951_01,t32,852,859,process,,,0.0
+PMC6134951_01,t33,863,877,tumor specimen,Finding,,1.0
+PMC6134951_01,t34,893,902,FISH test,,,0.0
+PMC6134951_01,t35,928,950,false-negative results,,,0.0
+PMC6134951_01,t36,959,963,case,Patient,,1.0
+PMC6134951_01,t37,969,1002,initial pleural effusion specimen,Finding,,1.0
+PMC6134951_01,t38,1033,1042,FISH test,,,0.0
+PMC6134951_01,t39,1048,1055,patient,,,0.0
+PMC6134951_01,t40,1092,1095,day,,,0.0
+PMC6134951_01,t41,1106,1123,rapid improvement,Outcome,,1.0
+PMC6134951_01,t42,1131,1152,left-sided chest pain,Symptom,,1.0
+PMC6134951_01,t43,1163,1170,10 days,,,0.0
+PMC6134951_01,t44,1194,1224,non-pruritic morbilliform rash,Symptom,,1.0
+PMC6134951_01,t45,1240,1245,trunk,,,0.0
+PMC6134951_01,t46,1253,1264,entire body,,,0.0
+PMC6134951_01,t47,1266,1281,including palms,,,0.0
+PMC6134951_01,t48,1283,1288,soles,,,0.0
+PMC6134951_01,t49,1294,1298,face,,,0.0
+PMC6134951_01,t50,1304,1312,mild lip,,,0.0
+PMC6134951_01,t51,1317,1329,eye swelling,Symptom,,1.0
+PMC6134951_01,t52,1351,1367,recurrent fevers,,,0.0
+PMC6134951_01,t53,1375,1394,maximum temperature,,,0.0
+PMC6134951_01,t54,1398,1411,105 degrees F,,,0.0
+PMC6134951_01,t55,1436,1452,right arm lesion,Finding,,1.0
+PMC6134951_01,t56,1496,1516,interface dermatitis,,,0.0
+PMC6134951_01,t57,1522,1533,eosinophils,,,0.0
+PMC6134951_01,t58,1551,1564,drug eruption,Diagnosis,D006968,1.0
+PMC6134951_01,t59,1566,1598,delayed type IV hypersensitivity,Diagnosis,D006968,1.0
+PMC6134951_01,t60,1620,1634,no hematologic,,,0.0
+PMC6134951_01,t61,1636,1648,eosinophilia,,,0.0
+PMC6134951_01,t62,1670,1691,pulmonary abnormality,,,0.0
+PMC6134951_01,t63,1703,1716,drug reaction,,,0.0
+PMC6134951_01,t64,1722,1734,eosinophilia,,,0.0
+PMC6134951_01,t65,1739,1756,systemic symptoms,,,0.0
+PMC6134951_01,t66,1758,1783,Infectious disease workup,,,0.0
+PMC6134951_01,t67,1801,1826,streptococcal pharyngitis,,,0.0
+PMC6134951_01,t68,1828,1831,HIV,,,0.0
+PMC6134951_01,t69,1833,1843,parvovirus,,,0.0
+PMC6134951_01,t70,1845,1851,herpes,,,0.0
+PMC6134951_01,t71,1853,1861,syphilis,,,0.0
+PMC6134951_01,t72,1863,1879,strongyloidiasis,,,0.0
+PMC6134951_01,t73,1885,1895,bacteremia,,,0.0
+PMC6134951_01,t74,1897,1906,Alectinib,Medication,,1.0
+PMC6134951_01,t75,1915,1930,only medication,,,0.0
+PMC6134951_01,t76,1974,1989,Oral prednisone,Medication,,1.0
+PMC6134951_01,t77,2014,2017,day,,,0.0
+PMC6134951_01,t78,2052,2060,next day,,,0.0
+PMC6134951_01,t79,2109,2115,5 days,,,0.0
+PMC6134951_01,t80,2123,2135,total course,,,0.0
+PMC6134951_01,t81,2139,2145,7 days,,,0.0
+PMC6134951_01,t82,2165,2173,one dose,,,0.0
+PMC6134951_01,t83,2222,2237,oral prednisone,Medication,,1.0
+PMC6134951_01,t84,2242,2269,topical triamcinolone cream,,,0.0
+PMC6134951_01,t85,2271,2285,No antibiotics,Medication,,1.0
+PMC6134951_01,t86,2309,2313,rash,Symptom,,1.0
+PMC6134951_01,t87,2340,2347,patient,,,0.0
+PMC6134951_01,t88,2348,2366,s febrile episodes,,,0.0
+PMC6134951_01,t89,2386,2391,1 day,,,0.0
+PMC6134951_01,t90,2395,2420,prednisone administration,Medication,,1.0
+PMC6134951_01,t91,2422,2437,Desensitization,,,0.0
+PMC6134951_01,t92,2494,2508,serious nature,,,0.0
+PMC6134951_01,t93,2517,2550,delayed hypersensitivity reaction,,,0.0
+PMC6134951_01,t94,2568,2576,presence,,,0.0
+PMC6134951_01,t95,2580,2591,eosinophils,,,0.0
+PMC6134951_01,t96,2599,2610,skin biopsy,AnatomicalSite,,1.0
+PMC6134951_01,t97,2616,2627,high fevers,,,0.0
+PMC6134951_01,t98,2661,2667,1 week,,,0.0
+PMC6134951_01,t99,2674,2684,completion,,,0.0
+PMC6134951_01,t100,2688,2698,prednisone,Medication,,1.0
+PMC6134951_01,t101,2724,2738,oral inhibitor,,,0.0
+PMC6134951_01,t102,2752,2756,rash,Symptom,,1.0
+PMC6134951_01,t103,2761,2766,fever,Symptom,,1.0
+PMC6134951_01,t104,2768,2779,Eight weeks,,,0.0
+PMC6134951_01,t105,2814,2839,improved pleural effusion,Finding,,1.0
+PMC6134951_01,t106,2844,2858,tumor response,Finding,,1.0
+PMC6134951_01,t107,2867,2869,1C,,,0.0
+PMC5875137_01,t1,3,20,83-year-old woman,,,0.0
+PMC5875137_01,t2,33,55,diagnostic assessments,,,0.0
+PMC5875137_01,t3,62,75,breast cancer,AnatomicalSite,,1.0
+PMC5875137_01,t4,94,119,chest computed tomography,Exam,D014054,1.0
+PMC5875137_01,t5,121,123,CT,,,0.0
+PMC5875137_01,t6,125,129,scan,,,0.0
+PMC5875137_01,t7,143,181,asymptomatic ascending aortic aneurysm,,,0.0
+PMC5875137_01,t8,183,199,maximum diameter,,,0.0
+PMC5875137_01,t9,224,243,surgical correction,,,0.0
+PMC5875137_01,t10,251,258,3 weeks,,,0.0
+PMC5875137_01,t11,264,294,underwent elective replacement,,,0.0
+PMC5875137_01,t12,298,313,ascending aorta,AnatomicalSite,,1.0
+PMC5875137_01,t13,336,355,platinum prosthesis,,,0.0
+PMC5875137_01,t14,360,371,anastomosis,,,0.0
+PMC5875137_01,t15,379,407,left internal mammary artery,AnatomicalSite,,1.0
+PMC5875137_01,t16,435,450,coronary artery,AnatomicalSite,,1.0
+PMC5875137_01,t17,462,476,tight stenosis,,,0.0
+PMC5875137_01,t18,492,514,cardiac rehabilitation,,,0.0
+PMC5875137_01,t19,522,532,department,,,0.0
+PMC5875137_01,t20,538,554,no complications,Outcome,,1.0
+PMC5875137_01,t21,575,583,hospital,,,0.0
+PMC5875137_01,t22,592,599,routine,,,0.0
+PMC5875137_01,t23,606,613,surgery,Treatment,,1.0
+PMC5875137_01,t24,615,662,TTE showed good biventricular systolic function,,,0.0
+PMC5875137_01,t25,664,681,normal appearance,,,0.0
+PMC5875137_01,t26,689,714,visible aortic prosthesis,,,0.0
+PMC5875137_01,t27,723,739,unclear LA image,,,0.0
+PMC5875137_01,t28,780,797,four-chamber view,,,0.0
+PMC5875137_01,t29,806,810,1a-d,,,0.0
+PMC5875137_01,t30,826,843,new chest CT scan,Exam,,1.0
+PMC5875137_01,t31,874,879,heart,AnatomicalSite,,1.0
+PMC5875137_01,t32,884,889,aorta,AnatomicalSite,,1.0
+PMC5875137_01,t33,904,926,no intracardiac masses,,,0.0
+PMC5875137_01,t34,946,950,mass,Finding,,1.0
+PMC5875137_01,t35,966,982,echocardiography,,,0.0
+PMC5875137_01,t36,1001,1011,pseudomass,,,0.0
+PMC5875137_01,t37,1047,1072,descending thoracic aorta,AnatomicalSite,,1.0
+PMC5875137_01,t38,1093,1098,level,,,0.0
+PMC5875137_01,t39,1103,1119,horizontal trait,,,0.0
+PMC5875137_01,t40,1121,1128,Figures,,,0.0
+PMC2700431_01,t1,2,18,35-year-old male,,,0.0
+PMC2700431_01,t2,35,54,intensive care unit,,,0.0
+PMC2700431_01,t3,63,81,accident/emergency,,,0.0
+PMC2700431_01,t4,90,111,road traffic accident,,,0.0
+PMC2700431_01,t5,116,150,having sustained multiple injuries,,,0.0
+PMC2700431_01,t6,161,172,drug addict,,,0.0
+PMC2700431_01,t7,174,183,alcoholic,,,0.0
+PMC2700431_01,t8,185,196,hepatitis B,Diagnosis,,1.0
+PMC2700431_01,t9,234,251,airway protection,,,0.0
+PMC2700431_01,t10,271,274,ICU,,,0.0
+PMC2700431_01,t11,283,291,fracture,,,0.0
+PMC2700431_01,t12,298,317,4 cervical vertebra,,,0.0
+PMC2700431_01,t13,327,338,transaction,,,0.0
+PMC2700431_01,t14,342,353,spinal cord,,,0.0
+PMC2700431_01,t15,357,365,C4 level,,,0.0
+PMC2700431_01,t16,367,379,quadriplegic,,,0.0
+PMC2700431_01,t17,382,390,fracture,,,0.0
+PMC2700431_01,t18,397,403,6 ribs,,,0.0
+PMC2700431_01,t19,411,421,right side,,,0.0
+PMC2700431_01,t20,427,449,bilateral pneumothorax,Finding,,1.0
+PMC2700431_01,t21,451,472,bilateral chest tubes,AnatomicalSite,,1.0
+PMC2700431_01,t22,484,498,rupture spleen,AnatomicalSite,,1.0
+PMC2700431_01,t23,503,508,liver,AnatomicalSite,,1.0
+PMC2700431_01,t24,530,544,operating room,,,0.0
+PMC2700431_01,t25,549,561,spleenectomy,,,0.0
+PMC2700431_01,t26,566,580,hepatic repair,,,0.0
+PMC2700431_01,t27,607,611,mind,,,0.0
+PMC2700431_01,t28,616,627,seriousness,,,0.0
+PMC2700431_01,t29,631,639,injuries,,,0.0
+PMC2700431_01,t30,644,675,anticipating long recovery time,Outcome,,1.0
+PMC2700431_01,t31,681,711,elective surgical tracheostomy,,,0.0
+PMC2700431_01,t32,724,738,operating room,,,0.0
+PMC2700431_01,t33,744,751,patient,,,0.0
+PMC2700431_01,t34,776,779,ICU,,,0.0
+PMC2700431_01,t35,783,793,ventilator,,,0.0
+PMC2700431_01,t36,813,824,antibiotics,Medication,,1.0
+PMC2700431_01,t37,830,845,supportive care,,,0.0
+PMC2700431_01,t38,864,871,feeding,,,0.0
+PMC2700431_01,t39,887,903,nasogastric tube,,,0.0
+PMC2700431_01,t40,905,922,Multiple attempts,,,0.0
+PMC2700431_01,t41,926,936,extubation,,,0.0
+PMC2700431_01,t42,952,955,day,,,0.0
+PMC2700431_01,t43,964,984,assigned staff nurse,,,0.0
+PMC2700431_01,t44,1006,1009,air,,,0.0
+PMC2700431_01,t45,1024,1029,mouth,,,0.0
+PMC2700431_01,t46,1038,1045,patient,,,0.0
+PMC2700431_01,t47,1075,1082,febrile,,,0.0
+PMC2700431_01,t48,1089,1111,white blood cell level,,,0.0
+PMC2700431_01,t49,1127,1137,suctioning,,,0.0
+PMC2700431_01,t50,1146,1163,endotracheal tube,,,0.0
+PMC2700431_01,t51,1165,1178,food material,,,0.0
+PMC2700431_01,t52,1192,1225,Chest radiograph showed opacities,AnatomicalSite,,1.0
+PMC2700431_01,t53,1233,1256,right lower lung region,AnatomicalSite,,1.0
+PMC2700431_01,t54,1261,1291,large endotracheal cuff shadow,,,0.0
+PMC2700431_01,t55,1304,1316,Bronchoscopy,Exam,,1.0
+PMC2700431_01,t56,1330,1337,fistula,,,0.0
+PMC2700431_01,t57,1359,1366,passage,,,0.0
+PMC2700431_01,t58,1370,1380,secretions,,,0.0
+PMC2700431_01,t59,1385,1388,air,,,0.0
+PMC2700431_01,t60,1390,1408,Intracuff pressure,,,0.0
+PMC2700431_01,t61,1442,1450,40 cmH2O,,,0.0
+PMC2700431_01,t62,1452,1461,Water dye,,,0.0
+PMC2700431_01,t63,1480,1485,mouth,,,0.0
+PMC2700431_01,t64,1513,1520,trachea,,,0.0
+PMC2700431_01,t65,1542,1574,having tracheoesophageal fistula,,,0.0
+PMC2700431_01,t66,1576,1598,Appropriate antibiotic,,,0.0
+PMC2700431_01,t67,1615,1635,aspiration pneumonia,Diagnosis,,1.0
+PMC2700431_01,t68,1645,1652,patient,,,0.0
+PMC2700431_01,t69,1681,1690,infection,,,0.0
+PMC7086412_01,t1,2,21,34-year-old gravida,,,0.0
+PMC7086412_01,t2,27,34,abortus,,,0.0
+PMC7086412_01,t3,40,44,para,,,0.0
+PMC7086412_01,t4,67,72,Labor,,,0.0
+PMC7086412_01,t5,77,90,Delivery Unit,,,0.0
+PMC7086412_01,t6,94,102,40 weeks,,,0.0
+PMC7086412_01,t7,107,143,three days estimated gestational age,,,0.0
+PMC7086412_01,t8,181,184,day,,,0.0
+PMC7086412_01,t9,193,218,intrauterine fetal demise,Diagnosis,D005313,1.0
+PMC7086412_01,t10,226,256,certified professional midwife,,,0.0
+PMC7086412_01,t11,283,292,pregnancy,,,0.0
+PMC7086412_01,t12,298,305,patient,,,0.0
+PMC7086412_01,t13,345,368,certified nurse midwife,,,0.0
+PMC7086412_01,t14,384,393,gestation,,,0.0
+PMC7086412_01,t15,398,404,review,,,0.0
+PMC7086412_01,t16,412,419,records,,,0.0
+PMC7086412_01,t17,443,494,standard 50-gram one-hour glucose tolerance testing,,,0.0
+PMC7086412_01,t18,496,499,GTT,,,0.0
+PMC7086412_01,t19,522,527,favor,,,0.0
+PMC7086412_01,t20,531,538,one day,,,0.0
+PMC7086412_01,t21,542,552,monitoring,,,0.0
+PMC7086412_01,t22,556,563,fasting,,,0.0
+PMC7086412_01,t23,568,586,postprandial blood,,,0.0
+PMC7086412_01,t24,595,601,levels,,,0.0
+PMC7086412_01,t25,619,643,25 weeks gestational age,,,0.0
+PMC7086412_01,t26,651,657,values,,,0.0
+PMC7086412_01,t27,681,687,review,,,0.0
+PMC7086412_01,t28,723,730,patient,,,0.0
+PMC7086412_01,t29,732,742,No testing,,,0.0
+PMC7086412_01,t30,746,765,glycated hemoglobin,Exam,,1.0
+PMC7086412_01,t31,767,781,hemoglobin A1c,Exam,,1.0
+PMC7086412_01,t32,817,829,serial blood,,,0.0
+PMC7086412_01,t33,872,896,25 weeks gestational age,,,0.0
+PMC7086412_01,t34,902,909,patient,,,0.0
+PMC7086412_01,t35,927,938,institution,,,0.0
+PMC7086412_01,t36,939,955,s standard panel,,,0.0
+PMC7086412_01,t37,959,977,laboratory testing,,,0.0
+PMC7086412_01,t38,982,990,patients,,,0.0
+PMC7086412_01,t39,1006,1031,intrauterine fetal demise,Diagnosis,D005313,1.0
+PMC7086412_01,t40,1038,1045,testing,,,0.0
+PMC7086412_01,t41,1057,1077,complete blood count,Exam,,1.0
+PMC7086412_01,t42,1079,1095,prothrombin time,,,0.0
+PMC7086412_01,t43,1097,1124,partial thromboplastin time,,,0.0
+PMC7086412_01,t44,1126,1142,fibrinogen level,,,0.0
+PMC7086412_01,t45,1144,1158,hemoglobin A1c,Exam,,1.0
+PMC7086412_01,t46,1160,1187,thyroid stimulating hormone,AnatomicalSite,,1.0
+PMC7086412_01,t47,1189,1206,urine drug screen,,,0.0
+PMC7086412_01,t48,1208,1223,Kleihauer-Betke,,,0.0
+PMC7086412_01,t49,1225,1244,rapid plasma reagin,,,0.0
+PMC7086412_01,t50,1246,1271,parvovirus B19 antibodies,,,0.0
+PMC7086412_01,t51,1273,1299,cytomegalovirus antibodies,,,0.0
+PMC7086412_01,t52,1301,1331,lupus anticoagulant antibodies,,,0.0
+PMC7086412_01,t53,1340,1363,glycoprotein antibodies,,,0.0
+PMC7086412_01,t54,1381,1391,antibodies,,,0.0
+PMC7086412_01,t55,1393,1417,factor V Leiden mutation,,,0.0
+PMC7086412_01,t56,1423,1450,prothrombin gene mutation G,,,0.0
+PMC7086412_01,t57,1462,1478,only abnormality,,,0.0
+PMC7086412_01,t58,1489,1492,set,,,0.0
+PMC7086412_01,t59,1496,1514,laboratory results,,,0.0
+PMC7086412_01,t60,1521,1541,hemoglobin A1c value,Exam,,1.0
+PMC7086412_01,t61,1566,1574,diabetes,Diagnosis,,1.0
+PMC7086412_01,t62,1584,1592,criteria,,,0.0
+PMC7086412_01,t63,1610,1639,American Diabetes Association,Diagnosis,,1.0
+PMC7086412_01,t64,1641,1671,No prepregnancy hemoglobin A1c,Exam,,1.0
+PMC7086412_01,t65,1675,1681,random,,,0.0
+PMC7086412_01,t66,1716,1722,review,,,0.0
+PMC7086412_01,t67,1728,1735,patient,,,0.0
+PMC7086412_01,t68,1749,1758,induction,,,0.0
+PMC7086412_01,t69,1762,1767,labor,,,0.0
+PMC7086412_01,t70,1773,1785,serial doses,,,0.0
+PMC7086412_01,t71,1789,1800,misoprostol,,,0.0
+PMC7086412_01,t72,1813,1833,Pitocin augmentation,,,0.0
+PMC7086412_01,t73,1838,1856,artificial rupture,,,0.0
+PMC7086412_01,t74,1860,1869,membranes,,,0.0
+PMC7086412_01,t75,1879,1887,criteria,,,0.0
+PMC7086412_01,t76,1892,1904,preeclampsia,,,0.0
+PMC7086412_01,t77,1910,1925,severe features,,,0.0
+PMC7086412_01,t78,1937,1955,intrapartum course,,,0.0
+PMC7086412_01,t79,1984,1992,dilation,,,0.0
+PMC7086412_01,t80,1999,2006,station,,,0.0
+PMC7086412_01,t81,2027,2035,36 hours,,,0.0
+PMC7086412_01,t82,2092,2111,expeditious descent,,,0.0
+PMC7086412_01,t83,2119,2129,fetal head,AnatomicalSite,,1.0
+PMC7086412_01,t84,2134,2143,3 station,,,0.0
+PMC7086412_01,t85,2145,2163,No further descent,,,0.0
+PMC7086412_01,t86,2189,2198,next hour,,,0.0
+PMC7086412_01,t87,2211,2228,Citing exhaustion,,,0.0
+PMC7086412_01,t88,2234,2262,patient requested assistance,,,0.0
+PMC7086412_01,t89,2270,2296,operative vaginal delivery,,,0.0
+PMC7086412_01,t90,2357,2367,fetal head,AnatomicalSite,,1.0
+PMC7086412_01,t91,2373,2390,anterior shoulder,,,0.0
+PMC7086412_01,t92,2412,2436,gentle downward traction,,,0.0
+PMC7086412_01,t93,2440,2457,shoulder dystocia,,,0.0
+PMC7086412_01,t94,2474,2492,McRoberts maneuver,,,0.0
+PMC7086412_01,t95,2498,2517,suprapubic pressure,,,0.0
+PMC7086412_01,t96,2538,2546,dystocia,,,0.0
+PMC7086412_01,t97,2552,2560,Rubin II,,,0.0
+PMC7086412_01,t98,2565,2569,Wood,,,0.0
+PMC7086412_01,t99,2570,2587,s Screw maneuvers,,,0.0
+PMC7086412_01,t100,2621,2634,posterior arm,,,0.0
+PMC7086412_01,t101,2671,2679,shoulder,,,0.0
+PMC7086412_01,t102,2699,2717,McRoberts maneuver,,,0.0
+PMC7086412_01,t103,2723,2742,suprapubic pressure,,,0.0
+PMC7086412_01,t104,2773,2793,rotational maneuvers,,,0.0
+PMC7086412_01,t105,2808,2815,success,,,0.0
+PMC7086412_01,t106,2823,2832,maneuvers,,,0.0
+PMC7086412_01,t107,2858,2871,delivery room,,,0.0
+PMC7086412_01,t108,2879,2889,fetal head,AnatomicalSite,,1.0
+PMC7086412_01,t109,2921,2925,body,,,0.0
+PMC7086412_01,t110,2931,2938,patient,,,0.0
+PMC7086412_01,t111,2962,2979,operating theater,,,0.0
+PMC7086412_01,t112,2991,3002,possibility,,,0.0
+PMC7086412_01,t113,3018,3037,fragmented delivery,,,0.0
+PMC7086412_01,t114,3039,3057,Uterine relaxation,,,0.0
+PMC7086412_01,t115,3076,3090,100 micrograms,,,0.0
+PMC7086412_01,t116,3094,3119,intravenous nitroglycerin,,,0.0
+PMC7086412_01,t117,3138,3155,anterior shoulder,,,0.0
+PMC7086412_01,t118,3179,3183,Wood,,,0.0
+PMC7086412_01,t119,3184,3185,s,Patient,,1.0
+PMC7086412_01,t120,3218,3226,delivery,,,0.0
+PMC7086412_01,t121,3233,3239,infant,,,0.0
+PMC7086412_01,t122,3249,3259,4190 grams,,,0.0
+PMC7086412_01,t123,3261,3276,85th percentile,,,0.0
+PMC7086412_01,t124,3281,3296,gestational age,,,0.0
+PMC7086412_01,t125,3303,3315,total length,,,0.0
+PMC7086412_01,t126,3323,3340,shoulder dystocia,,,0.0
+PMC7086412_01,t127,3345,3355,30 minutes,,,0.0
+PMC3859158_01,t1,2,17,44-year-old man,,,0.0
+PMC3859158_01,t2,35,50,4-month history,,,0.0
+PMC3859158_01,t3,54,75,vague epigastric pain,Symptom,D010146,1.0
+PMC3859158_01,t4,81,85,pain,Symptom,D010146,1.0
+PMC3859158_01,t5,114,122,severity,,,0.0
+PMC3859158_01,t6,143,149,nausea,Symptom,,1.0
+PMC3859158_01,t7,154,162,vomiting,Symptom,,1.0
+PMC3859158_01,t8,164,171,Patient,,,0.0
+PMC3859158_01,t9,179,190,any history,,,0.0
+PMC3859158_01,t10,194,209,physical trauma,,,0.0
+PMC3859158_01,t11,211,242,gastroesophageal reflux disease,,,0.0
+PMC3859158_01,t12,244,253,gastritis,,,0.0
+PMC3859158_01,t13,255,275,peptic ulcer disease,,,0.0
+PMC3859158_01,t14,277,289,pancreatitis,Diagnosis,,1.0
+PMC3859158_01,t15,294,315,hepatobiliary disease,,,0.0
+PMC3859158_01,t16,327,334,patient,,,0.0
+PMC3859158_01,t17,342,353,any history,,,0.0
+PMC3859158_01,t18,357,380,constitutional symptoms,,,0.0
+PMC3859158_01,t19,389,394,fever,Symptom,,1.0
+PMC3859158_01,t20,396,410,night sweating,Symptom,,1.0
+PMC3859158_01,t21,415,426,weight loss,Symptom,,1.0
+PMC3859158_01,t22,428,440,Past medical,,,0.0
+PMC3859158_01,t23,456,470,family history,History,,1.0
+PMC3859158_01,t24,493,513,physical examination,,,0.0
+PMC3859158_01,t25,515,522,patient,,,0.0
+PMC3859158_01,t26,543,550,Abdomen,AnatomicalSite,,1.0
+PMC3859158_01,t27,561,564,lax,,,0.0
+PMC3859158_01,t28,597,614,epigastric region,,,0.0
+PMC3859158_01,t29,640,649,palpation,,,0.0
+PMC3859158_01,t30,658,666,evidence,,,0.0
+PMC3859158_01,t31,672,685,palpable mass,Finding,,1.0
+PMC3859158_01,t32,687,707,All laboratory tests,,,0.0
+PMC3859158_01,t33,727,738,blood count,Exam,,1.0
+PMC3859158_01,t34,749,766,coagulation renal,,,0.0
+PMC3859158_01,t35,771,784,bone profiles,AnatomicalSite,,1.0
+PMC3859158_01,t36,786,793,amylase,,,0.0
+PMC3859158_01,t37,795,801,lipase,,,0.0
+PMC3859158_01,t38,803,824,lactate dehydrogenase,,,0.0
+PMC3859158_01,t39,826,829,LDH,,,0.0
+PMC3859158_01,t40,832,856,carcinoembryonic antigen,Exam,,1.0
+PMC3859158_01,t41,858,861,CEA,,,0.0
+PMC3859158_01,t42,868,882,cancer antigen,,,0.0
+PMC3859158_01,t43,889,891,CA,Patient,,1.0
+PMC3859158_01,t44,910,923,normal values,,,0.0
+PMC3859158_01,t45,925,962,Contrast-enhanced computed tomography,Exam,D014054,1.0
+PMC3859158_01,t46,964,966,CT,,,0.0
+PMC3859158_01,t47,968,972,scan,,,0.0
+PMC3859158_01,t48,982,987,9.2 x,,,0.0
+PMC3859158_01,t49,988,993,9.5 x,,,0.0
+PMC3859158_01,t50,1013,1046,well-defined left suprarenal mass,Finding,,1.0
+PMC3859158_01,t51,1067,1080,adrenal gland,,,0.0
+PMC3859158_01,t52,1082,1090,pancreas,AnatomicalSite,ANAT002,1.0
+PMC3859158_01,t53,1095,1110,retroperitoneum,,,0.0
+PMC3859158_01,t54,1116,1164,mass demonstrated mild heterogeneous enhancement,Finding,,1.0
+PMC3859158_01,t55,1170,1198,central cystic/necrotic area,,,0.0
+PMC3859158_01,t56,1200,1211,No evidence,,,0.0
+PMC3859158_01,t57,1215,1230,lymphadenopathy,Finding,,1.0
+PMC3859158_01,t58,1234,1261,regional/distant metastasis,,,0.0
+PMC3859158_01,t59,1278,1285,Figures,,,0.0
+PMC3859158_01,t60,1297,1298,b,Diagnosis,,1.0
+PMC3859158_01,t61,1305,1316,laparoscopy,Treatment,,1.0
+PMC3859158_01,t62,1322,1326,mass,Finding,,1.0
+PMC3859158_01,t63,1357,1372,pancreatic tail,Diagnosis,,1.0
+PMC3859158_01,t64,1374,1410,Patient underwent surgical resection,Treatment,,1.0
+PMC3859158_01,t65,1414,1429,pancreatic tail,Diagnosis,,1.0
+PMC3859158_01,t66,1431,1442,splenectomy,Treatment,,1.0
+PMC3859158_01,t67,1448,1477,celiac lymph node dissections,,,0.0
+PMC3859158_01,t68,1479,1490,Macroscopic,,,0.0
+PMC3859158_01,t69,1495,1518,microscopic examination,,,0.0
+PMC3859158_01,t70,1522,1528,spleen,AnatomicalSite,,1.0
+PMC3859158_01,t71,1533,1606,celiac lymph node dissections revealed unremarkable pathological findings,,,0.0
+PMC3859158_01,t72,1629,1649,malignant components,,,0.0
+PMC3859158_01,t73,1672,1694,distal pancreatic mass,Finding,,1.0
+PMC3859158_01,t74,1704,1709,7.1 x,,,0.0
+PMC3859158_01,t75,1720,1731,cut section,,,0.0
+PMC3859158_01,t76,1749,1760,yellow mass,Finding,,1.0
+PMC3859158_01,t77,1768,1787,central cystic area,,,0.0
+PMC3859158_01,t78,1810,1832,distal pancreatic mass,Finding,,1.0
+PMC3859158_01,t79,1849,1889,monomorphic spindle-shaped Schwann cells,,,0.0
+PMC3859158_01,t80,1902,1932,defined eosinophilic cytoplasm,,,0.0
+PMC3859158_01,t81,1937,1962,pointed basophilic nuclei,,,0.0
+PMC3859158_01,t82,1972,1990,collagenous stroma,,,0.0
+PMC3859158_01,t83,1992,2016,Focal nuclear palisading,,,0.0
+PMC3859158_01,t84,2042,2062,Areas characteristic,,,0.0
+PMC3859158_01,t85,2066,2074,Antoni B,,,0.0
+PMC3859158_01,t86,2087,2100,Schwann cells,,,0.0
+PMC3859158_01,t87,2106,2129,inconspicuous cytoplasm,,,0.0
+PMC3859158_01,t88,2134,2140,nuclei,,,0.0
+PMC3859158_01,t89,2154,2167,myxoid matrix,,,0.0
+PMC3859158_01,t90,2185,2213,Scattered degenerated nuclei,,,0.0
+PMC3859158_01,t91,2219,2247,hyalinized stroma suggestive,,,0.0
+PMC3859158_01,t92,2251,2269,ancient schwannoma,Diagnosis,,1.0
+PMC3859158_01,t93,2284,2294,No mitosis,,,0.0
+PMC3859158_01,t94,2298,2306,necrosis,Finding,,1.0
+PMC3859158_01,t95,2327,2328,b,Diagnosis,,1.0
+PMC3859158_01,t96,2355,2366,tumor cells,Finding,,1.0
+PMC3859158_01,t97,2411,2423,S100 protein,,,0.0
+PMC3859158_01,t98,2448,2459,tumor cells,Finding,,1.0
+PMC3859158_01,t99,2481,2485,CD34,,,0.0
+PMC3859158_01,t100,2487,2492,CD117,,,0.0
+PMC3859158_01,t101,2494,2496,CK,,,0.0
+PMC3859158_01,t102,2502,2507,ALK-1,,,0.0
+PMC3859158_01,t103,2511,2526,final diagnosis,,,0.0
+PMC3859158_01,t104,2530,2556,primary ancient schwannoma,Diagnosis,,1.0
+PMC3859158_01,t105,2560,2575,pancreatic tail,Diagnosis,,1.0
+PMC3859158_01,t106,2593,2600,Patient,,,0.0
+PMC3859158_01,t107,2608,2657,uneventful postoperative course following surgery,Treatment,,1.0
+PMC3859158_01,t108,2676,2683,patient,,,0.0
+PMC3859158_01,t109,2693,2712,no adjuvant therapy,,,0.0
+PMC3859158_01,t110,2719,2749,postoperative 6-month followup,,,0.0
+PMC3859158_01,t111,2751,2758,patient,,,0.0
+PMC3859158_01,t112,2791,2806,CT scan imaging,Exam,,1.0
+PMC3859158_01,t113,2814,2825,no evidence,,,0.0
+PMC3859158_01,t114,2829,2845,tumor recurrence,Outcome,,1.0
+PMC3897989_01,t1,2,18,65-year-old male,,,0.0
+PMC3897989_01,t2,39,47,hospital,,,0.0
+PMC3897989_01,t3,63,71,jaundice,Symptom,,1.0
+PMC3897989_01,t4,73,81,pruritus,,,0.0
+PMC3897989_01,t5,83,87,mild,Finding,,1.0
+PMC3897989_01,t6,94,114,upper abdominal pain,Symptom,,1.0
+PMC3897989_01,t7,119,134,darkening urine,,,0.0
+PMC3897989_01,t8,136,185,Past medical history revealed atrial fibrillation,History,,1.0
+PMC3897989_01,t9,194,201,patient,,,0.0
+PMC3897989_01,t10,209,237,intermittent aspirin therapy,Medication,,1.0
+PMC3897989_01,t11,247,261,family history,History,,1.0
+PMC3897989_01,t12,276,320,Physical examination revealed icteric sclera,,,0.0
+PMC3897989_01,t13,325,329,skin,AnatomicalSite,ANAT018,1.0
+PMC3897989_01,t14,331,362,mild upper abdominal tenderness,Finding,,1.0
+PMC3897989_01,t15,364,372,arythmia,,,0.0
+PMC3897989_01,t16,374,395,irregular heart sound,AnatomicalSite,ANAT006,1.0
+PMC3897989_01,t17,406,413,deficit,,,0.0
+PMC3897989_01,t18,419,439,laboratory test data,,,0.0
+PMC3897989_01,t19,443,452,admission,,,0.0
+PMC3897989_01,t20,469,481,serum levels,,,0.0
+PMC3897989_01,t21,485,505,alanine transaminase,,,0.0
+PMC3897989_01,t22,507,510,ALT,,,0.0
+PMC3897989_01,t23,513,535,aspartate transaminase,,,0.0
+PMC3897989_01,t24,537,540,AST,,,0.0
+PMC3897989_01,t25,543,563,alkaline phosphatase,,,0.0
+PMC3897989_01,t26,565,568,ALP,,,0.0
+PMC3897989_01,t27,571,596,gamma-glutamyltransferase,,,0.0
+PMC3897989_01,t28,598,606,gamma-GT,,,0.0
+PMC3897989_01,t29,609,624,total bilirubin,Exam,,1.0
+PMC3897989_01,t30,626,630,TBil,,,0.0
+PMC3897989_01,t31,636,652,direct bilirubin,Exam,,1.0
+PMC3897989_01,t32,654,658,DBil,Exam,,1.0
+PMC3897989_01,t33,757,768,408 mumol/L,,,0.0
+PMC3897989_01,t34,769,783,0-20.5 mumol/L,,,0.0
+PMC3897989_01,t35,789,802,283.7 mumol/L,,,0.0
+PMC3897989_01,t36,804,817,0-6.8 mumol/L,,,0.0
+PMC3897989_01,t37,834,843,Serum IgG,,,0.0
+PMC3897989_01,t38,848,851,IgM,Exam,,1.0
+PMC3897989_01,t39,934,939,titer,,,0.0
+PMC3897989_01,t40,943,963,antinuclear antibody,,,0.0
+PMC3897989_01,t41,965,968,ANA,,,0.0
+PMC3897989_01,t42,995,1014,antoimmune diseases,,,0.0
+PMC3897989_01,t43,1033,1040,patient,,,0.0
+PMC3897989_01,t44,1058,1084,antimitochondrial antibody,,,0.0
+PMC3897989_01,t45,1086,1089,AMA,,,0.0
+PMC3897989_01,t46,1108,1124,anti-Ro antibody,,,0.0
+PMC3897989_01,t47,1126,1146,Common tumor markers,Finding,,1.0
+PMC3897989_01,t48,1151,1164,viral markers,,,0.0
+PMC3897989_01,t49,1184,1208,Both computed tomography,Exam,D014054,1.0
+PMC3897989_01,t50,1210,1212,CT,Exam,,1.0
+PMC3897989_01,t51,1218,1242,magnetic resonance image,,,0.0
+PMC3897989_01,t52,1244,1247,MRI,,,0.0
+PMC3897989_01,t53,1249,1279,revealed diffusive enlargement,,,0.0
+PMC3897989_01,t54,1287,1295,pancreas,AnatomicalSite,,1.0
+PMC3897989_01,t55,1312,1337,armorlike low-density rim,,,0.0
+PMC3897989_01,t56,1376,1425,Other abnormalities included significant dilation,,,0.0
+PMC3897989_01,t57,1429,1434,intra,,,0.0
+PMC3897989_01,t58,1440,1463,extra-hepatic bile duct,AnatomicalSite,,1.0
+PMC3897989_01,t59,1465,1485,diffusive thickening,,,0.0
+PMC3897989_01,t60,1493,1509,gallbladder wall,AnatomicalSite,,1.0
+PMC3897989_01,t61,1514,1521,atrophy,,,0.0
+PMC3897989_01,t62,1529,1541,right kidney,AnatomicalSite,,1.0
+PMC3897989_01,t63,1543,1590,Endoscopic retrograde cholangio-pancreatography,,,0.0
+PMC3897989_01,t64,1592,1596,ERCP,,,0.0
+PMC3897989_01,t65,1613,1639,revealing similar findings,,,0.0
+PMC3897989_01,t66,1645,1647,CT,Exam,,1.0
+PMC3897989_01,t67,1652,1655,MRI,,,0.0
+PMC3897989_01,t68,1657,1664,No sign,,,0.0
+PMC3897989_01,t69,1668,1678,malignancy,Finding,,1.0
+PMC3897989_01,t70,1693,1697,Test,,,0.0
+PMC3897989_01,t71,1701,1714,tumor markers,Finding,,1.0
+PMC3897989_01,t72,1724,1739,bile showed CEA,Exam,,1.0
+PMC3897989_01,t73,1771,1776,CA199,,,0.0
+PMC3897989_01,t74,1817,1829,examinations,,,0.0
+PMC3897989_01,t75,1833,1849,exfoliated cells,,,0.0
+PMC3897989_01,t76,1870,1893,three consecutive times,,,0.0
+PMC3897989_01,t77,1899,1914,biliary culture,Exam,,1.0
+PMC3897989_01,t78,1932,1968,ESBL-producing Klebsiella pneumoniae,,,0.0
+PMC3897989_01,t79,1970,1979,Infection,,,0.0
+PMC3897989_01,t80,1998,2007,meropenem,Medication,D000077731,1.0
+PMC3897989_01,t81,2009,2014,0.5 g,,,0.0
+PMC3897989_01,t82,2019,2026,8 hours,,,0.0
+PMC3897989_01,t83,2059,2079,biochemical evidence,,,0.0
+PMC3897989_01,t84,2083,2094,cholestasis,,,0.0
+PMC3897989_01,t85,2104,2113,elevation,,,0.0
+PMC3897989_01,t86,2117,2120,ALP,,,0.0
+PMC3897989_01,t87,2122,2130,gamma-GT,,,0.0
+PMC3897989_01,t88,2135,2139,TBil,,,0.0
+PMC3897989_01,t89,2149,2157,presence,,,0.0
+PMC3897989_01,t90,2161,2164,AMA,,,0.0
+PMC3897989_01,t91,2170,2177,patient,,,0.0
+PMC3897989_01,t92,2208,2211,PBC,Diagnosis,,1.0
+PMC3897989_01,t93,2216,2220,UDCA,Diagnosis,,1.0
+PMC3897989_01,t94,2230,2241,three times,Diagnosis,,1.0
+PMC3897989_01,t95,2246,2249,day,Diagnosis,,1.0
+PMC3897989_01,t96,2283,2303,nasobiliary drainage,Diagnosis,,1.0
+PMC3897989_01,t97,2334,2341,patient,,,0.0
+PMC3897989_01,t98,2342,2358,s liver function,AnatomicalSite,,1.0
+PMC3897989_01,t99,2381,2388,patient,,,0.0
+PMC3897989_01,t100,2411,2420,suffering,,,0.0
+PMC3897989_01,t101,2426,2429,AIP,Diagnosis,,1.0
+PMC3897989_01,t102,2435,2457,following examinations,,,0.0
+PMC3897989_01,t103,2513,2520,44.36 g,,,0.0
+PMC3897989_01,t104,2521,2522,L,Finding,,1.0
+PMC3897989_01,t105,2531,2532,g,Exam,D014054,1.0
+PMC3897989_01,t106,2533,2534,L,Finding,,1.0
+PMC3897989_01,t107,2537,2564,CT-guided pancreatic biopsy,Exam,D001706,1.0
+PMC3897989_01,t108,2584,2656,histopathological evaluation showed dense lymphoplasmacytic infiltration,,,0.0
+PMC3897989_01,t109,2661,2669,fibrosis,,,0.0
+PMC3897989_01,t110,2677,2688,plasma cell,,,0.0
+PMC3897989_01,t111,2722,2726,high,,,0.0
+PMC3897989_01,t112,2737,2753,high-power field,,,0.0
+PMC3897989_01,t113,2755,2758,HPF,,,0.0
+PMC3897989_01,t114,2772,2775,ECT,Exam,,1.0
+PMC3897989_01,t115,2779,2793,salivary gland,,,0.0
+PMC3897989_01,t116,2813,2822,diagnosis,,,0.0
+PMC3897989_01,t117,2826,2830,type,Diagnosis,,1.0
+PMC3897989_01,t118,2833,2836,AIP,Diagnosis,,1.0
+PMC3897989_01,t119,2854,2864,accordance,Diagnosis,,1.0
+PMC3897989_01,t120,2874,2893,diagnostic criteria,Diagnosis,,1.0
+PMC3897989_01,t121,2895,2910,Steroid therapy,Exam,,1.0
+PMC3897989_01,t122,2916,2946,intravenous methylprednisolone,Medication,D008775,1.0
+PMC3897989_01,t123,2948,2951,MEP,,,0.0
+PMC3897989_01,t124,2964,2967,day,Diagnosis,,1.0
+PMC3897989_01,t125,2996,3005,Serum ALP,,,0.0
+PMC3897989_01,t126,3007,3015,gamma-GP,,,0.0
+PMC3897989_01,t127,3017,3021,TBil,,,0.0
+PMC3897989_01,t128,3043,3058,steroid therapy,Exam,,1.0
+PMC3897989_01,t129,3081,3094,404.9 mumol/L,,,0.0
+PMC3897989_01,t130,3099,3112,289.2 mumol/L,,,0.0
+PMC3897989_01,t131,3132,3140,one week,Exam,,1.0
+PMC3897989_01,t132,3177,3190,206.1 mumol/L,,,0.0
+PMC3897989_01,t133,3195,3208,167.1 mumol/L,,,0.0
+PMC3897989_01,t134,3249,3264,steroid therapy,Exam,,1.0
+PMC3897989_01,t135,3270,3278,oral MEP,,,0.0
+PMC3897989_01,t136,3279,3290,32 mg daily,,,0.0
+PMC3897989_01,t137,3300,3319,serum liver enzymes,AnatomicalSite,,1.0
+PMC3897989_01,t138,3324,3333,bilirubin,Exam,,1.0
+PMC3897989_01,t139,3366,3370,dose,Medication,,1.0
+PMC3897989_01,t140,3387,3394,morning,Medication,,1.0
+PMC3897989_01,t141,3412,3421,afternoon,,,0.0
+PMC3897989_01,t142,3436,3453,laboratory values,,,0.0
+PMC3897989_01,t143,3466,3504,repeat MRI showed remarkable reduction,,,0.0
+PMC3897989_01,t144,3512,3520,pancreas,AnatomicalSite,,1.0
+PMC3897989_01,t145,3522,3529,40 days,,,0.0
+PMC3897989_01,t146,3536,3545,treatment,,,0.0
+PMC3897989_01,t147,3551,3554,IgG,,,0.0
+PMC3897989_01,t148,3559,3562,IgM,Exam,,1.0
+PMC3897989_01,t149,3586,3598,normal range,,,0.0
+PMC3897989_01,t150,3604,3616,serum levels,,,0.0
+PMC3897989_01,t151,3620,3623,ALP,,,0.0
+PMC3897989_01,t152,3625,3633,gamma-GP,,,0.0
+PMC3897989_01,t153,3635,3639,TBil,,,0.0
+PMC3897989_01,t154,3644,3648,DBil,Exam,,1.0
+PMC3897989_01,t155,3672,3684,82.8 mumol/L,,,0.0
+PMC3897989_01,t156,3689,3701,54.9 mumol/L,,,0.0
+PMC3897989_01,t157,3721,3728,patient,,,0.0
+PMC3897989_01,t158,3767,3773,clinic,Outcome,,1.0
+PMC3897989_01,t159,3779,3782,MEP,,,0.0
+PMC3897989_01,t160,3815,3830,clinical course,,,0.0
+PMC3897989_01,t161,3846,3852,Figure,,,0.0
+PMC3897989_01,t162,3862,3869,40 days,,,0.0
+PMC3897989_01,t163,3876,3885,discharge,Outcome,,1.0
+PMC3897989_01,t164,3891,3926,patient developed red maculopapules,,,0.0
+PMC3897989_01,t165,3934,3945,right chest,AnatomicalSite,,1.0
+PMC3897989_01,t166,3951,3970,prickling-like pain,Symptom,,1.0
+PMC3897989_01,t167,3986,3993,erosion,,,0.0
+PMC3897989_01,t168,3998,4006,blisters,,,0.0
+PMC3897989_01,t169,4012,4019,patient,,,0.0
+PMC3897989_01,t170,4039,4052,herpes zoster,Diagnosis,D006562,1.0
+PMC3897989_01,t171,4070,4079,acyclovir,Diagnosis,,1.0
+PMC3897989_01,t172,4096,4099,day,Diagnosis,,1.0
+PMC3897989_01,t173,4105,4111,9 days,,,0.0
+PMC3897989_01,t174,4135,4142,patient,,,0.0
+PMC3897989_01,t175,4146,4157,chest X-ray,Exam,,1.0
+PMC3897989_01,t176,4164,4187,showed multiple nodules,,,0.0
+PMC3897989_01,t177,4195,4205,right lung,AnatomicalSite,,1.0
+PMC3897989_01,t178,4207,4249,Chest CT displayed multiple patchy shadows,AnatomicalSite,,1.0
+PMC3897989_01,t179,4255,4261,cavity,,,0.0
+PMC3897989_01,t180,4263,4314,CT-guided lung biopsy showed neutrophil aggregation,Exam,D001706,1.0
+PMC3897989_01,t181,4319,4335,fibrous effusion,Finding,,1.0
+PMC3897989_01,t182,4347,4354,alveoli,,,0.0
+PMC3897989_01,t183,4360,4367,patient,,,0.0
+PMC3897989_01,t184,4387,4404,pulmonary abscess,Diagnosis,D008169,1.0
+PMC3897989_01,t185,4438,4450,moxifloxacin,Medication,,1.0
+PMC3897989_01,t186,4473,4496,immunosuppressed status,,,0.0
+PMC3897989_01,t187,4504,4511,patient,,,0.0
+PMC3897989_01,t188,4513,4521,thymosin,,,0.0
+PMC3897989_01,t189,4543,4547,week,Medication,,1.0
+PMC3897989_01,t190,4563,4578,immune function,,,0.0
+PMC3897989_01,t191,4584,4598,liver function,AnatomicalSite,,1.0
+PMC3897989_01,t192,4603,4624,immunological indices,,,0.0
+PMC3897989_01,t193,4632,4639,patient,,,0.0
+PMC3897989_01,t194,4663,4699,subsequent one-year follow-up period,,,0.0
+PMC11368112_01,t1,2,18,35-year-old male,,,0.0
+PMC11368112_01,t2,26,39,2-day history,,,0.0
+PMC11368112_01,t3,43,58,chest tightness,AnatomicalSite,,1.0
+PMC11368112_01,t4,63,68,fever,Symptom,D005334,1.0
+PMC11368112_01,t5,89,109,emergency department,,,0.0
+PMC11368112_01,t6,113,117,July,,,0.0
+PMC11368112_01,t7,132,190,medical history included lower extremity venous thrombosis,History,,1.0
+PMC11368112_01,t8,192,209,pulmonary nodules,,,0.0
+PMC11368112_01,t9,211,226,cardiac surgery,Treatment,,1.0
+PMC11368112_01,t10,232,244,hypertension,Diagnosis,,1.0
+PMC11368112_01,t11,246,254,Two days,,,0.0
+PMC11368112_01,t12,263,294,experienced significant dyspnea,Symptom,,1.0
+PMC11368112_01,t13,310,328,intermittent fever,Symptom,,1.0
+PMC11368112_01,t14,333,339,chills,Symptom,,1.0
+PMC11368112_01,t15,345,365,physical examination,,,0.0
+PMC11368112_01,t16,377,388,temperature,,,0.0
+PMC11368112_01,t17,392,398,38.7 C,,,0.0
+PMC11368112_01,t18,405,422,rapid respiration,,,0.0
+PMC11368112_01,t19,427,457,no other obvious abnormalities,Finding,,1.0
+PMC11368112_01,t20,463,481,laboratory results,,,0.0
+PMC11368112_01,t21,499,502,WBC,,,0.0
+PMC11368112_01,t22,504,511,12.65 x,Exam,,1.0
+PMC11368112_01,t23,516,517,L,Symptom,D005334,1.0
+PMC11368112_01,t24,519,530,neutrophils,Exam,,1.0
+PMC11368112_01,t25,537,540,CRP,Exam,,1.0
+PMC11368112_01,t26,548,549,L,Symptom,D005334,1.0
+PMC11368112_01,t27,551,554,ESR,Exam,,1.0
+PMC11368112_01,t28,569,576,D-dimer,Exam,,1.0
+PMC11368112_01,t29,587,588,L,Symptom,D005334,1.0
+PMC11368112_01,t30,590,627,Venous ultrasound revealed thrombosis,Exam,,1.0
+PMC11368112_01,t31,635,654,common femoral vein,AnatomicalSite,,1.0
+PMC11368112_01,t32,656,686,bilateral external iliac veins,,,0.0
+PMC11368112_01,t33,692,721,left superficial femoral vein,AnatomicalSite,,1.0
+PMC11368112_01,t34,725,741,both lower limbs,,,0.0
+PMC11368112_01,t35,743,774,ECG indicated sinus tachycardia,,,0.0
+PMC11368112_01,t36,776,808,Pulmonary CTA indicated embolism,,,0.0
+PMC11368112_01,t37,812,848,both lower pulmonary artery branches,AnatomicalSite,,1.0
+PMC11368112_01,t38,852,863,new embolus,,,0.0
+PMC11368112_01,t39,871,906,right lower pulmonary artery branch,AnatomicalSite,,1.0
+PMC11368112_01,t40,912,929,exudative changes,,,0.0
+PMC11368112_01,t41,937,948,lower lobes,,,0.0
+PMC11368112_01,t42,952,962,both lungs,,,0.0
+PMC11368112_01,t43,971,973,1a,,,0.0
+PMC11368112_01,t44,978,979,b,Exam,D001706,1.0
+PMC11368112_01,t45,986,993,patient,,,0.0
+PMC11368112_01,t46,1017,1039,respiratory department,,,0.0
+PMC11368112_01,t47,1047,1056,diagnosis,,,0.0
+PMC11368112_01,t48,1060,1078,pulmonary embolism,Diagnosis,D011655,1.0
+PMC11368112_01,t49,1080,1082,PE,,,0.0
+PMC11368112_01,t50,1096,1101,night,,,0.0
+PMC11368112_01,t51,1107,1118,temperature,,,0.0
+PMC11368112_01,t52,1129,1135,39.5 C,,,0.0
+PMC11368112_01,t53,1152,1158,chills,Symptom,,1.0
+PMC11368112_01,t54,1171,1191,empirical escalation,,,0.0
+PMC11368112_01,t55,1195,1217,anti-infective therapy,,,0.0
+PMC11368112_01,t56,1223,1232,meropenem,,,0.0
+PMC11368112_01,t57,1252,1257,fever,Symptom,D005334,1.0
+PMC11368112_01,t58,1280,1284,peak,,,0.0
+PMC11368112_01,t59,1288,1294,39.8 C,,,0.0
+PMC11368112_01,t60,1302,1311,fifth day,,,0.0
+PMC11368112_01,t61,1315,1330,hospitalization,,,0.0
+PMC11368112_01,t62,1332,1337,Blood,,,0.0
+PMC11368112_01,t63,1342,1357,sputum cultures,,,0.0
+PMC11368112_01,t64,1377,1384,patient,,,0.0
+PMC11368112_01,t65,1409,1427,similar high fever,Symptom,D005334,1.0
+PMC11368112_01,t66,1428,1438,two months,,,0.0
+PMC11368112_01,t67,1447,1472,following cardiac surgery,Treatment,,1.0
+PMC11368112_01,t68,1517,1538,antipyretic treatment,,,0.0
+PMC11368112_01,t69,1540,1550,Two months,,,0.0
+PMC11368112_01,t70,1563,1588,esophageal echocardiogram,Exam,,1.0
+PMC11368112_01,t71,1605,1629,hyperechoic right atrium,,,0.0
+PMC11368112_01,t72,1637,1659,widened coronary sinus,,,0.0
+PMC11368112_01,t73,1676,1679,May,,,0.0
+PMC11368112_01,t74,1703,1710,surgery,Treatment,,1.0
+PMC11368112_01,t75,1724,1741,intracardiac mass,Finding,,1.0
+PMC11368112_01,t76,1743,1766,Intraoperative findings,,,0.0
+PMC11368112_01,t77,1778,1781,3 x,,,0.0
+PMC11368112_01,t78,1782,1829,3 cm cystic mass containing yellow cloudy fluid,Finding,,1.0
+PMC11368112_01,t79,1837,1851,coronary sinus,,,0.0
+PMC11368112_01,t80,1859,1871,right atrium,,,0.0
+PMC11368112_01,t81,1873,1944,Intraoperative cryopathologic analysis indicated inflammatory exudation,,,0.0
+PMC11368112_01,t82,1950,1965,necrotic tissue,,,0.0
+PMC11368112_01,t83,1970,1982,infiltration,,,0.0
+PMC11368112_01,t84,1986,2004,inflammatory cells,,,0.0
+PMC11368112_01,t85,2022,2043,cardiology department,,,0.0
+PMC11368112_01,t86,2059,2069,hematology,,,0.0
+PMC11368112_01,t87,2071,2080,infection,,,0.0
+PMC11368112_01,t88,2086,2106,vascular departments,,,0.0
+PMC11368112_01,t89,2128,2135,surgery,Treatment,,1.0
+PMC11368112_01,t90,2137,2160,suspecting tuberculosis,Diagnosis,,1.0
+PMC11368112_01,t91,2165,2181,fungal infection,,,0.0
+PMC11368112_01,t92,2194,2214,definitive diagnosis,,,0.0
+PMC11368112_01,t93,2232,2277,Physical examination revealed multiple ulcers,,,0.0
+PMC11368112_01,t94,2293,2301,diameter,,,0.0
+PMC11368112_01,t95,2310,2317,patient,,,0.0
+PMC11368112_01,t96,2318,2347,s bilateral lower extremities,,,0.0
+PMC11368112_01,t97,2360,2367,scrotum,,,0.0
+PMC11368112_01,t98,2380,2400,scattered old rashes,,,0.0
+PMC11368112_01,t99,2402,2413,Examination,,,0.0
+PMC11368112_01,t100,2421,2457,oropharynx indicated multiple ulcers,,,0.0
+PMC11368112_01,t101,2465,2471,tongue,,,0.0
+PMC11368112_01,t102,2476,2482,labium,,,0.0
+PMC11368112_01,t103,2491,2498,7th day,,,0.0
+PMC11368112_01,t104,2502,2517,hospitalization,,,0.0
+PMC11368112_01,t105,2523,2530,patient,,,0.0
+PMC11368112_01,t106,2543,2554,skin biopsy,Exam,D001706,1.0
+PMC11368112_01,t107,2571,2591,epidermal ulceration,,,0.0
+PMC11368112_01,t108,2597,2611,lipofuscinosis,,,0.0
+PMC11368112_01,t109,2620,2622,2c,,,0.0
+PMC11368112_01,t110,2625,2627,BD,,,0.0
+PMC11368112_01,t111,2650,2701,multidisciplinary discussion involving rheumatology,,,0.0
+PMC11368112_01,t112,2703,2732,cardiac microvascular surgery,Treatment,,1.0
+PMC11368112_01,t113,2734,2743,pathology,Exam,,1.0
+PMC11368112_01,t114,2745,2756,dermatology,,,0.0
+PMC11368112_01,t115,2758,2774,vascular surgery,Treatment,,1.0
+PMC11368112_01,t116,2780,2795,ultrasonography,,,0.0
+PMC11368112_01,t117,2810,2832,International Criteria,,,0.0
+PMC11368112_01,t118,2837,2843,Behcet,,,0.0
+PMC11368112_01,t119,2844,2853,s Disease,,,0.0
+PMC11368112_01,t120,2855,2859,ICBD,,,0.0
+PMC11368112_01,t121,2868,2898,multidisciplinary consultation,,,0.0
+PMC11368112_01,t122,2902,2916,treatment plan,,,0.0
+PMC11368112_01,t123,2932,2960,including methylprednisolone,Medication,D008775,1.0
+PMC11368112_01,t124,2974,2977,day,,,0.0
+PMC11368112_01,t125,2982,2991,two weeks,,,0.0
+PMC11368112_01,t126,3008,3011,day,,,0.0
+PMC11368112_01,t127,3016,3028,three months,,,0.0
+PMC11368112_01,t128,3062,3072,5 mg daily,,,0.0
+PMC11368112_01,t129,3075,3087,cyclosporine,Medication,D016572,1.0
+PMC11368112_01,t130,3102,3105,day,,,0.0
+PMC11368112_01,t131,3111,3119,warfarin,Medication,,1.0
+PMC11368112_01,t132,3134,3171,target international normalized ratio,,,0.0
+PMC11368112_01,t133,3188,3195,patient,,,0.0
+PMC11368112_01,t134,3196,3209,s temperature,,,0.0
+PMC11368112_01,t135,3235,3253,starting treatment,,,0.0
+PMC11368112_01,t136,3260,3263,ESR,Exam,,1.0
+PMC11368112_01,t137,3268,3278,CRP levels,,,0.0
+PMC11368112_01,t138,3296,3308,normal range,,,0.0
+PMC11368112_01,t139,3328,3335,14 days,,,0.0
+PMC11368112_01,t140,3342,3351,admission,,,0.0
+PMC11368112_01,t141,3360,3389,significant adverse reactions,,,0.0
+PMC11368112_01,t142,3391,3415,Two weeks post-treatment,,,0.0
+PMC11368112_01,t143,3417,3437,pulmonary artery CTA,AnatomicalSite,,1.0
+PMC11368112_01,t144,3452,3465,disappearance,,,0.0
+PMC11368112_01,t145,3469,3475,emboli,Diagnosis,D011655,1.0
+PMC11368112_01,t146,3483,3511,right lower pulmonary branch,,,0.0
+PMC11368112_01,t147,3518,3527,reduction,,,0.0
+PMC11368112_01,t148,3535,3539,size,,,0.0
+PMC11368112_01,t149,3543,3549,emboli,Diagnosis,D011655,1.0
+PMC11368112_01,t150,3557,3584,left lower pulmonary branch,,,0.0
+PMC11368112_01,t151,3593,3595,1c,,,0.0
+PMC11368112_01,t152,3600,3601,d,Exam,,1.0
+PMC11368112_01,t153,3608,3615,patient,,,0.0
+PMC11368112_01,t154,3628,3637,remission,Outcome,,1.0
+PMC11368112_01,t155,3645,3656,nine months,,,0.0
+PMC11368112_01,t156,3676,3695,regular adjustments,,,0.0
+PMC11368112_01,t157,3703,3713,medication,,,0.0
+PMC11368112_01,t158,3717,3729,rheumatology,,,0.0

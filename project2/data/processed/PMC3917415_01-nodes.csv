@@ -1,0 +1,22 @@
+case_id,node_id,type,label,attributes
+PMC3917415_01,A1,AnatomicalSite,chronic kidney disease,mentions=t19
+PMC3917415_01,A2,AnatomicalSite,Sylvian fissure,mentions=t33
+PMC3917415_01,A3,AnatomicalSite,neck,mentions=t68
+PMC3917415_01,D1,Diagnosis,ruptured aneurysm,mentions=t38|t66|t69|t72|t74
+PMC3917415_01,E1,Exam,G,mentions=t17
+PMC3917415_01,E2,Exam,Laboratory examinations revealed hypocomplementemia,mentions=t22
+PMC3917415_01,E3,Exam,C4,mentions=t24
+PMC3917415_01,E4,Exam,anti-double-stranded deoxyribonucleic acid,mentions=t25|t52|t65
+PMC3917415_01,E5,Exam,antibody,mentions=t27
+PMC3917415_01,E6,Exam,Computed tomography,mentions=t30
+PMC3917415_01,E7,Exam,b,mentions=t75
+PMC3917415_01,M1,Medication,cyclophosphamide,mentions=t10
+PMC3917415_01,O1,Outcome,GE,mentions=t42
+PMC3917415_01,O2,Outcome,general complications,mentions=t81
+PMC3917415_01,O3,Outcome,discharged home,mentions=t88
+PMC3917415_01,S1,Symptom,severe headache,mentions=t6
+PMC3917415_01,T1,Treatment,renal dialysis,mentions=t36|t83
+PMC3917415_01,T2,Treatment,left frontotemporal craniotomy,mentions=t67
+PMC3917415_01,C1,Concept,ruptured aneurysm,code=D017542
+PMC3917415_01,C2,Concept,G,code=D014054
+PMC3917415_01,C3,Concept,cyclophosphamide,code=D003520

@@ -1,0 +1,21 @@
+case_id,node_id,type,label,attributes
+PMC7102447_01,A1,AnatomicalSite,chest revealed moderate patchy ground-glass,mentions=t32
+PMC7102447_01,D1,Diagnosis,acute thrombosis,mentions=t38|t62
+PMC7102447_01,E1,Exam,Initial electrocardiogram,mentions=t10|t17
+PMC7102447_01,E2,Exam,total CK,mentions=t19
+PMC7102447_01,E3,Exam,computed tomography angiogram,mentions=t30
+PMC7102447_01,E4,Exam,Transesophageal echocardiogram,mentions=t36
+PMC7102447_01,E5,Exam,pathology findings,mentions=t61
+PMC7102447_01,F1,Finding,interstitial edema,mentions=t34
+PMC7102447_01,N1,History,past medical history,mentions=t2
+PMC7102447_01,N2,History,hypertension,mentions=t3
+PMC7102447_01,N3,History,asthma,mentions=t4
+PMC7102447_01,N4,History,invasive bioprosthetic mitral,mentions=t5|t39|t48
+PMC7102447_01,M1,Medication,heparin infusion,mentions=t26
+PMC7102447_01,M2,Medication,warfarin,mentions=t68
+PMC7102447_01,S1,Symptom,severe respiratory distress requiring emergent intubation,mentions=t9
+PMC7102447_01,T1,Treatment,surgery,mentions=t53
+PMC7102447_01,C1,Concept,chest revealed moderate patchy ground-glass,code=ANAT032
+PMC7102447_01,C2,Concept,acute thrombosis,code=D013927
+PMC7102447_01,C3,Concept,computed tomography angiogram,code=D014054
+PMC7102447_01,C4,Concept,interstitial edema,code=D004487

@@ -1,0 +1,27 @@
+case_id,node_id,type,label,attributes
+PMC11783470_01,D1,Diagnosis,esophagogastroduodenoscopy,mentions=t30
+PMC11783470_01,D2,Diagnosis,Image,mentions=t41|t62
+PMC11783470_01,D3,Diagnosis,OGA,mentions=t46|t54|t61|t75
+PMC11783470_01,D4,Diagnosis,known diagnosis,mentions=t60
+PMC11783470_01,D5,Diagnosis,anemia,mentions=t70
+PMC11783470_01,E1,Exam,Laboratory data,mentions=t20
+PMC11783470_01,E2,Exam,low transferrin saturation,mentions=t22|t26
+PMC11783470_01,E3,Exam,normal ferritin level,mentions=t23|t25
+PMC11783470_01,E4,Exam,colonoscopy,mentions=t32
+PMC11783470_01,E5,Exam,biopsy site,mentions=t40|t42
+PMC11783470_01,E6,Exam,negative bidirectional endoscopy,mentions=t65
+PMC11783470_01,E7,Exam,video capsule endoscopy,mentions=t68
+PMC11783470_01,F1,Finding,gastric lesion demonstrated well-circumscribed proliferation,mentions=t36|t38|t43
+PMC11783470_01,N1,History,family history,mentions=t4
+PMC11783470_01,N2,History,gastrointestinal malignancy,mentions=t5
+PMC11783470_01,M1,Medication,hemoglobin,mentions=t21
+PMC11783470_01,M2,Medication,iron deficiency,mentions=t24|t28
+PMC11783470_01,O1,Outcome,recurrence,mentions=t74
+PMC11783470_01,S1,Symptom,nausea,mentions=t9
+PMC11783470_01,S2,Symptom,vomiting,mentions=t10
+PMC11783470_01,S3,Symptom,abdominal pain,mentions=t11
+PMC11783470_01,S4,Symptom,unintentional weight loss,mentions=t15
+PMC11783470_01,T1,Treatment,endoscopic resection,mentions=t58
+PMC11783470_01,C1,Concept,biopsy site,code=D001706
+PMC11783470_01,C2,Concept,hemoglobin,code=D006454
+PMC11783470_01,C3,Concept,iron deficiency,code=D007501

@@ -1,0 +1,45 @@
+case_id,node_id,type,label,attributes
+PMC2817501_01,E1,Exam,A-53-year old man,mentions=t1
+PMC2817501_01,E2,Exam,exertional dyspnea,mentions=t3
+PMC2817501_01,E3,Exam,angina,mentions=t4
+PMC2817501_01,E4,Exam,replacement,mentions=t5|t40
+PMC2817501_01,E5,Exam,functioning Starr-Edwards caged ball mechanical prosthesis,mentions=t6|t22|t37|t47|t64
+PMC2817501_01,E6,Exam,odel caged ball,size=2320 m; mentions=t7
+PMC2817501_01,E7,Exam,thromboembolic serebrovascular accident,mentions=t9|t57
+PMC2817501_01,E8,Exam,two years,mentions=t10
+PMC2817501_01,E9,Exam,physical examination,mentions=t11
+PMC2817501_01,E10,Exam,hemiparesis,mentions=t12
+PMC2817501_01,E11,Exam,heart rate,mentions=t14
+PMC2817501_01,E12,Exam,92 beats/min,mentions=t15
+PMC2817501_01,E13,Exam,Cardiac auscultation,mentions=t16
+PMC2817501_01,E14,Exam,rales,mentions=t18
+PMC2817501_01,E15,Exam,base,mentions=t19
+PMC2817501_01,E16,Exam,Transesophageal echocardiography,mentions=t21
+PMC2817501_01,E17,Exam,Hg gradient,size=30 mm; mentions=t23
+PMC2817501_01,E18,Exam,3-4 degree mitral insufficiency,mentions=t24|t28|t53
+PMC2817501_01,E19,Exam,disease,mentions=t25
+PMC2817501_01,E20,Exam,peak pulmonary artery pressure,mentions=t26|t30
+PMC2817501_01,E21,Exam,area,mentions=t27
+PMC2817501_01,E22,Exam,left ventricular ejection fraction,mentions=t29
+PMC2817501_01,E23,Exam,pannus formation,mentions=t31|t58
+PMC2817501_01,E24,Exam,surrounding valvular tissue,mentions=t32
+PMC2817501_01,E25,Exam,one vessel coronary artery,mentions=t33|t41
+PMC2817501_01,E26,Exam,proximal portion,mentions=t35
+PMC2817501_01,E27,Exam,LAD,mentions=t36
+PMC2817501_01,E28,Exam,patient,mentions=t38
+PMC2817501_01,E29,Exam,reoperation,mentions=t39|t52
+PMC2817501_01,E30,Exam,median sternotomy,mentions=t42
+PMC2817501_01,E31,Exam,cardiopulmonary bypass,mentions=t44
+PMC2817501_01,E32,Exam,mild hypothermia,mentions=t45
+PMC2817501_01,E33,Exam,Macroscopic inspection,mentions=t46
+PMC2817501_01,E34,Exam,showing bare cage metal,mentions=t51
+PMC2817501_01,E35,Exam,bileaflet prosthesis,size=21 mm; mentions=t54|t66
+PMC2817501_01,E36,Exam,aortotomy,mentions=t56|t60
+PMC2817501_01,E37,Exam,better hemodynamic performance,mentions=t68
+PMC2817501_01,E38,Exam,lower INR ratio,mentions=t69
+PMC2817501_01,E39,Exam,postoperative course,mentions=t71
+PMC2817501_01,E40,Exam,Echocardiogram,mentions=t72
+PMC2817501_01,E41,Exam,discharge,mentions=t73
+PMC2817501_01,E42,Exam,prosthetic valves,mentions=t74
+PMC2817501_01,F1,Finding,6 systolic murmur,mentions=t17
+PMC2817501_01,C1,Concept,left ventricular ejection fraction,code=D013318

@@ -1,0 +1,9 @@
+case_id,node_id,type,label,attributes
+PMC9650410_01,D1,Diagnosis,cancer,mentions=t323|t351
+PMC9650410_01,D2,Diagnosis,undiagnosed depression,mentions=t324
+PMC9650410_01,E1,Exam,Theranos culture,mentions=t467
+PMC9650410_01,O1,Outcome,untimely death,mentions=t33
+PMC9650410_01,P1,Patient,p,mentions=t112|t156|t221|t232|t247|t329
+PMC9650410_01,P2,Patient,case,mentions=t365
+PMC9650410_01,S1,Symptom,pain,mentions=t420|t429
+PMC9650410_01,C1,Concept,cancer,code=D009369

@@ -1,0 +1,4 @@
+case_id,node_id,type,label,attributes
+PMC9532611_01,D1,Diagnosis,hypertension,mentions=t6|t24|t32
+PMC9532611_01,S1,Symptom,weakness,mentions=t5
+PMC9532611_01,T1,Treatment,undergone surgery,mentions=t38

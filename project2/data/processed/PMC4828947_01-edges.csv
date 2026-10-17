@@ -1,0 +1,4 @@
+case_id,edge_id,source_id,target_id,relation,attributes
+PMC4828947_01,e1,E1,F2,REVEALS,certainty=asserted
+PMC4828947_01,e2,E1,C1,SAME_AS,
+PMC4828947_01,e3,F1,C2,SAME_AS,

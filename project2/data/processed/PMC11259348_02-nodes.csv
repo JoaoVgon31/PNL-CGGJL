@@ -1,0 +1,14 @@
+case_id,node_id,type,label,attributes
+PMC11259348_02,D1,Diagnosis,presence,mentions=t2
+PMC11259348_02,D2,Diagnosis,erythrocyte alloantibodies,mentions=t3
+PMC11259348_02,D3,Diagnosis,ABO incompatibility,mentions=t4
+PMC11259348_02,D4,Diagnosis,patient,mentions=t5|t10|t27|t32|t41|t49|t64|t74|t128|t133|t136|t141
+PMC11259348_02,D5,Diagnosis,transfused units,mentions=t6
+PMC11259348_02,E1,Exam,Donath-Landsteiner test,mentions=t22
+PMC11259348_02,E2,Exam,ten blood packs,mentions=t80
+PMC11259348_02,E3,Exam,One volume,mentions=t87|t106|t114
+PMC11259348_02,P1,Patient,C,mentions=t44|t119
+PMC11259348_02,P2,Patient,e,mentions=t93
+PMC11259348_02,T1,Treatment,P antigen-negative red cell transfusion,mentions=t1|t12
+PMC11259348_02,T2,Treatment,hemolysis following blood transfusions,mentions=t8
+PMC11259348_02,C1,Concept,hemolysis following blood transfusions,code=D001803

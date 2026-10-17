@@ -1,0 +1,13 @@
+case_id,node_id,type,label,attributes
+PMC4310058_01,A1,AnatomicalSite,right parietal bone,mentions=t23|t30|t53|t57|t64|t66|t83|t85|t87
+PMC4310058_01,E1,Exam,third computed tomography,mentions=t31
+PMC4310058_01,E2,Exam,magnetic resonance imaging,mentions=t40
+PMC4310058_01,E3,Exam,Conflicting pathology interpretations,mentions=t97
+PMC4310058_01,F1,Finding,no local tenderness,mentions=t17
+PMC4310058_01,F2,Finding,soft tissue lesion appeared rubbery,mentions=t43|t79|t80|t92|t98
+PMC4310058_01,F3,Finding,minimal inflammation,mentions=t90
+PMC4310058_01,O1,Outcome,perioperative complications,mentions=t74
+PMC4310058_01,P1,Patient,c,mentions=t36
+PMC4310058_01,P2,Patient,case,mentions=t94
+PMC4310058_01,C1,Concept,third computed tomography,code=D014054
+PMC4310058_01,C2,Concept,magnetic resonance imaging,code=D008279

@@ -1,0 +1,12 @@
+case_id,node_id,type,label,attributes
+PMC11131390_01,A1,AnatomicalSite,thyroid function tests revealing mild overt hyperthyroidism,mentions=t8|t16
+PMC11131390_01,D1,Diagnosis,diagnosis,mentions=t18
+PMC11131390_01,D2,Diagnosis,GD,mentions=t19|t31
+PMC11131390_01,D3,Diagnosis,TRAbs,mentions=t20|t74|t104
+PMC11131390_01,R1,ExamResult,16.3 IU,mentions=t21
+PMC11131390_01,R2,ExamResult,3.3 IU,mentions=t75
+PMC11131390_01,M1,Medication,dose,mentions=t41|t46|t55|t97
+PMC11131390_01,S1,Symptom,4 kg weight gain,mentions=t6|t81
+PMC11131390_01,S2,Symptom,TSH,mentions=t9|t71|t83|t86
+PMC11131390_01,S3,Symptom,L,mentions=t22|t24|t76|t107
+PMC11131390_01,S4,Symptom,severe biochemical hypothyroidism,mentions=t82

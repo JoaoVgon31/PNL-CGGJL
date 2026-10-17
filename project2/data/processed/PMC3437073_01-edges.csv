@@ -1,0 +1,10 @@
+case_id,edge_id,source_id,target_id,relation,attributes
+PMC3437073_01,e1,S1,A1,LOCATED_IN,certainty=asserted
+PMC3437073_01,e2,F1,A2,LOCATED_IN,certainty=asserted
+PMC3437073_01,e3,F1,A1,LOCATED_IN,certainty=asserted
+PMC3437073_01,e4,F2,A1,LOCATED_IN,certainty=asserted
+PMC3437073_01,e5,F2,A4,LOCATED_IN,certainty=asserted
+PMC3437073_01,e6,A1,C1,SAME_AS,
+PMC3437073_01,e7,A2,C2,SAME_AS,
+PMC3437073_01,e8,A4,C3,SAME_AS,
+PMC3437073_01,e9,M1,C4,SAME_AS,

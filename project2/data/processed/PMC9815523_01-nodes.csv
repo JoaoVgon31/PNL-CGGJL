@@ -1,0 +1,21 @@
+case_id,node_id,type,label,attributes
+PMC9815523_01,A1,AnatomicalSite,subclavian vein bypass,mentions=t178
+PMC9815523_01,A2,AnatomicalSite,chest drain,mentions=t248
+PMC9815523_01,D1,Diagnosis,vTOS,mentions=t39|t197|t218
+PMC9815523_01,D2,Diagnosis,pneumonia,mentions=t250
+PMC9815523_01,E1,Exam,total,mentions=t1|t146|t236
+PMC9815523_01,E2,Exam,13 symptom free patients,mentions=t12|t23|t30|t38|t41|t50|t51|t70|t71|t78|t97|t106|t108|t111|t114|t122|t136|t149|t164|t179|t186|t205|t234|t235|t238|t243
+PMC9815523_01,E3,Exam,angiography,mentions=t34|t217
+PMC9815523_01,E4,Exam,surgery,mentions=t107
+PMC9815523_01,E5,Exam,CDT,mentions=t109|t120|t165|t241
+PMC9815523_01,E6,Exam,received intravenous stent placement,mentions=t118
+PMC9815523_01,M1,Medication,low-molecular weight heparin,mentions=t132
+PMC9815523_01,O1,Outcome,N,mentions=t7|t10|t16|t75|t77|t119|t121|t156|t228|t230
+PMC9815523_01,O2,Outcome,posture improvement,mentions=t58
+PMC9815523_01,O3,Outcome,Three patients suffered bleeding complications,mentions=t81|t180|t237|t240
+PMC9815523_01,O4,Outcome,full symptom resolution,mentions=t102|t148|t172|t175|t233
+PMC9815523_01,O5,Outcome,Six additional surgery related complications,mentions=t185
+PMC9815523_01,P1,Patient,s,mentions=t154|t158
+PMC9815523_01,T1,Treatment,blood transfusion,mentions=t91
+PMC9815523_01,T2,Treatment,undergo surgery,mentions=t117
+PMC9815523_01,T3,Treatment,which three required surgical exploration,mentions=t247

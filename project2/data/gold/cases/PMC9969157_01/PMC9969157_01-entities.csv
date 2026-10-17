@@ -1,0 +1,24 @@
+case_id,ent_id,char_start,char_end,texto,type,concept_code
+PMC9969157_01,t1,5,13,baby boy,Patient,
+PMC9969157_01,t2,26,38,33 2/7 weeks,ExamResult,
+PMC9969157_01,t3,222,242,gestational diabetes,Diagnosis,D016640
+PMC9969157_01,t4,247,271,gestational hypertension,Diagnosis,D006973
+PMC9969157_01,t5,325,331,LCHADD,Diagnosis,C537180
+PMC9969157_01,t6,362,378,cesarean section,Treatment,D002585
+PMC9969157_01,t7,464,476,preeclampsia,Diagnosis,D011225
+PMC9969157_01,t8,491,505,HELLP syndrome,Diagnosis,D017359
+PMC9969157_01,t9,902,921,10% dextrose fluids,Medication,D003920
+PMC9969157_01,t10,1474,1488,Echocardiogram,Exam,D004452
+PMC9969157_01,t11,1526,1550,patent ductus arteriosus,Finding,D004374
+PMC9969157_01,t12,1555,1575,patent foramen ovale,Finding,D054092
+PMC9969157_01,t13,1648,1660,Triheptanoin,Medication,C037659
+PMC9969157_01,t14,2185,2196,bradycardia,Symptom,D001919
+PMC9969157_01,t15,2201,2213,desaturation,Symptom,D000860
+PMC9969157_01,t16,2358,2364,emesis,Symptom,D014839
+PMC9969157_01,t17,2374,2386,hematochezia,Symptom,D006471
+PMC9969157_01,t18,2391,2406,abdominal x-ray,Exam,D011860
+PMC9969157_01,t19,2431,2455,pneumatosis intestinalis,Finding,D011006
+PMC9969157_01,t20,2495,2498,NEC,Diagnosis,D020345
+PMC9969157_01,t21,2573,2593,ampicillin-sulbactam,Medication,C054013
+PMC9969157_01,t22,2598,2608,gentamicin,Medication,D005839
+PMC9969157_01,t23,3095,3110,discharged home,Outcome,

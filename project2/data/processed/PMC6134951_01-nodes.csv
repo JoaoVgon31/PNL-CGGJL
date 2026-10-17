@@ -1,0 +1,24 @@
+case_id,node_id,type,label,attributes
+PMC6134951_01,A1,AnatomicalSite,left upper lobe perihilar lung nodule,mentions=t5
+PMC6134951_01,A2,AnatomicalSite,skin biopsy,mentions=t96
+PMC6134951_01,D1,Diagnosis,asthma,mentions=t3
+PMC6134951_01,D2,Diagnosis,TTF1-positive pulmonary adenocarcinoma,mentions=t10
+PMC6134951_01,D3,Diagnosis,drug eruption,mentions=t58
+PMC6134951_01,D4,Diagnosis,delayed type IV hypersensitivity,mentions=t59
+PMC6134951_01,E1,Exam,Cytology,mentions=t8
+PMC6134951_01,E2,Exam,PD-L1 TPS score,mentions=t16
+PMC6134951_01,F1,Finding,mediastinal lymphadenopathy,mentions=t6
+PMC6134951_01,F2,Finding,initial pleural effusion specimen,mentions=t7|t9|t37|t105
+PMC6134951_01,F3,Finding,NGS-based circulating tumor DNA analysis,mentions=t25|t33|t106
+PMC6134951_01,F4,Finding,right arm lesion,mentions=t55
+PMC6134951_01,M1,Medication,Alectinib,mentions=t74
+PMC6134951_01,M2,Medication,prednisone administration,mentions=t76|t83|t90|t100
+PMC6134951_01,M3,Medication,No antibiotics,mentions=t85
+PMC6134951_01,O1,Outcome,rapid improvement,mentions=t41
+PMC6134951_01,P1,Patient,case,mentions=t36
+PMC6134951_01,S1,Symptom,left-sided chest pain,mentions=t42
+PMC6134951_01,S2,Symptom,non-pruritic morbilliform rash,mentions=t44|t86|t102
+PMC6134951_01,S3,Symptom,eye swelling,mentions=t51
+PMC6134951_01,S4,Symptom,fever,mentions=t103
+PMC6134951_01,C1,Concept,TTF1-positive pulmonary adenocarcinoma,code=D000230
+PMC6134951_01,C2,Concept,drug eruption,code=D006968
