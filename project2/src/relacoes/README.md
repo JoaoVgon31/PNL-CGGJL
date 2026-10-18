@@ -12,8 +12,14 @@ essa.
 Esta Etapa depende das menções tipadas da Etapa 2 (Caio, `project2/src/entidades/`)
 e das arestas do Projeto 1 (`project1/data/processed/`), já disponíveis em `main`.
 
+**Todos os comandos abaixo devem ser rodados a partir da raiz do repositório**
+(a pasta que contém `project2/` diretamente) — eles usam `python3 -m
+project2.src...`, e o Python só encontra o pacote `project2` se você estiver
+parado na raiz. Rodar de dentro de `project2/src/relacoes/`, por exemplo, dá
+`ModuleNotFoundError: No module named 'project2'`.
+
 ```bash
-pip3 install pandas scikit-learn
+pip3 install -r project2/src/relacoes/requirements.txt
 pip3 install --break-system-packages -r project2/src/entidades/requirements.txt
 python3 -c "import nltk; nltk.download('punkt_tab')"
 
