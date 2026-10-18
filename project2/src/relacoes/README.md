@@ -49,7 +49,7 @@ com a config vencedora avaliada em `test`).
 ## Avaliação contra o gabarito manual
 
 `evaluate_against_gold(df_pred, case_ids, gold_dir)` reusa
-`project2/src/evaluation/metrics.py:evaluate_relations`. Os 2 casos
+`project2/src/montagem/evaluation/metrics.py:evaluate_relations`. Os 2 casos
 atribuídos a João (`PMC4630775_01`, `PMC6083636_03`) ainda não foram
 anotados manualmente — essa função já está pronta para ser usada assim
 que os CSVs em `project2/data/gold/cases/<case_id>/<case_id>-relations.csv`
