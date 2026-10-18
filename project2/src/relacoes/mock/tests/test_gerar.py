@@ -14,6 +14,9 @@ from project2.src.relacoes.mock.gerar import (
     parse_attributes,
     resolver_entidade,
     resolver_positivos,
+    gerar_pares_do_caso,
+    linha_negativa,
+    linha_do_positivo,
 )
 
 
@@ -239,6 +242,92 @@ class TestResolverPositivos(unittest.TestCase):
         ]
         positivos, _ = resolver_positivos(texto, mencoes, tipos, arestas)
         self.assertEqual(len(positivos), 1)
+
+
+class TestLinhaDoPositivo(unittest.TestCase):
+    def test_patient_tem_source_text_vazio(self):
+        texto = "0123456789" + "dor abdominal" + "x" * 20
+        destino = _mencao("s1", 10, 23, "dor abdominal", "Symptom")
+        positivo = {
+            "source_id": "P1", "target_id": "s1", "source_tipo": "Patient",
+            "target_tipo": "Symptom", "relation": "HAS_SYMPTOM", "certainty": "asserted",
+            "origem": None, "destino": destino,
+        }
+        linha = linha_do_positivo("C1", texto, positivo)
+        self.assertEqual(linha["source_text"], "")
+        self.assertEqual(linha["target_text"], "dor abdominal")
+        self.assertEqual(linha["is_positive"], 1)
+        self.assertEqual(linha["polarity"], "present")
+
+    def test_nao_patient_tem_textos_e_distancia_dos_dois_lados(self):
+        texto = "0123456789" + "achado" + "yy" + "figado" + "x" * 20
+        origem = _mencao("f1", 10, 16, "achado", "Finding")
+        destino = _mencao("a1", 18, 24, "figado", "AnatomicalSite")
+        positivo = {
+            "source_id": "f1", "target_id": "a1", "source_tipo": "Finding",
+            "target_tipo": "AnatomicalSite", "relation": "LOCATED_IN", "certainty": "asserted",
+            "origem": origem, "destino": destino,
+        }
+        linha = linha_do_positivo("C1", texto, positivo)
+        self.assertEqual(linha["source_text"], "achado")
+        self.assertEqual(linha["target_text"], "figado")
+        self.assertEqual(linha["distance_chars"], 8)
+
+
+class TestLinhaNegativa(unittest.TestCase):
+    def test_relation_none_e_is_positive_zero(self):
+        texto = "0123456789" + "dor" + "yy" + "febre" + "x" * 20
+        m1 = _mencao("s1", 10, 13, "dor", "Symptom")
+        m2 = _mencao("s2", 15, 20, "febre", "Symptom")
+        linha = linha_negativa("C1", texto, m1, m2)
+        self.assertEqual(linha["relation"], "NONE")
+        self.assertEqual(linha["is_positive"], 0)
+        self.assertEqual(linha["distance_chars"], 5)
+
+
+class TestGerarParesDoCaso(unittest.TestCase):
+    def test_gera_positivos_e_negativos_dentro_da_janela(self):
+        texto = "0123456789" + "dor abdominal" + "y" * 5 + "febre" + "z" * 300
+        with tempfile.TemporaryDirectory() as tmp:
+            raiz = Path(tmp)
+            mencoes_path = raiz / "mencoes.csv"
+            _escrever_csv(
+                mencoes_path,
+                [
+                    {"case_id": "C1", "id": "s1", "start": "10", "end": "23",
+                     "texto": "dor abdominal", "tipo": "Symptom"},
+                    {"case_id": "C1", "id": "s2", "start": "28", "end": "33",
+                     "texto": "febre", "tipo": "Symptom"},
+                ],
+                ["case_id", "id", "start", "end", "texto", "tipo"],
+            )
+            processados = raiz / "processados"
+            _escrever_csv(
+                processados / "C1-nodes.csv",
+                [
+                    {"case_id": "C1", "node_id": "P1", "type": "Patient", "label": "", "attributes": ""},
+                    {"case_id": "C1", "node_id": "S1", "type": "Symptom", "label": "", "attributes": ""},
+                ],
+                ["case_id", "node_id", "type", "label", "attributes"],
+            )
+            _escrever_csv(
+                processados / "C1-edges.csv",
+                [
+                    {"case_id": "C1", "edge_id": "e1", "source_id": "P1", "target_id": "S1",
+                     "relation": "HAS_SYMPTOM",
+                     "attributes": "trigger=dor; certainty=asserted; char_start=10; char_end=23"},
+                ],
+                ["case_id", "edge_id", "source_id", "target_id", "relation", "attributes"],
+            )
+            linhas, stats, mencoes = gerar_pares_do_caso("C1", texto, mencoes_path, processados)
+
+        self.assertEqual(stats["positivos_resolvidos"], 1)
+        self.assertEqual(stats["arestas_descartadas"], 0)
+        self.assertEqual(len(mencoes), 2)
+        relacoes = [l["relation"] for l in linhas]
+        self.assertIn("HAS_SYMPTOM", relacoes)
+        self.assertIn("NONE", relacoes)
+        self.assertEqual(len(linhas), 2)  # 1 positivo (P1->s1) + 1 negativo (s1,s2)
 
 
 if __name__ == "__main__":

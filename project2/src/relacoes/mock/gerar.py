@@ -162,3 +162,94 @@ def resolver_positivos(
             }
         )
     return positivos, descartadas
+
+
+COLUNAS = [
+    "case_id", "source_id", "target_id", "source_text", "target_text",
+    "source_type", "target_type", "between_text", "distance_chars",
+    "relation", "polarity", "certainty", "is_positive",
+]
+
+DISTANCIA_MAXIMA_NEGATIVO = 200
+
+
+def _texto(texto_caso: str, inicio: int, fim: int) -> str:
+    return texto_caso[inicio:fim]
+
+
+def linha_do_positivo(case_id: str, texto_caso: str, positivo: Dict) -> Dict:
+    origem = positivo["origem"]
+    destino = positivo["destino"]
+    if origem is None:
+        source_text, distance_chars, between_text = "", 0, ""
+    else:
+        source_text = _texto(texto_caso, origem["start"], origem["end"])
+        distance_chars = abs(destino["start"] - origem["start"])
+        inicio, fim = min(origem["end"], destino["end"]), max(origem["start"], destino["start"])
+        between_text = _texto(texto_caso, inicio, fim).strip() if inicio < fim else ""
+    return {
+        "case_id": case_id,
+        "source_id": positivo["source_id"],
+        "target_id": positivo["target_id"],
+        "source_text": source_text,
+        "target_text": _texto(texto_caso, destino["start"], destino["end"]),
+        "source_type": positivo["source_tipo"],
+        "target_type": positivo["target_tipo"],
+        "between_text": between_text,
+        "distance_chars": distance_chars,
+        "relation": positivo["relation"],
+        "polarity": "present",
+        "certainty": positivo["certainty"],
+        "is_positive": 1,
+    }
+
+
+def linha_negativa(case_id: str, texto_caso: str, m1: Dict, m2: Dict) -> Dict:
+    inicio, fim = min(m1["end"], m2["end"]), max(m1["start"], m2["start"])
+    between_text = _texto(texto_caso, inicio, fim).strip() if inicio < fim else ""
+    return {
+        "case_id": case_id,
+        "source_id": m1["id"],
+        "target_id": m2["id"],
+        "source_text": _texto(texto_caso, m1["start"], m1["end"]),
+        "target_text": _texto(texto_caso, m2["start"], m2["end"]),
+        "source_type": m1["tipo"],
+        "target_type": m2["tipo"],
+        "between_text": between_text,
+        "distance_chars": abs(m2["start"] - m1["start"]),
+        "relation": "NONE",
+        "polarity": "present",
+        "certainty": "asserted",
+        "is_positive": 0,
+    }
+
+
+def gerar_pares_do_caso(
+    case_id: str,
+    texto_caso: str,
+    mencoes_path: Path = MENCOES_SILVER,
+    processados: Path = PROCESSADOS,
+):
+    """Linhas (positivas + negativas), estatisticas e mencoes de um caso."""
+    mencoes = carregar_mencoes(case_id, mencoes_path)
+    if not mencoes:
+        return [], {"positivos_resolvidos": 0, "arestas_descartadas": 0}, []
+
+    tipos_dos_nos = carregar_tipos_dos_nos(case_id, processados)
+    arestas = carregar_arestas(case_id, processados)
+    positivos, descartadas = resolver_positivos(texto_caso, mencoes, tipos_dos_nos, arestas)
+
+    vistos = {(p["source_id"], p["target_id"]) for p in positivos}
+    linhas = [linha_do_positivo(case_id, texto_caso, p) for p in positivos]
+
+    for i, m1 in enumerate(mencoes):
+        for m2 in mencoes[i + 1:]:
+            par = (m1["id"], m2["id"])
+            if par in vistos or (m2["id"], m1["id"]) in vistos:
+                continue
+            if abs(m2["start"] - m1["start"]) > DISTANCIA_MAXIMA_NEGATIVO:
+                continue
+            linhas.append(linha_negativa(case_id, texto_caso, m1, m2))
+
+    stats = {"positivos_resolvidos": len(positivos), "arestas_descartadas": descartadas}
+    return linhas, stats, mencoes
