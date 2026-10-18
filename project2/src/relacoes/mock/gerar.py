@@ -11,6 +11,7 @@ para boa parte dos casos (ver docs/superpowers/specs/2026-10-18-relacoes-mock-ma
 from __future__ import annotations
 
 import csv
+import random
 from pathlib import Path
 from typing import Dict, List, Optional
 
@@ -253,3 +254,82 @@ def gerar_pares_do_caso(
 
     stats = {"positivos_resolvidos": len(positivos), "arestas_descartadas": descartadas}
     return linhas, stats, mencoes
+
+
+def dividir_casos(casos: List[str], random_state: int = 42) -> Dict[str, List[str]]:
+    """Split deterministico ~70/15/15 sobre a lista de case_ids (sem os de gabarito)."""
+    ordenados = sorted(casos)
+    random.Random(random_state).shuffle(ordenados)
+    n = len(ordenados)
+    n_val = round(n * 0.15)
+    n_test = round(n * 0.15)
+    val = ordenados[:n_val]
+    test = ordenados[n_val:n_val + n_test]
+    train = ordenados[n_val + n_test:]
+    return {"train": train, "val": val, "test": test}
+
+
+def gravar(linhas: List[Dict], caminho: Path) -> None:
+    caminho.parent.mkdir(parents=True, exist_ok=True)
+    with open(caminho, "w", encoding="utf-8", newline="") as handle:
+        writer = csv.DictWriter(handle, fieldnames=COLUNAS)
+        writer.writeheader()
+        writer.writerows(linhas)
+
+
+def gravar_entidades(mencoes_por_caso: Dict[str, List[Dict]], caminho: Path) -> None:
+    caminho.parent.mkdir(parents=True, exist_ok=True)
+    with open(caminho, "w", encoding="utf-8", newline="") as handle:
+        writer = csv.DictWriter(handle, fieldnames=["case_id", "ent_id", "char_start"])
+        writer.writeheader()
+        for case_id, mencoes in mencoes_por_caso.items():
+            for m in mencoes:
+                writer.writerow({"case_id": case_id, "ent_id": m["id"], "char_start": m["start"]})
+
+
+def gerar(
+    mencoes_path: Path = MENCOES_SILVER,
+    processados: Path = PROCESSADOS,
+    saida: Path = SAIDA,
+    casos_path: Optional[Path] = None,
+    gold_path: Optional[Path] = None,
+) -> Dict[str, int]:
+    """Gera train.csv/val.csv/test.csv/entidades.csv a partir do mock do Caio + Projeto 1.
+
+    casos_path/gold_path sao repassados explicitamente a comum.ler_casos()/
+    comum.casos_gold() (em vez de depender dos defaults de comum.py) para que
+    os testes possam apontar para fixtures sem precisar sobrescrever atributos
+    do modulo - o default de um parametro e vinculado em tempo de definicao da
+    funcao, nao de chamada, entao sobrescrever comum.CASOS_PADRAO depois de
+    importado nao teria efeito sobre uma chamada de comum.ler_casos() sem
+    argumento.
+    """
+    casos_todos = comum.ler_casos(casos_path) if casos_path else comum.ler_casos()
+    gold = comum.casos_gold(gold_path) if gold_path else comum.casos_gold()
+    textos = dict(casos_todos)
+    elegiveis = [cid for cid, _ in casos_todos if cid not in gold]
+    splits = dividir_casos(elegiveis)
+
+    estatisticas = {"positivos_resolvidos": 0, "arestas_descartadas": 0}
+    mencoes_usadas: Dict[str, List[Dict]] = {}
+
+    for nome_split, casos_do_split in splits.items():
+        linhas: List[Dict] = []
+        for case_id in casos_do_split:
+            linhas_caso, stats_caso, mencoes_caso = gerar_pares_do_caso(
+                case_id, textos[case_id], mencoes_path, processados
+            )
+            linhas.extend(linhas_caso)
+            estatisticas["positivos_resolvidos"] += stats_caso["positivos_resolvidos"]
+            estatisticas["arestas_descartadas"] += stats_caso["arestas_descartadas"]
+            if mencoes_caso:
+                mencoes_usadas[case_id] = mencoes_caso
+        gravar(linhas, saida / f"{nome_split}.csv")
+        estatisticas[nome_split] = len(linhas)
+
+    gravar_entidades(mencoes_usadas, saida / "entidades.csv")
+    return estatisticas
+
+
+if __name__ == "__main__":
+    print(gerar())

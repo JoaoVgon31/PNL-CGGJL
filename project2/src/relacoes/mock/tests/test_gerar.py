@@ -18,6 +18,7 @@ from project2.src.relacoes.mock.gerar import (
     linha_negativa,
     linha_do_positivo,
 )
+from project2.src.relacoes.mock.gerar import dividir_casos, gerar, gravar, gravar_entidades
 
 
 def _mencao(id_, start, end, texto, tipo):
@@ -328,6 +329,94 @@ class TestGerarParesDoCaso(unittest.TestCase):
         self.assertIn("HAS_SYMPTOM", relacoes)
         self.assertIn("NONE", relacoes)
         self.assertEqual(len(linhas), 2)  # 1 positivo (P1->s1) + 1 negativo (s1,s2)
+
+
+class TestDividirCasos(unittest.TestCase):
+    def test_particiona_em_tres_grupos_disjuntos(self):
+        casos = [f"C{i}" for i in range(20)]
+        splits = dividir_casos(casos, random_state=42)
+        todos = splits["train"] + splits["val"] + splits["test"]
+        self.assertEqual(sorted(todos), sorted(casos))
+        self.assertEqual(len(set(todos)), 20)
+
+    def test_e_deterministico(self):
+        casos = [f"C{i}" for i in range(20)]
+        self.assertEqual(dividir_casos(casos, random_state=42), dividir_casos(casos, random_state=42))
+
+
+class TestGerarEndToEnd(unittest.TestCase):
+    def test_gera_tres_csvs_e_entidades(self):
+        with tempfile.TemporaryDirectory() as tmp:
+            raiz = Path(tmp)
+
+            casos_path = raiz / "case_texts.csv"
+            textos = {
+                f"C{i}": "0123456789" + "dor abdominal" + "y" * 5 + "febre" + "z" * 50
+                for i in range(6)
+            }
+            _escrever_csv(
+                casos_path,
+                [{"case_id": cid, "case_text": texto} for cid, texto in textos.items()],
+                ["case_id", "case_text"],
+            )
+
+            gold_path = raiz / "gold" / "casos.txt"
+            gold_path.parent.mkdir(parents=True, exist_ok=True)
+            gold_path.write_text("C5\n", encoding="utf-8")
+
+            mencoes_path = raiz / "mencoes.csv"
+            linhas_mencoes = []
+            for cid in textos:
+                linhas_mencoes.append(
+                    {"case_id": cid, "id": "s1", "start": "10", "end": "23",
+                     "texto": "dor abdominal", "tipo": "Symptom"}
+                )
+                linhas_mencoes.append(
+                    {"case_id": cid, "id": "s2", "start": "28", "end": "33",
+                     "texto": "febre", "tipo": "Symptom"}
+                )
+            _escrever_csv(mencoes_path, linhas_mencoes, ["case_id", "id", "start", "end", "texto", "tipo"])
+
+            processados = raiz / "processados"
+            for cid in textos:
+                _escrever_csv(
+                    processados / f"{cid}-nodes.csv",
+                    [
+                        {"case_id": cid, "node_id": "P1", "type": "Patient", "label": "", "attributes": ""},
+                        {"case_id": cid, "node_id": "S1", "type": "Symptom", "label": "", "attributes": ""},
+                    ],
+                    ["case_id", "node_id", "type", "label", "attributes"],
+                )
+                _escrever_csv(
+                    processados / f"{cid}-edges.csv",
+                    [
+                        {"case_id": cid, "edge_id": "e1", "source_id": "P1", "target_id": "S1",
+                         "relation": "HAS_SYMPTOM",
+                         "attributes": "trigger=dor; certainty=asserted; char_start=10; char_end=23"},
+                    ],
+                    ["case_id", "edge_id", "source_id", "target_id", "relation", "attributes"],
+                )
+
+            saida = raiz / "saida"
+
+            estatisticas = gerar(
+                mencoes_path=mencoes_path,
+                processados=processados,
+                saida=saida,
+                casos_path=casos_path,
+                gold_path=gold_path,
+            )
+
+            self.assertTrue((saida / "train.csv").exists())
+            self.assertTrue((saida / "val.csv").exists())
+            self.assertTrue((saida / "test.csv").exists())
+            self.assertTrue((saida / "entidades.csv").exists())
+            self.assertGreater(estatisticas["positivos_resolvidos"], 0)
+
+            with open(saida / "entidades.csv", encoding="utf-8") as handle:
+                linhas_entidades = list(csv.DictReader(handle))
+            case_ids_entidades = {l["case_id"] for l in linhas_entidades}
+            self.assertNotIn("C5", case_ids_entidades)  # caso de gabarito, nunca entra
 
 
 if __name__ == "__main__":
