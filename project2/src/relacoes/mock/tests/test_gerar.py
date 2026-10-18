@@ -103,6 +103,13 @@ class TestCarregarMencoes(unittest.TestCase):
         self.assertEqual(resultado[0]["end"], 20)
         self.assertIsInstance(resultado[0]["start"], int)
 
+    def test_caminho_inexistente_levanta_erro_com_comando_claro(self):
+        with tempfile.TemporaryDirectory() as tmp:
+            caminho = Path(tmp) / "nao_existe.csv"
+            with self.assertRaises(FileNotFoundError) as cm:
+                carregar_mencoes("C1", caminho)
+        self.assertIn("entidades.py mock", str(cm.exception))
+
 
 class TestCarregarTiposDosNos(unittest.TestCase):
     def test_mapa_node_id_para_type(self):
@@ -194,7 +201,7 @@ class TestResolverPositivos(unittest.TestCase):
             {"source_id": "P1", "target_id": "S1", "relation": "HAS_SYMPTOM",
              "certainty": "asserted", "char_start": 0, "char_end": 23, "trigger": "dor"},
         ]
-        positivos, descartadas = resolver_positivos(texto, mencoes, tipos, arestas)
+        positivos, descartadas, _ = resolver_positivos(texto, mencoes, tipos, arestas)
         self.assertEqual(len(positivos), 1)
         self.assertEqual(positivos[0]["source_id"], "P1")
         self.assertEqual(positivos[0]["target_id"], "s1")
@@ -213,7 +220,7 @@ class TestResolverPositivos(unittest.TestCase):
             {"source_id": "F1", "target_id": "A1", "relation": "LOCATED_IN",
              "certainty": "asserted", "char_start": 10, "char_end": 24, "trigger": "figado"},
         ]
-        positivos, descartadas = resolver_positivos(texto, mencoes, tipos, arestas)
+        positivos, descartadas, _ = resolver_positivos(texto, mencoes, tipos, arestas)
         self.assertEqual(len(positivos), 1)
         self.assertEqual(positivos[0]["source_id"], "f1")
         self.assertEqual(positivos[0]["target_id"], "a1")
@@ -227,7 +234,7 @@ class TestResolverPositivos(unittest.TestCase):
             {"source_id": "P1", "target_id": "S1", "relation": "HAS_SYMPTOM",
              "certainty": "asserted", "char_start": 0, "char_end": 20, "trigger": "x"},
         ]
-        positivos, descartadas = resolver_positivos(texto, mencoes, tipos, arestas)
+        positivos, descartadas, _ = resolver_positivos(texto, mencoes, tipos, arestas)
         self.assertEqual(positivos, [])
         self.assertEqual(descartadas, 1)
 
@@ -241,8 +248,9 @@ class TestResolverPositivos(unittest.TestCase):
             {"source_id": "P1", "target_id": "S1", "relation": "HAS_SYMPTOM",
              "certainty": "hedged", "char_start": 0, "char_end": 13, "trigger": "dor"},
         ]
-        positivos, _ = resolver_positivos(texto, mencoes, tipos, arestas)
+        positivos, descartadas, colapsadas = resolver_positivos(texto, mencoes, tipos, arestas)
         self.assertEqual(len(positivos), 1)
+        self.assertEqual(colapsadas, 1)
 
 
 class TestLinhaDoPositivo(unittest.TestCase):

@@ -68,3 +68,27 @@ forem preenchidos.
   Algumas arestas do Projeto 1 são descartadas quando nenhuma menção do tipo certo
   cai na janela de evidência (`arestas_descartadas` no retorno de `gerar()`); isso
   é intencional — perder um exemplo é melhor que criar um casamento errado.
+  Além disso, `resolver_positivos` deduplica pares `(origem_id, destino_id)`
+  repetidos entre arestas diferentes, contados separadamente em
+  `pares_colapsados`: ao contrário de `arestas_descartadas` (nenhuma menção
+  candidata encontrada), um par colapsado sempre tem a mesma relação do par já
+  resolvido, então não gera rótulo errado — só reduz a contagem bruta de
+  arestas. Nos dados reais, a perda de cobertura total é `arestas_descartadas +
+  pares_colapsados`, cerca de 28,6% das arestas elegíveis, bem maior que os
+  ~9% que `arestas_descartadas` sozinho sugere; some os dois contadores ao
+  avaliar quanto do Projeto 1 efetivamente chega aos CSVs de saída.
+- **Comparação regra-vs-ML estruturalmente injusta para `Patient`**: nos dados
+  reais, todos os pares envolvendo `Patient` são positivos (nenhum `NONE`
+  gerado para esse tipo), então a regra de `relacoes.py` "acerta 100%" só
+  porque o gerador nunca cria um exemplo negativo envolvendo `Patient` para
+  ela errar. O classificador de N-gramas, por outro lado, recebe uma fatia
+  com ~90% `NONE`. Uma conclusão de relatório do tipo "a regra supera o
+  classificador" estaria medindo uma assimetria do gerador de dados, não uma
+  diferença real entre os dois métodos.
+- **Baixo suporte da classe `SUPPORTS`**: nos dados reais, a classe `SUPPORTS`
+  tem suporte 0 tanto em `val` quanto em `test`, então a seleção entre a
+  configuração unigrama e 1-3-grama (`select_best_lr_config`) acaba decidida
+  só pelas poucas classes com suporte real nesses splits. Isso torna a
+  escolha de configuração — e qualquer métrica agregada que dependa dela —
+  estatisticamente frágil; vale mencionar essa limitação antes de tirar
+  conclusões fortes dos números no relatório comparativo.

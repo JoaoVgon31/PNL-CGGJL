@@ -37,6 +37,11 @@ def parse_attributes(bruto: Optional[str]) -> Dict[str, str]:
 
 def carregar_mencoes(case_id: str, mencoes_path: Path = MENCOES_SILVER) -> List[Dict]:
     """Mencoes do caso (id, start, end, texto, tipo), com start/end como int."""
+    if not mencoes_path.exists():
+        raise FileNotFoundError(
+            f"{mencoes_path} nao existe. Rode primeiro: "
+            f"python3 project2/src/entidades/entidades.py mock"
+        )
     with open(mencoes_path, encoding="utf-8", newline="") as handle:
         linhas = [l for l in csv.DictReader(handle) if l["case_id"] == case_id]
     for linha in linhas:
@@ -107,13 +112,18 @@ def resolver_positivos(
 ):
     """Resolve cada aresta clinica para um par de mencoes via offset, sem casar texto.
 
-    Retorna (positivos, arestas_descartadas). 'origem' e None quando o lado e
-    Patient (nao tem span real - a regra de relacoes.py trata por categoria,
-    nao precisa de posicao); 'destino' e sempre uma mencao resolvida.
+    Retorna (positivos, arestas_descartadas, pares_colapsados). 'origem' e None
+    quando o lado e Patient (nao tem span real - a regra de relacoes.py trata
+    por categoria, nao precisa de posicao); 'destino' e sempre uma mencao
+    resolvida. 'pares_colapsados' conta arestas cujo par (origem_id, destino_id)
+    ja havia sido resolvido por outra aresta (dedup) - sempre com a mesma
+    relacao do par ja resolvido, portanto sem perda de informacao, apenas de
+    contagem bruta de arestas.
     """
     positivos: List[Dict] = []
     vistos = set()
     descartadas = 0
+    colapsadas = 0
     for aresta in arestas:
         tipo_origem = tipos_dos_nos.get(aresta["source_id"])
         tipo_destino = tipos_dos_nos.get(aresta["target_id"])
@@ -148,6 +158,7 @@ def resolver_positivos(
 
         chave = (origem_id, destino_id)
         if chave in vistos:
+            colapsadas += 1
             continue
         vistos.add(chave)
         positivos.append(
@@ -162,7 +173,7 @@ def resolver_positivos(
                 "destino": destino,
             }
         )
-    return positivos, descartadas
+    return positivos, descartadas, colapsadas
 
 
 COLUNAS = [
@@ -234,11 +245,11 @@ def gerar_pares_do_caso(
     """Linhas (positivas + negativas), estatisticas e mencoes de um caso."""
     mencoes = carregar_mencoes(case_id, mencoes_path)
     if not mencoes:
-        return [], {"positivos_resolvidos": 0, "arestas_descartadas": 0}, []
+        return [], {"positivos_resolvidos": 0, "arestas_descartadas": 0, "pares_colapsados": 0}, []
 
     tipos_dos_nos = carregar_tipos_dos_nos(case_id, processados)
     arestas = carregar_arestas(case_id, processados)
-    positivos, descartadas = resolver_positivos(texto_caso, mencoes, tipos_dos_nos, arestas)
+    positivos, descartadas, colapsadas = resolver_positivos(texto_caso, mencoes, tipos_dos_nos, arestas)
 
     vistos = {(p["source_id"], p["target_id"]) for p in positivos}
     linhas = [linha_do_positivo(case_id, texto_caso, p) for p in positivos]
@@ -252,7 +263,11 @@ def gerar_pares_do_caso(
                 continue
             linhas.append(linha_negativa(case_id, texto_caso, m1, m2))
 
-    stats = {"positivos_resolvidos": len(positivos), "arestas_descartadas": descartadas}
+    stats = {
+        "positivos_resolvidos": len(positivos),
+        "arestas_descartadas": descartadas,
+        "pares_colapsados": colapsadas,
+    }
     return linhas, stats, mencoes
 
 
@@ -310,7 +325,7 @@ def gerar(
     elegiveis = [cid for cid, _ in casos_todos if cid not in gold]
     splits = dividir_casos(elegiveis)
 
-    estatisticas = {"positivos_resolvidos": 0, "arestas_descartadas": 0}
+    estatisticas = {"positivos_resolvidos": 0, "arestas_descartadas": 0, "pares_colapsados": 0}
     mencoes_usadas: Dict[str, List[Dict]] = {}
 
     for nome_split, casos_do_split in splits.items():
@@ -322,6 +337,7 @@ def gerar(
             linhas.extend(linhas_caso)
             estatisticas["positivos_resolvidos"] += stats_caso["positivos_resolvidos"]
             estatisticas["arestas_descartadas"] += stats_caso["arestas_descartadas"]
+            estatisticas["pares_colapsados"] += stats_caso["pares_colapsados"]
             if mencoes_caso:
                 mencoes_usadas[case_id] = mencoes_caso
         gravar(linhas, saida / f"{nome_split}.csv")
