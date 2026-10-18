@@ -1,6 +1,12 @@
 # -*- coding: utf-8 -*-
 """Calculo formal de metricas de avaliacao para todas as estacoes do Projeto 2.
 
+Copia vendorizada (autoria original: George, Etapa 5) trazida para dentro do
+escopo da Etapa 4 porque este arquivo ainda nao existe em main - a branch que
+o publica (feat/estacao-5-dados-avaliacao-montagem) nao foi mergeada. Mantida
+aqui sem alteracao de logica; se/quando a Etapa 5 publicar isso em main, troque
+o import em relacoes.py e apague esta copia.
+
 Padroniza as metricas da equipe (Regra 4 do planejamento):
   1. Entidades: Precision, Recall e F1 (casamento exato e relaxado por sobreposicao).
   2. Tipos e Conceitos: Acuracia, Macro/Micro-F1, Matriz de Confusao e acuracia MeSH.

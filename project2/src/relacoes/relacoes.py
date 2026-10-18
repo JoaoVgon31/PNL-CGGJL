@@ -22,7 +22,7 @@ from sklearn.pipeline import Pipeline
 from sklearn.preprocessing import MaxAbsScaler, OneHotEncoder
 from sklearn.svm import LinearSVC
 
-from project2.src.montagem.evaluation.metrics import evaluate_relations
+from project2.src.relacoes.evaluation.metrics import evaluate_relations
 
 REPO_ROOT = Path(__file__).resolve().parents[3]
 DEFAULT_ENTIDADES = REPO_ROOT / "project2" / "data" / "mock" / "relacoes" / "entidades.csv"
@@ -213,7 +213,7 @@ def predict_relations(df_candidates: pd.DataFrame, pipeline: Pipeline) -> pd.Dat
 
     Descarta linhas preditas como NONE e formata no contrato de saida
     (case_id, source, target, relation, polarity, certainty, confidence)
-    esperado por project2/src/montagem/evaluation/metrics.py:evaluate_relations.
+    esperado por project2/src/relacoes/evaluation/metrics.py:evaluate_relations.
 
     Pre-condicao: df_candidates ja deve ter passado por prepare_features
     antes de chegar aqui (colunas source_type/target_type/between_text
