@@ -12,7 +12,13 @@ from project2.src.relacoes.mock.gerar import (
     carregar_mencoes,
     carregar_tipos_dos_nos,
     parse_attributes,
+    resolver_entidade,
+    resolver_positivos,
 )
+
+
+def _mencao(id_, start, end, texto, tipo):
+    return {"id": id_, "start": start, "end": end, "texto": texto, "tipo": tipo}
 
 
 def _escrever_csv(caminho: Path, linhas: list[dict], colunas: list[str]) -> None:
@@ -147,6 +153,92 @@ class TestCarregarArestas(unittest.TestCase):
             )
             resultado = carregar_arestas("C1", processados)
         self.assertEqual(resultado, [])
+
+
+class TestResolverEntidade(unittest.TestCase):
+    def test_unica_candidata_na_janela(self):
+        mencoes = [_mencao("s1", 10, 20, "dor", "Symptom")]
+        resultado = resolver_entidade(mencoes, "Symptom", 0, 30, "dor", "texto qualquer com dor aqui")
+        self.assertEqual(resultado["id"], "s1")
+
+    def test_nenhuma_candidata_retorna_none(self):
+        mencoes = [_mencao("s1", 10, 20, "dor", "Symptom")]
+        resultado = resolver_entidade(mencoes, "AnatomicalSite", 0, 30, "x", "texto")
+        self.assertIsNone(resultado)
+
+    def test_candidata_fora_da_janela_e_ignorada(self):
+        mencoes = [_mencao("s1", 500, 510, "dor", "Symptom")]
+        resultado = resolver_entidade(mencoes, "Symptom", 0, 30, "x", "texto" * 200)
+        self.assertIsNone(resultado)
+
+    def test_desambigua_pela_proximidade_do_trigger(self):
+        texto = "a" * 10 + "febre" + "b" * 10 + "palido" + "c" * 10
+        mencoes = [
+            _mencao("s1", 10, 15, "febre", "Symptom"),
+            _mencao("s2", 25, 31, "palido", "Symptom"),
+        ]
+        resultado = resolver_entidade(mencoes, "Symptom", 0, len(texto), "palido", texto)
+        self.assertEqual(resultado["id"], "s2")
+
+
+class TestResolverPositivos(unittest.TestCase):
+    def test_relacao_com_patient_nao_precisa_de_span_na_origem(self):
+        texto = "0123456789" + "dor abdominal" + "x" * 20
+        mencoes = [_mencao("s1", 10, 23, "dor abdominal", "Symptom")]
+        tipos = {"P1": "Patient", "S1": "Symptom"}
+        arestas = [
+            {"source_id": "P1", "target_id": "S1", "relation": "HAS_SYMPTOM",
+             "certainty": "asserted", "char_start": 0, "char_end": 23, "trigger": "dor"},
+        ]
+        positivos, descartadas = resolver_positivos(texto, mencoes, tipos, arestas)
+        self.assertEqual(len(positivos), 1)
+        self.assertEqual(positivos[0]["source_id"], "P1")
+        self.assertEqual(positivos[0]["target_id"], "s1")
+        self.assertIsNone(positivos[0]["origem"])
+        self.assertEqual(positivos[0]["destino"]["id"], "s1")
+        self.assertEqual(descartadas, 0)
+
+    def test_relacao_sem_patient_resolve_os_dois_lados(self):
+        texto = "0123456789" + "achado" + "yy" + "figado" + "x" * 20
+        mencoes = [
+            _mencao("f1", 10, 16, "achado", "Finding"),
+            _mencao("a1", 18, 24, "figado", "AnatomicalSite"),
+        ]
+        tipos = {"F1": "Finding", "A1": "AnatomicalSite"}
+        arestas = [
+            {"source_id": "F1", "target_id": "A1", "relation": "LOCATED_IN",
+             "certainty": "asserted", "char_start": 10, "char_end": 24, "trigger": "figado"},
+        ]
+        positivos, descartadas = resolver_positivos(texto, mencoes, tipos, arestas)
+        self.assertEqual(len(positivos), 1)
+        self.assertEqual(positivos[0]["source_id"], "f1")
+        self.assertEqual(positivos[0]["target_id"], "a1")
+        self.assertEqual(descartadas, 0)
+
+    def test_descarta_quando_nenhuma_candidata(self):
+        texto = "texto sem nada relevante" * 5
+        mencoes = []
+        tipos = {"P1": "Patient", "S1": "Symptom"}
+        arestas = [
+            {"source_id": "P1", "target_id": "S1", "relation": "HAS_SYMPTOM",
+             "certainty": "asserted", "char_start": 0, "char_end": 20, "trigger": "x"},
+        ]
+        positivos, descartadas = resolver_positivos(texto, mencoes, tipos, arestas)
+        self.assertEqual(positivos, [])
+        self.assertEqual(descartadas, 1)
+
+    def test_deduplica_pares_repetidos(self):
+        texto = "0123456789" + "dor" + "x" * 20
+        mencoes = [_mencao("s1", 10, 13, "dor", "Symptom")]
+        tipos = {"P1": "Patient", "S1": "Symptom"}
+        arestas = [
+            {"source_id": "P1", "target_id": "S1", "relation": "HAS_SYMPTOM",
+             "certainty": "asserted", "char_start": 0, "char_end": 13, "trigger": "dor"},
+            {"source_id": "P1", "target_id": "S1", "relation": "HAS_SYMPTOM",
+             "certainty": "hedged", "char_start": 0, "char_end": 13, "trigger": "dor"},
+        ]
+        positivos, _ = resolver_positivos(texto, mencoes, tipos, arestas)
+        self.assertEqual(len(positivos), 1)
 
 
 if __name__ == "__main__":

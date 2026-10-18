@@ -74,3 +74,91 @@ def carregar_arestas(case_id: str, processados: Path = PROCESSADOS) -> List[Dict
                 }
             )
     return arestas
+
+
+def resolver_entidade(
+    mencoes: List[Dict],
+    tipo: str,
+    char_start: int,
+    char_end: int,
+    trigger: str,
+    texto_caso: str,
+) -> Optional[Dict]:
+    """Mencao do tipo certo contida em [char_start, char_end], mais proxima do trigger."""
+    candidatas = [
+        m for m in mencoes
+        if m["tipo"] == tipo and char_start <= m["start"] and m["end"] <= char_end
+    ]
+    if not candidatas:
+        return None
+    if len(candidatas) == 1:
+        return candidatas[0]
+    posicao_trigger = texto_caso.find(trigger, char_start, char_end) if trigger else -1
+    referencia = posicao_trigger if posicao_trigger >= 0 else (char_start + char_end) // 2
+    return min(candidatas, key=lambda m: abs(((m["start"] + m["end"]) // 2) - referencia))
+
+
+def resolver_positivos(
+    texto_caso: str,
+    mencoes: List[Dict],
+    tipos_dos_nos: Dict[str, str],
+    arestas: List[Dict],
+):
+    """Resolve cada aresta clinica para um par de mencoes via offset, sem casar texto.
+
+    Retorna (positivos, arestas_descartadas). 'origem' e None quando o lado e
+    Patient (nao tem span real - a regra de relacoes.py trata por categoria,
+    nao precisa de posicao); 'destino' e sempre uma mencao resolvida.
+    """
+    positivos: List[Dict] = []
+    vistos = set()
+    descartadas = 0
+    for aresta in arestas:
+        tipo_origem = tipos_dos_nos.get(aresta["source_id"])
+        tipo_destino = tipos_dos_nos.get(aresta["target_id"])
+        if tipo_origem is None or tipo_destino is None:
+            descartadas += 1
+            continue
+
+        if tipo_origem == "Patient":
+            origem, origem_id = None, aresta["source_id"]
+        else:
+            origem = resolver_entidade(
+                mencoes, tipo_origem, aresta["char_start"], aresta["char_end"],
+                aresta["trigger"], texto_caso,
+            )
+            if origem is None:
+                descartadas += 1
+                continue
+            origem_id = origem["id"]
+
+        destino = resolver_entidade(
+            mencoes, tipo_destino, aresta["char_start"], aresta["char_end"],
+            aresta["trigger"], texto_caso,
+        )
+        if destino is None:
+            descartadas += 1
+            continue
+        destino_id = destino["id"]
+
+        if origem_id == destino_id:
+            descartadas += 1
+            continue
+
+        chave = (origem_id, destino_id)
+        if chave in vistos:
+            continue
+        vistos.add(chave)
+        positivos.append(
+            {
+                "source_id": origem_id,
+                "target_id": destino_id,
+                "source_tipo": tipo_origem,
+                "target_tipo": tipo_destino,
+                "relation": aresta["relation"],
+                "certainty": aresta["certainty"],
+                "origem": origem,
+                "destino": destino,
+            }
+        )
+    return positivos, descartadas
