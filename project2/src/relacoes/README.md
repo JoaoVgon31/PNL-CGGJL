@@ -39,7 +39,7 @@ com a config vencedora avaliada em `test`).
    `LOCATED_IN`, `HAS_RESULT`, `SUPPORTS`, `NONE`), um `Pipeline` do
    scikit-learn combina TF-IDF de `between_text`, one-hot dos tipos,
    `distance_chars` e a ordem textual (`source_before_target`, recuperada
-   via join com `project2/data/silver/entidades.csv`, já que
+   via join com `project2/data/mock/relacoes/entidades.csv`, já que
    `distance_chars` e `between_text` são simétricos e não preservam
    direção).
 3. O modelo de produção é **sempre LogisticRegression** (fornece
@@ -57,14 +57,10 @@ forem preenchidos.
 
 ## Limitações conhecidas
 
-- `project2/data/silver/*.csv` (entrada deste módulo) é gitignored e não é
-  versionado — precisa ser gerado localmente via
-  `python3 -m project2.src.data.weak_supervision` antes da primeira execução
-  (ver "Como rodar" acima).
-- `polarity`/`certainty` na saída final são herdados das colunas já
-  presentes em `relations_training_*.csv` (derivadas via weak supervision
-  das regras do Projeto 1), já que a Etapa 3 (tipos/polaridade) ainda não
-  tem saída própria. Revisitar quando a Etapa 3 estiver pronta.
+- `polarity`/`certainty` na saída final são herdados dos atributos já
+  presentes nas arestas do Projeto 1 (repassados por
+  `project2/src/relacoes/mock/gerar.py`), já que a Etapa 3 (tipos/polaridade)
+  ainda não tem saída própria. Revisitar quando a Etapa 3 estiver pronta.
 - Os dados de treino/val/teste são gerados por `project2/src/relacoes/mock/gerar.py`,
   que resolve as relações do Projeto 1 contra as menções tipadas da Etapa 2 (Caio)
   via sobreposição de offset de caractere — nunca por casamento de texto (ver
