@@ -2,6 +2,10 @@
 
 Infere relações clínicas entre entidades combinando uma regra fixa (pares
 envolvendo o paciente) com um classificador de N-gramas (demais pares).
+Ver a decisão completa, com os números do experimento e a comparação por
+tipo de relação, em [docs/relacoes.md](../../docs/relacoes.md). Este README
+é sobre como rodar o código; aquele documento é sobre por que a decisão foi
+essa.
 
 ## Como rodar
 
@@ -57,38 +61,16 @@ forem preenchidos.
 
 ## Limitações conhecidas
 
-- `polarity`/`certainty` na saída final são herdados dos atributos já
-  presentes nas arestas do Projeto 1 (repassados por
-  `project2/src/relacoes/mock/gerar.py`), já que a Etapa 3 (tipos/polaridade)
-  ainda não tem saída própria. Revisitar quando a Etapa 3 estiver pronta.
-- Os dados de treino/val/teste são gerados por `project2/src/relacoes/mock/gerar.py`,
-  que resolve as relações do Projeto 1 contra as menções tipadas da Etapa 2 (Caio)
-  via sobreposição de offset de caractere — nunca por casamento de texto (ver
-  `docs/superpowers/specs/2026-10-18-relacoes-mock-main-design.md` para o porquê).
-  Algumas arestas do Projeto 1 são descartadas quando nenhuma menção do tipo certo
-  cai na janela de evidência (`arestas_descartadas` no retorno de `gerar()`); isso
-  é intencional — perder um exemplo é melhor que criar um casamento errado.
-  Além disso, `resolver_positivos` deduplica pares `(origem_id, destino_id)`
-  repetidos entre arestas diferentes, contados separadamente em
-  `pares_colapsados`: ao contrário de `arestas_descartadas` (nenhuma menção
-  candidata encontrada), um par colapsado sempre tem a mesma relação do par já
-  resolvido, então não gera rótulo errado — só reduz a contagem bruta de
-  arestas. Nos dados reais, a perda de cobertura total é `arestas_descartadas +
-  pares_colapsados`, cerca de 28,6% das arestas elegíveis, bem maior que os
-  ~9% que `arestas_descartadas` sozinho sugere; some os dois contadores ao
-  avaliar quanto do Projeto 1 efetivamente chega aos CSVs de saída.
-- **Comparação regra-vs-ML estruturalmente injusta para `Patient`**: nos dados
-  reais, todos os pares envolvendo `Patient` são positivos (nenhum `NONE`
-  gerado para esse tipo), então a regra de `relacoes.py` "acerta 100%" só
-  porque o gerador nunca cria um exemplo negativo envolvendo `Patient` para
-  ela errar. O classificador de N-gramas, por outro lado, recebe uma fatia
-  com ~90% `NONE`. Uma conclusão de relatório do tipo "a regra supera o
-  classificador" estaria medindo uma assimetria do gerador de dados, não uma
-  diferença real entre os dois métodos.
-- **Baixo suporte da classe `SUPPORTS`**: nos dados reais, a classe `SUPPORTS`
-  tem suporte 0 tanto em `val` quanto em `test`, então a seleção entre a
-  configuração unigrama e 1-3-grama (`select_best_lr_config`) acaba decidida
-  só pelas poucas classes com suporte real nesses splits. Isso torna a
-  escolha de configuração — e qualquer métrica agregada que dependa dela —
-  estatisticamente frágil; vale mencionar essa limitação antes de tirar
-  conclusões fortes dos números no relatório comparativo.
+Detalhadas, com números e evidência, em
+[docs/relacoes.md](../../docs/relacoes.md#limitações-conhecidas):
+
+- `polarity`/`certainty` são herdados dos atributos das arestas do Projeto 1
+  (a Etapa 3 ainda não publicou saída própria).
+- A perda de cobertura real (`arestas_descartadas + pares_colapsados`) é
+  maior do que `arestas_descartadas` isolado sugere (~28,6% vs ~9%).
+- A comparação regra-vs-classificador não é direta: a regra nunca vê um
+  `Patient` negativo, o classificador vê ~90% `NONE`.
+- A classe `SUPPORTS` tem suporte zero em `val`, tornando a seleção de
+  configuração estatisticamente frágil.
+- Nenhum teste automatizado cruza a fronteira `mock/gerar.py` → `relacoes.py`.
+- Os 2 casos-gabarito de João ainda não foram anotados à mão.
