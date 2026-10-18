@@ -56,7 +56,7 @@ class Resposta:
 
 @lru_cache(maxsize=1)
 def _dicionarios() -> dict[str, dict]:
-    """Chave normalizada -> lista de (tipo, categoria, código), por fonte. Carrega uma vez (~10 s)."""
+    """Chave normalizada -> lista de (tipo, categoria, código), por fonte. Carrega uma vez (~3 s)."""
     import pos_bio
 
     termos = {" ".join(chave): [(tipo, "termos", "")] for chave, tipo in pos_bio.TERM_INDEX.items()}

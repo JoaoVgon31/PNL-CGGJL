@@ -79,7 +79,7 @@ limiar a menção fica sem tipo.
 O treino usa o tipo que as regras do projeto 1 inteiras deram (o silver), nunca os casos do gabarito.
 As menções `Medication` do silver são limpas antes: a regra de dose do projeto 1 pega as 3 palavras
 antes da dose (`a dose of 5 mg`, `BUN 17 mg`), então a menção fica só com o nome do remédio
-(`Rifampin 600 mg` → `Rifampin`) e sai quando não há remédio conhecido (90 → 29 menções no silver mock).
+(`Rifampin 600 mg` → `Rifampin`) e sai quando não há remédio conhecido (90 → 25 menções no silver mock).
 
 ## (TODO) Mocks
 
@@ -93,6 +93,6 @@ trocar os imports no topo de `tipos.py` e `lexico.py` e apagar os mocks.
 | `mock/avaliar.py` | `project2/src/avaliacao/avaliar.py` | #29 | só a tipagem |
 | `data/mock/gold/` | `project2/data/gold/` | #29 | 3 casos da amostra anotados à mão (o mesmo gabarito mock da etapa 2) |
 
-Com o silver mock (774 menções) e o gabarito mock (3 casos, 205 menções), nas fronteiras do
+Com o silver mock (770 menções) e o gabarito mock (3 casos, 205 menções), nas fronteiras do
 gabarito: `lexico` tem acurácia 0,28 e macro F1 0,33; `lexico+classificador`, 0,46 e 0,43; `ambiguas`,
 0,47 e 0,46; `classificador`, 0,38 e 0,32. Com 3 casos, diferenças pequenas não são conclusivas.

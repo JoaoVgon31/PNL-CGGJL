@@ -54,10 +54,14 @@ class LimpezaTests(unittest.TestCase):
     def test_medication_fica_so_com_o_remedio(self):
         linhas = [{"case_id": "c", "start": 100, "end": 115, "texto": "Rifampin 600 mg", "tipo": "Medication"},
                   {"case_id": "c", "start": 200, "end": 214, "texto": "a dose of 6 mg", "tipo": "Medication"},
-                  {"case_id": "c", "start": 300, "end": 306, "texto": "nausea", "tipo": "Symptom"}]
+                  {"case_id": "c", "start": 300, "end": 306, "texto": "nausea", "tipo": "Symptom"},
+                  # o nome que sobraria (aspirin) já é menção de outro tipo no mesmo lugar
+                  {"case_id": "c", "start": 400, "end": 414, "texto": "aspirin 100 mg", "tipo": "Medication"},
+                  {"case_id": "c", "start": 400, "end": 407, "texto": "aspirin", "tipo": "Treatment"}]
         limpas = tipos.limpar_silver(linhas)
-        self.assertEqual([(x["start"], x["end"], x["texto"]) for x in limpas],
-                         [(100, 108, "Rifampin"), (300, 306, "nausea")])
+        self.assertEqual([(x["start"], x["end"], x["texto"], x["tipo"]) for x in limpas],
+                         [(100, 108, "Rifampin", "Medication"), (300, 306, "nausea", "Symptom"),
+                          (400, 407, "aspirin", "Treatment")])
 
 
 def _m(inicio, fim, tipo, caso="c"):
@@ -115,10 +119,11 @@ class ClassificadorTests(unittest.TestCase):
 
 class TiparTests(unittest.TestCase):
     """O classificador é trocado por um falso que diz Finding (0.9) a tudo, menos a `xyzzy` (sem tipo)."""
-    TEXTO = "nausea, xyzzy, rifampin and cystic lesion"
+    TEXTO = "nausea, xyzzy, rifampin and blorpus"
     MENCOES = [{"case_id": "c", "id": "m1", "start": 0, "end": 6, "texto": "nausea"},
                {"case_id": "c", "id": "m2", "start": 8, "end": 13, "texto": "xyzzy"},
-               {"case_id": "c", "id": "m3", "start": 15, "end": 23, "texto": "rifampin"}]
+               {"case_id": "c", "id": "m3", "start": 15, "end": 23, "texto": "rifampin"},
+               {"case_id": "c", "id": "m4", "start": 28, "end": 35, "texto": "blorpus"}]
 
     @staticmethod
     def _falso(mencoes, textos):
@@ -129,21 +134,23 @@ class TiparTests(unittest.TestCase):
             return [(x["tipo"], x["fonte"]) for x in tipos.tipar(self.MENCOES, {"c": self.TEXTO}, modo)]
 
     def test_lexico(self):
-        self.assertEqual(self._tipos("lexico"), [("Symptom", "lexico"), ("", ""), ("Medication", "lexico")])
+        self.assertEqual(self._tipos("lexico"),
+                         [("Symptom", "lexico"), ("", ""), ("Medication", "lexico"), ("", "")])
 
     def test_classificador_so_no_que_o_lexico_nao_conhece(self):
-        # xyzzy: o classificador ficou abaixo do limiar, então segue sem tipo.
+        # blorpus: o léxico não conhece, o classificador tipa; xyzzy: abaixo do limiar, segue sem tipo.
         self.assertEqual(self._tipos("lexico+classificador"),
-                         [("Symptom", "lexico"), ("", ""), ("Medication", "lexico")])
+                         [("Symptom", "lexico"), ("", ""), ("Medication", "lexico"), ("Finding", "classificador")])
 
     def test_ambiguas_passam_pelo_classificador(self):
         # rifampin é `drugs` no MeSH (categoria ambígua): o classificador decide.
         self.assertEqual(self._tipos("ambiguas"),
-                         [("Symptom", "lexico"), ("", ""), ("Finding", "classificador")])
+                         [("Symptom", "lexico"), ("", ""), ("Finding", "classificador"), ("Finding", "classificador")])
 
     def test_so_classificador(self):
         self.assertEqual(self._tipos("classificador"),
-                         [("Finding", "classificador"), ("", ""), ("Finding", "classificador")])
+                         [("Finding", "classificador"), ("", ""), ("Finding", "classificador"),
+                          ("Finding", "classificador")])
 
     def test_mesh_vem_sempre_do_lexico(self):
         with patch.patch.object(tipos, "classificar", side_effect=self._falso):

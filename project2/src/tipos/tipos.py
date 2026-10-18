@@ -65,8 +65,10 @@ def limpar_silver(linhas: list[dict]) -> list[dict]:
     """Medication do silver só com o nome do remédio; sem remédio conhecido, a menção sai.
 
     A regra de dose do projeto 1 pega as 3 palavras antes da dose (`a dose of 5 mg`, `BUN 17 mg`):
-    o span quase nunca é só o remédio. Os outros tipos passam sem mudança.
+    o span quase nunca é só o remédio. Os outros tipos passam sem mudança. Se o nome que sobra já é
+    uma menção de outro tipo no silver (`aspartate transaminase` como Exam), a de Medication sai.
     """
+    outros = {(x["case_id"], x["start"], x["end"]) for x in linhas if x["tipo"] != "Medication"}
     saida = []
     for linha in linhas:
         if linha["tipo"] != "Medication":
@@ -75,7 +77,8 @@ def limpar_silver(linhas: list[dict]) -> list[dict]:
         trecho = lexico.nome_do_remedio(linha["texto"])
         if trecho:
             inicio, fim = linha["start"] + trecho[0], linha["start"] + trecho[1]
-            saida.append({**linha, "start": inicio, "end": fim, "texto": linha["texto"][trecho[0]:trecho[1]]})
+            if (linha["case_id"], inicio, fim) not in outros:
+                saida.append({**linha, "start": inicio, "end": fim, "texto": linha["texto"][trecho[0]:trecho[1]]})
     return saida
 
 
@@ -185,13 +188,13 @@ def treinar() -> dict:
 
 def classificar(mencoes: list[dict], textos: dict[str, str]) -> list[tuple[str, float]]:
     """(tipo, confiança) do classificador salvo; tipo vazio quando a confiança fica abaixo do limiar."""
+    if not mencoes:
+        return []
     if not MODELO.is_file():
         raise FileNotFoundError(f"{MODELO} não existe: rode `treinar` antes")
     with open(MODELO, "rb") as handle:
         salvo = pickle.load(handle)
     clf = salvo["classificador"]
-    if not mencoes:
-        return []
     return aplicar_limiar(clf.predict_proba(pistas(mencoes, textos)), clf.classes_, salvo["limiar"])
 
 
