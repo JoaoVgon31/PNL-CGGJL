@@ -1,7 +1,7 @@
 {
   "total_cases_consolidated": 8,
-  "total_gold_entities": 433,
-  "total_gold_relations": 86,
+  "total_gold_entities": 438,
+  "total_gold_relations": 113,
   "cases": {
     "PMC11259348_01": {
       "status": "ok",
@@ -167,7 +167,7 @@
       "status": "ok",
       "case_id": "PMC4630775_01",
       "entities_count": 28,
-      "relations_count": 0,
+      "relations_count": 8,
       "errors": [],
       "warnings": [
         "Entidade t1: tipo 'nan' nao faz parte da taxonomia padrao.",
@@ -195,8 +195,8 @@
     "PMC6083636_03": {
       "status": "ok",
       "case_id": "PMC6083636_03",
-      "entities_count": 33,
-      "relations_count": 0,
+      "entities_count": 38,
+      "relations_count": 19,
       "errors": [],
       "warnings": [
         "Entidade t1: tipo 'nan' nao faz parte da taxonomia padrao.",
