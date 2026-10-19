@@ -1,6 +1,8 @@
 project1/src/dicionarios/data/
 project1/src/dicionarios/output_v2/
 project1/src/dicionarios/slides/
+project2/data/processed/
+project2/data/silver/
 venv/
 .venv/
 env/
@@ -27,6 +29,7 @@ sample/
 
 .superpowers/
 project1/visualizer/data/
+.vscode/
 
 # Projeto 2 · saídas geradas pelos scripts (ver o README de cada módulo)
 project2/models/
