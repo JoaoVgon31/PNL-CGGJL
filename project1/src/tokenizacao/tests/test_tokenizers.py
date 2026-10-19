@@ -60,6 +60,10 @@ class ClinicalRegexTokenizerTests(unittest.TestCase):
         with self.assertRaises(TypeError):
             self.tokenizer.tokenize(None)
 
+    def test_underscore_isolado_preserva_cobertura_do_corpus_completo(self):
+        self.assert_tokens("Na_ions _ alpha_beta", ["Na_ions", "_", "alpha_beta"])
+        self.assertEqual(self.tokenizer.tokenize("_")[0].kind, "PUNCTUATION")
+
 
 class BaselineTests(unittest.TestCase):
     def test_whitespace_baseline_exposes_failure(self):

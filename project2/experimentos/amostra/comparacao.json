@@ -1,0 +1,12 @@
+{
+  "top_solicitado": 100,
+  "avaliados": 100,
+  "conhecidos_mesh": 20,
+  "candidatos_novos": 80,
+  "cobertura_lexical": 0.2,
+  "termos_sha256": "c388982597315fcfa9942a3f4a2c1f6a04c44268a10837a4e665c412838f137b",
+  "gazetteer_sha256": "4633e1a2c97dfc73b7d72a10c14f0202f81f9319ed1bf5d851c30e906937b1ce",
+  "codigo_sha256": "890db46033795f24330bea419625caebbc7a4ac771a17fbcaf2894bfe8e77ad4",
+  "normalizacao": "NFKC, casefold e compactacao de espacos; preserva numeros, unidades e pontuacao",
+  "interpretacao": "cobertura lexical; nao mede precisao, recall ou F1 de entidades"
+}

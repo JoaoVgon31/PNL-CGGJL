@@ -1,0 +1,601 @@
+termo,n,frequencia,pmi,c_value
+physical examination,2,19,8.666649,19.0
+spontaneous respiration,2,15,9.867506,15.0
+s serum,2,13,6.868322,13.0
+computed tomography,2,14,10.370006,12.0
+normal range,2,12,8.421639,12.0
+white blood cell count,4,6,6.423587,12.0
+left main bronchus,3,7,7.762676,11.094738
+abdominal pain,2,13,7.619235,11.0
+chest pain,2,10,7.170334,10.0
+weeks gestational age,3,6,8.688182,9.509775
+postoperative day,2,9,7.40038,9.0
+blood pressure,2,11,7.096423,9.0
+ct scan,2,8,9.463116,8.0
+erythrocyte sedimentation rate,3,5,9.785044,7.924813
+past medical history,3,5,7.846444,7.924813
+left upper extremity,3,5,6.891959,7.924813
+pleural effusion,2,7,10.837511,7.0
+esophagobronchial fistulae,2,7,10.370006,7.0
+normal limits,2,7,8.537116,7.0
+laboratory results,2,7,7.919973,7.0
+family history,2,7,7.653799,7.0
+intrauterine fetal demise,3,4,11.200081,6.33985
+neonatal compartment syndrome,3,4,10.669566,6.33985
+magnetic resonance imaging,3,4,10.463116,6.33985
+full symptom resolution,3,4,10.200081,6.33985
+intensive care unit,3,4,9.669566,6.33985
+esophageal bypass surgery,3,4,7.878153,6.33985
+normal sinus rhythm,3,4,7.537116,6.33985
+united states,2,6,11.785044,6.0
+free t4,2,6,10.370006,6.0
+shoulder dystocia,2,6,10.370006,6.0
+inflammatory process,2,6,9.707041,6.0
+gestational age,2,12,9.624052,6.0
+emergency department,2,6,9.588647,6.0
+heart rate,2,6,8.562651,6.0
+postoperative course,2,6,8.370006,6.0
+respiratory rate,2,6,7.977689,6.0
+medical history,2,11,7.846444,6.0
+left ventricular ejection fraction,4,3,7.795097,6.0
+arterial blood gas analysis,4,3,7.392726,6.0
+packed red blood cells,4,3,5.460113,6.0
+female patient,2,6,4.745515,6.0
+one-lung ventilation,2,5,11.048078,5.0
+oxygen saturation,2,5,10.691934,5.0
+c-reactive protein,2,5,10.562651,5.0
+human herpesvirus,2,5,10.562651,5.0
+main bronchus,2,10,10.463116,5.0
+hemoglobin a1c,2,7,10.200081,5.0
+anticoagulation therapy,2,5,9.325612,5.0
+recurrent thrombosis,2,5,8.82157,5.0
+red cells,2,8,7.997141,5.0
+thoracic ct,2,5,7.930383,5.0
+recurrent symptoms,2,5,7.567813,5.0
+right lung,2,5,6.803191,5.0
+enlarged cecal appendix,3,3,10.463116,4.754888
+proximal pa stenosis,3,3,8.282543,4.754888
+p-negative red cells,3,3,7.997141,4.754888
+p-positive red cells,3,3,7.997141,4.754888
+left temporal lobe,3,3,7.932601,4.754888
+lower chest wall,3,3,5.977689,4.754888
+surgical chest tube,3,3,5.838625,4.754888
+right main bronchus,3,3,5.744297,4.754888
+veno-venous extracorporeal membrane oxygenator,4,2,13.370006,4.0
+mycophenolate mofetil,2,4,12.370006,4.0
+vp shunt,2,4,11.562651,4.0
+peptic stricture,2,4,11.200081,4.0
+aortic arch,2,4,10.785044,4.0
+partial hexon gene sequencing,4,2,10.463116,4.0
+general anesthesia,2,4,10.200081,4.0
+weight loss,2,6,9.977689,4.0
+suprapubic pressure,2,4,9.846444,4.0
+caspr2 antibodies,2,4,9.800151,4.0
+similac liquid protein fortifier,4,2,9.562651,4.0
+fetal head,2,4,9.499641,4.0
+gastric emptying,2,4,9.463116,4.0
+low molecular weight heparin,4,2,9.463116,4.0
+symptom free,2,4,9.347638,4.0
+skin lesions,2,4,9.003684,4.0
+main pa,2,4,8.878153,4.0
+surgical intervention,2,4,8.655761,4.0
+small patent ductus arteriosus,4,2,8.562651,4.0
+posterior wall,2,4,8.325612,4.0
+pulmonary hypertension,2,4,8.02571,4.0
+blood units,2,4,7.838625,4.0
+small bowel,2,4,7.655761,4.0
+laboratory tests,2,4,7.200081,4.0
+mean arterial blood pressure,4,2,7.096423,4.0
+peripheral blood,2,4,6.918795,4.0
+bilateral lower extremity edema,4,2,6.800151,4.0
+patients underwent,2,4,5.545843,4.0
+patient underwent repeat egd,4,2,5.329152,4.0
+white blood,2,8,8.070798,3.333333
+methicillin-resistant staphylococcus aureus,3,2,13.370006,3.169925
+gentle downward traction,3,2,12.370006,3.169925
+vitamin k antagonists,3,2,12.370006,3.169925
+indirect immunofluorescence assay,3,2,11.785044,3.169925
+international normalized ratio,3,2,11.370006,3.169925
+mean corpuscular volume,3,2,11.200081,3.169925
+parastomal hernial sac,3,2,11.048078,3.169925
+american diabetes association,3,2,10.977689,3.169925
+video capsule endoscopy,3,2,10.785044,3.169925
+high-frequency jet ventilation,3,2,10.463116,3.169925
+urine drug screen,3,2,10.463116,3.169925
+hemoglobin a1c value,3,2,10.200081,3.169925
+keratocystic odontogenic tumor,3,2,10.122079,3.169925
+laparoscopic sugarbaker repair,3,2,9.910575,3.169925
+profound weight loss,3,2,9.878153,3.169925
+donor human milk,3,2,9.562651,3.169925
+repeat ugi study,3,2,9.562651,3.169925
+single elevated value,3,2,9.240723,3.169925
+liver function tests,3,2,9.048078,3.169925
+chose respiratory management,3,2,8.807764,3.169925
+preoperative computed tomography,3,2,8.72615,3.169925
+body mass index,3,2,8.537116,3.169925
+s screw maneuvers,3,2,8.122079,3.169925
+donor red cell,3,2,7.960615,3.169925
+red cell suspensions,3,2,7.960615,3.169925
+right parietal bone,3,2,7.388154,3.169925
+recurrent stoma prolapse,3,2,7.293191,3.169925
+serum hydroxychloroquine level,3,2,7.200081,3.169925
+lower pulmonary artery,3,2,7.070798,3.169925
+lower pulmonary branch,3,2,7.070798,3.169925
+s standard panel,3,2,6.314724,3.169925
+upper abdominal pain,3,2,6.200081,3.169925
+left thoracic cavity,3,2,6.084604,3.169925
+complete blood count,3,2,5.57559,3.169925
+white blood cells,3,2,5.460113,3.169925
+right lower quadrant,3,2,5.159335,3.169925
+gastrocolic ligament,2,3,12.785044,3.0
+silicon valley,2,3,12.785044,3.0
+hadv serotype,2,3,12.370006,3.0
+lymph nodes,2,3,12.370006,3.0
+mandibular canal,2,3,12.370006,3.0
+non-inflammatory controls,2,3,12.370006,3.0
+cow milk,2,3,11.785044,3.0
+methylprednisolone tablets,2,3,11.785044,3.0
+anatomical fovea,2,3,11.633041,3.0
+bronchial compression,2,3,11.633041,3.0
+enteral nutrition,2,3,11.633041,3.0
+mcroberts maneuver,2,3,11.633041,3.0
+transthoracic echocardiogram,2,3,11.633041,3.0
+ruptured aneurysm,2,3,11.562651,3.0
+diabetes mellitus,2,3,11.370006,3.0
+elizabeth holmes,2,3,11.370006,3.0
+excellent scientists,2,3,11.370006,3.0
+rebound tenderness,2,3,11.370006,3.0
+room air,2,3,11.370006,3.0
+endometrial glands,2,3,11.200081,3.0
+glucose tolerance,2,3,11.200081,3.0
+outside facility,2,3,11.048078,3.0
+backup plan,2,3,10.825686,3.0
+laparoscopic appendectomy,2,3,10.785044,3.0
+pneumoniae infection,2,3,10.785044,3.0
+ascending aorta,2,3,10.633041,3.0
+operating room,2,3,10.633041,3.0
+kidney injury,2,3,10.562651,3.0
+cardiopulmonary bypass,2,3,10.495537,3.0
+dermatology department,2,3,10.463116,3.0
+endometrial stroma,2,3,10.463116,3.0
+large amount,2,3,10.463116,3.0
+color change,2,3,10.370006,3.0
+family members,2,3,10.370006,3.0
+ian gibbons,2,3,10.370006,3.0
+fluid resuscitation,2,3,10.311113,3.0
+finger extension,2,3,10.173609,3.0
+area reduction,2,3,10.147614,3.0
+stent insertion,2,3,10.147614,3.0
+self-expandable stent,2,3,10.122079,3.0
+cell suspension,2,3,10.048078,3.0
+laparoscopic exploration,2,3,10.048078,3.0
+motor deficits,2,3,9.954969,3.0
+fish test,2,3,9.910575,3.0
+median duration,2,3,9.669566,3.0
+coronary artery,2,3,9.633041,3.0
+subcutaneous abscess,2,3,9.633041,3.0
+thoracic cavity,2,5,9.562651,3.0
+donath-landsteiner antibody,2,3,9.562651,3.0
+proximal jejunum,2,3,9.545578,3.0
+double-lumen tube,2,3,9.282543,3.0
+soft tissue,2,3,9.240723,3.0
+liver function,2,5,9.200081,3.0
+emergency room,2,3,9.173609,3.0
+intermittent fever,2,3,9.060151,3.0
+tumor markers,2,3,9.060151,3.0
+lower limbs,2,3,9.048078,3.0
+platelet count,2,3,9.048078,3.0
+medical records,2,3,8.910575,3.0
+gastric decompression,2,3,8.785044,3.0
+renal function,2,3,8.785044,3.0
+steroid therapy,2,3,8.588647,3.0
+chest x-ray,2,3,8.562651,3.0
+diagnostic criteria,2,3,8.562651,3.0
+anterior shoulder,2,3,8.554089,3.0
+laboratory examinations,2,3,8.463116,3.0
+t cell,2,3,8.463116,3.0
+persisting symptoms,2,3,8.41581,3.0
+th day,2,3,8.40038,3.0
+laboratory investigations,2,3,8.200081,3.0
+case report,2,3,8.141188,3.0
+right atrium,2,3,8.066225,3.0
+right ovary,2,3,8.066225,3.0
+proximal colon,2,3,7.960615,3.0
+cyst wall,2,3,7.910575,3.0
+laboratory data,2,3,7.785044,3.0
+anterior wall,2,3,7.669566,3.0
+t cells,2,3,7.499641,3.0
+laboratory findings,2,3,7.463116,3.0
+surgical procedure,2,3,7.463116,3.0
+blood transfusion,2,3,7.423587,3.0
+positive control,2,3,7.289633,3.0
+negative control,2,3,7.240723,3.0
+repeat ct,2,3,7.193417,3.0
+right hand,2,3,7.066225,3.0
+blood cultures,2,3,6.745515,3.0
+laboratory testing,2,3,6.697581,3.0
+right arm,2,3,6.481263,3.0
+chest tube,2,6,6.475188,3.0
+s condition,2,3,6.385113,3.0
+gastric tube,2,3,6.282543,3.0
+right pneumothorax,2,3,6.191756,3.0
+right side,2,3,6.191756,3.0
+right pa,2,3,6.066225,3.0
+abdominal wall,2,3,6.048078,3.0
+right median,2,3,5.950748,3.0
+surgical treatment,2,3,5.762676,3.0
+blood tests,2,3,5.745515,3.0
+right colon,2,3,5.744297,3.0
+chest ct,2,3,5.608455,3.0
+blood cells,2,6,5.460113,3.0
+arterial blood,2,5,7.392726,2.6
+alcohol consumption,2,2,13.370006,2.0
+alk rearrangement,2,2,13.370006,2.0
+alkaline phosphatase,2,2,13.370006,2.0
+en bloc,2,2,13.370006,2.0
+expert opinion,2,2,13.370006,2.0
+farnsworth munsell,2,2,13.370006,2.0
+infective endocarditis,2,2,13.370006,2.0
+lactate dehydrogenase,2,2,13.370006,2.0
+lumbar puncture,2,2,13.370006,2.0
+proton pump,2,2,13.370006,2.0
+serebrovascular accident,2,2,13.370006,2.0
+strut malapposition,2,2,13.370006,2.0
+syncopal attack,2,2,13.370006,2.0
+cold agglutinin,2,2,12.785044,2.0
+coprolite inside,2,2,12.785044,2.0
+greater omentum,2,2,12.785044,2.0
+alanine transaminase,2,2,12.370006,2.0
+aspartate transaminase,2,2,12.370006,2.0
+autoimmune encephalitis,2,2,12.370006,2.0
+billionaire vision,2,2,12.370006,2.0
+cesarean section,2,2,12.370006,2.0
+iron deficiency,2,2,12.370006,2.0
+pitocin augmentation,2,2,12.370006,2.0
+titanium plate,2,2,12.370006,2.0
+ethics committee,2,2,12.200081,2.0
+systolic murmur,2,2,12.200081,2.0
+artificial rupture,2,2,12.048078,2.0
+external genitalia,2,2,12.048078,2.0
+final ends,2,2,12.048078,2.0
+fundus camera,2,2,12.048078,2.0
+obturator sign,2,2,12.048078,2.0
+rubin ii,2,2,12.048078,2.0
+thumb pad,2,2,12.048078,2.0
+vaginal stump,2,2,12.048078,2.0
+magnetic resonance,2,6,11.785044,2.0
+abdominis muscle,2,2,11.785044,2.0
+colonic resections,2,2,11.785044,2.0
+device closure,2,2,11.785044,2.0
+nasopharyngeal swabs,2,2,11.785044,2.0
+pannus formation,2,2,11.785044,2.0
+st-segment elevation,2,2,11.785044,2.0
+sugarbaker technique,2,2,11.785044,2.0
+systemic lupus,2,2,11.785044,2.0
+transabdominal ultrasonography,2,2,11.785044,2.0
+valvular vegetations,2,2,11.785044,2.0
+conduction velocity,2,2,11.562651,2.0
+lupus anticoagulant,2,2,11.463116,2.0
+rotational maneuvers,2,2,11.463116,2.0
+terminal ileum,2,2,11.463116,2.0
+carbohydrate antigen,2,2,11.370006,2.0
+carcinoembryonic antigen,2,2,11.370006,2.0
+hexon genes,2,2,11.370006,2.0
+parietal pleura,2,2,11.370006,2.0
+renal dialysis,2,2,11.370006,2.0
+transferrin saturation,2,2,11.370006,2.0
+aspiration pneumonia,2,2,11.200081,2.0
+femoral vein,2,2,11.200081,2.0
+pleural effusions,2,2,11.200081,2.0
+sacral region,2,2,11.200081,2.0
+se stents,2,2,11.200081,2.0
+complete av-b,2,2,11.048078,2.0
+parastomal hernia,2,2,11.048078,2.0
+preferential drainage,2,2,11.048078,2.0
+serial doses,2,2,11.048078,2.0
+splenic abscess,2,2,11.048078,2.0
+healthy person,2,2,10.977689,2.0
+residual shunt,2,2,10.977689,2.0
+sinus rhythm,2,6,10.954969,2.0
+cecal appendix,2,5,10.910575,2.0
+stoma prolapse,2,4,10.785044,2.0
+antinuclear antibody,2,2,10.785044,2.0
+gastrointestinal tract,2,2,10.785044,2.0
+grade iii,2,2,10.785044,2.0
+outlet obstruction,2,2,10.785044,2.0
+previous surgeries,2,2,10.785044,2.0
+skull defect,2,2,10.785044,2.0
+tracheal intubation,2,2,10.785044,2.0
+balloon dilatation,2,2,10.72615,2.0
+hellp syndrome,2,2,10.669566,2.0
+innervation area,2,2,10.669566,2.0
+lewis-sumner syndrome,2,2,10.669566,2.0
+median sternotomy,2,2,10.669566,2.0
+three-hour values,2,2,10.615119,2.0
+ugi study,2,4,10.463116,2.0
+cardiology department,2,2,10.463116,2.0
+congenital heart,2,2,10.463116,2.0
+metastatic lesions,2,2,10.463116,2.0
+bone regeneration,2,2,10.370006,2.0
+cerebrospinal fluid,2,2,10.370006,2.0
+intrapartum course,2,2,10.370006,2.0
+ldh levels,2,2,10.370006,2.0
+localized tenderness,2,2,10.370006,2.0
+p antigen,2,2,10.370006,2.0
+endomyocardial biopsy,2,2,10.282543,2.0
+glucose intolerance,2,2,10.200081,2.0
+largest measuring,2,2,10.200081,2.0
+methylprednisolone dosage,2,2,10.200081,2.0
+phylogenetic analysis,2,2,10.200081,2.0
+tricuspid regurgitation,2,2,10.200081,2.0
+echogenic mass,2,2,10.122079,2.0
+inflammatory indicators,2,2,10.122079,2.0
+chronic gastritis,2,2,10.084604,2.0
+direct anastomosis,2,2,10.048078,2.0
+level t10,2,2,10.048078,2.0
+spontaneous circulation,2,2,10.048078,2.0
+tongji hospital,2,2,10.048078,2.0
+vital signs,2,2,10.048078,2.0
+diagnostic laparoscopy,2,2,9.977689,2.0
+intravenous fluids,2,2,9.878153,2.0
+ascitic fluid,2,2,9.785044,2.0
+free t3,2,2,9.785044,2.0
+lymphocyte count,2,2,9.785044,2.0
+recent change,2,2,9.785044,2.0
+supernatant color,2,2,9.785044,2.0
+tracheostomy site,2,2,9.755296,2.0
+multiple ulcers,2,2,9.697581,2.0
+oral medicines,2,2,9.697581,2.0
+sensitivity results,2,2,9.697581,2.0
+venous thrombosis,2,2,9.669566,2.0
+wrist extension,2,2,9.588647,2.0
+high doses,2,2,9.562651,2.0
+small intestine,2,2,9.562651,2.0
+stricture site,2,2,9.562651,2.0
+viral cultures,2,2,9.562651,2.0
+prothrombin time,2,2,9.537116,2.0
+radiolucent lesion,2,2,9.512025,2.0
+endoscopic remission,2,2,9.463116,2.0
+regular medications,2,2,9.463116,2.0
+surgical correction,2,2,9.463116,2.0
+definitive diagnosis,2,2,9.41581,2.0
+differential diagnosis,2,2,9.41581,2.0
+jejunal diverticulum,2,2,9.392726,2.0
+coronary sinus,2,2,9.370006,2.0
+total bilirubin,2,2,9.370006,2.0
+total length,2,2,9.370006,2.0
+first-line therapy,2,2,9.325612,2.0
+follow-up visit,2,2,9.325612,2.0
+fallopian tube,2,2,9.282543,2.0
+gastrojejunal tube,2,2,9.282543,2.0
+only abnormality,2,2,9.282543,2.0
+oral iron,2,2,9.282543,2.0
+coagulation function,2,2,9.200081,2.0
+immune function,2,2,9.200081,2.0
+progressive worsening,2,2,9.200081,2.0
+pressure gradient,2,2,9.122079,2.0
+rectal bleeding,2,2,9.122079,2.0
+epithelial cells,2,2,9.084604,2.0
+function tests,2,4,9.048078,2.0
+few years,2,2,8.878153,2.0
+further diagnostics,2,2,8.878153,2.0
+lower extremities,2,2,8.878153,2.0
+thyroid function,2,2,8.878153,2.0
+respiratory management,2,4,8.807764,2.0
+platelets count,2,2,8.785044,2.0
+antiplatelet therapy,2,2,8.74065,2.0
+posterior arm,2,2,8.74065,2.0
+years old,2,2,8.72615,2.0
+kidney biopsy,2,2,8.697581,2.0
+nj tube,2,2,8.697581,2.0
+albumin levels,2,2,8.562651,2.0
+normal saline,2,2,8.537116,2.0
+theranos story,2,2,8.524516,2.0
+delivery unit,2,2,8.499641,2.0
+ganglion cells,2,2,8.499641,2.0
+abdominal distention,2,2,8.463116,2.0
+upper gastrointestinal,2,2,8.463116,2.0
+distal esophagus,2,2,8.451143,2.0
+fresh serum,2,2,8.41581,2.0
+pulmonary artery,2,4,8.404222,2.0
+chest tightness,2,2,8.392726,2.0
+human immunoglobulin,2,2,8.392726,2.0
+chronic kidney,2,2,8.347638,2.0
+distal part,2,2,8.325612,2.0
+pa repair,2,2,8.325612,2.0
+cystic mass,2,2,8.314724,2.0
+inflammatory markers,2,2,8.314724,2.0
+pressure support,2,2,8.314724,2.0
+clinical information,2,2,8.293191,2.0
+clinical outcome,2,2,8.293191,2.0
+intravenous immunoglobulin,2,2,8.293191,2.0
+gastrostomy tube,2,2,8.282543,2.0
+diagnostic imaging,2,2,8.240723,2.0
+small amount,2,2,8.240723,2.0
+stent placement,2,2,8.240723,2.0
+who grade,2,2,8.200081,2.0
+positive result,2,2,8.190097,2.0
+intravenous contrast,2,2,8.141188,2.0
+surgical exploration,2,2,8.141188,2.0
+s screw,2,4,8.122079,2.0
+active bleeding,2,2,8.122079,2.0
+active disease,2,2,8.122079,2.0
+recent bleeding,2,2,8.122079,2.0
+severe features,2,2,8.122079,2.0
+donath-landsteiner test,2,2,8.10322,2.0
+final diagnosis,2,2,8.093882,2.0
+glial cells,2,2,8.084604,2.0
+serum ferritin,2,2,8.048078,2.0
+clinical response,2,2,8.030156,2.0
+cross-over patients,2,2,8.030156,2.0
+new skin,2,2,7.977689,2.0
+red cell,2,4,7.960615,2.0
+normal troponin,2,2,7.952154,2.0
+same time,2,2,7.952154,2.0
+bone repair,2,2,7.910575,2.0
+laboratory studies,2,2,7.878153,2.0
+skin biopsy,2,2,7.823112,2.0
+abdominal distension,2,2,7.72615,2.0
+cystic lesion,2,2,7.70467,2.0
+oral prednisone,2,2,7.697581,2.0
+proximal part,2,2,7.697581,2.0
+postprandial blood,2,2,7.655761,2.0
+clinical data,2,2,7.615119,2.0
+follow-up period,2,2,7.588647,2.0
+blood transfusions,2,2,7.57559,2.0
+diagnostic tests,2,2,7.562651,2.0
+total protein,2,2,7.562651,2.0
+neurological examination,2,2,7.556225,2.0
+s protocol,2,2,7.537116,2.0
+replacement therapy,2,2,7.518257,2.0
+next day,2,2,7.493489,2.0
+tracheostomy tube,2,2,7.475188,2.0
+gastric body,2,2,7.463116,2.0
+significant abnormalities,2,2,7.404222,2.0
+present case,2,2,7.370006,2.0
+jejunal lesion,2,2,7.3421,2.0
+further evaluation,2,2,7.293191,2.0
+histological examination,2,2,7.293191,2.0
+tracheal tube,2,2,7.282543,2.0
+tube placement,2,2,7.240723,2.0
+normal ferritin,2,2,7.215188,2.0
+treatment group,2,2,7.141188,2.0
+right mandible,2,2,7.066225,2.0
+laboratory values,2,2,7.030156,2.0
+lower esophagus,2,2,7.003684,2.0
+head ct,2,2,6.956378,2.0
+hemoglobin level,2,2,6.952154,2.0
+significant changes,2,2,6.918795,2.0
+initial diagnosis,2,2,6.830847,2.0
+abdominal cavity,2,2,6.72615,2.0
+clinical improvement,2,2,6.708228,2.0
+be stents,2,2,6.635297,2.0
+clinical course,2,2,6.615119,2.0
+lower chest,2,5,6.57559,2.0
+upper abdomen,2,2,6.463116,2.0
+further testing,2,2,6.375653,2.0
+serum levels,2,2,6.370006,2.0
+s images,2,2,6.314724,2.0
+blood loss,2,2,5.990628,2.0
+follow-up ct,2,2,5.956378,2.0
+right eye,2,2,5.8963,2.0
+physical therapy,2,2,5.86618,2.0
+cardiac surgery,2,2,5.79069,2.0
+blood count,2,4,5.57559,2.0
+blood group,2,2,5.57559,2.0
+s family,2,2,4.952154,2.0
+s disease,2,2,4.874151,2.0
+s symptoms,2,2,4.167882,2.0
+third patient,2,2,4.160553,2.0
+male patient,2,2,3.701121,2.0
+red blood cells,3,4,5.460113,1.584963
+vitamin k,2,3,12.370006,1.0
+ejection fraction,2,4,12.048078,1.0
+indirect immunofluorescence,2,3,12.048078,1.0
+immunofluorescence assay,2,3,11.785044,1.0
+symptom resolution,2,5,10.562651,1.0
+weight heparin,2,3,10.562651,1.0
+laparoscopic sugarbaker,2,3,10.370006,1.0
+cell suspensions,2,3,10.048078,1.0
+pa stenosis,2,4,9.977689,1.0
+sedimentation rate,2,6,9.785044,1.0
+care unit,2,5,9.669566,1.0
+human milk,2,3,9.562651,1.0
+upper extremity,2,6,9.200081,1.0
+lower quadrant,2,3,9.048078,1.0
+hydroxychloroquine level,2,3,8.707041,1.0
+cell count,2,7,8.270471,1.0
+lower extremity,2,3,7.878153,1.0
+red blood,2,4,6.15326,0.666667
+ductus arteriosus,2,2,13.370006,0.0
+extracorporeal membrane,2,2,13.370006,0.0
+extracorporeal membrane oxygenator,3,2,13.370006,0.0
+keratocystic odontogenic,2,2,13.370006,0.0
+membrane oxygenator,2,2,13.370006,0.0
+methicillin-resistant staphylococcus,2,2,13.370006,0.0
+staphylococcus aureus,2,2,13.370006,0.0
+veno-venous extracorporeal,2,2,13.370006,0.0
+veno-venous extracorporeal membrane,3,2,13.370006,0.0
+high-frequency jet,2,2,12.785044,0.0
+k antagonists,2,2,12.785044,0.0
+similac liquid,2,2,12.785044,0.0
+video capsule,2,2,12.785044,0.0
+downward traction,2,2,12.370006,0.0
+patent ductus,2,2,12.370006,0.0
+patent ductus arteriosus,3,2,12.370006,0.0
+neonatal compartment,2,4,12.048078,0.0
+drug screen,2,2,12.048078,0.0
+hernial sac,2,2,11.785044,0.0
+temporal lobe,2,3,11.633041,0.0
+protein fortifier,2,2,11.562651,0.0
+erythrocyte sedimentation,2,5,11.522009,0.0
+diabetes association,2,2,11.370006,0.0
+normalized ratio,2,2,11.370006,0.0
+fetal demise,2,4,11.200081,0.0
+corpuscular volume,2,2,11.200081,0.0
+hexon gene,2,2,11.048078,0.0
+screw maneuvers,2,2,11.048078,0.0
+american diabetes,2,2,10.977689,0.0
+capsule endoscopy,2,2,10.785044,0.0
+partial hexon,2,2,10.785044,0.0
+partial hexon gene,3,2,10.785044,0.0
+a1c value,2,2,10.72615,0.0
+compartment syndrome,2,4,10.669566,0.0
+intensive care,2,4,10.669566,0.0
+ventricular ejection,2,3,10.495537,0.0
+ventricular ejection fraction,3,3,10.495537,0.0
+resonance imaging,2,4,10.463116,0.0
+gene sequencing,2,2,10.463116,0.0
+hexon gene sequencing,3,2,10.463116,0.0
+jet ventilation,2,2,10.463116,0.0
+standard panel,2,2,10.463116,0.0
+urine drug,2,2,10.463116,0.0
+p-negative red,2,3,10.282543,0.0
+packed red,2,3,10.282543,0.0
+full symptom,2,4,10.200081,0.0
+donor human,2,2,10.200081,0.0
+odontogenic tumor,2,2,10.122079,0.0
+esophageal bypass,2,4,10.10322,0.0
+repeat egd,2,2,9.977689,0.0
+sugarbaker repair,2,2,9.910575,0.0
+profound weight,2,2,9.878153,0.0
+liquid protein,2,2,9.562651,0.0
+liquid protein fortifier,3,2,9.562651,0.0
+repeat ugi,2,2,9.562651,0.0
+similac liquid protein,3,2,9.562651,0.0
+p-positive red,2,3,9.545578,0.0
+gas analysis,2,3,9.463116,0.0
+low molecular weight,3,2,9.463116,0.0
+molecular weight,2,2,9.463116,0.0
+molecular weight heparin,3,2,9.463116,0.0
+donor red,2,2,9.282543,0.0
+elevated value,2,2,9.240723,0.0
+extremity edema,2,2,9.048078,0.0
+mass index,2,2,8.785044,0.0
+small patent,2,2,8.562651,0.0
+small patent ductus,3,2,8.562651,0.0
+body mass,2,2,8.537116,0.0
+proximal pa,2,3,8.282543,0.0
+parietal bone,2,2,8.200081,0.0
+pulmonary branch,2,2,7.918795,0.0
+bypass surgery,2,4,7.878153,0.0
+lower extremity edema,3,2,7.878153,0.0
+left ventricular ejection,3,3,7.795097,0.0
+normal sinus,2,4,7.537116,0.0
+blood gas,2,3,7.423587,0.0
+blood gas analysis,3,3,7.423587,0.0
+arterial blood gas,3,3,7.392726,0.0
+mean arterial blood,3,2,7.392726,0.0
+recurrent stoma,2,2,7.293191,0.0
+serum hydroxychloroquine,2,2,7.200081,0.0
+arterial blood pressure,3,2,7.096423,0.0
+bilateral lower extremity,3,2,6.800151,0.0
+underwent repeat egd,3,2,6.701121,0.0
+blood cell,2,6,6.423587,0.0
+blood cell count,3,6,6.423587,0.0
+white blood cell,3,6,6.423587,0.0
+s standard,2,2,6.314724,0.0
+packed red blood,3,3,6.15326,0.0
+chest wall,2,3,5.977689,0.0
+complete blood,2,2,5.918795,0.0
+surgical chest,2,3,5.838625,0.0

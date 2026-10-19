@@ -1,1 +1,1 @@
-# project2 source package
+"""Módulos do projeto 2."""
