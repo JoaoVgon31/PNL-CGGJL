@@ -1,21 +1,30 @@
 # -*- coding: utf-8 -*-
 """Avalia o pipeline treinado contra o gabarito manual dos casos reservados
-(`project2/data/gold/cases/`).
+(`project2/data/gold/cases/`, esquema oficial consolidado por
+`project2/src/montagem/data/gold_manager.py`).
 
-Esses casos ficam de fora de `mock/gerar.py` de proposito (nao vazar no
-treino), entao nao existe `entidades.csv` com os offsets de caractere das
-entidades do gabarito. Este script localiza cada entidade no texto bruto
-na mao (dicionario OVERRIDES abaixo) e monta os pares candidatos a partir
-dai - nao generaliza sozinho para um novo caso-gabarito: ao adicionar um,
-e preciso extender OVERRIDES/REGEX_KEYS/SKIP_OCCURRENCES/SEARCH_TEXT_OVERRIDE
-com as entidades que o texto desse novo caso nao deixa achar literalmente
-pelo label salvo em `<case_id>-nodes.csv`.
+Le `<case_id>-entities.csv` (ent_id, char_start, char_end, type ja prontos,
+gerados pelo starter pack oficial) e monta os pares candidatos a partir dai -
+nao precisa mais localizar entidades no texto na mao, porque o esquema
+oficial ja traz offset de caractere para cada candidato (inclusive os que
+nos mesmos adicionamos para os resultados de exame nao capturados pelo
+chunker automatico, ver `<case_id>-entities.csv`).
+
+A coluna `type` do `entities.csv` oficial herda o mesmo bug de casamento de
+texto do `weak_supervision.py` (ver project2/docs/relacoes.md): sitios
+anatomicos mencionados dentro do blob de sintoma do Projeto 1 (ex. "palm",
+"skin", "thumb") saem rotulados `Symptom` em vez de `AnatomicalSite`, e
+"RE"/"LE" saem sem tipo (ou `Exam`, errado). Corrigir isso no proprio
+`entities.csv` esta fora de escopo (arquivo compartilhado, usado por todas
+as 8 anotacoes-ouro do time, nao so as nossas) - por isso `TYPE_OVERRIDE`
+reaplica, so para os ent_id dos nossos 2 casos, os tipos que ja haviamos
+determinado lendo o texto na v1 deste gabarito. `PATIENT_ENT_ID` cobre o
+unico dado que o oficial nao marca nenhuma versao (`type` vazio para o
+`Patient`, porque "patient" nao casa contra o label do no do Projeto 1).
 """
 
 from __future__ import annotations
 
-import csv
-import re
 from itertools import combinations
 from typing import Dict, List
 
@@ -35,59 +44,61 @@ from project2.src.relacoes.relacoes import (
 
 CASOS = ["PMC4630775_01", "PMC6083636_03"]
 
-# snippet usado para localizar cada entidade no texto quando o label salvo
-# em <case_id>-nodes.csv nao aparece literalmente (ex.: "right eye" no
-# label, "RE" no texto) ou quando ha mais de uma ocorrencia e a certa nao
-# e a primeira.
-OVERRIDES = {
-    ("PMC4630775_01", "A3"): "dorsal hand",
-    ("PMC6083636_03", "A1"): r"\bRE\b",
-    ("PMC6083636_03", "A2"): r"\bLE\b",
-    ("PMC6083636_03", "R3"): "14 out of 15",
-    ("PMC6083636_03", "R4"): "15 out of 15",
-    ("PMC6083636_03", "R5"): "127",
-    ("PMC6083636_03", "R6"): "106",
-    ("PMC6083636_03", "F1"): "horizontal nystagmus",
+PATIENT_ENT_ID = {
+    "PMC4630775_01": "t8",
+    "PMC6083636_03": "t9",
 }
-REGEX_KEYS = {("PMC6083636_03", "A1"), ("PMC6083636_03", "A2")}
-SKIP_OCCURRENCES = {("PMC6083636_03", "F2"): 1}
-SEARCH_TEXT_OVERRIDE = {("PMC6083636_03", "F2"): "nystagmus"}
 
-
-def _carregar_nodes(case_id: str) -> List[Dict]:
-    path = DEFAULT_GOLD_DIR / case_id / f"{case_id}-nodes.csv"
-    with open(path, encoding="utf-8", newline="") as handle:
-        return list(csv.DictReader(handle))
+TYPE_OVERRIDE = {
+    ("PMC4630775_01", "t10"): "AnatomicalSite",  # palm
+    ("PMC4630775_01", "t12"): "AnatomicalSite",  # skin
+    ("PMC4630775_01", "t13"): "AnatomicalSite",  # right dorsal hand
+    ("PMC4630775_01", "t14"): "AnatomicalSite",  # circumferential forearm
+    ("PMC4630775_01", "t16"): "AnatomicalSite",  # thumb
+    ("PMC6083636_03", "t1"): "Exam",             # best corrected visual acuity
+    ("PMC6083636_03", "t2"): "ExamResult",       # 0.50 logMAR
+    ("PMC6083636_03", "t3"): "AnatomicalSite",   # RE
+    ("PMC6083636_03", "t4"): "ExamResult",       # 0.40 logMAR
+    ("PMC6083636_03", "t5"): "AnatomicalSite",   # LE
+    ("PMC6083636_03", "t7"): "Exam",             # Ishihara isochromatic plates
+    ("PMC6083636_03", "t11"): "AnatomicalSite",  # RE
+    ("PMC6083636_03", "t12"): "AnatomicalSite",  # LE
+    ("PMC6083636_03", "t13"): "Exam",            # Farnsworth Munsell 100-Hue
+    ("PMC6083636_03", "t15"): "AnatomicalSite",  # RE
+    ("PMC6083636_03", "t16"): "AnatomicalSite",  # LE
+    ("PMC6083636_03", "t21"): "ExamResult",      # intermittent exotropia
+    ("PMC6083636_03", "t23"): "Finding",         # horizontal nystagmus
+    ("PMC6083636_03", "t28"): "Finding",         # nystagmus (primary gaze)
+}
 
 
 def _carregar_texto(case_id: str) -> str:
-    path = DEFAULT_GOLD_DIR / case_id / f"{case_id}-texto.txt"
+    path = DEFAULT_GOLD_DIR / case_id / "case_text.txt"
     return path.read_text(encoding="utf-8")
 
 
-def localizar_entidades(case_id: str, texto: str) -> Dict[str, Dict]:
-    """IDs do gabarito -> {type, start, end} no texto bruto do caso."""
-    resultado: Dict[str, Dict] = {}
-    for node in _carregar_nodes(case_id):
-        node_id = node["node_id"]
-        key = (case_id, node_id)
-        if node["type"] == "Patient":
-            resultado[node_id] = {"type": "Patient", "start": 0, "end": 0}
-            continue
-        snippet = OVERRIDES.get(key, SEARCH_TEXT_OVERRIDE.get(key, node["label"]))
-        skip = SKIP_OCCURRENCES.get(key, 0)
-        if key in REGEX_KEYS:
-            m = list(re.finditer(snippet, texto))[skip]
-            pos, fim = m.start(), m.end()
+def _carregar_entidades(case_id: str) -> Dict[str, Dict]:
+    """Candidatos tipados do caso (Patient + TYPE_OVERRIDE + tipo original do
+    CSV quando nao vazio). Descarta candidatos sem tipo - `entities.csv`
+    oficial inclui todo chunk do pos_bio (inclusive ruido como "Figure",
+    "quality", frases das perguntas no fim do texto), mas o treino real
+    (`mencoes.csv` da Etapa 2) so contem mencoes ja tipadas; manter o ruido
+    aqui testaria o modelo fora da distribuicao em que foi treinado."""
+    path = DEFAULT_GOLD_DIR / case_id / f"{case_id}-entities.csv"
+    df = pd.read_csv(path)
+    patient_id = PATIENT_ENT_ID[case_id]
+    entidades: Dict[str, Dict] = {}
+    for row in df.itertuples():
+        if row.ent_id == patient_id:
+            tipo = "Patient"
         else:
-            texto_lower, snippet_lower = texto.lower(), snippet.lower()
-            pos, start_search = -1, 0
-            for _ in range(skip + 1):
-                pos = texto_lower.find(snippet_lower, start_search)
-                start_search = pos + 1
-            fim = pos + len(snippet)
-        resultado[node_id] = {"type": node["type"], "start": pos, "end": fim}
-    return resultado
+            tipo = TYPE_OVERRIDE.get(
+                (case_id, row.ent_id), str(row.type) if pd.notna(row.type) else ""
+            )
+        if not tipo:
+            continue
+        entidades[row.ent_id] = {"type": tipo, "start": int(row.char_start), "end": int(row.char_end)}
+    return entidades
 
 
 def _carregar_gold(case_id: str) -> pd.DataFrame:
@@ -134,7 +145,7 @@ def avaliar() -> Dict:
     entidades_rows: List[Dict] = []
     for case_id in CASOS:
         texto = _carregar_texto(case_id)
-        entidades = localizar_entidades(case_id, texto)
+        entidades = _carregar_entidades(case_id)
         gold = _carregar_gold(case_id)
         todas_linhas.extend(montar_candidatos(case_id, texto, entidades, gold))
         for ent_id, info in entidades.items():
