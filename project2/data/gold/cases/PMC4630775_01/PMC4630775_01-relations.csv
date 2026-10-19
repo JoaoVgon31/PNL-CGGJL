@@ -1,1 +1,9 @@
 case_id,source,target,relation,polarity,certainty
+PMC4630775_01,t8,t9,HAS_SYMPTOM,present,asserted
+PMC4630775_01,t8,t11,HAS_SYMPTOM,present,asserted
+PMC4630775_01,t8,t15,HAS_SYMPTOM,present,asserted
+PMC4630775_01,t9,t10,LOCATED_IN,present,asserted
+PMC4630775_01,t11,t12,LOCATED_IN,present,asserted
+PMC4630775_01,t11,t13,LOCATED_IN,present,asserted
+PMC4630775_01,t11,t14,LOCATED_IN,present,asserted
+PMC4630775_01,t15,t16,LOCATED_IN,present,asserted

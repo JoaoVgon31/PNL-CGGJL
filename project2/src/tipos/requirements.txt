@@ -1,0 +1,5 @@
+scikit-learn>=1.5
+pandas>=2.0
+# usados pelo léxico do projeto 1 (pos_bio.py e gazetteers)
+nltk>=3.9
+rapidfuzz>=3.0

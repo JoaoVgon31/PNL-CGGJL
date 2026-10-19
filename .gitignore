@@ -37,6 +37,7 @@ project2/data/mock/silver/
 project2/data/mock/regras/
 project2/data/mock/termos.csv
 project2/data/mencoes.csv
+project2/data/mencoes_tipadas.csv
 project2/data/resultados/
 # Issue #32: corpus e arquivos reproduzíveis; resultados pequenos da amostra ficam em experimentos/.
 project2/data/corpus/
@@ -46,3 +47,5 @@ project2/data/grafo/
 project2/data/visualizador/
 project2/data/interim/
 project2/data/demo/
+project2/data/mock/relacoes/
+project2/data/relacoes.csv
