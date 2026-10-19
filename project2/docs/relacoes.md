@@ -132,12 +132,24 @@ Evidência, não suposição:
 1. A resolução por offset reduziu a perda de cobertura de 38–75% (v1, casamento de texto) para
    28,9% (v2) — medido nos mesmos 56 casos, com as 181 colisões de deduplicação verificadas uma a
    uma como não gerando rótulo conflitante.
-2. `LinearSVC` vence `LogisticRegression` em macro-F1 (0,761 vs 0,691 em `val`, config `1-1`), mas
-   não tem `predict_proba` nativo — calibrar uma probabilidade aproximada por fora
-   (`CalibratedClassifierCV`) adicionaria uma camada de incerteza extra à coluna `confidence` das
-   predições finais, sem necessidade: a diferença de F1 entre os dois modelos é pequena frente ao
-   tamanho das classes raras (`REVEALS` tem 5 exemplos em `val`), e `LogisticRegression` já entrega
-   probabilidade exata.
+2. `LinearSVC` vence `LogisticRegression` em macro-F1 por uma margem real, não desprezível (0,761 vs
+   0,691 em `val`, config `1-1`) — mas isso não decide a escolha do modelo de produção, porque
+   `confidence` é uma coluna exigida pela issue para toda predição (`project2/data/relacoes.csv`
+   "relações do caso com confiança"), não um subproduto específico de um modelo. `LogisticRegression`
+   fornece essa confiança nativamente via `predict_proba`, sem custo extra, inclusive para a classe
+   mais rara do treino (`SUPPORTS`, 3 exemplos). `LinearSVC` não tem `predict_proba` nativo; o caminho
+   padrão para obter uma confiança a partir dele (`CalibratedClassifierCV`, Platt scaling) **falha de
+   forma reproduzível nesses dados**: `cv=5` exige ao menos 5 exemplos por classe, e `SUPPORTS` tem 3
+   no treino —
+   ```
+   ValueError: Requesting 5-fold cross-validation but provided less than 5 examples for at least one class.
+   ```
+   Contornar isso (reduzir `cv`, abandonar estratificação, agrupar classes) adicionaria engenharia não
+   padrão exatamente na classe que o relatório já marca como frágil (suporte zero em `val`, ponto 3
+   abaixo). A decisão não é "confiança exata é melhor que aproximada" — nenhuma das duas foi validada
+   por calibração (reliability curve/Brier score, não medido para nenhum dos dois modelos). É que
+   `LogisticRegression` produz o campo exigido para toda classe mecanicamente, e `LinearSVC` não
+   produz para a mais rara sem um remendo não testado.
 3. A régua de que o classificador acerta recall 1,0 mas precisão baixa nas classes raras é
    consistente entre as 4 configurações do grid (não é ruído de uma config específica) — reforça
    que é comportamento do `class_weight="balanced"` sob desbalanço real, não artefato de uma escolha
@@ -166,3 +178,8 @@ Evidência, não suposição:
 - **`avaliar_gabarito.py` não generaliza para um novo caso-gabarito sozinho** — localiza entidades no
   texto por um dicionário de overrides manual (`OVERRIDES`/`REGEX_KEYS`/...), específico dos 2 casos
   atuais, porque não existe `entidades.csv` (com offset de caractere) para casos reservados do treino.
+- **A coluna `confidence` ainda não tem consumidor** — `project2/src/montagem/assembly/pipeline.py`
+  (Etapa 5) não filtra nem usa esse valor hoje. A coluna é gerada porque a issue exige (anotação de
+  incerteza por aresta, mesmo papel que `certainty` já cumpre nas arestas do Projeto 1), não porque
+  algo no pipeline atual consome o número — fica disponível para quando a montagem do grafo (ou um
+  revisor humano) quiser usá-lo.
