@@ -40,7 +40,7 @@ clínicas do Projeto 1 com offset de evidência, **599 foram resolvidas, 62 desc
 menção do tipo certo caiu na janela de evidência) **e 181 colapsadas** por deduplicação (duas
 arestas do Projeto 1 apontando para o mesmo par de menções — verificado que nunca têm rótulos
 conflitantes, então não geram dado errado, só reduzem a contagem). Perda real de cobertura:
-(62+181)/842 ≈ **28,6%** — bem menor que os 38–75% da v1, e sem nenhum casamento por texto residual.
+(62+181)/842 ≈ **28,9%** — bem menor que os 38–75% da v1, e sem nenhum casamento por texto residual.
 
 ## Resultado agregado — grid de 4 configurações em `val`, vencedora avaliada em `test`
 
@@ -87,8 +87,8 @@ extração. Consequência prática: a escolha entre `1-1` e `1-3` grama em `sele
 decidida por uma margem de 0,003 sobre um macro-F1 calculado com uma classe de suporte zero — uma
 decisão estatisticamente frágil, não um resultado robusto.
 
-**A regra do paciente nunca vê um exemplo negativo.** De 432 pares envolvendo `Patient` nos dados
-gerados, 432 são positivos e 0 são `NONE` — o gerador nunca cria um candidato negativo em que
+**A regra do paciente nunca vê um exemplo negativo.** De 430 pares envolvendo `Patient` nos dados
+gerados, 430 são positivos e 0 são `NONE` — o gerador nunca cria um candidato negativo em que
 `Patient` participa, porque a regra resolve esses pares por tipo, não por classificação. Uma
 conclusão de relatório do tipo "a regra supera o classificador" estaria comparando uma tarefa sem
 nenhum caso difícil (a regra) contra uma tarefa 90% `NONE` (o classificador) — **não é uma
@@ -130,7 +130,7 @@ produção — mesmo quando `LinearSVC` vence o grid de comparação.**
 Evidência, não suposição:
 
 1. A resolução por offset reduziu a perda de cobertura de 38–75% (v1, casamento de texto) para
-   28,6% (v2) — medido nos mesmos 56 casos, com as 181 colisões de deduplicação verificadas uma a
+   28,9% (v2) — medido nos mesmos 56 casos, com as 181 colisões de deduplicação verificadas uma a
    uma como não gerando rótulo conflitante.
 2. `LinearSVC` vence `LogisticRegression` em macro-F1 (0,761 vs 0,691 em `val`, config `1-1`), mas
    não tem `predict_proba` nativo — calibrar uma probabilidade aproximada por fora
