@@ -1,5 +1,10 @@
 # Montagem do grafo
 
+Este diretório reúne duas entregas. O comando `montagem.py`, descrito abaixo, é da #32.
+Os módulos `data/`, `evaluation/` e `assembly/` vieram da #29 e estão descritos no
+[README da etapa 5](README-etapa5.md). As duas rotas de montagem têm contratos e métodos de
+agrupamento diferentes; a integração final ainda precisa definir qual será usada na avaliação.
+
 Consome as saídas das etapas 3/4 e gera o mesmo contrato CSV do P1. Não treina modelos e não
 cria relações clínicas por proximidade. Arestas do paciente devem vir da etapa 4 com `origem=P1`.
 As únicas arestas adicionadas pela montagem são `SAME_AS`.

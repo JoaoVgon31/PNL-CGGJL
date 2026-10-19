@@ -1,0 +1,9 @@
+case_id,source,target,relation,polarity,certainty
+PMC9532611_01,t2,t5,HAS_SYMPTOM,present,asserted
+PMC9532611_01,t2,t3,HAS_FINDING,present,asserted
+PMC9532611_01,t3,t4,HAS_RESULT,present,asserted
+PMC9532611_01,t2,t6,DIAGNOSED_WITH,present,asserted
+PMC9532611_01,t6,t7,HAS_RESULT,present,asserted
+PMC9532611_01,t2,t8,HAS_FINDING,present,asserted
+PMC9532611_01,t2,t10,TREATED_WITH,present,asserted
+PMC9532611_01,t2,t11,DIAGNOSED_WITH,present,asserted

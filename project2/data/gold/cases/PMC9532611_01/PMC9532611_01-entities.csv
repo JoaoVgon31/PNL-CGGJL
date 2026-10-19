@@ -1,0 +1,12 @@
+case_id,ent_id,char_start,char_end,texto,type,concept_code
+PMC9532611_01,t1,40,49,patient 1,Patient,
+PMC9532611_01,t2,57,93,12-year-old female-phenotype patient,Patient,
+PMC9532611_01,t3,113,124,hypokalemic,Finding,D007008
+PMC9532611_01,t4,126,136,1.8 mmol/l,ExamResult,
+PMC9532611_01,t5,138,146,weakness,Symptom,D001284
+PMC9532611_01,t6,171,183,hypertension,Diagnosis,D006973
+PMC9532611_01,t7,185,196,138/94 mmHg,ExamResult,
+PMC9532611_01,t8,445,456,infantilism,Finding,D007248
+PMC9532611_01,t9,644,662,periodic paralysis,Diagnosis,D020514
+PMC9532611_01,t10,866,873,surgery,Treatment,D013514
+PMC9532611_01,t11,903,918,inguinal hernia,Diagnosis,D006552
