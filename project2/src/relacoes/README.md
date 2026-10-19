@@ -81,7 +81,7 @@ Detalhadas, com números e evidência, em
 - `polarity`/`certainty` são herdados dos atributos das arestas do Projeto 1
   (a Etapa 3 ainda não publicou saída própria).
 - A perda de cobertura real (`arestas_descartadas + pares_colapsados`) é
-  maior do que `arestas_descartadas` isolado sugere (~28,6% vs ~9%).
+  maior do que `arestas_descartadas` isolado sugere (~28,9% vs ~9%).
 - A comparação regra-vs-classificador não é direta: a regra nunca vê um
   `Patient` negativo, o classificador vê ~90% `NONE`.
 - A classe `SUPPORTS` tem suporte zero em `val`, tornando a seleção de
