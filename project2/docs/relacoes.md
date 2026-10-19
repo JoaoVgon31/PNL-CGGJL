@@ -95,6 +95,32 @@ nenhum caso difícil (a regra) contra uma tarefa 90% `NONE` (o classificador) �
 comparação justa entre os dois métodos**, é uma comparação entre duas distribuições de dados
 diferentes. Vale reportar os dois separadamente, não como "regra vence ML".
 
+## Validação contra gabarito manual independente
+
+Os 2 casos reservados do João (`PMC4630775_01`, `PMC6083636_03`) foram anotados à mão (texto lido do
+zero, sem copiar as relações do Projeto 1 sem revisar — ver `project2/data/gold/cases/`) e avaliados
+com `python3 -m project2.src.relacoes.avaliar_gabarito`:
+
+```
+total_predicted=39  total_gold=27  aligned_pairs=22
+relation_precision=0,564  relation_recall=0,815  relation_f1=0,667
+```
+
+Nos 22 pares em que modelo e gabarito concordam que existe uma relação, **100% dos rótulos batem**
+(`HAS_FINDING`, `HAS_RESULT`, `HAS_SYMPTOM`, `LOCATED_IN`, `UNDERWENT_EXAM` — precision/recall 1,00
+em todas). O erro inteiro está em *quais* pares têm relação, não em qual relação é:
+
+- **5 relações do gabarito não foram previstas** (recall perdido): o resultado do Farnsworth-Munsell
+  do olho esquerdo (`E3→R6`) e 4 `LOCATED_IN` de resultado→olho — o modelo só generalizou essa
+  relação para os resultados do Ishihara, não para os de acuidade visual/Farnsworth-Munsell.
+- **17 pares sem relação no gabarito foram previstos como se tivessem** (precisão baixa): o padrão
+  mais visível é `Exam→Finding` classificado como `REVEALS` (ex.: "exame revela nistagmo") em quase
+  todo exame do caso, e `Patient→AnatomicalSite` como `LOCATED_IN` sem sentido clínico.
+
+Essa é a mesma assinatura de erro já vista nos dados mock (seção anterior): recall alto, precisão
+baixa nas classes raras, efeito do `class_weight="balanced"` sob desbalanço — agora confirmada contra
+anotação humana independente do Projeto 1, não só contra dados derivados dele.
+
 ## Decisão
 
 **Arquitetura híbrida (regra para `Patient`, classificador de N-gramas para o resto), resolução de
@@ -134,6 +160,9 @@ Evidência, não suposição:
   destino resolvem para a mesma menção. Isso afeta só `REVISES` (`Diagnosis`→`Diagnosis`), que tem 1
   ocorrência em todo o corpus — negligível nos dados atuais, mas é uma limitação estrutural, não um
   caso tratado.
-- **Os 2 casos-gabarito de João (`PMC4630775_01`, `PMC6083636_03`) ainda não foram anotados à mão** —
-  `evaluate_against_gold` já está pronta para uso, mas sem gabarito de relações ainda não há como
-  validar as predições desta etapa contra anotação humana independente do próprio Projeto 1.
+- **A avaliação contra gabarito (seção acima) cobre só 2 casos, 27 relações** — amostra pequena
+  demais para generalizar a magnitude exata de precisão/recall; serve como confirmação qualitativa
+  do padrão de erro (recall alto, precisão baixa), não como medida definitiva.
+- **`avaliar_gabarito.py` não generaliza para um novo caso-gabarito sozinho** — localiza entidades no
+  texto por um dicionário de overrides manual (`OVERRIDES`/`REGEX_KEYS`/...), específico dos 2 casos
+  atuais, porque não existe `entidades.csv` (com offset de caractere) para casos reservados do treino.
