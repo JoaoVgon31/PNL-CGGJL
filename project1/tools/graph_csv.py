@@ -7,6 +7,7 @@ serializado), igual a qualquer estratégia que siga o contrato comum.
 """
 
 import csv
+import json
 import re
 from pathlib import Path
 
@@ -15,16 +16,20 @@ EDGE_COLUMNS = ("case_id", "edge_id", "source_id", "target_id", "relation", "att
 
 # 'serialize_attributes' (repetido em cada estratégia, ex. stopwords/core/models.py)
 # junta pares 'chave=valor' com '; ' sem escapar valores que contenham esse
-# delimitador (ex.: evidence_text com pontuação). Só quebramos em '; ' quando o
-# que vem depois parece uma nova chave (identificador seguido de '='), porque
-# nenhuma chave conhecida do contrato comum tem esse formato dentro do valor.
+# delimitador (ex.: evidence_text com pontuação). Esse legado é ambíguo se o texto
+# contém '; p='. A serialização nova usa JSON nesses casos; o leitor aceita ambos.
 _ATTR_SPLIT_RE = re.compile(r"; (?=[A-Za-z_][A-Za-z0-9_]*=)")
 
 
 def parse_attributes(raw: str) -> dict[str, str]:
-    """Reverte 'chave=valor; chave=valor' para dict. String vazia -> {}."""
+    """Aceita pares legados ou objeto JSON com valores string. String vazia -> {}."""
     if not raw:
         return {}
+    if raw.lstrip().startswith("{"):
+        attributes = json.loads(raw)
+        if not isinstance(attributes, dict) or any(not isinstance(v, str) for v in attributes.values()):
+            raise ValueError("Atributos JSON precisam ser um objeto de valores string")
+        return attributes
     attributes: dict[str, str] = {}
     for part in _ATTR_SPLIT_RE.split(raw):
         key, separator, value = part.partition("=")

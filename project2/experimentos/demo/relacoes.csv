@@ -1,0 +1,7 @@
+case_id,origem,destino,relacao,confianca,fonte
+PMC0_01,P1,m1,HAS_SYMPTOM,,regra
+PMC0_01,P1,m2,UNDERWENT_EXAM,,regra
+PMC0_01,P1,m3,HAS_FINDING,,regra
+PMC0_01,P1,m5,HAS_FINDING,,regra
+PMC0_01,m2,m3,REVEALS,0.88,exemplo_sintetico
+PMC0_01,m3,m4,LOCATED_IN,0.83,exemplo_sintetico

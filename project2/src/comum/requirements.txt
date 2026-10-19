@@ -1,0 +1,2 @@
+# Opcional: leitura de Parquet e exportação da coleta. CSV/texto/HMM usam só a biblioteca padrão.
+duckdb>=1.2,<2

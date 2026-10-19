@@ -1,0 +1,6 @@
+case_id,id,start,end,texto,tipo,mesh,polaridade
+PMC0_01,m1,24,30,nausea,Symptom,D009325,present
+PMC0_01,m2,32,34,CT,Exam,D014054,present
+PMC0_01,m3,46,63,6cm cystic lesion,Finding,,present
+PMC0_01,m4,67,75,pancreas,AnatomicalSite,ANAT002,present
+PMC0_01,m5,80,90,malignancy,Finding,D009369,absent

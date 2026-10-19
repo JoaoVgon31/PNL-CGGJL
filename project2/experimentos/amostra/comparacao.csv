@@ -1,0 +1,101 @@
+posicao,termo,n,frequencia,pmi,c_value,conhecido_mesh,codigos_mesh
+1,physical examination,2,19,8.666649,19.0,1,D010808
+2,spontaneous respiration,2,15,9.867506,15.0,0,
+3,s serum,2,13,6.868322,13.0,0,
+4,computed tomography,2,14,10.370006,12.0,0,
+5,normal range,2,12,8.421639,12.0,0,
+6,white blood cell count,4,6,6.423587,12.0,1,D007958
+7,left main bronchus,3,7,7.762676,11.094738,0,
+8,abdominal pain,2,13,7.619235,11.0,1,D015746
+9,chest pain,2,10,7.170334,10.0,1,D002637
+10,weeks gestational age,3,6,8.688182,9.509775,0,
+11,postoperative day,2,9,7.40038,9.0,0,
+12,blood pressure,2,11,7.096423,9.0,1,D001794
+13,ct scan,2,8,9.463116,8.0,0,
+14,erythrocyte sedimentation rate,3,5,9.785044,7.924813,1,D001799
+15,past medical history,3,5,7.846444,7.924813,0,
+16,left upper extremity,3,5,6.891959,7.924813,0,
+17,pleural effusion,2,7,10.837511,7.0,1,D010996
+18,esophagobronchial fistulae,2,7,10.370006,7.0,0,
+19,normal limits,2,7,8.537116,7.0,0,
+20,laboratory results,2,7,7.919973,7.0,0,
+21,family history,2,7,7.653799,7.0,0,
+22,intrauterine fetal demise,3,4,11.200081,6.33985,0,
+23,neonatal compartment syndrome,3,4,10.669566,6.33985,0,
+24,magnetic resonance imaging,3,4,10.463116,6.33985,1,D008279
+25,full symptom resolution,3,4,10.200081,6.33985,0,
+26,intensive care unit,3,4,9.669566,6.33985,0,
+27,esophageal bypass surgery,3,4,7.878153,6.33985,0,
+28,normal sinus rhythm,3,4,7.537116,6.33985,0,
+29,united states,2,6,11.785044,6.0,0,
+30,free t4,2,6,10.370006,6.0,0,
+31,shoulder dystocia,2,6,10.370006,6.0,1,D000080883
+32,inflammatory process,2,6,9.707041,6.0,0,
+33,gestational age,2,12,9.624052,6.0,0,
+34,emergency department,2,6,9.588647,6.0,0,
+35,heart rate,2,6,8.562651,6.0,1,D006339
+36,postoperative course,2,6,8.370006,6.0,0,
+37,respiratory rate,2,6,7.977689,6.0,1,D056152
+38,medical history,2,11,7.846444,6.0,0,
+39,left ventricular ejection fraction,4,3,7.795097,6.0,0,
+40,arterial blood gas analysis,4,3,7.392726,6.0,0,
+41,packed red blood cells,4,3,5.460113,6.0,0,
+42,female patient,2,6,4.745515,6.0,0,
+43,one-lung ventilation,2,5,11.048078,5.0,1,D061810
+44,oxygen saturation,2,5,10.691934,5.0,0,
+45,c-reactive protein,2,5,10.562651,5.0,1,D002097
+46,human herpesvirus,2,5,10.562651,5.0,0,
+47,main bronchus,2,10,10.463116,5.0,0,
+48,hemoglobin a1c,2,7,10.200081,5.0,0,
+49,anticoagulation therapy,2,5,9.325612,5.0,0,
+50,recurrent thrombosis,2,5,8.82157,5.0,0,
+51,red cells,2,8,7.997141,5.0,0,
+52,thoracic ct,2,5,7.930383,5.0,0,
+53,recurrent symptoms,2,5,7.567813,5.0,0,
+54,right lung,2,5,6.803191,5.0,0,
+55,enlarged cecal appendix,3,3,10.463116,4.754888,0,
+56,proximal pa stenosis,3,3,8.282543,4.754888,0,
+57,p-negative red cells,3,3,7.997141,4.754888,0,
+58,p-positive red cells,3,3,7.997141,4.754888,0,
+59,left temporal lobe,3,3,7.932601,4.754888,0,
+60,lower chest wall,3,3,5.977689,4.754888,0,
+61,surgical chest tube,3,3,5.838625,4.754888,0,
+62,right main bronchus,3,3,5.744297,4.754888,0,
+63,veno-venous extracorporeal membrane oxygenator,4,2,13.370006,4.0,0,
+64,mycophenolate mofetil,2,4,12.370006,4.0,1,D009173
+65,vp shunt,2,4,11.562651,4.0,0,
+66,peptic stricture,2,4,11.200081,4.0,0,
+67,aortic arch,2,4,10.785044,4.0,0,
+68,partial hexon gene sequencing,4,2,10.463116,4.0,0,
+69,general anesthesia,2,4,10.200081,4.0,0,
+70,weight loss,2,6,9.977689,4.0,1,D015431
+71,suprapubic pressure,2,4,9.846444,4.0,0,
+72,caspr2 antibodies,2,4,9.800151,4.0,0,
+73,similac liquid protein fortifier,4,2,9.562651,4.0,0,
+74,fetal head,2,4,9.499641,4.0,0,
+75,gastric emptying,2,4,9.463116,4.0,0,
+76,low molecular weight heparin,4,2,9.463116,4.0,1,D006495
+77,symptom free,2,4,9.347638,4.0,0,
+78,skin lesions,2,4,9.003684,4.0,0,
+79,main pa,2,4,8.878153,4.0,0,
+80,surgical intervention,2,4,8.655761,4.0,0,
+81,small patent ductus arteriosus,4,2,8.562651,4.0,0,
+82,posterior wall,2,4,8.325612,4.0,0,
+83,pulmonary hypertension,2,4,8.02571,4.0,1,D006976
+84,blood units,2,4,7.838625,4.0,0,
+85,small bowel,2,4,7.655761,4.0,0,
+86,laboratory tests,2,4,7.200081,4.0,0,
+87,mean arterial blood pressure,4,2,7.096423,4.0,0,
+88,peripheral blood,2,4,6.918795,4.0,0,
+89,bilateral lower extremity edema,4,2,6.800151,4.0,0,
+90,patients underwent,2,4,5.545843,4.0,0,
+91,patient underwent repeat egd,4,2,5.329152,4.0,0,
+92,white blood,2,8,8.070798,3.333333,0,
+93,methicillin-resistant staphylococcus aureus,3,2,13.370006,3.169925,0,
+94,gentle downward traction,3,2,12.370006,3.169925,0,
+95,vitamin k antagonists,3,2,12.370006,3.169925,0,
+96,indirect immunofluorescence assay,3,2,11.785044,3.169925,1,D019084
+97,international normalized ratio,3,2,11.370006,3.169925,1,D019934
+98,mean corpuscular volume,3,2,11.200081,3.169925,1,D004909
+99,parastomal hernial sac,3,2,11.048078,3.169925,0,
+100,american diabetes association,3,2,10.977689,3.169925,0,

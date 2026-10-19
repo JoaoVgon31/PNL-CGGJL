@@ -5,7 +5,10 @@ from __future__ import annotations
 import re
 from abc import ABC, abstractmethod
 
-from models import Token
+try:
+    from .models import Token
+except ImportError:  # execução dos scripts legados da pasta tokenizacao/
+    from models import Token
 
 
 NUMBER_SOURCE = r"(?:\d{1,3}(?:,\d{3})+|\d+)(?:\.\d+)?"
@@ -36,7 +39,7 @@ CLINICAL_TOKEN_RE = re.compile(
     | (?P<UNIT>(?:{_UNIT_SOURCE}))(?![A-Za-z0-9_])
     | (?P<OPERATOR><=|>=|<|>)
     | (?P<WORD>[^\W\d_][\w]*(?:[-/][\w]+)*)
-    | (?P<PUNCTUATION>[^\w\s])
+    | (?P<PUNCTUATION>[^\w\s]|_)
     """,
     re.VERBOSE | re.IGNORECASE | re.UNICODE,
 )

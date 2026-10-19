@@ -24,6 +24,10 @@ um JSON por caso + `manifest.json` em `visualizer/data/`. Roda sozinho a cada pu
 relevante via `.github/workflows/deploy-visualizer.yml`; localmente, rode manualmente
 como acima sempre que quiser ver dados atualizados.
 
+O leitor compartilhado `tools/graph_csv.py` aceita tanto os atributos legados `chave=valor`
+quanto objetos JSON com valores string. O serializador da tokenização e da montagem P2 usa
+JSON quando texto como `CT; p=0.05` tornaria o formato legado ambíguo.
+
 ## `case_texts.csv`
 
 A gaveta de detalhes mostra o `case_text` completo com o trecho de evidência

@@ -1,0 +1,88 @@
+{
+  "casos_verificados": 98641,
+  "tokens": 51253744,
+  "falhas": 713,
+  "exemplos_falhas": [
+    {
+      "case_id": "PMC10416632_01",
+      "erro": "tokenizer skipped text: '_'"
+    },
+    {
+      "case_id": "PMC10076737_01",
+      "erro": "tokenizer skipped text: '_'"
+    },
+    {
+      "case_id": "PMC4879337_01",
+      "erro": "tokenizer skipped text: '_'"
+    },
+    {
+      "case_id": "PMC6299974_01",
+      "erro": "tokenizer skipped text: '_'"
+    },
+    {
+      "case_id": "PMC7263430_02",
+      "erro": "tokenizer skipped text: '_'"
+    },
+    {
+      "case_id": "PMC10203705_01",
+      "erro": "tokenizer skipped text: '_'"
+    },
+    {
+      "case_id": "PMC8734028_02",
+      "erro": "tokenizer skipped text: '_'"
+    },
+    {
+      "case_id": "PMC4503302_02",
+      "erro": "tokenizer skipped text: '_'"
+    },
+    {
+      "case_id": "PMC8053604_01",
+      "erro": "tokenizer skipped text: '_'"
+    },
+    {
+      "case_id": "PMC9079315_01",
+      "erro": "tokenizer skipped text: '_'"
+    },
+    {
+      "case_id": "PMC9343796_02",
+      "erro": "tokenizer skipped text: '_'"
+    },
+    {
+      "case_id": "PMC9299075_01",
+      "erro": "tokenizer skipped text: '_'"
+    },
+    {
+      "case_id": "PMC9909053_02",
+      "erro": "tokenizer skipped text: '_'"
+    },
+    {
+      "case_id": "PMC8585933_08",
+      "erro": "tokenizer skipped text: '_'"
+    },
+    {
+      "case_id": "PMC9846957_01",
+      "erro": "tokenizer skipped text: '_'"
+    },
+    {
+      "case_id": "PMC9561087_01",
+      "erro": "tokenizer skipped text: '_'"
+    },
+    {
+      "case_id": "PMC9391182_01",
+      "erro": "tokenizer skipped text: '_'"
+    },
+    {
+      "case_id": "PMC7096564_01",
+      "erro": "tokenizer skipped text: '_'"
+    },
+    {
+      "case_id": "PMC8606537_01",
+      "erro": "tokenizer skipped text: '_'"
+    },
+    {
+      "case_id": "PMC9433698_03",
+      "erro": "tokenizer skipped text: '_'"
+    }
+  ],
+  "tempo_s": 92.12
+}

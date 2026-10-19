@@ -1,0 +1,24 @@
+{
+  "record_id": 20416562,
+  "version": "3.0.1",
+  "endpoint": "https://zenodo.org/api/records/10079369/versions/latest",
+  "tutorial": "https://github.com/santanche/nlp2learn/blob/main/to-kg/notebooks/01_data_preparation.ipynb",
+  "casos": 98641,
+  "arquivos": [
+    {
+      "key": "cases.parquet",
+      "size": 168061894,
+      "checksum": "md5:3d19b916147bc16fd3bdb556546c52a4"
+    },
+    {
+      "key": "metadata.parquet",
+      "size": 20357281,
+      "checksum": "md5:112b1cc572dfd9045faae1a302c40a81"
+    },
+    {
+      "key": "data_dictionary.csv",
+      "size": 6291,
+      "checksum": "md5:723cb7557a939fe878c60be79c10f7a5"
+    }
+  ]
+}

@@ -1,0 +1,32 @@
+{
+  "corpus": "project1/data/case_texts.csv",
+  "corpus_sha256": "aa568519b6e431490ecde05e7e69d3119551a073bddf3a5eee35ce4bdfe74962",
+  "gold": "project2/data/mock/gold/casos.txt",
+  "gold_sha256": "f186006c0c9a7513032e93b2e1a0b9198aa750b6f24b17776574bb96879c029c",
+  "lista_gold": [
+    "PMC2700431_01",
+    "PMC3859158_01",
+    "PMC7102447_01"
+  ],
+  "casos_processados": 53,
+  "casos_gold_excluidos": 3,
+  "limite": null,
+  "freq_min": 2,
+  "n_max": 4,
+  "ocorrencias_por_n": {
+    "1": 25535,
+    "2": 21174,
+    "3": 17903,
+    "4": 15100
+  },
+  "termos": 600,
+  "tempo_s": 0.572,
+  "codigo_sha256": "890db46033795f24330bea419625caebbc7a4ac771a17fbcaf2894bfe8e77ad4",
+  "tokenizador_sha256": "02b5fd23d755db04d723c9974af8e70f00170bbe56f15404a94c90fe423d00f1",
+  "comum_texto_sha256": "1d5440c73aa2f75034462d1f0193916fa5b11259b43c7ba8a590fe2d202f2400",
+  "comum_corpus_sha256": "cd25b65f08e5d13e702678bce613a1355a6200bb59b0c329e5c85926519c91a9",
+  "pos_bio_sha256": "8fa374857d7f50c54d9627638816cf467c050763e113fd6d0ed3d4e8008a5db6",
+  "hmm_sha256": "9141ce2b40c769d5493e9a9945e62c2b4503238e2e3c5ba6fe3277879e7c0f56",
+  "pmi": "minimo do PMI dos pares adjacentes; marginais posicionais no universo de bigramas",
+  "filtro_pos": "ao menos metade das ocorrencias com (ADJ|NOUN)* NOUN"
+}

@@ -2,6 +2,7 @@
 
 from __future__ import annotations
 
+import json
 import re
 from dataclasses import dataclass, field
 from decimal import Decimal
@@ -83,11 +84,17 @@ def _attribute_value(value: Any) -> str:
 
 
 def serialize_attributes(attributes: dict[str, Any]) -> str:
-    return "; ".join(
-        f"{key}={_attribute_value(value)}"
+    """Mantém pares legados quando inequívocos; JSON de strings protege delimitadores no texto."""
+    values = {
+        key: _attribute_value(value)
         for key, value in attributes.items()
         if value not in (None, "")
-    )
+    }
+    if any(re.search(r"; [A-Za-z_][A-Za-z0-9_]*=", value) for value in values.values()) or any(
+        re.fullmatch(r"[A-Za-z_][A-Za-z0-9_]*", key) is None for key in values
+    ):
+        return json.dumps(values, ensure_ascii=False, separators=(",", ":"))
+    return "; ".join(f"{key}={value}" for key, value in values.items())
 
 
 @dataclass

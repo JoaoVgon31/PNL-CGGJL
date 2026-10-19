@@ -4,6 +4,11 @@ Repositório dos projetos da disciplina de **Processamento de Linguagem Natural 
 
 O enunciado dos projetos vem do repositório da disciplina: [santanche/nlp2learn](https://github.com/santanche/nlp2learn).
 
+## Projetos
+
+- [Projeto 1 — grafos clínicos com regras](project1/README.md)
+- [Projeto 2 — N-gramas e aprendizado de máquina](project2/README.md)
+
 ## Equipe
 
 | Nome | RA |
