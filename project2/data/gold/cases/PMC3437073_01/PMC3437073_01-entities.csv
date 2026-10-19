@@ -1,0 +1,82 @@
+case_id,ent_id,char_start,char_end,texto,type,concept_code
+PMC3437073_01,t1,2,18,55-year-old male,,
+PMC3437073_01,t2,46,61,increasing mass,Symptom,
+PMC3437073_01,t3,69,93,left lateral lower chest,AnatomicalSite,ANAT032
+PMC3437073_01,t4,98,111,upper abdomen,AnatomicalSite,ANAT033
+PMC3437073_01,t5,119,125,period,,
+PMC3437073_01,t6,129,137,one year,,
+PMC3437073_01,t7,146,171,no other medical problems,,
+PMC3437073_01,t8,176,186,no history,,
+PMC3437073_01,t9,190,197,contact,,
+PMC3437073_01,t10,205,224,tuberculous patient,,
+PMC3437073_01,t11,229,240,examination,,
+PMC3437073_01,t12,244,271,lobulated subcutaneous mass,Finding,
+PMC3437073_01,t13,296,304,diameter,,
+PMC3437073_01,t14,324,335,consistency,,
+PMC3437073_01,t15,337,345,immobile,,
+PMC3437073_01,t16,366,370,skin,AnatomicalSite,ANAT018
+PMC3437073_01,t17,405,411,tender,,
+PMC3437073_01,t18,420,424,warm,,
+PMC3437073_01,t19,450,458,no bruit,,
+PMC3437073_01,t20,476,492,left lower chest,AnatomicalSite,ANAT032
+PMC3437073_01,t21,497,510,upper abdomen,AnatomicalSite,ANAT033
+PMC3437073_01,t22,526,532,spleen,AnatomicalSite,
+PMC3437073_01,t23,561,574,costal margin,,
+PMC3437073_01,t24,576,589,Other systems,,
+PMC3437073_01,t25,603,615,Chest X-rays,AnatomicalSite,ANAT032
+PMC3437073_01,t26,625,641,calcified lesion,Finding,
+PMC3437073_01,t27,651,656,hilum,,
+PMC3437073_01,t28,664,685,right lung suggestive,AnatomicalSite,ANAT007
+PMC3437073_01,t29,692,718,old pulmonary tuberculosis,Diagnosis,
+PMC3437073_01,t30,720,766,Abdominal radiographs showed calcified lesions,Finding,
+PMC3437073_01,t31,774,793,left upper quadrant,AnatomicalSite,
+PMC3437073_01,t32,806,816,Ultrasound,Exam,
+PMC3437073_01,t33,824,831,abdomen,AnatomicalSite,ANAT033
+PMC3437073_01,t34,845,860,enlarged spleen,AnatomicalSite,
+PMC3437073_01,t35,866,871,areas,,
+PMC3437073_01,t36,875,888,calcification,Finding,
+PMC3437073_01,t37,890,897,CT scan,Exam,
+PMC3437073_01,t38,905,912,abdomen,AnatomicalSite,ANAT033
+PMC3437073_01,t39,924,939,splenic abscess,Finding,D000038
+PMC3437073_01,t40,959,987,another subcutaneous abscess,Finding,D000038
+PMC3437073_01,t41,1000,1016,lower chest wall,AnatomicalSite,ANAT032
+PMC3437073_01,t42,1044,1048,data,,
+PMC3437073_01,t43,1052,1091,complicated tuberculous splenic abscess,Finding,D000038
+PMC3437073_01,t44,1100,1123,most probable diagnosis,,
+PMC3437073_01,t45,1131,1149,general anesthesia,,
+PMC3437073_01,t46,1155,1175,subcutaneous abscess,Finding,D000038
+PMC3437073_01,t47,1205,1216,splenectomy,Treatment,
+PMC3437073_01,t48,1251,1257,spleen,AnatomicalSite,
+PMC3437073_01,t49,1298,1306,adherent,,
+PMC3437073_01,t50,1314,1330,lower chest wall,AnatomicalSite,ANAT032
+PMC3437073_01,t51,1345,1359,abscess cavity,Finding,
+PMC3437073_01,t52,1371,1377,spleen,AnatomicalSite,
+PMC3437073_01,t53,1401,1421,subcutaneous abscess,Finding,D000038
+PMC3437073_01,t54,1432,1443,small tract,,
+PMC3437073_01,t55,1451,1467,lower chest wall,AnatomicalSite,ANAT032
+PMC3437073_01,t56,1478,1487,insertion,,
+PMC3437073_01,t57,1495,1504,diaphragm,,
+PMC3437073_01,t58,1510,1539,abscesses contained thick pus,,
+PMC3437073_01,t59,1544,1561,necrotic material,,
+PMC3437073_01,t60,1563,1577,Histopathology,,
+PMC3437073_01,t61,1585,1591,spleen,AnatomicalSite,
+PMC3437073_01,t62,1605,1641,characteristic tuberculoid granuloma,,
+PMC3437073_01,t63,1647,1664,epithelioid cells,,
+PMC3437073_01,t64,1666,1674,Langhans,,
+PMC3437073_01,t65,1676,1702,multinucleated giant cells,,
+PMC3437073_01,t66,1708,1726,caseation necrosis,Finding,
+PMC3437073_01,t67,1739,1765,Acid fast bacilli staining,,
+PMC3437073_01,t68,1783,1801,bacterial cultures,,
+PMC3437073_01,t69,1825,1832,patient,,
+PMC3437073_01,t70,1859,1862,INH,,
+PMC3437073_01,t71,1864,1873,300 mg OD,,
+PMC3437073_01,t72,1884,1893,600 mg OD,,
+PMC3437073_01,t73,1895,1905,Ethambutol,Medication,D004977
+PMC3437073_01,t74,1906,1915,600 mg OD,,
+PMC3437073_01,t75,1933,1942,500 mg OD,,
+PMC3437073_01,t76,1947,1954,5 weeks,,
+PMC3437073_01,t77,1986,1995,two drugs,,
+PMC3437073_01,t78,2001,2008,patient,,
+PMC3437073_01,t79,2009,2020,s condition,,
+PMC3437073_01,t80,2033,2061,anti-tuberculous medications,,
+PMC3437073_01,t81,2066,2095,showed good clinical progress,,
