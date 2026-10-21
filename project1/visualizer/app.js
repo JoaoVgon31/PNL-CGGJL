@@ -18,6 +18,8 @@ const NODE_STYLE = {
 };
 
 const STRATEGY_LABELS = {
+  projeto1: "Projeto 1",
+  projeto2: "Projeto 2",
   combinado: "Combinado",
   tokenizacao: "Tokenização",
   stopwords: "Stopwords",
@@ -27,6 +29,8 @@ const STRATEGY_LABELS = {
 };
 
 const STRATEGY_ORDER = [
+  "projeto1",
+  "projeto2",
   "combinado",
   "tokenizacao",
   "stopwords",
@@ -129,9 +133,18 @@ async function loadCase(caseId) {
   state.currentCase = caseId;
   state.currentCasePayload = await fetchJson(`${DATA_BASE}/${caseId}.json`);
   renderTabs();
-  const firstAvailable = STRATEGY_ORDER.find((key) => state.currentCasePayload.graphs[key]);
-  if (firstAvailable) {
-    selectStrategy(firstAvailable);
+  const availableKeys = STRATEGY_ORDER.filter((key) => state.currentCasePayload.graphs[key]);
+  let targetStrategy = null;
+  if (state.currentStrategy && state.currentCasePayload.graphs[state.currentStrategy]) {
+    targetStrategy = state.currentStrategy;
+  } else if (state.currentCasePayload.graphs.projeto2) {
+    targetStrategy = "projeto2";
+  } else {
+    targetStrategy = availableKeys[0];
+  }
+
+  if (targetStrategy) {
+    selectStrategy(targetStrategy);
   } else {
     showEmptyState(true, "Nenhum grafo disponível para este caso.");
   }
@@ -140,10 +153,13 @@ async function loadCase(caseId) {
 function renderTabs() {
   const nav = document.getElementById("tabs");
   nav.innerHTML = "";
-  const availableKeys = STRATEGY_ORDER.filter((key) => state.currentCasePayload.graphs[key]);
+  let availableKeys = STRATEGY_ORDER.filter((key) => state.currentCasePayload.graphs[key]);
+  if (availableKeys.includes("projeto2") && availableKeys.includes("combinado")) {
+    availableKeys = availableKeys.filter((key) => key !== "combinado");
+  }
   for (const key of availableKeys) {
     const button = document.createElement("button");
-    button.textContent = STRATEGY_LABELS[key];
+    button.textContent = STRATEGY_LABELS[key] || key;
     button.className = "tab";
     button.setAttribute("role", "tab");
     button.dataset.strategy = key;

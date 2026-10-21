@@ -18,6 +18,7 @@ if __package__ in (None, ""):
 from project2.src.comum import CASOS_PADRAO, REPO, casos_gold, dividir_frases, iter_registros
 from project1.src.stopwords.extractors.common import detect_polarity
 from project1.src.tokenizacao.models import NODE_PREFIXES, serialize_attributes
+from project1.tools.graph_csv import read_edges_csv, read_nodes_csv
 
 TIPOS = set(NODE_PREFIXES) - {"Patient", "Concept"}
 DOMINIO = {
@@ -183,7 +184,8 @@ def _ler_tabela(caminho, obrigatorias):
 def montar(mencoes: Path, relacoes: Path, corpus: Path = CASOS_PADRAO,
            saida: Path = REPO / "project2/data/grafo", case_id: str | None = None,
            gold: Path | None = None, visualizador: Path | None = None,
-           polaridade_regras: bool = False, ignorar_sem_tipo: bool = False) -> dict:
+           polaridade_regras: bool = False, ignorar_sem_tipo: bool = False,
+           p1_grafos: Path | None = REPO / "project1/data/processed") -> dict:
     por_mencao, por_relacao = defaultdict(list), defaultdict(list)
     colunas = ["case_id", "id", "start", "end", "texto", "tipo", "mesh"]
     if not polaridade_regras:
@@ -255,13 +257,30 @@ def montar(mencoes: Path, relacoes: Path, corpus: Path = CASOS_PADRAO,
         shutil.copytree(fonte / "vendor", site / "vendor", dirs_exist_ok=True)
         dados = site / "data"
         dados.mkdir(exist_ok=True)
+        p1_dir = Path(p1_grafos) if p1_grafos else None
+        p1_disponivel = p1_dir is not None and p1_dir.is_dir()
+        manifest_cases = []
         for c, (nodes, edges) in grafos.items():
-            grafo = {"nodes": [{k: v for k, v in n.items() if k != "case_id"} for n in nodes],
-                     "edges": [{k: v for k, v in e.items() if k != "case_id"} for e in edges]}
-            # A chave combinado reaproveita a aba existente, sem mudar o site do projeto 1.
-            payload = {"case_id": c, "case_text": casos[c]["case_text"], "graphs": {"combinado": grafo}}
+            grafo_p2 = {"nodes": [{k: v for k, v in n.items() if k != "case_id"} for n in nodes],
+                        "edges": [{k: v for k, v in e.items() if k != "case_id"} for e in edges]}
+            graphs_dict = {
+                "projeto2": grafo_p2,
+                "combinado": grafo_p2,  # Mantém compatibilidade com testes e visualizador legado
+            }
+            available_graphs = ["projeto2"]
+            if p1_disponivel:
+                p1_nodes_csv = p1_dir / f"{c}-nodes.csv"
+                p1_edges_csv = p1_dir / f"{c}-edges.csv"
+                if p1_nodes_csv.is_file() and p1_edges_csv.is_file():
+                    graphs_dict["projeto1"] = {
+                        "nodes": read_nodes_csv(p1_nodes_csv),
+                        "edges": read_edges_csv(p1_edges_csv),
+                    }
+                    available_graphs.insert(0, "projeto1")
+            payload = {"case_id": c, "case_text": casos[c]["case_text"], "graphs": graphs_dict}
             (dados / f"{c}.json").write_text(_json(payload), encoding="utf-8")
-        (dados / "manifest.json").write_text(_json({"cases": [{"case_id": c, "graphs": ["combinado"]} for c in grafos]}), encoding="utf-8")
+            manifest_cases.append({"case_id": c, "graphs": available_graphs})
+        (dados / "manifest.json").write_text(_json({"cases": manifest_cases}), encoding="utf-8")
     resumo = {"casos": len(grafos), "nos": sum(len(n) for n, _ in grafos.values()),
               "arestas": sum(len(e) for _, e in grafos.values()), "saida": str(saida),
               "mencoes_sem_tipo_omitidas": omitidas, "relacoes_com_ponta_sem_tipo_omitidas": relacoes_omitidas,
@@ -280,6 +299,8 @@ def main():
     grupo.add_argument("--case-id")
     grupo.add_argument("--gold", type=Path)
     parser.add_argument("--visualizador", type=Path, help="copia o visualizador P1 e exporta JSON neste diretório")
+    parser.add_argument("--p1-grafos", type=Path, default=REPO / "project1/data/processed",
+                        help="diretório com os grafos processados do P1 para inclusão no visualizador (default: project1/data/processed)")
     parser.add_argument("--polaridade-regras", action="store_true", help="completa polaridades ausentes com a regra de sentença do P1")
     parser.add_argument("--ignorar-sem-tipo", action="store_true", help="omite menções não classificadas e suas relações; registra a contagem")
     try:
