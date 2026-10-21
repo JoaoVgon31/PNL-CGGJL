@@ -25,7 +25,5 @@ servem só para avaliação. Os ids estão em [`casos.txt`](casos.txt).
   `id` de uma menção.
 - `cases/<case_id>/`: texto do caso e as planilhas de anotação por caso
   (`-entities.csv`, `-relations.csv`). `src/relacoes/avaliar_gabarito.py` ainda lê essas planilhas.
-- `gold_entidades.csv`, `gold_relacoes.csv` e `manifest.json`: consolidação dessas planilhas, com a
-  validação de spans e de ids das relações, feita por um script já removido do repositório.
 
 Os módulos de avaliação ([`src/avaliacao`](../../src/avaliacao/)) leem `mencoes.csv` e `relacoes.csv`.
