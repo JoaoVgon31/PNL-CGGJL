@@ -1,19 +1,24 @@
 codigo_a,termo_a,codigo_b,termo_b,casos_ab,casos_a,casos_b,pmi
-D000418,Albumins,D004724,Endoscopy,2,2,5,3.263034
-D005124,Eye Abnormalities,D008279,Magnetic Resonance Imaging,3,4,4,3.169925
-D006454,Hemoglobins,D007958,Leukocyte Count,2,5,3,2.678072
-D004322,Drainage,D009369,Neoplasms,2,3,8,2.0
-D001706,Biopsy,D008775,Methylprednisolone,2,10,3,1.678072
-D003404,Creatinine,D014054,Tomography,2,2,15,1.678072
-D005124,Eye Abnormalities,D009369,Neoplasms,2,4,8,1.584963
-D008279,Magnetic Resonance Imaging,D009369,Neoplasms,2,4,8,1.584963
-D001706,Biopsy,D006454,Hemoglobins,3,10,5,1.526069
-D008279,Magnetic Resonance Imaging,D014054,Tomography,3,4,15,1.263034
-D001706,Biopsy,D005124,Eye Abnormalities,2,10,4,1.263034
-D004724,Endoscopy,D009369,Neoplasms,2,5,8,1.263034
-D007958,Leukocyte Count,D014054,Tomography,2,3,15,1.093109
-D009369,Neoplasms,D014054,Tomography,5,8,15,1.0
-D004487,Edema,D014054,Tomography,3,5,15,0.941106
-D001706,Biopsy,D009369,Neoplasms,3,10,8,0.847997
-D001706,Biopsy,D014054,Tomography,5,10,15,0.678072
-D005124,Eye Abnormalities,D014054,Tomography,2,4,15,0.678072
+D000418,Albumins,D011506,Proteins,2,2,3,3.906891
+D001799,Blood Sedimentation,D002097,C-Reactive Protein,2,2,3,3.906891
+D000418,Albumins,D004724,Endoscopy,2,2,5,3.169925
+D000740,Anemia,D004724,Endoscopy,2,2,5,3.169925
+D004724,Endoscopy,D011506,Proteins,2,5,3,2.584963
+D000418,Albumins,D006454,Hemoglobins,2,2,10,2.169925
+D001663,Bilirubin,D001706,Biopsy,2,2,10,2.169925
+D001706,Biopsy,D013812,Therapeutics,2,10,2,2.169925
+D005313,Fetal Death,D006454,Hemoglobins,2,2,10,2.169925
+D006454,Hemoglobins,D007958,Leukocyte Count,2,10,3,1.584963
+D006454,Hemoglobins,D011506,Proteins,2,10,3,1.584963
+D013812,Therapeutics,D014054,Tomography,2,2,15,1.584963
+D004724,Endoscopy,D006454,Hemoglobins,3,5,10,1.432959
+D008279,Magnetic Resonance Imaging,D014054,Tomography,3,4,15,1.169925
+D009369,Neoplasms,D014054,Tomography,3,4,15,1.169925
+D001706,Biopsy,D004322,Drainage,2,10,4,1.169925
+D001706,Biopsy,D009369,Neoplasms,2,10,4,1.169925
+D007958,Leukocyte Count,D014054,Tomography,2,3,15,1.0
+D004487,Edema,D014054,Tomography,3,5,15,0.847997
+D004487,Edema,D006454,Hemoglobins,2,5,10,0.847997
+D001706,Biopsy,D014054,Tomography,5,10,15,0.584963
+D004322,Drainage,D014054,Tomography,2,4,15,0.584963
+D001706,Biopsy,D006454,Hemoglobins,3,10,10,0.432959

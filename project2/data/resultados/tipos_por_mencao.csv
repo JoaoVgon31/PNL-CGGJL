@@ -1,0 +1,225 @@
+case_id,start,end,texto,gabarito,lexico,lexico+classificador,ambiguas,classificador
+PMC11259348_01,22,27,fever,Symptom,Symptom,Symptom,Symptom,Diagnosis
+PMC11259348_01,29,41,loose stools,Symptom,,Diagnosis,Diagnosis,Diagnosis
+PMC11259348_01,47,63,dark color urine,Symptom,,Exam,Exam,Exam
+PMC11259348_01,83,86,PCH,Diagnosis,,Diagnosis,Diagnosis,Diagnosis
+PMC11259348_01,100,108,positive,ExamResult,,Exam,Exam,Exam
+PMC11259348_01,109,132,Donath-Landsteiner test,Exam,Exam,Exam,Exam,Exam
+PMC11259348_01,140,156,hemoglobin level,Exam,Exam,Exam,Exam,Exam
+PMC11259348_01,161,167,4 g/dL,ExamResult,,ExamResult,ExamResult,ExamResult
+PMC11259348_01,204,215,blood group,Exam,Medication,Medication,Exam,Exam
+PMC11259348_01,220,235,A Rh D-positive,ExamResult,,Diagnosis,Diagnosis,Diagnosis
+PMC11259348_01,240,258,antibody screening,Exam,Exam,Exam,Exam,Diagnosis
+PMC11259348_01,263,271,negative,ExamResult,,Diagnosis,Diagnosis,Diagnosis
+PMC11259348_01,289,299,transfused,Treatment,,Treatment,Treatment,Treatment
+PMC11259348_01,405,422,blood transfusion,Treatment,Treatment,Treatment,Treatment,Treatment
+PMC11259348_01,450,464,hemoglobinuria,Symptom,Diagnosis,Diagnosis,Exam,Exam
+PMC11723754_01,43,71,traumatic spinal cord injury,Diagnosis,Diagnosis,Diagnosis,Diagnosis,Diagnosis
+PMC11723754_01,80,96,fall from height,History,,Exam,Exam,Exam
+PMC11723754_01,103,131,neurogenic bowel and bladder,Diagnosis,Diagnosis,Diagnosis,Symptom,Symptom
+PMC11723754_01,137,162,Grade III pressure injury,Finding,Diagnosis,Diagnosis,Diagnosis,Diagnosis
+PMC11723754_01,168,181,sacral region,AnatomicalSite,,Exam,Exam,Exam
+PMC11723754_01,290,297,7cmx3cm,ExamResult,,ExamResult,ExamResult,ExamResult
+PMC11723754_01,471,493,fall in blood pressure,Finding,Exam,Exam,Exam,Symptom
+PMC11723754_01,505,531,increased respiratory rate,Symptom,Exam,Exam,Exam,Diagnosis
+PMC11723754_01,579,598,fluid resuscitation,Treatment,Treatment,Treatment,Treatment,Exam
+PMC11723754_01,644,655,improvement,Outcome,Outcome,Outcome,Outcome,Outcome
+PMC11723754_01,708,723,inotropic drugs,Medication,Medication,Medication,ExamResult,ExamResult
+PMC11723754_01,767,802,multiple organ dysfunction syndrome,Diagnosis,Diagnosis,Diagnosis,Diagnosis,Diagnosis
+PMC11723754_01,811,831,Renal function tests,Exam,AnatomicalSite,AnatomicalSite,AnatomicalSite,Exam
+PMC11723754_01,839,860,deranged electrolytes,Finding,Medication,Medication,Exam,Exam
+PMC11723754_01,865,882,raised creatinine,Finding,Exam,Exam,Exam,Diagnosis
+PMC11723754_01,1021,1050,septicaemia with septic shock,Diagnosis,Diagnosis,Diagnosis,Diagnosis,Diagnosis
+PMC11723754_01,1065,1081,PRBC transfusion,Treatment,Treatment,Treatment,Treatment,Treatment
+PMC11723754_01,1093,1099,low Hb,Exam,,Diagnosis,Diagnosis,Diagnosis
+PMC11723754_01,1100,1105,7g/dl,ExamResult,,ExamResult,ExamResult,ExamResult
+PMC11723754_01,1213,1226,Noradrenaline,Medication,Medication,Medication,Exam,Exam
+PMC11723754_01,1285,1293,improved,Outcome,,Outcome,Outcome,Outcome
+PMC11723754_01,1305,1311,stable,Outcome,,Diagnosis,Diagnosis,Diagnosis
+PMC11723754_01,1325,1346,antibiotic medication,Medication,Medication,Medication,Diagnosis,Diagnosis
+PMC11723754_01,1409,1429,creatinine clearance,Exam,Exam,Exam,Exam,Exam
+PMC11723754_01,1574,1598,blood and urine cultures,Exam,,Exam,Exam,Exam
+PMC11723754_01,1604,1611,sterile,ExamResult,,Exam,Exam,Exam
+PMC11723754_01,1664,1688,considerable improvement,Outcome,Outcome,Outcome,Outcome,Outcome
+PMC11723754_01,1773,1796,strengthening exercises,Treatment,,Exam,Exam,Exam
+PMC11723754_01,1837,1847,discharged,Outcome,,Outcome,Outcome,Outcome
+PMC11723754_01,1901,1919,granulation tissue,Finding,,Finding,Finding,Finding
+PMC11723754_01,1968,2006,bilateral hip knee ankle foot orthosis,Treatment,AnatomicalSite,AnatomicalSite,AnatomicalSite,History
+PMC3437073_01,36,61,gradually increasing mass,Symptom,Finding,Finding,Finding,Finding
+PMC3437073_01,69,93,left lateral lower chest,AnatomicalSite,AnatomicalSite,AnatomicalSite,AnatomicalSite,AnatomicalSite
+PMC3437073_01,98,111,upper abdomen,AnatomicalSite,AnatomicalSite,AnatomicalSite,AnatomicalSite,AnatomicalSite
+PMC3437073_01,104,111,abdomen,AnatomicalSite,AnatomicalSite,AnatomicalSite,AnatomicalSite,AnatomicalSite
+PMC3437073_01,244,271,lobulated subcutaneous mass,Finding,Finding,Finding,Finding,Finding
+PMC3437073_01,288,292,7 cm,ExamResult,,Exam,Exam,Exam
+PMC3437073_01,366,370,skin,AnatomicalSite,AnatomicalSite,AnatomicalSite,AnatomicalSite,AnatomicalSite
+PMC3437073_01,476,492,left lower chest,AnatomicalSite,AnatomicalSite,AnatomicalSite,AnatomicalSite,AnatomicalSite
+PMC3437073_01,497,510,upper abdomen,AnatomicalSite,AnatomicalSite,AnatomicalSite,AnatomicalSite,AnatomicalSite
+PMC3437073_01,503,510,abdomen,AnatomicalSite,AnatomicalSite,AnatomicalSite,AnatomicalSite,AnatomicalSite
+PMC3437073_01,526,532,spleen,AnatomicalSite,AnatomicalSite,AnatomicalSite,AnatomicalSite,Exam
+PMC3437073_01,603,615,Chest X-rays,Exam,AnatomicalSite,AnatomicalSite,AnatomicalSite,AnatomicalSite
+PMC3437073_01,625,641,calcified lesion,Finding,Finding,Finding,Finding,Finding
+PMC3437073_01,664,674,right lung,AnatomicalSite,AnatomicalSite,AnatomicalSite,AnatomicalSite,Symptom
+PMC3437073_01,692,718,old pulmonary tuberculosis,Diagnosis,Diagnosis,Diagnosis,Diagnosis,Diagnosis
+PMC3437073_01,720,741,Abdominal radiographs,Exam,AnatomicalSite,AnatomicalSite,AnatomicalSite,AnatomicalSite
+PMC3437073_01,749,766,calcified lesions,Finding,,Finding,Finding,Finding
+PMC3437073_01,774,793,left upper quadrant,AnatomicalSite,AnatomicalSite,AnatomicalSite,AnatomicalSite,Exam
+PMC3437073_01,806,816,Ultrasound,Exam,Exam,Exam,Exam,Exam
+PMC3437073_01,845,860,enlarged spleen,Finding,Diagnosis,Diagnosis,Exam,Exam
+PMC3437073_01,854,860,spleen,AnatomicalSite,AnatomicalSite,AnatomicalSite,AnatomicalSite,Exam
+PMC3437073_01,875,888,calcification,Finding,Finding,Finding,Finding,Diagnosis
+PMC3437073_01,890,897,CT scan,Exam,Exam,Exam,Exam,Exam
+PMC3437073_01,924,939,splenic abscess,Finding,Finding,Finding,Finding,Diagnosis
+PMC3437073_01,967,987,subcutaneous abscess,Finding,Finding,Finding,Finding,Diagnosis
+PMC3437073_01,1000,1016,lower chest wall,AnatomicalSite,AnatomicalSite,AnatomicalSite,AnatomicalSite,AnatomicalSite
+PMC3437073_01,1052,1091,complicated tuberculous splenic abscess,Diagnosis,Finding,Finding,Finding,Diagnosis
+PMC3437073_01,1155,1175,subcutaneous abscess,Finding,Finding,Finding,Finding,Diagnosis
+PMC3437073_01,1205,1216,splenectomy,Treatment,Treatment,Treatment,Treatment,Exam
+PMC3437073_01,1251,1257,spleen,AnatomicalSite,AnatomicalSite,AnatomicalSite,AnatomicalSite,Finding
+PMC3437073_01,1314,1330,lower chest wall,AnatomicalSite,AnatomicalSite,AnatomicalSite,AnatomicalSite,AnatomicalSite
+PMC3437073_01,1345,1359,abscess cavity,Finding,Finding,Finding,Finding,Diagnosis
+PMC3437073_01,1371,1377,spleen,AnatomicalSite,AnatomicalSite,AnatomicalSite,AnatomicalSite,Diagnosis
+PMC3437073_01,1401,1421,subcutaneous abscess,Finding,Finding,Finding,Finding,Diagnosis
+PMC3437073_01,1451,1467,lower chest wall,AnatomicalSite,AnatomicalSite,AnatomicalSite,AnatomicalSite,AnatomicalSite
+PMC3437073_01,1495,1504,diaphragm,AnatomicalSite,,Diagnosis,Diagnosis,Diagnosis
+PMC3437073_01,1530,1539,thick pus,Finding,Diagnosis,Diagnosis,AnatomicalSite,AnatomicalSite
+PMC3437073_01,1544,1561,necrotic material,Finding,,Diagnosis,Diagnosis,Diagnosis
+PMC3437073_01,1563,1577,Histopathology,Exam,,Exam,Exam,Exam
+PMC3437073_01,1620,1641,tuberculoid granuloma,Finding,Diagnosis,Diagnosis,Exam,Exam
+PMC3437073_01,1708,1726,caseation necrosis,Finding,Finding,Finding,Finding,Diagnosis
+PMC3437073_01,1739,1765,Acid fast bacilli staining,Exam,Exam,Exam,Exam,Diagnosis
+PMC3437073_01,1767,1801,tuberculous and bacterial cultures,Exam,,Symptom,Symptom,Symptom
+PMC3437073_01,1811,1819,negative,ExamResult,,Diagnosis,Diagnosis,Diagnosis
+PMC3437073_01,1848,1857,Isoniazid,Medication,Medication,Medication,Medication,Medication
+PMC3437073_01,1875,1883,Rifampin,Medication,Medication,Medication,Medication,Medication
+PMC3437073_01,1895,1905,Ethambutol,Medication,Medication,Medication,Medication,Medication
+PMC3437073_01,1920,1932,Pyrazinamide,Medication,Medication,Medication,Medication,Medication
+PMC3437073_01,2021,2029,improved,Outcome,,Outcome,Outcome,Outcome
+PMC3437073_01,2033,2061,anti-tuberculous medications,Medication,,Exam,Exam,Exam
+PMC3437073_01,2073,2095,good clinical progress,Outcome,,Exam,Exam,Exam
+PMC4630775_01,153,165,desquamation,Symptom,,Symptom,Symptom,Symptom
+PMC4630775_01,173,177,palm,AnatomicalSite,AnatomicalSite,AnatomicalSite,AnatomicalSite,AnatomicalSite
+PMC4630775_01,184,203,leathery appearance,Symptom,,Diagnosis,Diagnosis,Diagnosis
+PMC4630775_01,211,215,skin,AnatomicalSite,AnatomicalSite,AnatomicalSite,AnatomicalSite,AnatomicalSite
+PMC4630775_01,223,240,right dorsal hand,AnatomicalSite,AnatomicalSite,AnatomicalSite,AnatomicalSite,Symptom
+PMC4630775_01,245,268,circumferential forearm,AnatomicalSite,AnatomicalSite,AnatomicalSite,AnatomicalSite,Diagnosis
+PMC4630775_01,274,288,frank ischemia,Symptom,Diagnosis,Diagnosis,Diagnosis,Diagnosis
+PMC4630775_01,296,301,thumb,AnatomicalSite,,Diagnosis,Diagnosis,Diagnosis
+PMC6083636_03,0,28,Best corrected visual acuity,Exam,Exam,Exam,Exam,Exam
+PMC6083636_03,33,44,0.50 logMAR,ExamResult,,ExamResult,ExamResult,ExamResult
+PMC6083636_03,52,54,RE,AnatomicalSite,,AnatomicalSite,AnatomicalSite,AnatomicalSite
+PMC6083636_03,59,70,0.40 logMAR,ExamResult,,Finding,Finding,Finding
+PMC6083636_03,78,80,LE,AnatomicalSite,,Finding,Finding,Finding
+PMC6083636_03,114,142,Ishihara isochromatic plates,Exam,,Diagnosis,Diagnosis,Diagnosis
+PMC6083636_03,223,235,14 out of 15,ExamResult,,Symptom,Symptom,Symptom
+PMC6083636_03,261,263,RE,AnatomicalSite,,Diagnosis,Diagnosis,Diagnosis
+PMC6083636_03,268,280,15 out of 15,ExamResult,,Diagnosis,Diagnosis,Diagnosis
+PMC6083636_03,290,292,LE,AnatomicalSite,,Diagnosis,Diagnosis,Diagnosis
+PMC6083636_03,298,324,Farnsworth Munsell 100-Hue,Exam,,Exam,Exam,Exam
+PMC6083636_03,355,358,127,ExamResult,,ExamResult,ExamResult,ExamResult
+PMC6083636_03,367,369,RE,AnatomicalSite,,Exam,Exam,Exam
+PMC6083636_03,374,377,106,ExamResult,,ExamResult,ExamResult,ExamResult
+PMC6083636_03,386,388,LE,AnatomicalSite,,Finding,Finding,Finding
+PMC6083636_03,536,554,Cover-test at near,Exam,,Exam,Exam,Exam
+PMC6083636_03,565,587,intermittent exotropia,ExamResult,Diagnosis,Diagnosis,Exam,Exam
+PMC6083636_03,615,635,horizontal nystagmus,Finding,Diagnosis,Diagnosis,Exam,Exam
+PMC6083636_03,756,765,nystagmus,Finding,,Diagnosis,Diagnosis,Diagnosis
+PMC6949661_01,114,119,dizzy,Symptom,,Diagnosis,Diagnosis,Diagnosis
+PMC6949661_01,124,132,confused,Symptom,,Diagnosis,Diagnosis,Diagnosis
+PMC6949661_01,139,159,urinary incontinence,Symptom,Diagnosis,Diagnosis,Diagnosis,Diagnosis
+PMC6949661_01,186,197,convulsions,Symptom,Diagnosis,Diagnosis,Diagnosis,Diagnosis
+PMC6949661_01,222,227,fever,Symptom,Symptom,Symptom,Symptom,Symptom
+PMC6949661_01,229,233,head,AnatomicalSite,AnatomicalSite,AnatomicalSite,AnatomicalSite,AnatomicalSite
+PMC6949661_01,229,237,headache,Symptom,Symptom,Symptom,Symptom,AnatomicalSite
+PMC6949661_01,239,249,chest pain,Symptom,Symptom,Symptom,Symptom,Symptom
+PMC6949661_01,251,270,shortness of breath,Symptom,Diagnosis,Diagnosis,Symptom,Symptom
+PMC6949661_01,275,287,palpitations,Symptom,,Symptom,Symptom,Symptom
+PMC6949661_01,292,308,cardiac diseases,History,Diagnosis,Diagnosis,AnatomicalSite,AnatomicalSite
+PMC6949661_01,330,335,pulse,Exam,,Exam,Exam,Exam
+PMC6949661_01,340,359,75 beats per minute,ExamResult,,ExamResult,ExamResult,ExamResult
+PMC6949661_01,361,375,blood pressure,Exam,Exam,Exam,Exam,Exam
+PMC6949661_01,376,382,125/78,ExamResult,,ExamResult,ExamResult,ExamResult
+PMC6949661_01,511,526,syncopal attack,Diagnosis,,Diagnosis,Diagnosis,Diagnosis
+PMC6949661_01,532,552,complete blood count,Exam,Exam,Exam,Exam,Exam
+PMC6949661_01,557,573,biochemical test,Exam,,Exam,Exam,Exam
+PMC6949661_01,579,602,within the normal range,ExamResult,,Exam,Exam,Exam
+PMC6949661_01,604,623,Computed tomography,Exam,Exam,Exam,Exam,Exam
+PMC6949661_01,625,627,CT,Exam,Exam,Exam,Exam,Exam
+PMC6949661_01,650,662,unremarkable,ExamResult,,Exam,Exam,Exam
+PMC6949661_01,667,670,ECG,Exam,Exam,Exam,Exam,Exam
+PMC6949661_01,678,706,left ventricular hypertrophy,Finding,Diagnosis,Diagnosis,Exam,Exam
+PMC6949661_01,711,731,early repolarization,Finding,,Exam,Exam,Exam
+PMC6949661_01,733,749,Echocardiography,Exam,Exam,Exam,Exam,Exam
+PMC6949661_01,762,789,moderate septal hypertrophy,Finding,Diagnosis,Diagnosis,Exam,Exam
+PMC6949661_01,897,903,melena,Symptom,Diagnosis,Diagnosis,Diagnosis,Diagnosis
+PMC6949661_01,948,954,nausea,Symptom,Symptom,Symptom,Symptom,Symptom
+PMC6949661_01,975,983,vomiting,Symptom,Symptom,Symptom,Symptom,Diagnosis
+PMC6949661_01,1007,1026,alcohol consumption,History,,History,History,History
+PMC6949661_01,1028,1044,analgesic intake,History,Medication,Medication,Diagnosis,Diagnosis
+PMC6949661_01,1061,1074,liver disease,History,Diagnosis,Diagnosis,History,History
+PMC6949661_01,1121,1132,tachycardia,Symptom,Diagnosis,Diagnosis,AnatomicalSite,AnatomicalSite
+PMC6949661_01,1136,1143,122 bpm,ExamResult,,ExamResult,ExamResult,ExamResult
+PMC6949661_01,1184,1191,abdomen,AnatomicalSite,AnatomicalSite,AnatomicalSite,AnatomicalSite,AnatomicalSite
+PMC6949661_01,1294,1320,Digital Rectal Examination,Exam,Exam,Exam,Exam,Exam
+PMC6949661_01,1334,1349,melanotic stool,Finding,,Exam,Exam,Exam
+PMC6949661_01,1387,1397,hemoglobin,Exam,Exam,Exam,Exam,Exam
+PMC6949661_01,1426,1430,urea,Exam,Medication,Medication,Exam,Exam
+PMC6949661_01,1454,1472,intravenous fluids,Treatment,,Treatment,Treatment,Treatment
+PMC6949661_01,1477,1499,proton pump inhibitors,Medication,Medication,Medication,Exam,Exam
+PMC6949661_01,1526,1548,packed red blood cells,Treatment,,Exam,Exam,Exam
+PMC6949661_01,1590,1616,Esophagogastroduodenoscopy,Exam,Exam,Exam,Exam,Exam
+PMC6949661_01,1677,1685,duodenum,AnatomicalSite,AnatomicalSite,AnatomicalSite,AnatomicalSite,Diagnosis
+PMC6949661_01,1694,1709,active bleeding,Finding,Diagnosis,Diagnosis,Finding,Finding
+PMC6949661_01,1728,1739,Colonoscopy,Exam,Exam,Exam,Exam,Exam
+PMC6949661_01,1760,1771,enteroscopy,Exam,,Exam,Exam,Exam
+PMC6949661_01,1781,1801,jejunal diverticulum,Finding,Diagnosis,Diagnosis,Exam,Exam
+PMC6949661_01,1837,1851,fresh bleeding,Finding,Diagnosis,Diagnosis,Finding,Finding
+PMC6949661_01,1969,1983,CT angiography,Exam,Exam,Exam,Exam,Exam
+PMC6949661_01,2059,2076,coil embolization,Treatment,Treatment,Treatment,Treatment,Diagnosis
+PMC6949661_01,2165,2181,horseshoe kidney,Finding,Diagnosis,Diagnosis,Diagnosis,Diagnosis
+PMC6949661_01,2205,2227,diagnostic laparoscopy,Exam,Treatment,Treatment,Treatment,Exam
+PMC6949661_01,2295,2304,Endoscopy,Exam,Exam,Exam,Exam,Exam
+PMC6949661_01,2337,2351,jejunal lesion,Finding,Finding,Finding,Finding,Finding
+PMC6949661_01,2433,2451,Midline laparotomy,Treatment,Treatment,Treatment,Treatment,Exam
+PMC6949661_01,2504,2511,jejunum,AnatomicalSite,,ExamResult,ExamResult,ExamResult
+PMC6949661_01,2515,2527,small lesion,Finding,Finding,Finding,Finding,Finding
+PMC6949661_01,2704,2719,active bleeding,Finding,Diagnosis,Diagnosis,Finding,Finding
+PMC6949661_01,2827,2842,Wedge resection,Treatment,Treatment,Treatment,Treatment,Treatment
+PMC6949661_01,2850,2875,suspicious jejunal lesion,Finding,Finding,Finding,Finding,Finding
+PMC6949661_01,2910,2925,smooth recovery,Outcome,Outcome,Outcome,Outcome,Finding
+PMC6949661_01,2935,2942,surgery,Treatment,Treatment,Treatment,Treatment,Exam
+PMC6949661_01,3071,3080,Histology,Exam,,Exam,Exam,Exam
+PMC6949661_01,3090,3116,small jejunal diverticulum,Diagnosis,Diagnosis,Diagnosis,Diagnosis,Diagnosis
+PMC6949661_01,3122,3148,gastric heterotopic tissue,Finding,Diagnosis,Diagnosis,Diagnosis,Diagnosis
+PMC6949661_01,3473,3482,dysplasia,Finding,,ExamResult,ExamResult,ExamResult
+PMC6949661_01,3487,3497,malignancy,Finding,Finding,Finding,Finding,Finding
+PMC9532611_01,113,124,hypokalemic,Finding,,Symptom,Symptom,Symptom
+PMC9532611_01,126,136,1.8 mmol/l,ExamResult,,Symptom,Symptom,Symptom
+PMC9532611_01,138,146,weakness,Symptom,Symptom,Symptom,Symptom,Finding
+PMC9532611_01,171,183,hypertension,Diagnosis,Diagnosis,Diagnosis,Diagnosis,History
+PMC9532611_01,185,196,138/94 mmHg,ExamResult,,ExamResult,ExamResult,ExamResult
+PMC9532611_01,445,456,infantilism,Finding,,Diagnosis,Diagnosis,Diagnosis
+PMC9532611_01,644,662,periodic paralysis,Diagnosis,Diagnosis,Diagnosis,Diagnosis,Diagnosis
+PMC9532611_01,866,873,surgery,Treatment,Treatment,Treatment,Treatment,Exam
+PMC9532611_01,903,918,inguinal hernia,Diagnosis,Diagnosis,Diagnosis,Diagnosis,Diagnosis
+PMC9969157_01,26,38,33 2/7 weeks,ExamResult,,ExamResult,ExamResult,ExamResult
+PMC9969157_01,222,242,gestational diabetes,Diagnosis,Diagnosis,Diagnosis,Symptom,Symptom
+PMC9969157_01,247,271,gestational hypertension,Diagnosis,Diagnosis,Diagnosis,History,History
+PMC9969157_01,325,331,LCHADD,Diagnosis,,Diagnosis,Diagnosis,Diagnosis
+PMC9969157_01,362,378,cesarean section,Treatment,Treatment,Treatment,Treatment,Exam
+PMC9969157_01,464,476,preeclampsia,Diagnosis,Diagnosis,Diagnosis,Symptom,Symptom
+PMC9969157_01,491,505,HELLP syndrome,Diagnosis,Diagnosis,Diagnosis,Diagnosis,Diagnosis
+PMC9969157_01,902,921,10% dextrose fluids,Medication,Medication,Medication,ExamResult,ExamResult
+PMC9969157_01,1474,1488,Echocardiogram,Exam,Exam,Exam,Exam,Exam
+PMC9969157_01,1526,1550,patent ductus arteriosus,Finding,Diagnosis,Diagnosis,Diagnosis,Diagnosis
+PMC9969157_01,1555,1575,patent foramen ovale,Finding,Diagnosis,Diagnosis,Exam,Exam
+PMC9969157_01,1648,1660,Triheptanoin,Medication,,Diagnosis,Diagnosis,Diagnosis
+PMC9969157_01,2185,2196,bradycardia,Symptom,Diagnosis,Diagnosis,Diagnosis,Diagnosis
+PMC9969157_01,2201,2213,desaturation,Symptom,,Exam,Exam,Exam
+PMC9969157_01,2358,2364,emesis,Symptom,Diagnosis,Diagnosis,Diagnosis,Diagnosis
+PMC9969157_01,2374,2386,hematochezia,Symptom,Diagnosis,Diagnosis,Exam,Exam
+PMC9969157_01,2391,2406,abdominal x-ray,Exam,AnatomicalSite,AnatomicalSite,AnatomicalSite,AnatomicalSite
+PMC9969157_01,2431,2455,pneumatosis intestinalis,Finding,,Diagnosis,Diagnosis,Diagnosis
+PMC9969157_01,2495,2498,NEC,Diagnosis,,Diagnosis,Diagnosis,Diagnosis
+PMC9969157_01,2573,2593,ampicillin-sulbactam,Medication,,Diagnosis,Diagnosis,Diagnosis
+PMC9969157_01,2598,2608,gentamicin,Medication,Medication,Medication,Exam,Exam
+PMC9969157_01,3095,3110,discharged home,Outcome,,Outcome,Outcome,Outcome

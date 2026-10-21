@@ -147,7 +147,7 @@ O P2 acrescenta atributos de rastreabilidade (`mentions`, `spans`, `evidence_spa
 ## Análises que podem ser realizadas
 
 * **Filtrar por confiança.** Toda aresta prevista pelo classificador tem `confianca`. É possível montar um grafo só com relações acima de um limiar e comparar a precisão obtida.
-* **Associações entre conceitos.** O grafo de associações (`data/resultados/associacoes-{nodes,edges}.csv`) liga códigos MeSH que coocorrem mais do que o acaso, por exemplo `Eye Abnormalities` ↔ `Magnetic Resonance Imaging` (PMI = 3,17).
+* **Associações entre conceitos.** O grafo de associações (`data/resultados/associacoes-{nodes,edges}.csv`) liga códigos MeSH que coocorrem mais do que o acaso, por exemplo `Blood Sedimentation` ↔ `C-Reactive Protein` (PMI = 3,91).
 * **Casos por conceito.** Com `SAME_AS`, grafias e siglas diferentes convergem para o mesmo código, o que permite agrupar casos por doença, exame ou fármaco.
 * **Cadeias de evidência.** O caminho `Exam -REVEALS-> Finding -SUPPORTS-> Diagnosis`, filtrado por `polarity`, separa achados confirmados de achados descartados.
 * **Auditoria.** Os spans e o `evidence_text` permitem conferir cada nó e cada aresta no texto original.
@@ -239,7 +239,7 @@ Os modelos das Etapas 3 e 4 são claramente melhores que as regras quando recebe
 * filtrando do silver as frases sem nenhuma menção, que são as que mais carregam falsos `O`;
 * combinando o recall do `pos_bio` com o classificador da Etapa 3.
 
-**Exemplo de grafo** (trecho de `PMC5137649_01`, [nós](data/grafo/PMC5137649_01-nodes.csv) e [arestas](data/grafo/PMC5137649_01-edges.csv)). O grafo completo tem 45 nós e 55 arestas. Os números nas arestas são a confiança do classificador.
+**Exemplo de grafo** (trecho de `PMC5137649_01`, [nós](data/grafo/PMC5137649_01-nodes.csv) e [arestas](data/grafo/PMC5137649_01-edges.csv)). O grafo completo tem 44 nós e 55 arestas. Os números nas arestas são a confiança do classificador.
 
 ~~~mermaid
 flowchart LR
