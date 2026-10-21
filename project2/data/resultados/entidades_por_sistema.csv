@@ -1,0 +1,423 @@
+sistema,case_id,start,end,texto
+gabarito,PMC11259348_01,22,27,fever
+gabarito,PMC11259348_01,29,41,loose stools
+gabarito,PMC11259348_01,47,63,dark color urine
+gabarito,PMC11259348_01,83,86,PCH
+gabarito,PMC11259348_01,100,108,positive
+gabarito,PMC11259348_01,109,132,Donath-Landsteiner test
+gabarito,PMC11259348_01,140,156,hemoglobin level
+gabarito,PMC11259348_01,161,167,4 g/dL
+gabarito,PMC11259348_01,204,215,blood group
+gabarito,PMC11259348_01,220,235,A Rh D-positive
+gabarito,PMC11259348_01,240,258,antibody screening
+gabarito,PMC11259348_01,263,271,negative
+gabarito,PMC11259348_01,289,299,transfused
+gabarito,PMC11259348_01,405,422,blood transfusion
+gabarito,PMC11259348_01,450,464,hemoglobinuria
+gabarito,PMC11723754_01,43,71,traumatic spinal cord injury
+gabarito,PMC11723754_01,80,96,fall from height
+gabarito,PMC11723754_01,103,131,neurogenic bowel and bladder
+gabarito,PMC11723754_01,137,162,Grade III pressure injury
+gabarito,PMC11723754_01,168,181,sacral region
+gabarito,PMC11723754_01,290,297,7cmx3cm
+gabarito,PMC11723754_01,471,493,fall in blood pressure
+gabarito,PMC11723754_01,505,531,increased respiratory rate
+gabarito,PMC11723754_01,579,598,fluid resuscitation
+gabarito,PMC11723754_01,644,655,improvement
+gabarito,PMC11723754_01,708,723,inotropic drugs
+gabarito,PMC11723754_01,767,802,multiple organ dysfunction syndrome
+gabarito,PMC11723754_01,811,831,Renal function tests
+gabarito,PMC11723754_01,839,860,deranged electrolytes
+gabarito,PMC11723754_01,865,882,raised creatinine
+gabarito,PMC11723754_01,1021,1050,septicaemia with septic shock
+gabarito,PMC11723754_01,1065,1081,PRBC transfusion
+gabarito,PMC11723754_01,1093,1099,low Hb
+gabarito,PMC11723754_01,1100,1105,7g/dl
+gabarito,PMC11723754_01,1213,1226,Noradrenaline
+gabarito,PMC11723754_01,1285,1293,improved
+gabarito,PMC11723754_01,1305,1311,stable
+gabarito,PMC11723754_01,1325,1346,antibiotic medication
+gabarito,PMC11723754_01,1409,1429,creatinine clearance
+gabarito,PMC11723754_01,1574,1598,blood and urine cultures
+gabarito,PMC11723754_01,1604,1611,sterile
+gabarito,PMC11723754_01,1664,1688,considerable improvement
+gabarito,PMC11723754_01,1773,1796,strengthening exercises
+gabarito,PMC11723754_01,1837,1847,discharged
+gabarito,PMC11723754_01,1901,1919,granulation tissue
+gabarito,PMC11723754_01,1968,2006,bilateral hip knee ankle foot orthosis
+gabarito,PMC3437073_01,36,61,gradually increasing mass
+gabarito,PMC3437073_01,69,93,left lateral lower chest
+gabarito,PMC3437073_01,98,111,upper abdomen
+gabarito,PMC3437073_01,104,111,abdomen
+gabarito,PMC3437073_01,244,271,lobulated subcutaneous mass
+gabarito,PMC3437073_01,288,292,7 cm
+gabarito,PMC3437073_01,366,370,skin
+gabarito,PMC3437073_01,476,492,left lower chest
+gabarito,PMC3437073_01,497,510,upper abdomen
+gabarito,PMC3437073_01,503,510,abdomen
+gabarito,PMC3437073_01,526,532,spleen
+gabarito,PMC3437073_01,603,615,Chest X-rays
+gabarito,PMC3437073_01,625,641,calcified lesion
+gabarito,PMC3437073_01,664,674,right lung
+gabarito,PMC3437073_01,692,718,old pulmonary tuberculosis
+gabarito,PMC3437073_01,720,741,Abdominal radiographs
+gabarito,PMC3437073_01,749,766,calcified lesions
+gabarito,PMC3437073_01,774,793,left upper quadrant
+gabarito,PMC3437073_01,806,816,Ultrasound
+gabarito,PMC3437073_01,845,860,enlarged spleen
+gabarito,PMC3437073_01,854,860,spleen
+gabarito,PMC3437073_01,875,888,calcification
+gabarito,PMC3437073_01,890,897,CT scan
+gabarito,PMC3437073_01,924,939,splenic abscess
+gabarito,PMC3437073_01,967,987,subcutaneous abscess
+gabarito,PMC3437073_01,1000,1016,lower chest wall
+gabarito,PMC3437073_01,1052,1091,complicated tuberculous splenic abscess
+gabarito,PMC3437073_01,1155,1175,subcutaneous abscess
+gabarito,PMC3437073_01,1205,1216,splenectomy
+gabarito,PMC3437073_01,1251,1257,spleen
+gabarito,PMC3437073_01,1314,1330,lower chest wall
+gabarito,PMC3437073_01,1345,1359,abscess cavity
+gabarito,PMC3437073_01,1371,1377,spleen
+gabarito,PMC3437073_01,1401,1421,subcutaneous abscess
+gabarito,PMC3437073_01,1451,1467,lower chest wall
+gabarito,PMC3437073_01,1495,1504,diaphragm
+gabarito,PMC3437073_01,1530,1539,thick pus
+gabarito,PMC3437073_01,1544,1561,necrotic material
+gabarito,PMC3437073_01,1563,1577,Histopathology
+gabarito,PMC3437073_01,1620,1641,tuberculoid granuloma
+gabarito,PMC3437073_01,1708,1726,caseation necrosis
+gabarito,PMC3437073_01,1739,1765,Acid fast bacilli staining
+gabarito,PMC3437073_01,1767,1801,tuberculous and bacterial cultures
+gabarito,PMC3437073_01,1811,1819,negative
+gabarito,PMC3437073_01,1848,1857,Isoniazid
+gabarito,PMC3437073_01,1875,1883,Rifampin
+gabarito,PMC3437073_01,1895,1905,Ethambutol
+gabarito,PMC3437073_01,1920,1932,Pyrazinamide
+gabarito,PMC3437073_01,2021,2029,improved
+gabarito,PMC3437073_01,2033,2061,anti-tuberculous medications
+gabarito,PMC3437073_01,2073,2095,good clinical progress
+gabarito,PMC4630775_01,153,165,desquamation
+gabarito,PMC4630775_01,173,177,palm
+gabarito,PMC4630775_01,184,203,leathery appearance
+gabarito,PMC4630775_01,211,215,skin
+gabarito,PMC4630775_01,223,240,right dorsal hand
+gabarito,PMC4630775_01,245,268,circumferential forearm
+gabarito,PMC4630775_01,274,288,frank ischemia
+gabarito,PMC4630775_01,296,301,thumb
+gabarito,PMC6083636_03,0,28,Best corrected visual acuity
+gabarito,PMC6083636_03,33,44,0.50 logMAR
+gabarito,PMC6083636_03,52,54,RE
+gabarito,PMC6083636_03,59,70,0.40 logMAR
+gabarito,PMC6083636_03,78,80,LE
+gabarito,PMC6083636_03,114,142,Ishihara isochromatic plates
+gabarito,PMC6083636_03,223,235,14 out of 15
+gabarito,PMC6083636_03,261,263,RE
+gabarito,PMC6083636_03,268,280,15 out of 15
+gabarito,PMC6083636_03,290,292,LE
+gabarito,PMC6083636_03,298,324,Farnsworth Munsell 100-Hue
+gabarito,PMC6083636_03,355,358,127
+gabarito,PMC6083636_03,367,369,RE
+gabarito,PMC6083636_03,374,377,106
+gabarito,PMC6083636_03,386,388,LE
+gabarito,PMC6083636_03,536,554,Cover-test at near
+gabarito,PMC6083636_03,565,587,intermittent exotropia
+gabarito,PMC6083636_03,615,635,horizontal nystagmus
+gabarito,PMC6083636_03,756,765,nystagmus
+gabarito,PMC6949661_01,114,119,dizzy
+gabarito,PMC6949661_01,124,132,confused
+gabarito,PMC6949661_01,139,159,urinary incontinence
+gabarito,PMC6949661_01,186,197,convulsions
+gabarito,PMC6949661_01,222,227,fever
+gabarito,PMC6949661_01,229,233,head
+gabarito,PMC6949661_01,229,237,headache
+gabarito,PMC6949661_01,239,249,chest pain
+gabarito,PMC6949661_01,251,270,shortness of breath
+gabarito,PMC6949661_01,275,287,palpitations
+gabarito,PMC6949661_01,292,308,cardiac diseases
+gabarito,PMC6949661_01,330,335,pulse
+gabarito,PMC6949661_01,340,359,75 beats per minute
+gabarito,PMC6949661_01,361,375,blood pressure
+gabarito,PMC6949661_01,376,382,125/78
+gabarito,PMC6949661_01,511,526,syncopal attack
+gabarito,PMC6949661_01,532,552,complete blood count
+gabarito,PMC6949661_01,557,573,biochemical test
+gabarito,PMC6949661_01,579,602,within the normal range
+gabarito,PMC6949661_01,604,623,Computed tomography
+gabarito,PMC6949661_01,625,627,CT
+gabarito,PMC6949661_01,650,662,unremarkable
+gabarito,PMC6949661_01,667,670,ECG
+gabarito,PMC6949661_01,678,706,left ventricular hypertrophy
+gabarito,PMC6949661_01,711,731,early repolarization
+gabarito,PMC6949661_01,733,749,Echocardiography
+gabarito,PMC6949661_01,762,789,moderate septal hypertrophy
+gabarito,PMC6949661_01,897,903,melena
+gabarito,PMC6949661_01,948,954,nausea
+gabarito,PMC6949661_01,975,983,vomiting
+gabarito,PMC6949661_01,1007,1026,alcohol consumption
+gabarito,PMC6949661_01,1028,1044,analgesic intake
+gabarito,PMC6949661_01,1061,1074,liver disease
+gabarito,PMC6949661_01,1121,1132,tachycardia
+gabarito,PMC6949661_01,1136,1143,122 bpm
+gabarito,PMC6949661_01,1184,1191,abdomen
+gabarito,PMC6949661_01,1294,1320,Digital Rectal Examination
+gabarito,PMC6949661_01,1334,1349,melanotic stool
+gabarito,PMC6949661_01,1387,1397,hemoglobin
+gabarito,PMC6949661_01,1426,1430,urea
+gabarito,PMC6949661_01,1454,1472,intravenous fluids
+gabarito,PMC6949661_01,1477,1499,proton pump inhibitors
+gabarito,PMC6949661_01,1526,1548,packed red blood cells
+gabarito,PMC6949661_01,1590,1616,Esophagogastroduodenoscopy
+gabarito,PMC6949661_01,1677,1685,duodenum
+gabarito,PMC6949661_01,1694,1709,active bleeding
+gabarito,PMC6949661_01,1728,1739,Colonoscopy
+gabarito,PMC6949661_01,1760,1771,enteroscopy
+gabarito,PMC6949661_01,1781,1801,jejunal diverticulum
+gabarito,PMC6949661_01,1837,1851,fresh bleeding
+gabarito,PMC6949661_01,1969,1983,CT angiography
+gabarito,PMC6949661_01,2059,2076,coil embolization
+gabarito,PMC6949661_01,2165,2181,horseshoe kidney
+gabarito,PMC6949661_01,2205,2227,diagnostic laparoscopy
+gabarito,PMC6949661_01,2295,2304,Endoscopy
+gabarito,PMC6949661_01,2337,2351,jejunal lesion
+gabarito,PMC6949661_01,2433,2451,Midline laparotomy
+gabarito,PMC6949661_01,2504,2511,jejunum
+gabarito,PMC6949661_01,2515,2527,small lesion
+gabarito,PMC6949661_01,2704,2719,active bleeding
+gabarito,PMC6949661_01,2827,2842,Wedge resection
+gabarito,PMC6949661_01,2850,2875,suspicious jejunal lesion
+gabarito,PMC6949661_01,2910,2925,smooth recovery
+gabarito,PMC6949661_01,2935,2942,surgery
+gabarito,PMC6949661_01,3071,3080,Histology
+gabarito,PMC6949661_01,3090,3116,small jejunal diverticulum
+gabarito,PMC6949661_01,3122,3148,gastric heterotopic tissue
+gabarito,PMC6949661_01,3473,3482,dysplasia
+gabarito,PMC6949661_01,3487,3497,malignancy
+gabarito,PMC9532611_01,113,124,hypokalemic
+gabarito,PMC9532611_01,126,136,1.8 mmol/l
+gabarito,PMC9532611_01,138,146,weakness
+gabarito,PMC9532611_01,171,183,hypertension
+gabarito,PMC9532611_01,185,196,138/94 mmHg
+gabarito,PMC9532611_01,445,456,infantilism
+gabarito,PMC9532611_01,644,662,periodic paralysis
+gabarito,PMC9532611_01,866,873,surgery
+gabarito,PMC9532611_01,903,918,inguinal hernia
+gabarito,PMC9969157_01,26,38,33 2/7 weeks
+gabarito,PMC9969157_01,222,242,gestational diabetes
+gabarito,PMC9969157_01,247,271,gestational hypertension
+gabarito,PMC9969157_01,325,331,LCHADD
+gabarito,PMC9969157_01,362,378,cesarean section
+gabarito,PMC9969157_01,464,476,preeclampsia
+gabarito,PMC9969157_01,491,505,HELLP syndrome
+gabarito,PMC9969157_01,902,921,10% dextrose fluids
+gabarito,PMC9969157_01,1474,1488,Echocardiogram
+gabarito,PMC9969157_01,1526,1550,patent ductus arteriosus
+gabarito,PMC9969157_01,1555,1575,patent foramen ovale
+gabarito,PMC9969157_01,1648,1660,Triheptanoin
+gabarito,PMC9969157_01,2185,2196,bradycardia
+gabarito,PMC9969157_01,2201,2213,desaturation
+gabarito,PMC9969157_01,2358,2364,emesis
+gabarito,PMC9969157_01,2374,2386,hematochezia
+gabarito,PMC9969157_01,2391,2406,abdominal x-ray
+gabarito,PMC9969157_01,2431,2455,pneumatosis intestinalis
+gabarito,PMC9969157_01,2495,2498,NEC
+gabarito,PMC9969157_01,2573,2593,ampicillin-sulbactam
+gabarito,PMC9969157_01,2598,2608,gentamicin
+gabarito,PMC9969157_01,3095,3110,discharged home
+regras P1,PMC11259348_01,22,132,"fever, loose stools, and dark color urine was diagnosed with PCH after having positive Donath-Landsteiner test"
+regras P1,PMC11259348_01,134,156,Since hemoglobin level
+regras P1,PMC11259348_01,161,167,4 g/dL
+regras P1,PMC11259348_01,289,299,transfused
+regras P1,PMC11723754_01,644,655,improvement
+regras P1,PMC11723754_01,1021,1050,septicaemia with septic shock
+regras P1,PMC11723754_01,1070,1099,transfusion in view of low Hb
+regras P1,PMC11723754_01,1100,1105,7g/dl
+regras P1,PMC11723754_01,1285,1293,improved
+regras P1,PMC11723754_01,1677,1688,improvement
+regras P1,PMC11723754_01,1837,1847,discharged
+regras P1,PMC3437073_01,46,61,increasing mass
+regras P1,PMC3437073_01,88,93,chest
+regras P1,PMC3437073_01,104,111,abdomen
+regras P1,PMC3437073_01,244,271,lobulated subcutaneous mass
+regras P1,PMC3437073_01,366,370,skin
+regras P1,PMC3437073_01,487,492,chest
+regras P1,PMC3437073_01,503,510,abdomen
+regras P1,PMC3437073_01,603,608,Chest
+regras P1,PMC3437073_01,625,641,calcified lesion
+regras P1,PMC3437073_01,670,674,lung
+regras P1,PMC3437073_01,696,705,pulmonary
+regras P1,PMC3437073_01,890,892,CT
+regras P1,PMC3437073_01,905,912,abdomen
+regras P1,PMC3437073_01,924,939,splenic abscess
+regras P1,PMC3437073_01,967,987,subcutaneous abscess
+regras P1,PMC3437073_01,1006,1011,chest
+regras P1,PMC3437073_01,1875,1890,Rifampin 600 mg
+regras P1,PMC3437073_01,1895,1912,Ethambutol 600 mg
+regras P1,PMC3437073_01,1913,1939,OD and Pyrazinamide 500 mg
+regras P1,PMC3437073_01,2021,2029,improved
+regras P1,PMC4630775_01,153,301,desquamation of the palm and a leathery appearance of the skin to the right dorsal hand and circumferential forearm with frank ischemia to the thumb
+regras P1,PMC6083636_03,480,512,scores are expected in less than
+regras P1,PMC6083636_03,513,516,20%
+regras P1,PMC6949661_01,604,623,Computed tomography
+regras P1,PMC6949661_01,1454,1472,intravenous fluids
+regras P1,PMC6949661_01,1489,1522,inhibitors and transfused 2 units
+regras P1,PMC6949661_01,1694,1709,active bleeding
+regras P1,PMC6949661_01,1837,1851,fresh bleeding
+regras P1,PMC9532611_01,113,127,hypokalemic (1
+regras P1,PMC9969157_01,312,331,sibling with LCHADD
+regras P1,PMC9969157_01,859,901,peripheral intravenous line was placed and
+regras P1,PMC9969157_01,902,905,10%
+regras P1,PMC9969157_01,906,931,dextrose fluids at 150 ml
+regras P1,PMC9969157_01,1292,1324,LCHADD given elevation of C16-OH
+regras P1,PMC9969157_01,1329,1370,C18-OH levels with the ultimate diagnosis
+regras P1,PMC9969157_01,1781,1803,unit standard of 20 ml
+regras P1,PMC9969157_01,1815,1835,was limited to 23 ml
+regras P1,PMC9969157_01,2401,2406,x-ray
+regras P1,PMC9969157_01,2495,2524,NEC (modified Bell Stage IIa)
+regras P1,PMC9969157_01,2709,2717,with 4 g
+regras P1,PMC9969157_01,2778,2788,2 g/kg/day
+regras P1,PMC9969157_01,2789,2792,20%
+regras P1,PMC9969157_01,3095,3110,discharged home
+só pos_bio,PMC11259348_01,22,27,fever
+só pos_bio,PMC11259348_01,93,132,having positive Donath-Landsteiner test
+só pos_bio,PMC11259348_01,140,156,hemoglobin level
+só pos_bio,PMC11259348_01,400,422,each blood transfusion
+só pos_bio,PMC11723754_01,124,131,bladder
+só pos_bio,PMC11723754_01,641,655,no improvement
+só pos_bio,PMC11723754_01,865,882,raised creatinine
+só pos_bio,PMC11723754_01,1065,1081,PRBC transfusion
+só pos_bio,PMC11723754_01,1397,1429,calculating creatinine clearance
+só pos_bio,PMC11723754_01,1518,1538,liver function tests
+só pos_bio,PMC11723754_01,1658,1688,which considerable improvement
+só pos_bio,PMC3437073_01,46,61,increasing mass
+só pos_bio,PMC3437073_01,65,93,the left lateral lower chest
+só pos_bio,PMC3437073_01,98,111,upper abdomen
+só pos_bio,PMC3437073_01,242,271,a lobulated subcutaneous mass
+só pos_bio,PMC3437073_01,362,370,the skin
+só pos_bio,PMC3437073_01,472,492,the left lower chest
+só pos_bio,PMC3437073_01,497,510,upper abdomen
+só pos_bio,PMC3437073_01,522,532,The spleen
+só pos_bio,PMC3437073_01,603,615,Chest X-rays
+só pos_bio,PMC3437073_01,623,641,a calcified lesion
+só pos_bio,PMC3437073_01,660,685,the right lung suggestive
+só pos_bio,PMC3437073_01,689,718,an old pulmonary tuberculosis
+só pos_bio,PMC3437073_01,770,793,the left upper quadrant
+só pos_bio,PMC3437073_01,806,816,Ultrasound
+só pos_bio,PMC3437073_01,820,831,the abdomen
+só pos_bio,PMC3437073_01,842,860,an enlarged spleen
+só pos_bio,PMC3437073_01,875,888,calcification
+só pos_bio,PMC3437073_01,890,897,CT scan
+só pos_bio,PMC3437073_01,901,912,the abdomen
+só pos_bio,PMC3437073_01,922,939,a splenic abscess
+só pos_bio,PMC3437073_01,959,987,another subcutaneous abscess
+só pos_bio,PMC3437073_01,996,1016,the lower chest wall
+só pos_bio,PMC3437073_01,1050,1091,a complicated tuberculous splenic abscess
+só pos_bio,PMC3437073_01,1151,1175,the subcutaneous abscess
+só pos_bio,PMC3437073_01,1205,1216,splenectomy
+só pos_bio,PMC3437073_01,1247,1257,The spleen
+só pos_bio,PMC3437073_01,1310,1330,the lower chest wall
+só pos_bio,PMC3437073_01,1342,1359,an abscess cavity
+só pos_bio,PMC3437073_01,1367,1377,the spleen
+só pos_bio,PMC3437073_01,1397,1421,the subcutaneous abscess
+só pos_bio,PMC3437073_01,1447,1467,the lower chest wall
+só pos_bio,PMC3437073_01,1581,1591,the spleen
+só pos_bio,PMC3437073_01,1708,1726,caseation necrosis
+só pos_bio,PMC4630775_01,207,215,the skin
+só pos_bio,PMC6949661_01,218,227,any fever
+só pos_bio,PMC6949661_01,229,237,headache
+só pos_bio,PMC6949661_01,239,249,chest pain
+só pos_bio,PMC6949661_01,450,471,the chest examination
+só pos_bio,PMC6949661_01,541,552,blood count
+só pos_bio,PMC6949661_01,604,623,Computed tomography
+só pos_bio,PMC6949661_01,637,645,the head
+só pos_bio,PMC6949661_01,948,954,nausea
+só pos_bio,PMC6949661_01,975,983,vomiting
+só pos_bio,PMC6949661_01,1061,1074,liver disease
+só pos_bio,PMC6949661_01,1184,1191,abdomen
+só pos_bio,PMC6949661_01,1387,1397,hemoglobin
+só pos_bio,PMC6949661_01,1558,1574,hemoglobin level
+só pos_bio,PMC6949661_01,1673,1685,the duodenum
+só pos_bio,PMC6949661_01,1728,1739,Colonoscopy
+só pos_bio,PMC6949661_01,1928,1938,hemoglobin
+só pos_bio,PMC6949661_01,1969,1983,CT angiography
+só pos_bio,PMC6949661_01,2059,2076,coil embolization
+só pos_bio,PMC6949661_01,2165,2181,horseshoe kidney
+só pos_bio,PMC6949661_01,2183,2227,The patient underwent diagnostic laparoscopy
+só pos_bio,PMC6949661_01,2295,2304,Endoscopy
+só pos_bio,PMC6949661_01,2333,2351,the jejunal lesion
+só pos_bio,PMC6949661_01,2433,2451,Midline laparotomy
+só pos_bio,PMC6949661_01,2513,2527,A small lesion
+só pos_bio,PMC6949661_01,2800,2812,no pathology
+só pos_bio,PMC6949661_01,2827,2842,Wedge resection
+só pos_bio,PMC6949661_01,2846,2875,the suspicious jejunal lesion
+só pos_bio,PMC6949661_01,2893,2925,The patient made smooth recovery
+só pos_bio,PMC6949661_01,2931,2942,the surgery
+só pos_bio,PMC6949661_01,3041,3048,surgery
+só pos_bio,PMC6949661_01,3487,3497,malignancy
+só pos_bio,PMC9532611_01,138,146,weakness
+só pos_bio,PMC9532611_01,171,183,hypertension
+só pos_bio,PMC9532611_01,627,639,hypertension
+só pos_bio,PMC9532611_01,778,790,hypertension
+só pos_bio,PMC9532611_01,856,873,undergone surgery
+só pos_bio,PMC9969157_01,200,242,medication-controlled gestational diabetes
+só pos_bio,PMC9969157_01,247,271,gestational hypertension
+só pos_bio,PMC9969157_01,277,293,a family history
+só pos_bio,PMC9969157_01,711,729,head circumference
+só pos_bio,PMC9969157_01,986,1016,the significant family history
+só pos_bio,PMC9969157_01,1394,1408,family history
+só pos_bio,PMC9969157_01,1474,1488,Echocardiogram
+CRF,PMC11259348_01,134,167,Since hemoglobin level was 4 g/dL
+CRF,PMC11723754_01,644,655,improvement
+CRF,PMC11723754_01,1021,1032,septicaemia
+CRF,PMC11723754_01,1065,1105,PRBC transfusion in view of low Hb 7g/dl
+CRF,PMC11723754_01,1285,1293,improved
+CRF,PMC11723754_01,1371,1429,sensitivity reports after calculating creatinine clearance
+CRF,PMC11723754_01,1677,1688,improvement
+CRF,PMC11723754_01,1837,1847,discharged
+CRF,PMC3437073_01,98,137,upper abdomen over a period of one year
+CRF,PMC3437073_01,609,615,X-rays
+CRF,PMC3437073_01,806,816,Ultrasound
+CRF,PMC3437073_01,890,892,CT
+CRF,PMC3437073_01,1605,1664,characteristic tuberculoid granuloma with epithelioid cells
+CRF,PMC3437073_01,1848,1870,Isoniazid (INH) 300 mg
+CRF,PMC3437073_01,2021,2029,improved
+CRF,PMC6083636_03,513,516,20%
+CRF,PMC6949661_01,275,287,palpitations
+CRF,PMC6949661_01,604,623,Computed tomography
+CRF,PMC6949661_01,1969,1971,CT
+CRF,PMC6949661_01,2295,2304,Endoscopy
+CRF,PMC6949661_01,3487,3497,malignancy
+CRF,PMC9532611_01,113,124,hypokalemic
+CRF,PMC9532611_01,126,183,1.8 mmol/l) weakness that was accompanied by hypertension
+CRF,PMC9969157_01,902,931,10% dextrose fluids at 150 ml
+CRF,PMC9969157_01,2401,2406,x-ray
+CRF,PMC9969157_01,2495,2498,NEC
+CRF,PMC9969157_01,2737,2765,glucose infusion rate ~15 mg
+CRF,PMC9969157_01,3095,3110,discharged home
+CRF + termos,PMC11259348_01,134,167,Since hemoglobin level was 4 g/dL
+CRF + termos,PMC11723754_01,644,655,improvement
+CRF + termos,PMC11723754_01,1021,1032,septicaemia
+CRF + termos,PMC11723754_01,1065,1105,PRBC transfusion in view of low Hb 7g/dl
+CRF + termos,PMC11723754_01,1285,1293,improved
+CRF + termos,PMC11723754_01,1371,1429,sensitivity reports after calculating creatinine clearance
+CRF + termos,PMC11723754_01,1677,1688,improvement
+CRF + termos,PMC11723754_01,1837,1847,discharged
+CRF + termos,PMC3437073_01,34,137,a gradually increasing mass on the left lateral lower chest and upper abdomen over a period of one year
+CRF + termos,PMC3437073_01,609,615,X-rays
+CRF + termos,PMC3437073_01,806,816,Ultrasound
+CRF + termos,PMC3437073_01,890,892,CT
+CRF + termos,PMC3437073_01,1605,1664,characteristic tuberculoid granuloma with epithelioid cells
+CRF + termos,PMC3437073_01,1848,1870,Isoniazid (INH) 300 mg
+CRF + termos,PMC3437073_01,2021,2029,improved
+CRF + termos,PMC6083636_03,513,516,20%
+CRF + termos,PMC6949661_01,275,287,palpitations
+CRF + termos,PMC6949661_01,604,623,Computed tomography
+CRF + termos,PMC6949661_01,1969,1971,CT
+CRF + termos,PMC6949661_01,2295,2304,Endoscopy
+CRF + termos,PMC6949661_01,3487,3497,malignancy
+CRF + termos,PMC9532611_01,113,124,hypokalemic
+CRF + termos,PMC9532611_01,126,183,1.8 mmol/l) weakness that was accompanied by hypertension
+CRF + termos,PMC9969157_01,902,931,10% dextrose fluids at 150 ml
+CRF + termos,PMC9969157_01,2401,2406,x-ray
+CRF + termos,PMC9969157_01,2495,2498,NEC
+CRF + termos,PMC9969157_01,2737,2765,glucose infusion rate ~15 mg
+CRF + termos,PMC9969157_01,3095,3110,discharged home

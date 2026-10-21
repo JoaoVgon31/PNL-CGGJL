@@ -1,0 +1,351 @@
+sistema,entrada,casamento,gold,previsto,n
+regras P1,regras,exato,AnatomicalSite,(sem tipo),28
+regras P1,regras,exato,AnatomicalSite,AnatomicalSite,5
+regras P1,regras,exato,Diagnosis,(sem tipo),16
+regras P1,regras,exato,Diagnosis,Diagnosis,2
+regras P1,regras,exato,Exam,(sem tipo),38
+regras P1,regras,exato,Exam,Exam,1
+regras P1,regras,exato,ExamResult,(sem tipo),21
+regras P1,regras,exato,ExamResult,ExamResult,3
+regras P1,regras,exato,Finding,(sem tipo),34
+regras P1,regras,exato,Finding,Exam,1
+regras P1,regras,exato,Finding,Finding,6
+regras P1,regras,exato,History,(sem tipo),5
+regras P1,regras,exato,Medication,(sem tipo),10
+regras P1,regras,exato,Medication,Medication,3
+regras P1,regras,exato,Outcome,(sem tipo),4
+regras P1,regras,exato,Outcome,Outcome,5
+regras P1,regras,exato,Symptom,(sem tipo),27
+regras P1,regras,exato,Treatment,(sem tipo),13
+regras P1,regras,exato,Treatment,Treatment,2
+regras P1,regras,sobreposicao,AnatomicalSite,(sem tipo),22
+regras P1,regras,sobreposicao,AnatomicalSite,AnatomicalSite,11
+regras P1,regras,sobreposicao,Diagnosis,(sem tipo),13
+regras P1,regras,sobreposicao,Diagnosis,AnatomicalSite,1
+regras P1,regras,sobreposicao,Diagnosis,Diagnosis,3
+regras P1,regras,sobreposicao,Diagnosis,History,1
+regras P1,regras,sobreposicao,Exam,(sem tipo),34
+regras P1,regras,sobreposicao,Exam,AnatomicalSite,1
+regras P1,regras,sobreposicao,Exam,Exam,4
+regras P1,regras,sobreposicao,ExamResult,(sem tipo),21
+regras P1,regras,sobreposicao,ExamResult,ExamResult,2
+regras P1,regras,sobreposicao,ExamResult,Symptom,1
+regras P1,regras,sobreposicao,Finding,(sem tipo),34
+regras P1,regras,sobreposicao,Finding,Exam,1
+regras P1,regras,sobreposicao,Finding,Finding,6
+regras P1,regras,sobreposicao,History,(sem tipo),5
+regras P1,regras,sobreposicao,Medication,(sem tipo),9
+regras P1,regras,sobreposicao,Medication,ExamResult,1
+regras P1,regras,sobreposicao,Medication,Medication,3
+regras P1,regras,sobreposicao,Outcome,(sem tipo),3
+regras P1,regras,sobreposicao,Outcome,Outcome,6
+regras P1,regras,sobreposicao,Symptom,(sem tipo),24
+regras P1,regras,sobreposicao,Symptom,Symptom,3
+regras P1,regras,sobreposicao,Treatment,(sem tipo),12
+regras P1,regras,sobreposicao,Treatment,Exam,1
+regras P1,regras,sobreposicao,Treatment,Treatment,2
+lexico,gabarito,exato,AnatomicalSite,(sem tipo),10
+lexico,gabarito,exato,AnatomicalSite,AnatomicalSite,23
+lexico,gabarito,exato,Diagnosis,(sem tipo),4
+lexico,gabarito,exato,Diagnosis,Diagnosis,13
+lexico,gabarito,exato,Diagnosis,Finding,1
+lexico,gabarito,exato,Exam,(sem tipo),11
+lexico,gabarito,exato,Exam,AnatomicalSite,4
+lexico,gabarito,exato,Exam,Exam,21
+lexico,gabarito,exato,Exam,Medication,2
+lexico,gabarito,exato,Exam,Treatment,1
+lexico,gabarito,exato,ExamResult,(sem tipo),23
+lexico,gabarito,exato,ExamResult,Diagnosis,1
+lexico,gabarito,exato,Finding,(sem tipo),10
+lexico,gabarito,exato,Finding,Diagnosis,15
+lexico,gabarito,exato,Finding,Exam,2
+lexico,gabarito,exato,Finding,Finding,13
+lexico,gabarito,exato,Finding,Medication,1
+lexico,gabarito,exato,History,(sem tipo),2
+lexico,gabarito,exato,History,Diagnosis,2
+lexico,gabarito,exato,History,Medication,1
+lexico,gabarito,exato,Medication,(sem tipo),3
+lexico,gabarito,exato,Medication,Medication,10
+lexico,gabarito,exato,Outcome,(sem tipo),6
+lexico,gabarito,exato,Outcome,Outcome,3
+lexico,gabarito,exato,Symptom,(sem tipo),8
+lexico,gabarito,exato,Symptom,Diagnosis,10
+lexico,gabarito,exato,Symptom,Exam,1
+lexico,gabarito,exato,Symptom,Finding,1
+lexico,gabarito,exato,Symptom,Symptom,7
+lexico,gabarito,exato,Treatment,(sem tipo),4
+lexico,gabarito,exato,Treatment,AnatomicalSite,1
+lexico,gabarito,exato,Treatment,Treatment,10
+lexico+classificador,gabarito,exato,AnatomicalSite,AnatomicalSite,24
+lexico+classificador,gabarito,exato,AnatomicalSite,Diagnosis,4
+lexico+classificador,gabarito,exato,AnatomicalSite,Exam,2
+lexico+classificador,gabarito,exato,AnatomicalSite,ExamResult,1
+lexico+classificador,gabarito,exato,AnatomicalSite,Finding,2
+lexico+classificador,gabarito,exato,Diagnosis,Diagnosis,17
+lexico+classificador,gabarito,exato,Diagnosis,Finding,1
+lexico+classificador,gabarito,exato,Exam,AnatomicalSite,4
+lexico+classificador,gabarito,exato,Exam,Diagnosis,2
+lexico+classificador,gabarito,exato,Exam,Exam,29
+lexico+classificador,gabarito,exato,Exam,Medication,2
+lexico+classificador,gabarito,exato,Exam,Symptom,1
+lexico+classificador,gabarito,exato,Exam,Treatment,1
+lexico+classificador,gabarito,exato,ExamResult,Diagnosis,5
+lexico+classificador,gabarito,exato,ExamResult,Exam,5
+lexico+classificador,gabarito,exato,ExamResult,ExamResult,11
+lexico+classificador,gabarito,exato,ExamResult,Finding,1
+lexico+classificador,gabarito,exato,ExamResult,Symptom,2
+lexico+classificador,gabarito,exato,Finding,Diagnosis,19
+lexico+classificador,gabarito,exato,Finding,Exam,4
+lexico+classificador,gabarito,exato,Finding,ExamResult,1
+lexico+classificador,gabarito,exato,Finding,Finding,15
+lexico+classificador,gabarito,exato,Finding,Medication,1
+lexico+classificador,gabarito,exato,Finding,Symptom,1
+lexico+classificador,gabarito,exato,History,Diagnosis,2
+lexico+classificador,gabarito,exato,History,Exam,1
+lexico+classificador,gabarito,exato,History,History,1
+lexico+classificador,gabarito,exato,History,Medication,1
+lexico+classificador,gabarito,exato,Medication,Diagnosis,2
+lexico+classificador,gabarito,exato,Medication,Exam,1
+lexico+classificador,gabarito,exato,Medication,Medication,10
+lexico+classificador,gabarito,exato,Outcome,Diagnosis,1
+lexico+classificador,gabarito,exato,Outcome,Exam,1
+lexico+classificador,gabarito,exato,Outcome,Outcome,7
+lexico+classificador,gabarito,exato,Symptom,Diagnosis,14
+lexico+classificador,gabarito,exato,Symptom,Exam,3
+lexico+classificador,gabarito,exato,Symptom,Finding,1
+lexico+classificador,gabarito,exato,Symptom,Symptom,9
+lexico+classificador,gabarito,exato,Treatment,AnatomicalSite,1
+lexico+classificador,gabarito,exato,Treatment,Exam,2
+lexico+classificador,gabarito,exato,Treatment,Treatment,12
+ambiguas,gabarito,exato,AnatomicalSite,AnatomicalSite,24
+ambiguas,gabarito,exato,AnatomicalSite,Diagnosis,4
+ambiguas,gabarito,exato,AnatomicalSite,Exam,2
+ambiguas,gabarito,exato,AnatomicalSite,ExamResult,1
+ambiguas,gabarito,exato,AnatomicalSite,Finding,2
+ambiguas,gabarito,exato,Diagnosis,Diagnosis,13
+ambiguas,gabarito,exato,Diagnosis,Finding,1
+ambiguas,gabarito,exato,Diagnosis,History,1
+ambiguas,gabarito,exato,Diagnosis,Symptom,3
+ambiguas,gabarito,exato,Exam,AnatomicalSite,4
+ambiguas,gabarito,exato,Exam,Diagnosis,2
+ambiguas,gabarito,exato,Exam,Exam,31
+ambiguas,gabarito,exato,Exam,Symptom,1
+ambiguas,gabarito,exato,Exam,Treatment,1
+ambiguas,gabarito,exato,ExamResult,Diagnosis,4
+ambiguas,gabarito,exato,ExamResult,Exam,6
+ambiguas,gabarito,exato,ExamResult,ExamResult,11
+ambiguas,gabarito,exato,ExamResult,Finding,1
+ambiguas,gabarito,exato,ExamResult,Symptom,2
+ambiguas,gabarito,exato,Finding,AnatomicalSite,1
+ambiguas,gabarito,exato,Finding,Diagnosis,8
+ambiguas,gabarito,exato,Finding,Exam,12
+ambiguas,gabarito,exato,Finding,ExamResult,1
+ambiguas,gabarito,exato,Finding,Finding,18
+ambiguas,gabarito,exato,Finding,Symptom,1
+ambiguas,gabarito,exato,History,AnatomicalSite,1
+ambiguas,gabarito,exato,History,Diagnosis,1
+ambiguas,gabarito,exato,History,Exam,1
+ambiguas,gabarito,exato,History,History,2
+ambiguas,gabarito,exato,Medication,Diagnosis,3
+ambiguas,gabarito,exato,Medication,Exam,4
+ambiguas,gabarito,exato,Medication,ExamResult,2
+ambiguas,gabarito,exato,Medication,Medication,4
+ambiguas,gabarito,exato,Outcome,Diagnosis,1
+ambiguas,gabarito,exato,Outcome,Exam,1
+ambiguas,gabarito,exato,Outcome,Outcome,7
+ambiguas,gabarito,exato,Symptom,AnatomicalSite,1
+ambiguas,gabarito,exato,Symptom,Diagnosis,10
+ambiguas,gabarito,exato,Symptom,Exam,5
+ambiguas,gabarito,exato,Symptom,Finding,1
+ambiguas,gabarito,exato,Symptom,Symptom,10
+ambiguas,gabarito,exato,Treatment,AnatomicalSite,1
+ambiguas,gabarito,exato,Treatment,Exam,2
+ambiguas,gabarito,exato,Treatment,Treatment,12
+classificador,gabarito,exato,AnatomicalSite,AnatomicalSite,15
+classificador,gabarito,exato,AnatomicalSite,Diagnosis,7
+classificador,gabarito,exato,AnatomicalSite,Exam,5
+classificador,gabarito,exato,AnatomicalSite,ExamResult,1
+classificador,gabarito,exato,AnatomicalSite,Finding,3
+classificador,gabarito,exato,AnatomicalSite,Symptom,2
+classificador,gabarito,exato,Diagnosis,Diagnosis,13
+classificador,gabarito,exato,Diagnosis,History,2
+classificador,gabarito,exato,Diagnosis,Symptom,3
+classificador,gabarito,exato,Exam,AnatomicalSite,3
+classificador,gabarito,exato,Exam,Diagnosis,4
+classificador,gabarito,exato,Exam,Exam,31
+classificador,gabarito,exato,Exam,Symptom,1
+classificador,gabarito,exato,ExamResult,Diagnosis,4
+classificador,gabarito,exato,ExamResult,Exam,6
+classificador,gabarito,exato,ExamResult,ExamResult,11
+classificador,gabarito,exato,ExamResult,Finding,1
+classificador,gabarito,exato,ExamResult,Symptom,2
+classificador,gabarito,exato,Finding,AnatomicalSite,1
+classificador,gabarito,exato,Finding,Diagnosis,16
+classificador,gabarito,exato,Finding,Exam,10
+classificador,gabarito,exato,Finding,ExamResult,1
+classificador,gabarito,exato,Finding,Finding,11
+classificador,gabarito,exato,Finding,Symptom,2
+classificador,gabarito,exato,History,AnatomicalSite,1
+classificador,gabarito,exato,History,Diagnosis,1
+classificador,gabarito,exato,History,Exam,1
+classificador,gabarito,exato,History,History,2
+classificador,gabarito,exato,Medication,Diagnosis,3
+classificador,gabarito,exato,Medication,Exam,4
+classificador,gabarito,exato,Medication,ExamResult,2
+classificador,gabarito,exato,Medication,Medication,4
+classificador,gabarito,exato,Outcome,Diagnosis,1
+classificador,gabarito,exato,Outcome,Exam,1
+classificador,gabarito,exato,Outcome,Finding,1
+classificador,gabarito,exato,Outcome,Outcome,6
+classificador,gabarito,exato,Symptom,AnatomicalSite,2
+classificador,gabarito,exato,Symptom,Diagnosis,13
+classificador,gabarito,exato,Symptom,Exam,4
+classificador,gabarito,exato,Symptom,Finding,2
+classificador,gabarito,exato,Symptom,Symptom,6
+classificador,gabarito,exato,Treatment,Diagnosis,1
+classificador,gabarito,exato,Treatment,Exam,8
+classificador,gabarito,exato,Treatment,History,1
+classificador,gabarito,exato,Treatment,Treatment,5
+lexico,crf,exato,AnatomicalSite,(sem tipo),33
+lexico,crf,exato,Diagnosis,(sem tipo),18
+lexico,crf,exato,Exam,(sem tipo),36
+lexico,crf,exato,Exam,Exam,3
+lexico,crf,exato,ExamResult,(sem tipo),24
+lexico,crf,exato,Finding,(sem tipo),40
+lexico,crf,exato,Finding,Finding,1
+lexico,crf,exato,History,(sem tipo),5
+lexico,crf,exato,Medication,(sem tipo),13
+lexico,crf,exato,Outcome,(sem tipo),8
+lexico,crf,exato,Outcome,Outcome,1
+lexico,crf,exato,Symptom,(sem tipo),27
+lexico,crf,exato,Treatment,(sem tipo),15
+lexico,crf,sobreposicao,AnatomicalSite,(sem tipo),32
+lexico,crf,sobreposicao,AnatomicalSite,AnatomicalSite,1
+lexico,crf,sobreposicao,Diagnosis,(sem tipo),18
+lexico,crf,sobreposicao,Exam,(sem tipo),33
+lexico,crf,sobreposicao,Exam,Exam,6
+lexico,crf,sobreposicao,ExamResult,(sem tipo),23
+lexico,crf,sobreposicao,ExamResult,Diagnosis,1
+lexico,crf,sobreposicao,Finding,(sem tipo),39
+lexico,crf,sobreposicao,Finding,Diagnosis,1
+lexico,crf,sobreposicao,Finding,Finding,1
+lexico,crf,sobreposicao,History,(sem tipo),5
+lexico,crf,sobreposicao,Medication,(sem tipo),11
+lexico,crf,sobreposicao,Medication,Medication,2
+lexico,crf,sobreposicao,Outcome,(sem tipo),7
+lexico,crf,sobreposicao,Outcome,Outcome,2
+lexico,crf,sobreposicao,Symptom,(sem tipo),27
+lexico,crf,sobreposicao,Treatment,(sem tipo),14
+lexico,crf,sobreposicao,Treatment,Treatment,1
+lexico+classificador,crf,exato,AnatomicalSite,(sem tipo),33
+lexico+classificador,crf,exato,Diagnosis,(sem tipo),17
+lexico+classificador,crf,exato,Diagnosis,Diagnosis,1
+lexico+classificador,crf,exato,Exam,(sem tipo),36
+lexico+classificador,crf,exato,Exam,Exam,3
+lexico+classificador,crf,exato,ExamResult,(sem tipo),24
+lexico+classificador,crf,exato,Finding,(sem tipo),39
+lexico+classificador,crf,exato,Finding,Finding,1
+lexico+classificador,crf,exato,Finding,Symptom,1
+lexico+classificador,crf,exato,History,(sem tipo),5
+lexico+classificador,crf,exato,Medication,(sem tipo),13
+lexico+classificador,crf,exato,Outcome,(sem tipo),4
+lexico+classificador,crf,exato,Outcome,Outcome,5
+lexico+classificador,crf,exato,Symptom,(sem tipo),26
+lexico+classificador,crf,exato,Symptom,Symptom,1
+lexico+classificador,crf,exato,Treatment,(sem tipo),15
+lexico+classificador,crf,sobreposicao,AnatomicalSite,(sem tipo),32
+lexico+classificador,crf,sobreposicao,AnatomicalSite,AnatomicalSite,1
+lexico+classificador,crf,sobreposicao,Diagnosis,(sem tipo),16
+lexico+classificador,crf,sobreposicao,Diagnosis,Diagnosis,2
+lexico+classificador,crf,sobreposicao,Exam,(sem tipo),30
+lexico+classificador,crf,sobreposicao,Exam,Exam,9
+lexico+classificador,crf,sobreposicao,ExamResult,(sem tipo),23
+lexico+classificador,crf,sobreposicao,ExamResult,Diagnosis,1
+lexico+classificador,crf,sobreposicao,Finding,(sem tipo),38
+lexico+classificador,crf,sobreposicao,Finding,Diagnosis,1
+lexico+classificador,crf,sobreposicao,Finding,Finding,1
+lexico+classificador,crf,sobreposicao,Finding,Symptom,1
+lexico+classificador,crf,sobreposicao,History,(sem tipo),5
+lexico+classificador,crf,sobreposicao,Medication,(sem tipo),11
+lexico+classificador,crf,sobreposicao,Medication,Medication,2
+lexico+classificador,crf,sobreposicao,Outcome,(sem tipo),3
+lexico+classificador,crf,sobreposicao,Outcome,Outcome,6
+lexico+classificador,crf,sobreposicao,Symptom,(sem tipo),26
+lexico+classificador,crf,sobreposicao,Symptom,Symptom,1
+lexico+classificador,crf,sobreposicao,Treatment,(sem tipo),14
+lexico+classificador,crf,sobreposicao,Treatment,Treatment,1
+ambiguas,crf,exato,AnatomicalSite,(sem tipo),33
+ambiguas,crf,exato,Diagnosis,(sem tipo),17
+ambiguas,crf,exato,Diagnosis,Diagnosis,1
+ambiguas,crf,exato,Exam,(sem tipo),36
+ambiguas,crf,exato,Exam,Exam,3
+ambiguas,crf,exato,ExamResult,(sem tipo),24
+ambiguas,crf,exato,Finding,(sem tipo),39
+ambiguas,crf,exato,Finding,Finding,1
+ambiguas,crf,exato,Finding,Symptom,1
+ambiguas,crf,exato,History,(sem tipo),5
+ambiguas,crf,exato,Medication,(sem tipo),13
+ambiguas,crf,exato,Outcome,(sem tipo),4
+ambiguas,crf,exato,Outcome,Outcome,5
+ambiguas,crf,exato,Symptom,(sem tipo),26
+ambiguas,crf,exato,Symptom,Symptom,1
+ambiguas,crf,exato,Treatment,(sem tipo),15
+ambiguas,crf,sobreposicao,AnatomicalSite,(sem tipo),32
+ambiguas,crf,sobreposicao,AnatomicalSite,AnatomicalSite,1
+ambiguas,crf,sobreposicao,Diagnosis,(sem tipo),16
+ambiguas,crf,sobreposicao,Diagnosis,Diagnosis,2
+ambiguas,crf,sobreposicao,Exam,(sem tipo),30
+ambiguas,crf,sobreposicao,Exam,Exam,9
+ambiguas,crf,sobreposicao,ExamResult,(sem tipo),23
+ambiguas,crf,sobreposicao,ExamResult,Diagnosis,1
+ambiguas,crf,sobreposicao,Finding,(sem tipo),38
+ambiguas,crf,sobreposicao,Finding,Diagnosis,1
+ambiguas,crf,sobreposicao,Finding,Finding,1
+ambiguas,crf,sobreposicao,Finding,Symptom,1
+ambiguas,crf,sobreposicao,History,(sem tipo),5
+ambiguas,crf,sobreposicao,Medication,(sem tipo),11
+ambiguas,crf,sobreposicao,Medication,ExamResult,2
+ambiguas,crf,sobreposicao,Outcome,(sem tipo),3
+ambiguas,crf,sobreposicao,Outcome,Outcome,6
+ambiguas,crf,sobreposicao,Symptom,(sem tipo),26
+ambiguas,crf,sobreposicao,Symptom,Symptom,1
+ambiguas,crf,sobreposicao,Treatment,(sem tipo),14
+ambiguas,crf,sobreposicao,Treatment,Treatment,1
+classificador,crf,exato,AnatomicalSite,(sem tipo),33
+classificador,crf,exato,Diagnosis,(sem tipo),17
+classificador,crf,exato,Diagnosis,Diagnosis,1
+classificador,crf,exato,Exam,(sem tipo),36
+classificador,crf,exato,Exam,Exam,3
+classificador,crf,exato,ExamResult,(sem tipo),24
+classificador,crf,exato,Finding,(sem tipo),39
+classificador,crf,exato,Finding,Finding,1
+classificador,crf,exato,Finding,Symptom,1
+classificador,crf,exato,History,(sem tipo),5
+classificador,crf,exato,Medication,(sem tipo),13
+classificador,crf,exato,Outcome,(sem tipo),4
+classificador,crf,exato,Outcome,Outcome,5
+classificador,crf,exato,Symptom,(sem tipo),26
+classificador,crf,exato,Symptom,Symptom,1
+classificador,crf,exato,Treatment,(sem tipo),15
+classificador,crf,sobreposicao,AnatomicalSite,(sem tipo),32
+classificador,crf,sobreposicao,AnatomicalSite,AnatomicalSite,1
+classificador,crf,sobreposicao,Diagnosis,(sem tipo),16
+classificador,crf,sobreposicao,Diagnosis,Diagnosis,2
+classificador,crf,sobreposicao,Exam,(sem tipo),30
+classificador,crf,sobreposicao,Exam,Diagnosis,1
+classificador,crf,sobreposicao,Exam,Exam,8
+classificador,crf,sobreposicao,ExamResult,(sem tipo),23
+classificador,crf,sobreposicao,ExamResult,Symptom,1
+classificador,crf,sobreposicao,Finding,(sem tipo),38
+classificador,crf,sobreposicao,Finding,Diagnosis,1
+classificador,crf,sobreposicao,Finding,Finding,1
+classificador,crf,sobreposicao,Finding,Symptom,1
+classificador,crf,sobreposicao,History,(sem tipo),5
+classificador,crf,sobreposicao,Medication,(sem tipo),11
+classificador,crf,sobreposicao,Medication,ExamResult,2
+classificador,crf,sobreposicao,Outcome,(sem tipo),3
+classificador,crf,sobreposicao,Outcome,Outcome,6
+classificador,crf,sobreposicao,Symptom,(sem tipo),26
+classificador,crf,sobreposicao,Symptom,Symptom,1
+classificador,crf,sobreposicao,Treatment,(sem tipo),14
+classificador,crf,sobreposicao,Treatment,Treatment,1

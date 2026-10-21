@@ -1,0 +1,9 @@
+etapa,modo,criterio,p1_sistema,p1_f1,p2_sistema,p2_f1
+Etapa 2 - Fronteiras de Mencoes,ponta_a_ponta,exato,regras P1,0.1439,CRF + termos (pos_bio),0.0952 (pos_bio=0.2051)
+Etapa 2 - Fronteiras de Mencoes,ponta_a_ponta,sobreposicao,regras P1,0.3022,CRF + termos (pos_bio),0.2063 (pos_bio=0.4615)
+Etapa 3 - Tipagem Semantica (Macro-F1),isolado (gabarito),exato,regras P1,0.2125,lexico + modelo,0.6188
+Etapa 3 - Tipagem Semantica (Macro-F1),ponta_a_ponta (crf),sobreposicao,regras P1,0.2853,lexico + modelo,0.1907
+Etapa 3 - Polaridade (Acuracia / F1 absent),isolado (gabarito),exato,regras P1,acc=1.0 / f1_abs=1.0,lexico + modelo (clausula),acc=0.9509 / f1_abs=0.7317
+Etapa 4 - Extracao de Relacoes (F1 Global),isolado (gabarito),exato,regras P1,0.1032,LR (1-2) + regra Patient,0.75
+Etapa 4 - Extracao de Relacoes (F1 Global),ponta_a_ponta (crf+tipos),sobreposicao,regras P1,0.3016,LR (1-2) + regra Patient,0.2
+Etapa 5 - Grafo Estrutural (% Nos c/ MeSH | Duplicados),56_casos,estrutural,Projeto 1 (regras),0.2658 | dup=8,Projeto 2 (montagem.py),0.4053 | dup=3

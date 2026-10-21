@@ -1,0 +1,9 @@
+sistema,casamento,precisao,revocacao,f1,n_pred,n_gold,casados
+regras P1,exato,0.3704,0.0893,0.1439,54,224,20
+regras P1,sobreposicao,0.7778,0.1875,0.3022,54,224,42
+só pos_bio,exato,0.3636,0.1429,0.2051,88,224,32
+só pos_bio,sobreposicao,0.8182,0.3214,0.4615,88,224,72
+CRF,exato,0.4286,0.0536,0.0952,28,224,12
+CRF,sobreposicao,0.9286,0.1161,0.2063,28,224,26
+CRF + termos,exato,0.4286,0.0536,0.0952,28,224,12
+CRF + termos,sobreposicao,0.9286,0.1161,0.2063,28,224,26

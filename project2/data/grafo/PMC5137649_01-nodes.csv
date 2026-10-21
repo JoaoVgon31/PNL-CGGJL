@@ -1,0 +1,45 @@
+case_id,node_id,type,label,attributes
+PMC5137649_01,P1,Patient,case PMC5137649_01,
+PMC5137649_01,S1,Symptom,right flank and lower quadrant abdominal pain,"polarity=present; mentions=m1; mention_texts=[""right flank and lower quadrant abdominal pain""]; spans=[[54,99]]; char_start=54; char_end=99; evidence_text=right flank and lower quadrant abdominal pain; mesh=D015746; confianca=1.0"
+PMC5137649_01,S2,Symptom,nausea,"polarity=present; mentions=m2; mention_texts=[""nausea""]; spans=[[116,122]]; char_start=116; char_end=122; evidence_text=nausea; mesh=D009325; confianca=1.0"
+PMC5137649_01,S3,Symptom,constipation,"polarity=present; mentions=m3; mention_texts=[""constipation""]; spans=[[127,139]]; char_start=127; char_end=139; evidence_text=constipation; mesh=D003248; confianca=1.0"
+PMC5137649_01,E1,Exam,computed tomography,"polarity=present; mentions=m4; mention_texts=[""computed tomography""]; spans=[[300,319]]; char_start=300; char_end=319; evidence_text=computed tomography; mesh=D014054; confianca=1.0"
+PMC5137649_01,E2,Exam,eus-fna,"polarity=present; mentions=m5; mention_texts=[""EUS-FNA""]; spans=[[441,448]]; char_start=441; char_end=448; evidence_text=EUS-FNA; mesh=D061765; confianca=1.0"
+PMC5137649_01,A1,AnatomicalSite,pancreatic,"polarity=present; mentions=m6|m20; mention_texts=[""pancreatic"",""pancreas""]; spans=[[472,482],[1237,1245]]; char_start=472; char_end=482; evidence_text=pancreatic; mesh=ANAT002; confianca=1.0"
+PMC5137649_01,F1,Finding,cyst,"polarity=present; mentions=m7|m10|m30|m31; mention_texts=[""cyst"",""cyst"",""cyst"",""smooth internal cyst wall""]; spans=[[501,505],[631,635],[2092,2096],[2104,2129]]; char_start=501; char_end=505; evidence_text=cyst; mesh=D003560; confianca=1.0"
+PMC5137649_01,A2,AnatomicalSite,stomach,"polarity=present; mentions=m8|m19|m25|m27; mention_texts=[""stomach"",""stomach"",""stomach"",""stomach""]; spans=[[611,618],[1225,1232],[1575,1582],[1958,1965]]; char_start=611; char_end=618; evidence_text=stomach; mesh=ANAT001; confianca=1.0"
+PMC5137649_01,E3,Exam,fna,"polarity=present; mentions=m9; mention_texts=[""FNA""]; spans=[[620,623]]; char_start=620; char_end=623; evidence_text=FNA; confianca=0.2028"
+PMC5137649_01,F2,Finding,malignancy,"polarity=absent; mentions=m11; mention_texts=[""malignancy""]; spans=[[664,674]]; char_start=664; char_end=674; evidence_text=malignancy; mesh=D009369; confianca=1.0"
+PMC5137649_01,E4,Exam,a carcinoembryonic antigen,"polarity=present; mentions=m12; mention_texts=[""a carcinoembryonic antigen""]; spans=[[735,761]]; char_start=735; char_end=761; evidence_text=a carcinoembryonic antigen; mesh=D002272; confianca=1.0"
+PMC5137649_01,R1,ExamResult,"12,476.5ng/ml","polarity=present; mentions=m13; mention_texts=[""12,476.5ng/ml""]; spans=[[777,790]]; char_start=777; char_end=790; evidence_text=12,476.5ng/ml; confianca=0.3616"
+PMC5137649_01,E5,Exam,a carbohydrate antigen (ca) 19-9,"polarity=present; mentions=m14; mention_texts=[""a carbohydrate antigen (CA) 19-9""]; spans=[[795,827]]; char_start=795; char_end=827; evidence_text=a carbohydrate antigen (CA) 19-9; mesh=D018395; confianca=1.0"
+PMC5137649_01,R2,ExamResult,6iu/ml,"polarity=present; mentions=m15; mention_texts=[""6iu/ml""]; spans=[[837,843]]; char_start=837; char_end=843; evidence_text=6iu/ml; confianca=0.3351"
+PMC5137649_01,D1,Diagnosis,mucinous pancreatic cystic neoplasm,"polarity=present; mentions=m16; mention_texts=[""mucinous pancreatic cystic neoplasm""]; spans=[[875,910]]; char_start=875; char_end=910; evidence_text=mucinous pancreatic cystic neoplasm; mesh=D018297; confianca=1.0"
+PMC5137649_01,T1,Treatment,laparoscopic distal pancreatectomy,"polarity=present; mentions=m17; mention_texts=[""laparoscopic distal pancreatectomy""]; spans=[[976,1010]]; char_start=976; char_end=1010; evidence_text=laparoscopic distal pancreatectomy; mesh=D010180; confianca=1.0"
+PMC5137649_01,F3,Finding,lesion,"polarity=present; mentions=m18; mention_texts=[""lesion""]; spans=[[1173,1179]]; char_start=1173; char_end=1179; evidence_text=lesion; confianca=1.0"
+PMC5137649_01,E6,Exam,endoscopy,"polarity=present; mentions=m21; mention_texts=[""endoscopy""]; spans=[[1370,1379]]; char_start=1370; char_end=1379; evidence_text=endoscopy; mesh=D004724; confianca=1.0"
+PMC5137649_01,F4,Finding,mucosal abnormalities,"polarity=absent; mentions=m22; mention_texts=[""mucosal abnormalities""]; spans=[[1401,1422]]; char_start=1401; char_end=1422; evidence_text=mucosal abnormalities; confianca=0.5214"
+PMC5137649_01,A3,AnatomicalSite,stomach,"polarity=absent; mentions=m23; mention_texts=[""stomach""]; spans=[[1430,1437]]; char_start=1430; char_end=1437; evidence_text=stomach; mesh=ANAT001; confianca=1.0"
+PMC5137649_01,T2,Treatment,open resection,"polarity=present; mentions=m24; mention_texts=[""open resection""]; spans=[[1555,1569]]; char_start=1555; char_end=1569; evidence_text=open resection; confianca=1.0"
+PMC5137649_01,D2,Diagnosis,gastric duplication cyst,"polarity=present; mentions=m26; mention_texts=[""gastric duplication cyst""]; spans=[[1611,1635]]; char_start=1611; char_end=1635; evidence_text=gastric duplication cyst; mesh=ANAT001; confianca=1.0"
+PMC5137649_01,D3,Diagnosis,bleeding,"polarity=absent; mentions=m28; mention_texts=[""bleeding""]; spans=[[1990,1998]]; char_start=1990; char_end=1998; evidence_text=bleeding; mesh=D006470; confianca=1.0"
+PMC5137649_01,F5,Finding,leak,"polarity=absent; mentions=m29; mention_texts=[""leak""]; spans=[[2002,2006]]; char_start=2002; char_end=2006; evidence_text=leak; confianca=0.3558"
+PMC5137649_01,D4,Diagnosis,gdc,"polarity=present; mentions=m32; mention_texts=[""GDC""]; spans=[[2148,2151]]; char_start=2148; char_end=2151; evidence_text=GDC; confianca=0.3957"
+PMC5137649_01,O1,Outcome,discharged home,"polarity=present; mentions=m33; mention_texts=[""discharged home""]; spans=[[2180,2195]]; char_start=2180; char_end=2195; evidence_text=discharged home; confianca=0.5969"
+PMC5137649_01,O2,Outcome,complications,"polarity=absent; mentions=m34; mention_texts=[""complications""]; spans=[[2273,2286]]; char_start=2273; char_end=2286; evidence_text=complications; confianca=0.2412"
+PMC5137649_01,O3,Outcome,complete resolution,"polarity=present; mentions=m35; mention_texts=[""complete resolution""]; spans=[[2310,2329]]; char_start=2310; char_end=2329; evidence_text=complete resolution; confianca=1.0"
+PMC5137649_01,C1,Concept,D015746,code=D015746; vocabulary=MeSH
+PMC5137649_01,C2,Concept,D009325,code=D009325; vocabulary=MeSH
+PMC5137649_01,C3,Concept,D003248,code=D003248; vocabulary=MeSH
+PMC5137649_01,C4,Concept,D014054,code=D014054; vocabulary=MeSH
+PMC5137649_01,C5,Concept,D061765,code=D061765; vocabulary=MeSH
+PMC5137649_01,C6,Concept,ANAT002,code=ANAT002; vocabulary=AnatomicalSite
+PMC5137649_01,C7,Concept,D003560,code=D003560; vocabulary=MeSH
+PMC5137649_01,C8,Concept,ANAT001,code=ANAT001; vocabulary=AnatomicalSite
+PMC5137649_01,C9,Concept,D009369,code=D009369; vocabulary=MeSH
+PMC5137649_01,C10,Concept,D002272,code=D002272; vocabulary=MeSH
+PMC5137649_01,C11,Concept,D018395,code=D018395; vocabulary=MeSH
+PMC5137649_01,C12,Concept,D018297,code=D018297; vocabulary=MeSH
+PMC5137649_01,C13,Concept,D010180,code=D010180; vocabulary=MeSH
+PMC5137649_01,C14,Concept,D004724,code=D004724; vocabulary=MeSH
+PMC5137649_01,C15,Concept,D006470,code=D006470; vocabulary=MeSH
