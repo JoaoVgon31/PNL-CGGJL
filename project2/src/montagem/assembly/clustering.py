@@ -1,4 +1,6 @@
 # -*- coding: utf-8 -*-
+# LEGADO: primeira rota de montagem/avaliação da #29, substituída por
+# src/montagem/montagem.py, src/dados/ e src/avaliacao/. Fora do pipeline final.
 """Agrupamento hierarquico de mencoes clinicas e deduplicacao de nos.
 
 Implementa a diretriz "Um no por coisa" do Projeto 2:

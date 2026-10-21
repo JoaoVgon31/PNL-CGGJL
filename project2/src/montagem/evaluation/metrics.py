@@ -1,4 +1,6 @@
 # -*- coding: utf-8 -*-
+# LEGADO: primeira rota de montagem/avaliação da #29, substituída por
+# src/montagem/montagem.py, src/dados/ e src/avaliacao/. Fora do pipeline final.
 """Calculo formal de metricas de avaliacao para todas as estacoes do Projeto 2.
 
 Padroniza as metricas da equipe (Regra 4 do planejamento):

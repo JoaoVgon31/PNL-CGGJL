@@ -1,4 +1,6 @@
 # -*- coding: utf-8 -*-
+# LEGADO: primeira rota de montagem/avaliação da #29, substituída por
+# src/montagem/montagem.py, src/dados/ e src/avaliacao/. Fora do pipeline final.
 """Gerador de dados de supervisao fraca (Weak Supervision) e Silver Standard.
 
 Utiliza as saidas consolidadas e regras do Projeto 1 para rotular automaticamente

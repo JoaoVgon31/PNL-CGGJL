@@ -1,4 +1,6 @@
 # -*- coding: utf-8 -*-
+# LEGADO: primeira rota de montagem/avaliação da #29, substituída por
+# src/montagem/montagem.py, src/dados/ e src/avaliacao/. Fora do pipeline final.
 """Script unificado de avaliacao oficial para toda a equipe do Projeto 2.
 
 Uso:

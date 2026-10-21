@@ -1,4 +1,6 @@
 # -*- coding: utf-8 -*-
+# LEGADO: primeira rota de montagem/avaliação da #29, substituída por
+# src/montagem/montagem.py, src/dados/ e src/avaliacao/. Fora do pipeline final.
 """Montador de Grafos de Conhecimento Clinico (nodes.csv e edges.csv).
 
 Integra as predicoes das estacoes a montante (Lucas e Joao) ou os mocks do P1:

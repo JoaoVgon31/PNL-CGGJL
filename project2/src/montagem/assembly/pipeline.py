@@ -1,4 +1,6 @@
 # -*- coding: utf-8 -*-
+# LEGADO: primeira rota de montagem/avaliação da #29, substituída por
+# src/montagem/montagem.py, src/dados/ e src/avaliacao/. Fora do pipeline final.
 """Pipeline de Montagem de Grafos em Lote para o Projeto 2.
 
 Executa a montagem e deduplicacao para todos os casos da amostra (ou subconjunto),

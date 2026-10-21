@@ -1,4 +1,6 @@
 # -*- coding: utf-8 -*-
+# LEGADO: primeira rota de montagem/avaliação da #29, substituída por
+# src/montagem/montagem.py, src/dados/ e src/avaliacao/. Fora do pipeline final.
 """Gerenciamento e geracao dos splits deterministicos de casos clinicos.
 
 Garante a divisao estrita por case_id entre treino, validacao e teste,
