@@ -24,9 +24,8 @@ servem só para avaliação. Os ids estão em [`casos.txt`](casos.txt).
 - `relacoes.csv`: `case_id, origem, destino, relacao`. `origem` é `P1` para relações do paciente ou o
   `id` de uma menção.
 - `cases/<case_id>/`: texto do caso e as planilhas de anotação por caso
-  (`-entities.csv`, `-relations.csv`), no formato da rota legada. `src/relacoes/avaliar_gabarito.py`
-  ainda lê essas planilhas.
-- `gold_entidades.csv`, `gold_relacoes.csv` e `manifest.json`: consolidação dessas planilhas pelo
-  `gold_manager.py` legado, com a validação de spans e de ids das relações.
+  (`-entities.csv`, `-relations.csv`). `src/relacoes/avaliar_gabarito.py` ainda lê essas planilhas.
+- `gold_entidades.csv`, `gold_relacoes.csv` e `manifest.json`: consolidação dessas planilhas, com a
+  validação de spans e de ids das relações, feita por um script já removido do repositório.
 
 Os módulos de avaliação ([`src/avaliacao`](../../src/avaliacao/)) leem `mencoes.csv` e `relacoes.csv`.

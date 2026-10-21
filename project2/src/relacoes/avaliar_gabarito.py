@@ -1,7 +1,6 @@
 # -*- coding: utf-8 -*-
 """Avalia o pipeline treinado contra o gabarito manual dos casos reservados
-(`project2/data/gold/cases/`, esquema oficial consolidado por
-`project2/src/montagem/data/gold_manager.py`).
+(`project2/data/gold/cases/`).
 
 Le `<case_id>-entities.csv` (ent_id, char_start, char_end, type ja prontos,
 gerados pelo starter pack oficial) e monta os pares candidatos a partir dai -
@@ -11,7 +10,7 @@ nos mesmos adicionamos para os resultados de exame nao capturados pelo
 chunker automatico, ver `<case_id>-entities.csv`).
 
 A coluna `type` do `entities.csv` oficial herda o mesmo bug de casamento de
-texto do `weak_supervision.py` (ver project2/docs/relacoes.md): sitios
+texto da primeira versao do silver (ver project2/docs/relacoes.md): sitios
 anatomicos mencionados dentro do blob de sintoma do Projeto 1 (ex. "palm",
 "skin", "thumb") saem rotulados `Symptom` em vez de `AnatomicalSite`, e
 "RE"/"LE" saem sem tipo (ou `Exam`, errado). Corrigir isso no proprio

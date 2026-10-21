@@ -1,8 +1,5 @@
 # Montagem do grafo
 
-`montagem.py` (#32) é a montagem usada no pipeline final. Os subdiretórios `data/`, `evaluation/` e
-`assembly/` são a primeira rota da #29, mantida como legado e fora do pipeline.
-
 Consome as saídas das etapas 3/4 e gera o mesmo contrato CSV do P1. Não treina modelos e não
 cria relações clínicas por proximidade. Arestas do paciente devem vir da etapa 4 com `origem=P1`.
 As únicas arestas adicionadas pela montagem são `SAME_AS`.
