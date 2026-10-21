@@ -113,45 +113,47 @@ def gerar(saida: Path | str = TERMOS_PADRAO, freq_min: int = 2, n_max: int = 4,
         if banco:
             db_path.parent.mkdir(parents=True, exist_ok=True)
             db_path.touch(exist_ok=False)  # nunca apaga um banco de uma execução anterior
-        with sqlite3.connect(db_path) as db:
-            db.execute("CREATE TABLE ngramas (termo TEXT PRIMARY KEY, n INTEGER, frequencia INTEGER, validas INTEGER)")
-            db.execute("CREATE TABLE marginais (palavra TEXT PRIMARY KEY, esquerda INTEGER, direita INTEGER)")
-            for case_id, texto in iter_casos(corpus, limite):
-                if case_id in excluidos:
-                    ignorados += 1
-                    continue
-                contagens, validas, esq, dire = contar_caso(texto, n_max)
-                db.executemany("INSERT INTO ngramas VALUES (?,?,?,?) ON CONFLICT(termo) DO UPDATE SET "
-                               "frequencia=frequencia+excluded.frequencia, validas=validas+excluded.validas",
-                               ((t, n, f, validas[t]) for (t, n), f in contagens.items()))
-                db.executemany("INSERT INTO marginais VALUES (?,?,?) ON CONFLICT(palavra) DO UPDATE SET "
-                               "esquerda=esquerda+excluded.esquerda, direita=direita+excluded.direita",
-                               ((p, esq[p], dire[p]) for p in esq.keys() | dire.keys()))
-                pares += sum(esq.values())
-                processados += 1
-                if processados % 100 == 0:
-                    db.commit()
-                    print(f"{processados} casos processados; {time.perf_counter() - inicio:.1f}s", file=sys.stderr, flush=True)
-            db.commit()
-            if not processados:
-                raise ValueError("Nenhum caso de treino após excluir o gabarito")
-            candidatos = {tuple(t.split()): f for t, f in db.execute(
-                "SELECT termo, frequencia FROM ngramas WHERE n >= 2 AND frequencia >= ? AND validas * 2 >= frequencia",
-                (freq_min,))}
-            c_values = calcular_c_values(candidatos)
+        from contextlib import closing
+        with closing(sqlite3.connect(db_path)) as db:
+            with db:
+                db.execute("CREATE TABLE ngramas (termo TEXT PRIMARY KEY, n INTEGER, frequencia INTEGER, validas INTEGER)")
+                db.execute("CREATE TABLE marginais (palavra TEXT PRIMARY KEY, esquerda INTEGER, direita INTEGER)")
+                for case_id, texto in iter_casos(corpus, limite):
+                    if case_id in excluidos:
+                        ignorados += 1
+                        continue
+                    contagens, validas, esq, dire = contar_caso(texto, n_max)
+                    db.executemany("INSERT INTO ngramas VALUES (?,?,?,?) ON CONFLICT(termo) DO UPDATE SET "
+                                   "frequencia=frequencia+excluded.frequencia, validas=validas+excluded.validas",
+                                   ((t, n, f, validas[t]) for (t, n), f in contagens.items()))
+                    db.executemany("INSERT INTO marginais VALUES (?,?,?) ON CONFLICT(palavra) DO UPDATE SET "
+                                   "esquerda=esquerda+excluded.esquerda, direita=direita+excluded.direita",
+                                   ((p, esq[p], dire[p]) for p in esq.keys() | dire.keys()))
+                    pares += sum(esq.values())
+                    processados += 1
+                    if processados % 100 == 0:
+                        db.commit()
+                        print(f"{processados} casos processados; {time.perf_counter() - inicio:.1f}s", file=sys.stderr, flush=True)
+                db.commit()
+                if not processados:
+                    raise ValueError("Nenhum caso de treino após excluir o gabarito")
+                candidatos = {tuple(t.split()): f for t, f in db.execute(
+                    "SELECT termo, frequencia FROM ngramas WHERE n >= 2 AND frequencia >= ? AND validas * 2 >= frequencia",
+                    (freq_min,))}
+                c_values = calcular_c_values(candidatos)
 
-            @lru_cache(maxsize=8192)
-            def pmi_par(a, b):
-                f = db.execute("SELECT frequencia FROM ngramas WHERE termo=?", (a + " " + b,)).fetchone()[0]
-                esquerda = db.execute("SELECT esquerda FROM marginais WHERE palavra=?", (a,)).fetchone()[0]
-                direita = db.execute("SELECT direita FROM marginais WHERE palavra=?", (b,)).fetchone()[0]
-                return math.log2(f * pares / (esquerda * direita))
+                @lru_cache(maxsize=8192)
+                def pmi_par(a, b):
+                    f = db.execute("SELECT frequencia FROM ngramas WHERE termo=?", (a + " " + b,)).fetchone()[0]
+                    esquerda = db.execute("SELECT esquerda FROM marginais WHERE palavra=?", (a,)).fetchone()[0]
+                    direita = db.execute("SELECT direita FROM marginais WHERE palavra=?", (b,)).fetchone()[0]
+                    return math.log2(f * pares / (esquerda * direita))
 
-            linhas = [{"termo": " ".join(a), "n": len(a), "frequencia": f,
-                       "pmi": round(min(pmi_par(x, y) for x, y in zip(a, a[1:])), 6),
-                       "c_value": round(c_values[a], 6)} for a, f in candidatos.items()]
-            linhas.sort(key=lambda r: (-r["c_value"], -r["pmi"], -r["frequencia"], r["termo"]))
-            totais = {str(n): f for n, f in db.execute("SELECT n, SUM(frequencia) FROM ngramas GROUP BY n")}
+                linhas = [{"termo": " ".join(a), "n": len(a), "frequencia": f,
+                           "pmi": round(min(pmi_par(x, y) for x, y in zip(a, a[1:])), 6),
+                           "c_value": round(c_values[a], 6)} for a, f in candidatos.items()]
+                linhas.sort(key=lambda r: (-r["c_value"], -r["pmi"], -r["frequencia"], r["termo"]))
+                totais = {str(n): f for n, f in db.execute("SELECT n, SUM(frequencia) FROM ngramas GROUP BY n")}
     saida.parent.mkdir(parents=True, exist_ok=True)
     with saida.open("w", encoding="utf-8", newline="") as handle:
         writer = csv.DictWriter(handle, fieldnames=COLUNAS)
@@ -218,6 +220,160 @@ def comparar(termos: Path | str = TERMOS_PADRAO, gazetteer: Path | str = GAZETTE
     return resumo
 
 
+ASSOCIACOES_PADRAO = REPO / "project2/data/associacoes.csv"
+COLUNAS_ASSOCIACOES = ["codigo_a", "termo_a", "codigo_b", "termo_b", "casos_ab", "casos_a", "casos_b", "pmi"]
+
+
+def _silver_padrao() -> Path:
+    preferido = REPO / "project2/data/silver/mencoes.csv"
+    return preferido if preferido.is_file() else REPO / "project2/data/silver/entidades_tipadas.csv"
+
+
+def associar(silver: Path | str | None = None, gazetteer: Path | str = GAZETTEER,
+             gold: Path | str = GOLD_PADRAO, saida: Path | str = ASSOCIACOES_PADRAO,
+             grafo_prefixo: Path | str = REPO / "project2/data/resultados/associacoes",
+             freq_min: int = 2, top_grafo: int = 30) -> dict:
+    """PMI entre pares de conceitos MeSH que coocorrem no mesmo caso do silver (excluindo o gold)."""
+    if freq_min < 1 or top_grafo < 1:
+        raise ValueError("freq_min e top_grafo devem ser >= 1")
+    excluidos = casos_gold(gold)
+    silver_path = Path(silver) if silver else _silver_padrao()
+    gazetteer, gold, saida = Path(gazetteer), Path(gold), Path(saida)
+    if not silver_path.is_file():
+        raise FileNotFoundError(f"Silver não encontrado: {silver_path}")
+
+    nomes_mesh: dict[str, str] = {}
+    if gazetteer.is_file():
+        with gazetteer.open(encoding="utf-8-sig", newline="") as handle:
+            for linha in csv.DictReader(handle):
+                code = (linha.get("code") or "").strip()
+                pref = (linha.get("preferred_term") or linha.get("term") or "").strip()
+                if code and pref and code not in nomes_mesh:
+                    nomes_mesh[code] = pref
+
+    casos_vistos: set[str] = set()
+    casos_excluidos: set[str] = set()
+    conceitos_por_caso: dict[str, set[str]] = defaultdict(set)
+    rotulos_fallback: dict[str, Counter] = defaultdict(Counter)
+
+    with silver_path.open(encoding="utf-8-sig", newline="") as handle:
+        for linha in csv.DictReader(handle):
+            cid = (linha.get("case_id") or "").strip()
+            if not cid:
+                continue
+            if cid in excluidos:
+                casos_excluidos.add(cid)
+                continue
+            casos_vistos.add(cid)
+            pol = (linha.get("polaridade") or linha.get("polarity") or "present").strip().lower()
+            if pol == "absent":
+                continue
+            codigo = (linha.get("mesh") or linha.get("concept_code") or "").strip()
+            if not codigo or codigo.lower() == "nan" or not codigo.startswith("D"):
+                continue
+            conceitos_por_caso[cid].add(codigo)
+            texto = (linha.get("texto") or "").strip()
+            if texto:
+                rotulos_fallback[codigo][texto.lower()] += 1
+
+    total_casos = len(casos_vistos)
+    if total_casos == 0:
+        raise ValueError("Nenhum caso elegível no silver após excluir o gabarito")
+
+    contagem_conceito: Counter = Counter()
+    contagem_pares: Counter = Counter()
+    for codigos in conceitos_por_caso.values():
+        ordenados = sorted(codigos)
+        for c in ordenados:
+            contagem_conceito[c] += 1
+        for i, a in enumerate(ordenados):
+            for b in ordenados[i + 1:]:
+                contagem_pares[(a, b)] += 1
+
+    def nome_conceito(codigo: str) -> str:
+        if codigo in nomes_mesh:
+            return nomes_mesh[codigo]
+        if rotulos_fallback[codigo]:
+            return rotulos_fallback[codigo].most_common(1)[0][0]
+        return codigo
+
+    linhas = []
+    for (a, b), c_ab in contagem_pares.items():
+        if c_ab < freq_min:
+            continue
+        c_a, c_b = contagem_conceito[a], contagem_conceito[b]
+        pmi = math.log2((c_ab * total_casos) / (c_a * c_b))
+        linhas.append({
+            "codigo_a": a,
+            "termo_a": nome_conceito(a),
+            "codigo_b": b,
+            "termo_b": nome_conceito(b),
+            "casos_ab": c_ab,
+            "casos_a": c_a,
+            "casos_b": c_b,
+            "pmi": round(pmi, 6),
+        })
+    linhas.sort(key=lambda r: (-r["pmi"], -r["casos_ab"], r["codigo_a"], r["codigo_b"]))
+
+    saida.parent.mkdir(parents=True, exist_ok=True)
+    with saida.open("w", encoding="utf-8", newline="") as handle:
+        writer = csv.DictWriter(handle, fieldnames=COLUNAS_ASSOCIACOES)
+        writer.writeheader()
+        writer.writerows(linhas)
+
+    # Exporta as associações mais fortes como um grafo de conceitos (nodes + edges)
+    prefixo = Path(grafo_prefixo)
+    prefixo.parent.mkdir(parents=True, exist_ok=True)
+    nodes_path = prefixo.with_name(prefixo.name + "-nodes.csv")
+    edges_path = prefixo.with_name(prefixo.name + "-edges.csv")
+    top_linhas = linhas[:top_grafo]
+    nos_vistos: dict[str, dict] = {}
+    arestas_grafo: list[dict] = []
+    for idx, r in enumerate(top_linhas, 1):
+        for col_c, col_t, col_n in (("codigo_a", "termo_a", "casos_a"), ("codigo_b", "termo_b", "casos_b")):
+            cod = r[col_c]
+            if cod not in nos_vistos:
+                nos_vistos[cod] = {
+                    "node_id": cod,
+                    "type": "Concept",
+                    "label": r[col_t],
+                    "attributes": f"code={cod}; cases={r[col_n]}",
+                }
+        arestas_grafo.append({
+            "edge_id": f"a{idx}",
+            "source_id": r["codigo_a"],
+            "target_id": r["codigo_b"],
+            "relation": "ASSOCIATED_WITH",
+            "attributes": f"cases_cooccur={r['casos_ab']}; pmi={r['pmi']}",
+        })
+    with nodes_path.open("w", encoding="utf-8", newline="") as handle:
+        w = csv.DictWriter(handle, fieldnames=["node_id", "type", "label", "attributes"])
+        w.writeheader()
+        w.writerows(nos_vistos.values())
+    with edges_path.open("w", encoding="utf-8", newline="") as handle:
+        w = csv.DictWriter(handle, fieldnames=["edge_id", "source_id", "target_id", "relation", "attributes"])
+        w.writeheader()
+        w.writerows(arestas_grafo)
+
+    resumo = {
+        "silver": _referencia(silver_path),
+        "silver_sha256": _sha256(silver_path),
+        "gold": _referencia(gold),
+        "gold_sha256": _sha256(gold),
+        "casos_processados": total_casos,
+        "casos_gold_excluidos": len(casos_excluidos),
+        "conceitos_distintos": len(contagem_conceito),
+        "freq_min": freq_min,
+        "pares_associados": len(linhas),
+        "grafo_nos": len(nos_vistos),
+        "grafo_arestas": len(arestas_grafo),
+        "grafo_nodes_csv": _referencia(nodes_path),
+        "grafo_edges_csv": _referencia(edges_path),
+    }
+    saida.with_suffix(".json").write_text(json.dumps(resumo, ensure_ascii=False, indent=2) + "\n", encoding="utf-8")
+    return resumo
+
+
 def main():
     parser = argparse.ArgumentParser(description=__doc__)
     sub = parser.add_subparsers(dest="comando", required=True)
@@ -234,13 +390,23 @@ def main():
     p.add_argument("--gazetteer", type=Path, default=GAZETTEER)
     p.add_argument("--saida", type=Path, default=REPO / "project2/data/resultados/termos.csv")
     p.add_argument("--top", type=int, default=100)
+    p = sub.add_parser("associar")
+    p.add_argument("--silver", type=Path, default=None)
+    p.add_argument("--gazetteer", type=Path, default=GAZETTEER)
+    p.add_argument("--gold", type=Path, default=GOLD_PADRAO)
+    p.add_argument("--saida", type=Path, default=ASSOCIACOES_PADRAO)
+    p.add_argument("--grafo-prefixo", type=Path, default=REPO / "project2/data/resultados/associacoes")
+    p.add_argument("--freq-min", type=int, default=2)
+    p.add_argument("--top-grafo", type=int, default=30)
     args = vars(parser.parse_args())
     comando = args.pop("comando")
+    acoes = {"gerar": gerar, "comparar": comparar, "associar": associar}
     try:
-        print(json.dumps((gerar if comando == "gerar" else comparar)(**args), ensure_ascii=False, indent=2))
+        print(json.dumps(acoes[comando](**args), ensure_ascii=False, indent=2))
     except (ValueError, FileNotFoundError, RuntimeError) as error:
         parser.exit(2, f"Erro: {error}\n")
 
 
 if __name__ == "__main__":
     main()
+

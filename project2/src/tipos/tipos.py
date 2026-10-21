@@ -14,6 +14,8 @@ from __future__ import annotations
 import argparse
 import csv
 import pickle
+import re
+import sys
 import time
 from collections import Counter
 from pathlib import Path
@@ -24,14 +26,21 @@ from sklearn.feature_extraction.text import TfidfVectorizer
 from sklearn.linear_model import LogisticRegression
 from sklearn.pipeline import Pipeline
 
-# Entregas de outras etapas ainda em mock: troque estes imports quando #29 e #32 publicarem.
-from mock import avaliar as avaliacao
-from mock.comum import DADOS_MOCK, REPO, casos_gold, ler_casos
-from mock.silver import ler_silver
+MODULO = Path(__file__).resolve().parent
+REPO = MODULO.parents[2]
+PROJECT1_SRC = REPO / "project1" / "src"
+for _pasta in (REPO, MODULO, PROJECT1_SRC, PROJECT1_SRC / "sintagmas", PROJECT1_SRC / "dicionarios"):
+    if str(_pasta) not in sys.path:
+        sys.path.insert(0, str(_pasta))
 
-import lexico
+from project1.src.stopwords.extractors.common import detect_polarity, split_sentences  # noqa: E402
+from project2.src.avaliacao import avaliar as avaliacao  # noqa: E402
+from project2.src.comum import casos_gold, ler_casos as _ler_casos_lista  # noqa: E402
+from project2.src.dados.silver import REGRAS, ler_silver  # noqa: E402
 
-GOLD = DADOS_MOCK / "gold" / "mencoes.csv"
+import lexico  # noqa: E402
+
+GOLD = REPO / "project2" / "data" / "gold" / "mencoes.csv"
 MENCOES = REPO / "project2" / "data" / "mencoes.csv"
 TIPADAS = REPO / "project2" / "data" / "mencoes_tipadas.csv"
 RESULTADOS = REPO / "project2" / "data" / "resultados"
@@ -48,10 +57,36 @@ MODOS = {
     "ambiguas": "como o anterior, mas o classificador decide também em diseases/drugs do MeSH",
     "classificador": "só o classificador",
 }
-COLUNAS = ["case_id", "id", "start", "end", "texto", "tipo", "mesh", "confianca", "fonte"]
+COLUNAS = ["case_id", "id", "start", "end", "texto", "tipo", "mesh", "polaridade", "confianca", "fonte"]
+
+_CORTE_CLAUSULA = re.compile(
+    r"[;:]|\b(?:but|however|although|whereas)\b|,\s+(?:and\s+)?[a-z]+\s+(?:was|were|is|are|showed|revealed)\b",
+    re.I,
+)
 
 
 # ======================================================================= dados ==
+def ler_casos() -> dict[str, str]:
+    """{case_id: case_text} usando o leitor oficial de `project2.src.comum`."""
+    return dict(_ler_casos_lista())
+
+
+def polaridade_da_mencao(texto_caso: str, inicio: int, fim: int) -> str:
+    """Detecta polaridade ('present' ou 'absent') na janela da oração que antecede a menção."""
+    if not texto_caso:
+        return "present"
+    sentencas = split_sentences(texto_caso)
+    sent = next((s for s in sentencas if s.start <= inicio < s.end), None)
+    s_ini = sent.start if sent else max(0, inicio - 80)
+    cortes = list(_CORTE_CLAUSULA.finditer(texto_caso, s_ini, inicio))
+    inicio_oracao = cortes[-1].end() if cortes else s_ini
+    janela_antes = texto_caso[inicio_oracao:inicio]
+    trecho_mencao = texto_caso[inicio:fim]
+    if re.match(r"^\s*(?:no|without)\b", trecho_mencao, re.I):
+        return "absent"
+    return detect_polarity(janela_antes)
+
+
 def ler_mencoes(caminho: Path) -> list[dict]:
     """Linhas de uma tabela de menções, com `start`/`end` inteiros."""
     with open(caminho, encoding="utf-8", newline="") as handle:
@@ -200,16 +235,28 @@ def classificar(mencoes: list[dict], textos: dict[str, str]) -> list[tuple[str, 
 
 # =================================================================== tipagem ==
 def tipar(mencoes: list[dict], textos: dict[str, str], modo: str = "lexico+classificador") -> list[dict]:
-    """As mesmas menções com tipo, mesh, confianca e fonte (lexico | classificador | "").
+    """As mesmas menções com tipo, mesh, polaridade, confianca e fonte (lexico | classificador | "").
 
-    O léxico responde com confiança 1. No modo `ambiguas`, se o classificador ficar abaixo do limiar
-    numa menção de categoria ambígua, o tipo do léxico é mantido: a variante não perde cobertura.
+    O léxico responde com confiança 1 e expande siglas definidas no próprio caso (`Forma Extensa (SIGLA)`).
+    No modo `ambiguas`, se o classificador ficar abaixo do limiar numa menção de categoria ambígua,
+    o tipo do léxico é mantido: a variante não perde cobertura.
     """
     if modo not in MODOS:
         raise ValueError(f"modo {modo!r}; use um de {sorted(MODOS)}")
-    respostas = [lexico.consultar(m["texto"]) for m in mencoes]
-    saida = [{**m, "tipo": r.tipo, "mesh": r.mesh, "confianca": 1.0 if r.tipo else 0.0,
-              "fonte": "lexico" if r.tipo else ""} for m, r in zip(mencoes, respostas)]
+    respostas = [lexico.consultar(m["texto"], textos.get(m["case_id"], "")) for m in mencoes]
+    saida = [
+        {
+            **m,
+            "tipo": r.tipo,
+            "mesh": r.mesh,
+            "polaridade": polaridade_da_mencao(
+                textos.get(m["case_id"], ""), int(m["start"]), int(m["end"])
+            ),
+            "confianca": 1.0 if r.tipo else 0.0,
+            "fonte": "lexico" if r.tipo else "",
+        }
+        for m, r in zip(mencoes, respostas)
+    ]
     if modo == "lexico":
         return saida
 
@@ -245,7 +292,7 @@ def _gravar_csv(caminho: Path, linhas: list[dict]) -> None:
 
 
 def comparar() -> list[dict]:
-    """Retreina e mede os 4 modos no gabarito, em duas entradas:
+    """Retreina e mede regras P1 + os 4 modos no gabarito, em duas entradas:
 
     gabarito  as fronteiras do gabarito: mede só a tipagem (casamento exato, os pares são perfeitos)
     crf       as menções da etapa 2 (data/mencoes.csv): ponta a ponta, exato e por sobreposição
@@ -256,14 +303,40 @@ def comparar() -> list[dict]:
     print("treino:", treinar())
     textos = ler_casos()
     gold = ler_mencoes(GOLD)
+    ids = casos_gold()
     entradas = {"gabarito": (gold, (True,))}
     if MENCOES.is_file():
-        ids = casos_gold()
         entradas["crf"] = ([m for m in ler_mencoes(MENCOES) if m["case_id"] in ids], (True, False))
     else:
         print(f"{MENCOES.relative_to(REPO)} não existe: rode `entidades.py prever` para a linha ponta a ponta")
 
     linhas, confusao, por_modo = [], [], {}
+
+    # Linha de base: regras P1 sobre os casos do gabarito
+    if REGRAS.is_file():
+        regras_mencoes = limpar_silver([m for m in ler_mencoes(REGRAS) if m["case_id"] in ids])
+        for exato in (True, False):
+            m = avaliacao.avaliar_tipos(regras_mencoes, gold, exato)
+            casamento = "exato" if exato else "sobreposicao"
+            linhas.append({
+                "sistema": "regras P1",
+                "entrada": "regras",
+                "casamento": casamento,
+                "cobertura": round(m["cobertura"], 4),
+                "acuracia": round(m["acuracia"], 4),
+                "macro_f1": round(m["macro_f1"], 4),
+                "acuracia_polaridade": round(m["acuracia_polaridade"], 4),
+                "f1_absent": round(m["f1_absent"], 4),
+                "n_pred": m["n_pred"],
+                "n_gold": m["n_gold"],
+                **{f"f1_{t}": round(m["por_tipo"][t]["f1"], 4) for t in TIPOS if t in m["por_tipo"]},
+            })
+            confusao += [
+                {"sistema": "regras P1", "entrada": "regras", "casamento": casamento,
+                 "gold": g, "previsto": p or "(sem tipo)", "n": n}
+                for (g, p), n in sorted(m["confusao"].items())
+            ]
+
     for entrada, (mencoes, casamentos) in entradas.items():
         for modo in MODOS:
             tipadas = tipar(mencoes, textos, modo)
@@ -272,13 +345,24 @@ def comparar() -> list[dict]:
             for exato in casamentos:
                 m = avaliacao.avaliar_tipos(tipadas, gold, exato)
                 casamento = "exato" if exato else "sobreposicao"
-                linhas.append({"sistema": modo, "entrada": entrada, "casamento": casamento,
-                               "cobertura": round(m["cobertura"], 4), "acuracia": round(m["acuracia"], 4),
-                               "macro_f1": round(m["macro_f1"], 4), "n_pred": m["n_pred"], "n_gold": m["n_gold"],
-                               **{f"f1_{t}": round(m["por_tipo"][t]["f1"], 4) for t in TIPOS if t in m["por_tipo"]}})
-                confusao += [{"sistema": modo, "entrada": entrada, "casamento": casamento,
-                              "gold": g, "previsto": p or "(sem tipo)", "n": n}
-                             for (g, p), n in sorted(m["confusao"].items())]
+                linhas.append({
+                    "sistema": modo,
+                    "entrada": entrada,
+                    "casamento": casamento,
+                    "cobertura": round(m["cobertura"], 4),
+                    "acuracia": round(m["acuracia"], 4),
+                    "macro_f1": round(m["macro_f1"], 4),
+                    "acuracia_polaridade": round(m["acuracia_polaridade"], 4),
+                    "f1_absent": round(m["f1_absent"], 4),
+                    "n_pred": m["n_pred"],
+                    "n_gold": m["n_gold"],
+                    **{f"f1_{t}": round(m["por_tipo"][t]["f1"], 4) for t in TIPOS if t in m["por_tipo"]},
+                })
+                confusao += [
+                    {"sistema": modo, "entrada": entrada, "casamento": casamento,
+                     "gold": g, "previsto": p or "(sem tipo)", "n": n}
+                    for (g, p), n in sorted(m["confusao"].items())
+                ]
 
     lado_a_lado = [{"case_id": g["case_id"], "start": g["start"], "end": g["end"], "texto": g["texto"],
                     "gabarito": g["tipo"], **{modo: por_modo[modo][k]["tipo"] for modo in MODOS}}

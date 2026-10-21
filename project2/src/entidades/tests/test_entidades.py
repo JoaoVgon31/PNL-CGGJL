@@ -4,10 +4,13 @@ import unittest
 from pathlib import Path
 
 MODULO = Path(__file__).resolve().parents[1]
-sys.path.insert(0, str(MODULO))
+REPO = Path(__file__).resolve().parents[4]
+for _p in (REPO, MODULO):
+    if str(_p) not in sys.path:
+        sys.path.insert(0, str(_p))
 import entidades  # noqa: E402
-from mock import avaliar  # noqa: E402
-from mock.comum import casos_gold, tokenizar  # noqa: E402
+from project2.src.avaliacao import avaliar  # noqa: E402
+from project2.src.comum import casos_gold, tokenizar  # noqa: E402
 
 TEXTO = ("A 44-year-old woman presented with a 3-day history of right flank and lower quadrant "
          "abdominal pain associated with nausea and constipation.")

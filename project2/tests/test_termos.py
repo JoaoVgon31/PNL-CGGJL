@@ -5,7 +5,7 @@ import unittest
 from pathlib import Path
 from unittest.mock import patch
 
-from project2.src.termos.termos import calcular_c_values, comparar, contar_caso, gerar, ler_termos, normalizar
+from project2.src.termos.termos import associar, calcular_c_values, comparar, contar_caso, gerar, ler_termos, normalizar
 
 
 class TermosTests(unittest.TestCase):
@@ -95,3 +95,43 @@ class TermosTests(unittest.TestCase):
             with saida.open() as handle:
                 linhas = list(csv.DictReader(handle))
             self.assertEqual(linhas[0]["codigos_mesh"], "D1|D2")
+
+    def test_associacoes_pmi_conceitos_mesh_e_grafo(self):
+        with tempfile.TemporaryDirectory() as d:
+            raiz = Path(d)
+            silver, gaz, gold = raiz / "silver.csv", raiz / "gaz.csv", raiz / "gold.txt"
+            saida, prefixo = raiz / "associacoes.csv", raiz / "grafo_assoc"
+            silver.write_text(
+                "case_id,id,start,end,texto,tipo,mesh,polaridade\n"
+                "PMC1_01,m1,0,6,cancer,Diagnosis,D009369,present\n"
+                "PMC1_01,m2,10,20,metastasis,Finding,D009362,present\n"
+                "PMC2_01,m1,0,6,cancer,Diagnosis,D009369,present\n"
+                "PMC2_01,m2,10,20,metastasis,Finding,D009362,present\n"
+                "PMC3_01,m1,0,5,fever,Symptom,D005334,present\n"
+                "PMC4_01,m1,0,6,cancer,Diagnosis,D009369,present\n"
+                "PMC4_01,m2,10,20,metastasis,Finding,D009362,absent\n"
+                "PMC9_01,m1,0,6,cancer,Diagnosis,D009369,present\n",
+                encoding="utf-8",
+            )
+            gaz.write_text(
+                "term,code,preferred_term,category\n"
+                "Cancer,D009369,Neoplasms,diseases\n"
+                "Metastasis,D009362,Neoplasm Metastasis,diseases\n",
+                encoding="utf-8",
+            )
+            gold.write_text("PMC9_01\n", encoding="utf-8")
+            resumo = associar(silver=silver, gazetteer=gaz, gold=gold, saida=saida, grafo_prefixo=prefixo, freq_min=2)
+            self.assertEqual(resumo["casos_processados"], 4)
+            self.assertEqual(resumo["casos_gold_excluidos"], 1)
+            self.assertEqual(resumo["pares_associados"], 1)
+            with saida.open(encoding="utf-8") as handle:
+                linhas = list(csv.DictReader(handle))
+            self.assertEqual(len(linhas), 1)
+            self.assertEqual(linhas[0]["codigo_a"], "D009362")
+            self.assertEqual(linhas[0]["termo_a"], "Neoplasm Metastasis")
+            self.assertEqual(linhas[0]["codigo_b"], "D009369")
+            self.assertEqual(linhas[0]["termo_b"], "Neoplasms")
+            self.assertAlmostEqual(float(linhas[0]["pmi"]), math.log2(2 * 4 / (2 * 3)), places=5)
+            self.assertTrue((raiz / "grafo_assoc-nodes.csv").is_file())
+            self.assertTrue((raiz / "grafo_assoc-edges.csv").is_file())
+

@@ -1,0 +1,64 @@
+case_id,id,start,end,texto,tipo,mesh,polaridade
+PMC3437073_01,s1,46,61,increasing mass,Symptom,,present
+PMC3437073_01,s2,88,93,chest,AnatomicalSite,ANAT032,present
+PMC3437073_01,s3,104,111,abdomen,AnatomicalSite,ANAT033,present
+PMC3437073_01,s4,244,271,lobulated subcutaneous mass,Finding,,present
+PMC3437073_01,s5,366,370,skin,AnatomicalSite,ANAT018,present
+PMC3437073_01,s6,487,492,chest,AnatomicalSite,ANAT032,present
+PMC3437073_01,s7,503,510,abdomen,AnatomicalSite,ANAT033,present
+PMC3437073_01,s8,603,608,Chest,AnatomicalSite,ANAT032,present
+PMC3437073_01,s9,625,641,calcified lesion,Finding,,present
+PMC3437073_01,s10,670,674,lung,AnatomicalSite,ANAT007,present
+PMC3437073_01,s11,696,705,pulmonary,AnatomicalSite,ANAT007,present
+PMC3437073_01,s12,890,892,CT,Exam,,present
+PMC3437073_01,s13,905,912,abdomen,AnatomicalSite,ANAT033,present
+PMC3437073_01,s14,924,939,splenic abscess,Finding,ANAT005,present
+PMC3437073_01,s15,967,987,subcutaneous abscess,Finding,D000038,present
+PMC3437073_01,s16,1006,1011,chest,AnatomicalSite,ANAT032,present
+PMC3437073_01,s17,1875,1890,Rifampin 600 mg,Medication,D012293,present
+PMC3437073_01,s18,1895,1912,Ethambutol 600 mg,Medication,D004977,present
+PMC3437073_01,s19,1913,1939,OD and Pyrazinamide 500 mg,Medication,D011718,present
+PMC3437073_01,s20,2021,2029,improved,Outcome,,present
+PMC9532611_01,s1,113,124,hypokalemic,Exam,,present
+PMC9532611_01,s2,113,127,hypokalemic (1,Symptom,,present
+PMC9532611_01,s3,126,136,1.8 mmol/l,ExamResult,,present
+PMC6949661_01,s1,604,623,Computed tomography,Exam,D014054,present
+PMC6949661_01,s2,1454,1472,intravenous fluids,Treatment,,present
+PMC6949661_01,s3,1489,1522,inhibitors and transfused 2 units,Medication,,present
+PMC6949661_01,s4,1504,1514,transfused,Treatment,,present
+PMC6949661_01,s5,1694,1709,active bleeding,Finding,D006470,absent
+PMC6949661_01,s6,1837,1851,fresh bleeding,Finding,D006470,present
+PMC4630775_01,s1,153,301,desquamation of the palm and a leathery appearance of the skin to the right dorsal hand and circumferential forearm with frank ischemia to the thumb,Symptom,D007511,present
+PMC4630775_01,s2,173,177,palm,AnatomicalSite,ANAT040,present
+PMC4630775_01,s3,211,215,skin,AnatomicalSite,ANAT018,present
+PMC4630775_01,s4,229,235,dorsal,AnatomicalSite,ANAT048,present
+PMC4630775_01,s5,261,268,forearm,AnatomicalSite,ANAT038,present
+PMC6083636_03,s1,480,512,scores are expected in less than,Exam,,present
+PMC6083636_03,s2,513,516,20%,ExamResult,,present
+PMC9969157_01,s1,312,331,sibling with LCHADD,History,,present
+PMC9969157_01,s2,859,901,peripheral intravenous line was placed and,Exam,,present
+PMC9969157_01,s3,902,905,10%,ExamResult,,present
+PMC9969157_01,s4,906,931,dextrose fluids at 150 ml,Medication,D005947,present
+PMC9969157_01,s5,1292,1324,LCHADD given elevation of C16-OH,Diagnosis,,present
+PMC9969157_01,s6,1329,1370,C18-OH levels with the ultimate diagnosis,Diagnosis,D003933,present
+PMC9969157_01,s7,1781,1803,unit standard of 20 ml,Medication,,present
+PMC9969157_01,s8,1815,1835,was limited to 23 ml,Medication,,present
+PMC9969157_01,s9,2401,2406,x-ray,Exam,,present
+PMC9969157_01,s10,2495,2524,NEC (modified Bell Stage IIa),Diagnosis,,present
+PMC9969157_01,s11,2709,2717,with 4 g,Medication,,present
+PMC9969157_01,s12,2774,2781,and 2 g,Medication,,present
+PMC9969157_01,s13,2778,2788,2 g/kg/day,Exam,,present
+PMC9969157_01,s14,2789,2792,20%,ExamResult,,present
+PMC9969157_01,s15,3095,3110,discharged home,Outcome,,present
+PMC11259348_01,s1,22,132,"fever, loose stools, and dark color urine was diagnosed with PCH after having positive Donath-Landsteiner test",Symptom,D005334,present
+PMC11259348_01,s2,83,86,PCH,Diagnosis,,present
+PMC11259348_01,s3,134,156,Since hemoglobin level,Exam,D006454,present
+PMC11259348_01,s4,161,167,4 g/dL,ExamResult,,present
+PMC11259348_01,s5,289,299,transfused,Treatment,,present
+PMC11723754_01,s1,644,655,improvement,Outcome,,absent
+PMC11723754_01,s2,1021,1050,septicaemia with septic shock,Diagnosis,D012772,present
+PMC11723754_01,s3,1070,1099,transfusion in view of low Hb,Exam,,present
+PMC11723754_01,s4,1100,1105,7g/dl,ExamResult,,present
+PMC11723754_01,s5,1285,1293,improved,Outcome,,present
+PMC11723754_01,s6,1677,1688,improvement,Outcome,,present
+PMC11723754_01,s7,1837,1847,discharged,Outcome,,present

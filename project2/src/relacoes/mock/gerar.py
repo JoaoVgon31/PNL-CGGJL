@@ -18,9 +18,9 @@ from typing import Dict, List, Optional
 from project2.src.relacoes.mock import comum
 
 REPO_ROOT = comum.REPO
-MENCOES_SILVER = REPO_ROOT / "project2" / "data" / "mock" / "silver" / "mencoes.csv"
+MENCOES_SILVER = REPO_ROOT / "project2" / "data" / "silver" / "mencoes.csv"
 PROCESSADOS = REPO_ROOT / "project1" / "data" / "processed"
-SAIDA = REPO_ROOT / "project2" / "data" / "mock" / "relacoes"
+SAIDA = REPO_ROOT / "project2" / "data" / "silver" / "relacoes_pares"
 
 
 def parse_attributes(bruto: Optional[str]) -> Dict[str, str]:

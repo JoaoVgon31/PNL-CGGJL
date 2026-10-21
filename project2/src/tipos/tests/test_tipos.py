@@ -7,12 +7,15 @@ from unittest import mock as patch
 import numpy as np
 
 MODULO = Path(__file__).resolve().parents[1]
-sys.path.insert(0, str(MODULO))
+REPO = Path(__file__).resolve().parents[4]
+for _p in (REPO, MODULO):
+    if str(_p) not in sys.path:
+        sys.path.insert(0, str(_p))
 import lexico  # noqa: E402
 import tipos  # noqa: E402
-from mock import avaliar  # noqa: E402
-from mock.comum import casos_gold  # noqa: E402
-from mock.silver import SILVER, ler_silver  # noqa: E402
+from project2.src.avaliacao import avaliar  # noqa: E402
+from project2.src.comum import casos_gold  # noqa: E402
+from project2.src.dados.silver import SILVER, ler_silver  # noqa: E402
 
 
 class DadosTests(unittest.TestCase):
@@ -21,7 +24,7 @@ class DadosTests(unittest.TestCase):
             self.assertLess(linha["start"], linha["end"])
             self.assertIn(linha["tipo"], tipos.TIPOS)
 
-    @unittest.skipUnless(SILVER.is_file(), "rode `entidades.py mock` para gerar o silver")
+    @unittest.skipUnless(SILVER.is_file(), "rode `python project2/src/dados/silver.py` para gerar o silver")
     def test_silver_nunca_tem_casos_do_gabarito(self):
         self.assertFalse({linha["case_id"] for linha in ler_silver()} & casos_gold())
 
@@ -38,6 +41,12 @@ class LexicoTests(unittest.TestCase):
     def test_tipo_sem_codigo_e_codigo_sem_tipo(self):
         self.assertEqual(lexico.consultar("6cm cystic lesion"), lexico.Resposta("Finding", "", "termos", "termos"))
         self.assertEqual(lexico.consultar("FNA"), lexico.Resposta("", "", "", ""))
+
+    def test_expansao_de_sigla_definida_no_texto(self):
+        texto_caso = "Transesophageal echocardiogram (TEE) revealed thrombosis. Follow-up TEE was normal."
+        esperado = lexico.consultar("Transesophageal echocardiogram")
+        self.assertEqual(esperado.tipo, "Exam")
+        self.assertEqual(lexico.consultar("TEE", texto_caso), esperado)
 
     def test_categoria_do_mesh_vira_tipo(self):
         resposta = lexico.consultar("rifampin")
@@ -156,6 +165,16 @@ class TiparTests(unittest.TestCase):
         with patch.patch.object(tipos, "classificar", side_effect=self._falso):
             linhas = tipos.tipar(self.MENCOES, {"c": self.TEXTO}, "classificador")
         self.assertEqual(linhas[0]["mesh"], "D009325")
+
+    def test_polaridade_presente_e_ausente(self):
+        texto = "Patient presented with nausea, but denied fever and headache."
+        mencoes = [
+            {"case_id": "c", "id": "m1", "start": 23, "end": 29, "texto": "nausea"},
+            {"case_id": "c", "id": "m2", "start": 42, "end": 47, "texto": "fever"},
+            {"case_id": "c", "id": "m3", "start": 52, "end": 60, "texto": "headache"},
+        ]
+        linhas = tipos.tipar(mencoes, {"c": texto}, "lexico")
+        self.assertEqual([l["polaridade"] for l in linhas], ["present", "absent", "absent"])
 
 
 if __name__ == "__main__":

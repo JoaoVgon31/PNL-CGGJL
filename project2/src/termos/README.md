@@ -21,6 +21,7 @@ Para a entrega definitiva, obtenha a lista gold da #29 e colete o corpus conform
 ```bash
 python3 -m project2.src.termos.termos gerar --corpus project2/data/corpus/csv/full/cases.csv --freq-min 5 --n-max 4
 python3 -m project2.src.termos.termos comparar --top 100
+python3 -m project2.src.termos.termos associar --freq-min 2 --top-grafo 30
 ```
 
 Também funciona `python3 project2/src/termos/termos.py gerar ...`.
@@ -36,6 +37,7 @@ Também funciona `python3 project2/src/termos/termos.py gerar ...`.
 | `--banco` | SQLite temporário | Caminho novo para preservar contagens; não sobrescreve bancos existentes |
 
 `comparar` aceita `--termos`, `--gazetteer`, `--saida` e `--top`.
+`associar` calcula o PMI entre pares de conceitos MeSH que coocorrem no mesmo caso do silver (excluindo casos do `gold/casos.txt` e menções negadas), gerando `project2/data/associacoes.csv` (`codigo_a, termo_a, codigo_b, termo_b, casos_ab, casos_a, casos_b, pmi`) e o grafo de conceitos em `project2/data/resultados/associacoes-nodes.csv` e `associacoes-edges.csv`.
 Cada CSV de saída tem um JSON acompanhante com parâmetros e resultados. A geração registra
 hashes do corpus, lista gold, código e modelo HMM; a comparação registra hashes do ranking e do gazetteer.
 O manifesto especifica se a execução foi limitada. A ordem é determinística; tempo de execução varia.

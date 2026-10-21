@@ -1,0 +1,225 @@
+case_id,id,start,end,texto,tipo,mesh,polaridade
+PMC11259348_01,g1,22,27,fever,Symptom,D005334,present
+PMC11259348_01,g2,29,41,loose stools,Symptom,,present
+PMC11259348_01,g3,47,63,dark color urine,Symptom,,present
+PMC11259348_01,g4,83,86,PCH,Diagnosis,,present
+PMC11259348_01,g5,100,108,positive,ExamResult,,present
+PMC11259348_01,g6,109,132,Donath-Landsteiner test,Exam,,present
+PMC11259348_01,g7,140,156,hemoglobin level,Exam,D006454,present
+PMC11259348_01,g8,161,167,4 g/dL,ExamResult,,present
+PMC11259348_01,g9,204,215,blood group,Exam,D001789,present
+PMC11259348_01,g10,220,235,A Rh D-positive,ExamResult,,present
+PMC11259348_01,g11,240,258,antibody screening,Exam,D008403,present
+PMC11259348_01,g12,263,271,negative,ExamResult,,present
+PMC11259348_01,g13,289,299,transfused,Treatment,,present
+PMC11259348_01,g14,405,422,blood transfusion,Treatment,D001803,present
+PMC11259348_01,g15,450,464,hemoglobinuria,Symptom,D006456,present
+PMC11723754_01,g1,43,71,traumatic spinal cord injury,Diagnosis,D013119,present
+PMC11723754_01,g2,80,96,fall from height,History,,present
+PMC11723754_01,g3,103,131,neurogenic bowel and bladder,Diagnosis,D055496,present
+PMC11723754_01,g4,137,162,Grade III pressure injury,Finding,D003668,present
+PMC11723754_01,g5,168,181,sacral region,AnatomicalSite,,present
+PMC11723754_01,g6,290,297,7cmx3cm,ExamResult,,present
+PMC11723754_01,g7,471,493,fall in blood pressure,Finding,D001794,present
+PMC11723754_01,g8,505,531,increased respiratory rate,Symptom,D056152,present
+PMC11723754_01,g9,579,598,fluid resuscitation,Treatment,D012151,present
+PMC11723754_01,g10,644,655,improvement,Outcome,,absent
+PMC11723754_01,g11,708,723,inotropic drugs,Medication,D004364,present
+PMC11723754_01,g12,767,802,multiple organ dysfunction syndrome,Diagnosis,D009102,present
+PMC11723754_01,g13,811,831,Renal function tests,Exam,ANAT004,present
+PMC11723754_01,g14,839,860,deranged electrolytes,Finding,D004573,present
+PMC11723754_01,g15,865,882,raised creatinine,Finding,D003404,present
+PMC11723754_01,g16,1021,1050,septicaemia with septic shock,Diagnosis,D012772,present
+PMC11723754_01,g17,1065,1081,PRBC transfusion,Treatment,,present
+PMC11723754_01,g18,1093,1099,low Hb,Exam,,present
+PMC11723754_01,g19,1100,1105,7g/dl,ExamResult,,present
+PMC11723754_01,g20,1213,1226,Noradrenaline,Medication,D009638,present
+PMC11723754_01,g21,1285,1293,improved,Outcome,,present
+PMC11723754_01,g22,1305,1311,stable,Outcome,,present
+PMC11723754_01,g23,1325,1346,antibiotic medication,Medication,D000900,present
+PMC11723754_01,g24,1409,1429,creatinine clearance,Exam,D003404,present
+PMC11723754_01,g25,1574,1598,blood and urine cultures,Exam,,present
+PMC11723754_01,g26,1604,1611,sterile,ExamResult,,present
+PMC11723754_01,g27,1664,1688,considerable improvement,Outcome,,present
+PMC11723754_01,g28,1773,1796,strengthening exercises,Treatment,,present
+PMC11723754_01,g29,1837,1847,discharged,Outcome,,present
+PMC11723754_01,g30,1901,1919,granulation tissue,Finding,,present
+PMC11723754_01,g31,1968,2006,bilateral hip knee ankle foot orthosis,Treatment,ANAT045,present
+PMC3437073_01,g1,36,61,gradually increasing mass,Symptom,,present
+PMC3437073_01,g2,69,93,left lateral lower chest,AnatomicalSite,ANAT032,present
+PMC3437073_01,g3,98,111,upper abdomen,AnatomicalSite,ANAT033,present
+PMC3437073_01,g4,104,111,abdomen,AnatomicalSite,ANAT033,present
+PMC3437073_01,g5,244,271,lobulated subcutaneous mass,Finding,,present
+PMC3437073_01,g6,288,292,7 cm,ExamResult,,present
+PMC3437073_01,g7,366,370,skin,AnatomicalSite,ANAT018,present
+PMC3437073_01,g8,476,492,left lower chest,AnatomicalSite,ANAT032,absent
+PMC3437073_01,g9,497,510,upper abdomen,AnatomicalSite,ANAT033,present
+PMC3437073_01,g10,503,510,abdomen,AnatomicalSite,ANAT033,present
+PMC3437073_01,g11,526,532,spleen,AnatomicalSite,ANAT005,present
+PMC3437073_01,g12,603,615,Chest X-rays,Exam,ANAT032,present
+PMC3437073_01,g13,625,641,calcified lesion,Finding,,present
+PMC3437073_01,g14,664,674,right lung,AnatomicalSite,ANAT007,present
+PMC3437073_01,g15,692,718,old pulmonary tuberculosis,Diagnosis,D014397,present
+PMC3437073_01,g16,720,741,Abdominal radiographs,Exam,ANAT033,present
+PMC3437073_01,g17,749,766,calcified lesions,Finding,,present
+PMC3437073_01,g18,774,793,left upper quadrant,AnatomicalSite,,present
+PMC3437073_01,g19,806,816,Ultrasound,Exam,,present
+PMC3437073_01,g20,845,860,enlarged spleen,Finding,D013163,present
+PMC3437073_01,g21,854,860,spleen,AnatomicalSite,ANAT005,present
+PMC3437073_01,g22,875,888,calcification,Finding,,present
+PMC3437073_01,g23,890,897,CT scan,Exam,,present
+PMC3437073_01,g24,924,939,splenic abscess,Finding,ANAT005,present
+PMC3437073_01,g25,967,987,subcutaneous abscess,Finding,D000038,present
+PMC3437073_01,g26,1000,1016,lower chest wall,AnatomicalSite,ANAT032,present
+PMC3437073_01,g27,1052,1091,complicated tuberculous splenic abscess,Diagnosis,ANAT005,present
+PMC3437073_01,g28,1155,1175,subcutaneous abscess,Finding,D000038,present
+PMC3437073_01,g29,1205,1216,splenectomy,Treatment,D013156,present
+PMC3437073_01,g30,1251,1257,spleen,AnatomicalSite,ANAT005,present
+PMC3437073_01,g31,1314,1330,lower chest wall,AnatomicalSite,ANAT032,present
+PMC3437073_01,g32,1345,1359,abscess cavity,Finding,D000038,present
+PMC3437073_01,g33,1371,1377,spleen,AnatomicalSite,ANAT005,present
+PMC3437073_01,g34,1401,1421,subcutaneous abscess,Finding,D000038,present
+PMC3437073_01,g35,1451,1467,lower chest wall,AnatomicalSite,ANAT032,present
+PMC3437073_01,g36,1495,1504,diaphragm,AnatomicalSite,,present
+PMC3437073_01,g37,1530,1539,thick pus,Finding,D013492,present
+PMC3437073_01,g38,1544,1561,necrotic material,Finding,,present
+PMC3437073_01,g39,1563,1577,Histopathology,Exam,,present
+PMC3437073_01,g40,1620,1641,tuberculoid granuloma,Finding,D006099,present
+PMC3437073_01,g41,1708,1726,caseation necrosis,Finding,D009336,present
+PMC3437073_01,g42,1739,1765,Acid fast bacilli staining,Exam,D013194,present
+PMC3437073_01,g43,1767,1801,tuberculous and bacterial cultures,Exam,,present
+PMC3437073_01,g44,1811,1819,negative,ExamResult,,present
+PMC3437073_01,g45,1848,1857,Isoniazid,Medication,D007538,present
+PMC3437073_01,g46,1875,1883,Rifampin,Medication,D012293,present
+PMC3437073_01,g47,1895,1905,Ethambutol,Medication,D004977,present
+PMC3437073_01,g48,1920,1932,Pyrazinamide,Medication,D011718,present
+PMC3437073_01,g49,2021,2029,improved,Outcome,,present
+PMC3437073_01,g50,2033,2061,anti-tuberculous medications,Medication,,present
+PMC3437073_01,g51,2073,2095,good clinical progress,Outcome,,present
+PMC4630775_01,g1,153,165,desquamation,Symptom,,present
+PMC4630775_01,g2,173,177,palm,AnatomicalSite,ANAT040,present
+PMC4630775_01,g3,184,203,leathery appearance,Symptom,,present
+PMC4630775_01,g4,211,215,skin,AnatomicalSite,ANAT018,present
+PMC4630775_01,g5,223,240,right dorsal hand,AnatomicalSite,ANAT048,present
+PMC4630775_01,g6,245,268,circumferential forearm,AnatomicalSite,ANAT038,present
+PMC4630775_01,g7,274,288,frank ischemia,Symptom,D007511,present
+PMC4630775_01,g8,296,301,thumb,AnatomicalSite,,present
+PMC6083636_03,g1,0,28,Best corrected visual acuity,Exam,D014792,present
+PMC6083636_03,g2,33,44,0.50 logMAR,ExamResult,,present
+PMC6083636_03,g3,52,54,RE,AnatomicalSite,,present
+PMC6083636_03,g4,59,70,0.40 logMAR,ExamResult,,present
+PMC6083636_03,g5,78,80,LE,AnatomicalSite,,present
+PMC6083636_03,g6,114,142,Ishihara isochromatic plates,Exam,,present
+PMC6083636_03,g7,223,235,14 out of 15,ExamResult,,present
+PMC6083636_03,g8,261,263,RE,AnatomicalSite,,present
+PMC6083636_03,g9,268,280,15 out of 15,ExamResult,,present
+PMC6083636_03,g10,290,292,LE,AnatomicalSite,,present
+PMC6083636_03,g11,298,324,Farnsworth Munsell 100-Hue,Exam,,present
+PMC6083636_03,g12,355,358,127,ExamResult,,present
+PMC6083636_03,g13,367,369,RE,AnatomicalSite,,present
+PMC6083636_03,g14,374,377,106,ExamResult,,present
+PMC6083636_03,g15,386,388,LE,AnatomicalSite,,present
+PMC6083636_03,g16,536,554,Cover-test at near,Exam,,present
+PMC6083636_03,g17,565,587,intermittent exotropia,ExamResult,,present
+PMC6083636_03,g18,615,635,horizontal nystagmus,Finding,D009759,present
+PMC6083636_03,g19,756,765,nystagmus,Finding,,absent
+PMC6949661_01,g1,114,119,dizzy,Symptom,,present
+PMC6949661_01,g2,124,132,confused,Symptom,,present
+PMC6949661_01,g3,139,159,urinary incontinence,Symptom,D014549,present
+PMC6949661_01,g4,186,197,convulsions,Symptom,D012640,absent
+PMC6949661_01,g5,222,227,fever,Symptom,D005334,absent
+PMC6949661_01,g6,229,233,head,AnatomicalSite,ANAT024,absent
+PMC6949661_01,g7,229,237,headache,Symptom,D006261,absent
+PMC6949661_01,g8,239,249,chest pain,Symptom,D002637,absent
+PMC6949661_01,g9,251,270,shortness of breath,Symptom,D004417,absent
+PMC6949661_01,g10,275,287,palpitations,Symptom,,absent
+PMC6949661_01,g11,292,308,cardiac diseases,History,D006331,present
+PMC6949661_01,g12,330,335,pulse,Exam,,present
+PMC6949661_01,g13,340,359,75 beats per minute,ExamResult,,present
+PMC6949661_01,g14,361,375,blood pressure,Exam,D001794,present
+PMC6949661_01,g15,376,382,125/78,ExamResult,,present
+PMC6949661_01,g16,511,526,syncopal attack,Diagnosis,,present
+PMC6949661_01,g17,532,552,complete blood count,Exam,D001772,present
+PMC6949661_01,g18,557,573,biochemical test,Exam,,present
+PMC6949661_01,g19,579,602,within the normal range,ExamResult,,present
+PMC6949661_01,g20,604,623,Computed tomography,Exam,D014054,present
+PMC6949661_01,g21,625,627,CT,Exam,,present
+PMC6949661_01,g22,650,662,unremarkable,ExamResult,,present
+PMC6949661_01,g23,667,670,ECG,Exam,D004562,present
+PMC6949661_01,g24,678,706,left ventricular hypertrophy,Finding,D017379,present
+PMC6949661_01,g25,711,731,early repolarization,Finding,,present
+PMC6949661_01,g26,733,749,Echocardiography,Exam,D004452,present
+PMC6949661_01,g27,762,789,moderate septal hypertrophy,Finding,D006984,present
+PMC6949661_01,g28,897,903,melena,Symptom,D008551,present
+PMC6949661_01,g29,948,954,nausea,Symptom,D009325,present
+PMC6949661_01,g30,975,983,vomiting,Symptom,D014839,present
+PMC6949661_01,g31,1007,1026,alcohol consumption,History,,absent
+PMC6949661_01,g32,1028,1044,analgesic intake,History,D000700,absent
+PMC6949661_01,g33,1061,1074,liver disease,History,D008107,present
+PMC6949661_01,g34,1121,1132,tachycardia,Symptom,D013610,present
+PMC6949661_01,g35,1136,1143,122 bpm,ExamResult,,present
+PMC6949661_01,g36,1184,1191,abdomen,AnatomicalSite,ANAT033,present
+PMC6949661_01,g37,1294,1320,Digital Rectal Examination,Exam,D051517,present
+PMC6949661_01,g38,1334,1349,melanotic stool,Finding,,present
+PMC6949661_01,g39,1387,1397,hemoglobin,Exam,D006454,present
+PMC6949661_01,g40,1426,1430,urea,Exam,D014508,present
+PMC6949661_01,g41,1454,1472,intravenous fluids,Treatment,,present
+PMC6949661_01,g42,1477,1499,proton pump inhibitors,Medication,D054328,present
+PMC6949661_01,g43,1526,1548,packed red blood cells,Treatment,,present
+PMC6949661_01,g44,1590,1616,Esophagogastroduodenoscopy,Exam,D016145,present
+PMC6949661_01,g45,1677,1685,duodenum,AnatomicalSite,,present
+PMC6949661_01,g46,1694,1709,active bleeding,Finding,D006470,absent
+PMC6949661_01,g47,1728,1739,Colonoscopy,Exam,D003113,absent
+PMC6949661_01,g48,1760,1771,enteroscopy,Exam,,present
+PMC6949661_01,g49,1781,1801,jejunal diverticulum,Finding,D004240,present
+PMC6949661_01,g50,1837,1851,fresh bleeding,Finding,D006470,present
+PMC6949661_01,g51,1969,1983,CT angiography,Exam,D000072226,present
+PMC6949661_01,g52,2059,2076,coil embolization,Treatment,,present
+PMC6949661_01,g53,2165,2181,horseshoe kidney,Finding,D000069337,present
+PMC6949661_01,g54,2205,2227,diagnostic laparoscopy,Exam,D010535,present
+PMC6949661_01,g55,2295,2304,Endoscopy,Exam,D004724,present
+PMC6949661_01,g56,2337,2351,jejunal lesion,Finding,,present
+PMC6949661_01,g57,2433,2451,Midline laparotomy,Treatment,D007813,present
+PMC6949661_01,g58,2504,2511,jejunum,AnatomicalSite,,present
+PMC6949661_01,g59,2515,2527,small lesion,Finding,,present
+PMC6949661_01,g60,2704,2719,active bleeding,Finding,D006470,absent
+PMC6949661_01,g61,2827,2842,Wedge resection,Treatment,,absent
+PMC6949661_01,g62,2850,2875,suspicious jejunal lesion,Finding,,present
+PMC6949661_01,g63,2910,2925,smooth recovery,Outcome,,present
+PMC6949661_01,g64,2935,2942,surgery,Treatment,,present
+PMC6949661_01,g65,3071,3080,Histology,Exam,,absent
+PMC6949661_01,g66,3090,3116,small jejunal diverticulum,Diagnosis,D004240,present
+PMC6949661_01,g67,3122,3148,gastric heterotopic tissue,Finding,D002828,present
+PMC6949661_01,g68,3473,3482,dysplasia,Finding,,absent
+PMC6949661_01,g69,3487,3497,malignancy,Finding,D009369,absent
+PMC9532611_01,g1,113,124,hypokalemic,Finding,D007008,present
+PMC9532611_01,g2,126,136,1.8 mmol/l,ExamResult,,present
+PMC9532611_01,g3,138,146,weakness,Symptom,D001284,present
+PMC9532611_01,g4,171,183,hypertension,Diagnosis,D006973,present
+PMC9532611_01,g5,185,196,138/94 mmHg,ExamResult,,present
+PMC9532611_01,g6,445,456,infantilism,Finding,D007248,present
+PMC9532611_01,g7,644,662,periodic paralysis,Diagnosis,D020514,present
+PMC9532611_01,g8,866,873,surgery,Treatment,D013514,present
+PMC9532611_01,g9,903,918,inguinal hernia,Diagnosis,D006552,present
+PMC9969157_01,g1,26,38,33 2/7 weeks,ExamResult,,present
+PMC9969157_01,g2,222,242,gestational diabetes,Diagnosis,D016640,present
+PMC9969157_01,g3,247,271,gestational hypertension,Diagnosis,D006973,present
+PMC9969157_01,g4,325,331,LCHADD,Diagnosis,C537180,present
+PMC9969157_01,g5,362,378,cesarean section,Treatment,D002585,present
+PMC9969157_01,g6,464,476,preeclampsia,Diagnosis,D011225,present
+PMC9969157_01,g7,491,505,HELLP syndrome,Diagnosis,D017359,present
+PMC9969157_01,g8,902,921,10% dextrose fluids,Medication,D003920,present
+PMC9969157_01,g9,1474,1488,Echocardiogram,Exam,D004452,present
+PMC9969157_01,g10,1526,1550,patent ductus arteriosus,Finding,D004374,present
+PMC9969157_01,g11,1555,1575,patent foramen ovale,Finding,D054092,present
+PMC9969157_01,g12,1648,1660,Triheptanoin,Medication,C037659,present
+PMC9969157_01,g13,2185,2196,bradycardia,Symptom,D001919,present
+PMC9969157_01,g14,2201,2213,desaturation,Symptom,D000860,present
+PMC9969157_01,g15,2358,2364,emesis,Symptom,D014839,present
+PMC9969157_01,g16,2374,2386,hematochezia,Symptom,D006471,present
+PMC9969157_01,g17,2391,2406,abdominal x-ray,Exam,D011860,present
+PMC9969157_01,g18,2431,2455,pneumatosis intestinalis,Finding,D011006,present
+PMC9969157_01,g19,2495,2498,NEC,Diagnosis,D020345,present
+PMC9969157_01,g20,2573,2593,ampicillin-sulbactam,Medication,C054013,present
+PMC9969157_01,g21,2598,2608,gentamicin,Medication,D005839,present
+PMC9969157_01,g22,3095,3110,discharged home,Outcome,,present

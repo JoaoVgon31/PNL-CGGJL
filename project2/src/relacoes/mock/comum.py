@@ -15,7 +15,7 @@ from typing import List, Optional, Set, Tuple
 
 REPO = Path(__file__).resolve().parents[4]
 CASOS_PADRAO = REPO / "project1" / "data" / "case_texts.csv"
-CASOS_GOLD_PADRAO = REPO / "project2" / "data" / "mock" / "gold" / "casos.txt"
+CASOS_GOLD_PADRAO = REPO / "project2" / "data" / "gold" / "casos.txt"
 
 
 def ler_casos(

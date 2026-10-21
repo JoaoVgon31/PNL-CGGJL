@@ -14,14 +14,21 @@ from __future__ import annotations
 from dataclasses import dataclass
 from functools import lru_cache
 from pathlib import Path
+import re
+import sys
 
 from nltk.tokenize import NLTKWordTokenizer
 
-import mock.comum  # noqa: F401  (põe sintagmas/ e dicionarios/ do projeto 1 no path)
+REPO = Path(__file__).resolve().parents[3]
+PROJECT1_SRC = REPO / "project1" / "src"
+for _pasta in (REPO, PROJECT1_SRC / "sintagmas", PROJECT1_SRC / "dicionarios"):
+    if str(_pasta) not in sys.path:
+        sys.path.insert(0, str(_pasta))
+
 from mesh_parser import load_gazetteer_rows, rows_to_raw_gazetteer  # noqa: E402
 from normalization import build_normalized_gazetteer, normalize_token  # noqa: E402
 
-GAZETTEERS = mock.comum.PROJECT1_SRC / "dicionarios" / "gazetteer"
+GAZETTEERS = PROJECT1_SRC / "dicionarios" / "gazetteer"
 CATEGORIA_TIPO = {"drugs": "Medication", "diseases": "Diagnosis", "mental_disorders": "Diagnosis",
                   "treatments": "Treatment", "exams": "Exam", "anatomical_site": "AnatomicalSite"}
 # Categorias que juntam tipos diferentes: diseases tem sintomas e achados; drugs (árvore D do
@@ -33,6 +40,8 @@ ORDEM_CATEGORIAS = ("termos", "anatomical_site", "exams", "treatments", "drugs",
 JANELA = 6
 
 _TOKENIZADOR = NLTKWordTokenizer()
+_PADRAO_SIGLA = re.compile(r"\(\s*([A-Z][A-Z0-9\-]{1,9})\s*\)")
+_QUEBRA_TRECHO = re.compile(r"[,;:.()\n]")
 
 
 @dataclass(frozen=True)
@@ -110,14 +119,60 @@ def _melhor(lista: list[Casamento]) -> Casamento | None:
                                      -ORDEM_CATEGORIAS.index(c.categoria)))
 
 
-def consultar(texto: str) -> Resposta:
-    """Tipo pelo melhor casamento; código pelo melhor casamento que tem código."""
+def _consultar_direto(texto: str) -> Resposta:
     todos = casamentos(texto)
     tipo = _melhor(todos)
     codigo = _melhor([c for c in todos if c.codigo])
     if tipo is None:
         return Resposta("", codigo.codigo if codigo else "", "", "")
     return Resposta(tipo.tipo, codigo.codigo if codigo else "", tipo.fonte, tipo.categoria)
+
+
+@lru_cache(maxsize=256)
+def siglas_do_texto(texto_caso: str) -> dict[str, Resposta]:
+    """Mapeia siglas definidas no caso (`Forma Extensa (SIGLA)`) para a Resposta da forma extensa."""
+    if not texto_caso:
+        return {}
+    mapa: dict[str, Resposta] = {}
+    for m in _PADRAO_SIGLA.finditer(texto_caso):
+        sigla = m.group(1).strip()
+        janela = texto_caso[max(0, m.start() - 80):m.start()]
+        partes = _QUEBRA_TRECHO.split(janela)
+        trecho_antes = partes[-1].strip() if partes else ""
+        if not trecho_antes:
+            continue
+        toks = palavras(trecho_antes)
+        if not toks:
+            continue
+        # Prioriza casamentos ancorados no fim do sintagma imediatamente antes do parêntese
+        fim_ultimo = toks[-1][1]
+        todos = casamentos(trecho_antes)
+        no_fim = [c for c in todos if c.fim == fim_ultimo]
+        escolhidos = no_fim if no_fim else todos
+        tipo = _melhor(escolhidos)
+        codigo = _melhor([c for c in escolhidos if c.codigo])
+        if tipo is not None:
+            mapa[sigla] = Resposta(
+                tipo.tipo,
+                codigo.codigo if codigo else "",
+                tipo.fonte,
+                tipo.categoria,
+            )
+    return mapa
+
+
+def consultar(texto: str, texto_caso: str = "") -> Resposta:
+    """Tipo pelo melhor casamento; código pelo melhor casamento que tem código.
+
+    Quando `texto_caso` é informado e `texto` é uma sigla definida no próprio caso
+    (`transesophageal echocardiogram (TEE)`), herda o tipo e o código da forma extensa.
+    """
+    limpo = texto.strip()
+    if texto_caso and limpo:
+        definidas = siglas_do_texto(texto_caso)
+        if limpo in definidas:
+            return definidas[limpo]
+    return _consultar_direto(texto)
 
 
 def nome_do_remedio(texto: str) -> tuple[int, int] | None:

@@ -1,0 +1,15 @@
+{
+  "silver": "project2/data/silver/entidades_tipadas.csv",
+  "silver_sha256": "db96988b64fabf2090060a06c0c84eca871ba25264b7ebf717d012e241226d63",
+  "gold": "project2/data/gold/casos.txt",
+  "gold_sha256": "fbc5571abc3ab25baacb3c2a73747e198ef13f5ebf24bfa9d35f9fb252dbb9d7",
+  "casos_processados": 48,
+  "casos_gold_excluidos": 8,
+  "conceitos_distintos": 73,
+  "freq_min": 2,
+  "pares_associados": 18,
+  "grafo_nos": 13,
+  "grafo_arestas": 18,
+  "grafo_nodes_csv": "project2/data/resultados/associacoes-nodes.csv",
+  "grafo_edges_csv": "project2/data/resultados/associacoes-edges.csv"
+}
