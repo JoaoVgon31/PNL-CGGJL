@@ -147,3 +147,35 @@ class MontagemTests(unittest.TestCase):
             nodes = payload["graphs"]["combinado"]["nodes"]
             symptom = next(n for n in nodes if n["type"] == "Symptom")
             self.assertEqual(symptom["attributes"]["polarity"], "absent")
+
+    def test_visualizador_duas_abas_p1_e_p2(self):
+        with tempfile.TemporaryDirectory() as d:
+            raiz = Path(d)
+            corpus = raiz / "casos.csv"
+            corpus.write_text("case_id,case_text\nPMC1_01,She had nausea.\n", encoding="utf-8")
+            ms = raiz / "mencoes.csv"
+            ms.write_text("case_id,id,start,end,texto,tipo,mesh,polaridade\nPMC1_01,m1,8,14,nausea,Symptom,D009325,present\n", encoding="utf-8")
+            rs = raiz / "relacoes.csv"
+            rs.write_text("case_id,origem,destino,relacao\nPMC1_01,P1,m1,HAS_SYMPTOM\n", encoding="utf-8")
+            
+            p1_dir = raiz / "p1_processed"
+            p1_dir.mkdir()
+            (p1_dir / "PMC1_01-nodes.csv").write_text(
+                "case_id,node_id,type,label,attributes\nPMC1_01,P1,Patient,case PMC1_01,\nPMC1_01,S1,Symptom,nausea,polarity=present\n",
+                encoding="utf-8"
+            )
+            (p1_dir / "PMC1_01-edges.csv").write_text(
+                "case_id,edge_id,source_id,target_id,relation,attributes\nPMC1_01,e1,P1,S1,HAS_SYMPTOM,char_start=8; char_end=14\n",
+                encoding="utf-8"
+            )
+            
+            montar(ms, rs, corpus, raiz / "grafo", visualizador=raiz / "site", p1_grafos=p1_dir)
+            payload = json.loads((raiz / "site/data/PMC1_01.json").read_text(encoding="utf-8"))
+            self.assertIn("projeto1", payload["graphs"])
+            self.assertIn("projeto2", payload["graphs"])
+            self.assertIn("combinado", payload["graphs"])
+            self.assertEqual(len(payload["graphs"]["projeto1"]["nodes"]), 2)
+            self.assertEqual(len(payload["graphs"]["projeto1"]["edges"]), 1)
+            self.assertEqual(len(payload["graphs"]["projeto2"]["nodes"]), 3)
+            manifest = json.loads((raiz / "site/data/manifest.json").read_text(encoding="utf-8"))
+            self.assertEqual(manifest["cases"][0]["graphs"], ["projeto1", "projeto2"])

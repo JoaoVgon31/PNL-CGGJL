@@ -36,8 +36,9 @@ Para reproduzir o pipeline ponta a ponta a partir da raiz do repositório:
 
 5. **Montagem do Grafo de Conhecimento e Visualizador:**
    ```bash
-   python -m project2.src.montagem.montagem --mencoes project2/data/mencoes_tipadas.csv --relacoes project2/data/relacoes.csv --grafo project2/data/grafo --visualizador project2/data/visualizador
+   python -m project2.src.montagem.montagem --mencoes project2/data/mencoes_tipadas.csv --relacoes project2/data/relacoes.csv --saida project2/data/grafo --visualizador project2/data/visualizador
    ```
+   *Nota: O visualizador compila tanto os grafos do Projeto 2 quanto os do Projeto 1, disponibilizando abas para inspeção e auditoria comparativa direta.*
 
 6. **Etapa 5 — Avaliação Completa contra o Gabarito:**
    ```bash

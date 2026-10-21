@@ -37,12 +37,10 @@ python3 -m project2.src.montagem.montagem --visualizador project2/data/visualiza
 python3 -m http.server 8000 --directory project2/data/visualizador
 ```
 
-Abra `http://localhost:8000`. A aba “Combinado” mostra o grafo P2; os arquivos originais do site
-P1 são copiados sem alterações. O site publicado do projeto 1 permanece independente.
+Abra `http://localhost:8000`. O visualizador exibe abas para alternar facilmente entre o grafo do **Projeto 1** e o do **Projeto 2** para cada caso clínico, facilitando a comparação direta entre as abordagens (regras vs. aprendizado de máquina). Por padrão, os grafos do Projeto 1 são obtidos de `project1/data/processed/` (configurável via `--p1-grafos`). Os arquivos do site P1 permanecem independentes.
 Também funciona `python3 project2/src/montagem/montagem.py ...`.
 
-Todos os caminhos podem ser informados com `--mencoes`, `--relacoes`, `--corpus`, `--saida` e
-`--visualizador`. Saída padrão: `project2/data/grafo/<case_id>-nodes.csv` e `-edges.csv`, mais `resumo.json`.
+Todos os caminhos podem ser informados com `--mencoes`, `--relacoes`, `--corpus`, `--saida`, `--visualizador` e `--p1-grafos`. Saída padrão: `project2/data/grafo/<case_id>-nodes.csv` e `-edges.csv`, mais `resumo.json`.
 Na coluna `attributes`, pares simples mantêm o formato legado `chave=valor; chave=valor`.
 Se um valor contiver uma sequência ambígua como `; p=`, o escritor usa um objeto JSON com
 valores string. Os leitores `read_nodes_csv` e `read_edges_csv` de `project1.tools.graph_csv`
