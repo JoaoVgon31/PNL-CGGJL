@@ -9,20 +9,16 @@ excluindo os casos do gabarito. Usa o HMM e o tokenizador já existentes no P1.
 Python 3.10+ e biblioteca padrão para entradas CSV. Para Parquet, instale
 `project2/src/comum/requirements.txt`. Não é necessário baixar modelos NLTK para o HMM versionado.
 
-Da raiz do repositório, primeiro execute a demonstração na amostra:
+Da raiz do repositório, na amostra de 56 casos (excluindo o gabarito):
 
 ```bash
-python3 -m project2.src.termos.termos gerar --gold project2/data/mock/gold/casos.txt --saida project2/data/demo/termos.csv
-python3 -m project2.src.termos.termos comparar --termos project2/data/demo/termos.csv --saida project2/data/demo/comparacao.csv --top 100
-```
-
-Para a entrega definitiva, obtenha a lista gold da #29 e colete o corpus conforme o README do comum:
-
-```bash
-python3 -m project2.src.termos.termos gerar --corpus project2/data/corpus/csv/full/cases.csv --freq-min 5 --n-max 4
+python3 -m project2.src.termos.termos gerar
 python3 -m project2.src.termos.termos comparar --top 100
-python3 -m project2.src.termos.termos associar --freq-min 2 --top-grafo 30
+python3 -m project2.src.termos.termos associar
 ```
+
+Para o corpus completo, colete-o conforme o [README do comum](../comum/README.md) e use
+`gerar --corpus project2/data/corpus/csv/full/cases.csv --freq-min 5`.
 
 Também funciona `python3 project2/src/termos/termos.py gerar ...`.
 
@@ -90,14 +86,10 @@ Não usa fuzzy match nem rótulos do gold. O JSON da comparação registra a pol
 
 ## Resultados e limites
 
-A execução de desenvolvimento nos 53 casos restantes da amostra levou menos de 1 segundo para
-gerar 600 candidatos com frequência mínima 2 nesta máquina; a comparação com o gazetteer levou
-alguns segundos. Entre os 100 primeiros, 20 têm correspondência MeSH normalizada. Veja
-[resultados reproduzíveis](../../experimentos/amostra/) e [discussão](../../docs/etapa-1.md).
-Esses tempos não são medições do corpus completo.
+Os números da amostra (584 termos; 22 do top-100 no MeSH) e o efeito dos termos no CRF estão no
+[README do projeto](../../README.md#resultados).
 
-Cobertura lexical não é precisão clínica: candidato novo pode ser termo útil, variante lexical ou
-ruído. A avaliação do efeito sobre entidades vem do CRF com/sem termos no gold definitivo.
+Cobertura lexical não é precisão clínica: um candidato novo pode ser termo útil, variante ou ruído.
 PMI favorece sequências raras; frequência mínima e C-value reduzem esse efeito, sem eliminá-lo.
 Filtros POS ainda erram; abreviações e termos com preposições podem ser perdidos.
 

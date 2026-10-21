@@ -1,9 +1,5 @@
 # Montagem do grafo
 
-Este diretório reúne duas entregas. O comando `montagem.py`, descrito abaixo, é da #32.
-Os módulos `data/`, `evaluation/` e `assembly/` vieram da #29. As duas rotas de montagem têm contratos e métodos de
-agrupamento diferentes; a integração final ainda precisa definir qual será usada na avaliação.
-
 Consome as saídas das etapas 3/4 e gera o mesmo contrato CSV do P1. Não treina modelos e não
 cria relações clínicas por proximidade. Arestas do paciente devem vir da etapa 4 com `origem=P1`.
 As únicas arestas adicionadas pela montagem são `SAME_AS`.
@@ -43,30 +39,18 @@ Também funciona `python3 project2/src/montagem/montagem.py ...`.
 
 Todos os caminhos podem ser informados com `--mencoes`, `--relacoes`, `--corpus`, `--saida` e
 `--visualizador`. Saída padrão: `project2/data/grafo/<case_id>-nodes.csv` e `-edges.csv`, mais `resumo.json`.
-Na coluna `attributes`, pares simples mantêm o formato legado `chave=valor; chave=valor`.
-Se um valor contiver uma sequência ambígua como `; p=`, o escritor usa um objeto JSON com
-valores string. Os leitores `read_nodes_csv` e `read_edges_csv` de `project1.tools.graph_csv`
-aceitam os dois formatos; use-os em vez de dividir a coluna manualmente por `;`.
-CSV antigo escrito sem essa proteção precisa ser regenerado a partir da fonte para recuperar
-o texto com segurança; a ambiguidade não pode ser resolvida apenas pela leitura.
+A coluna `attributes` usa `chave=valor; chave=valor`, ou JSON quando algum valor contém algo como `; chave=`.
+Leia-a com `read_nodes_csv`/`read_edges_csv` de `project1.tools.graph_csv`, não dividindo por `;`.
 O comando sem seleção inclui só casos presentes nas tabelas; `--gold` inclui também casos sem extrações.
 Diretórios podem manter CSVs de execuções antigas; a exportação do visualizador usa somente os casos
 selecionados na execução atual, conforme seu manifesto.
 
-## Compatibilidade com o PR #38
+## Entradas incompletas
 
-Essa versão da etapa 3 ainda pode omitir a coluna `polaridade` e deixar menções sem `tipo`.
-Até o contrato definitivo ser integrado, há opções explícitas:
-
-```bash
-python3 -m project2.src.montagem.montagem --polaridade-regras --ignorar-sem-tipo
-```
-
-`--polaridade-regras` completa apenas valores ausentes com `detect_polarity` do P1 na sentença
-que contém a menção. Essa regra tem escopo de sentença e pode negar menções fora do alcance real
-da negação. Valores já preenchidos são preservados. `--ignorar-sem-tipo` omite somente menções
-cujo tipo é vazio e suas relações. O resumo registra quantas menções/relações foram omitidas e
-quantas polaridades foram completadas. Sem as opções, essas incompatibilidades causam erro.
+Menção sem `tipo` ou sem `polaridade` interrompe a montagem. Duas opções relaxam isso:
+`--ignorar-sem-tipo` omite essas menções e suas relações, e `--polaridade-regras` completa as
+polaridades vazias com `detect_polarity` do P1 na frase da menção. O resumo registra o que foi
+omitido ou completado.
 
 ## Desduplicação e rastreabilidade
 

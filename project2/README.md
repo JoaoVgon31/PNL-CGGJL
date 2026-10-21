@@ -9,7 +9,7 @@ Equipe `CGGJL`: Caio Melloni (167974), Gabriel Lorhan Rodrigues Dourado (197496)
 
 ## Demonstração Executável
 
-O [visualizador interativo](data/visualizador/README.md) do Projeto 1 foi reaproveitado. Ele mostra os grafos gerados pelo Projeto 2 caso a caso, e cada nó e aresta tem sua evidência destacada no `case_text` original. Para gerar e abrir o visualizador, rode a partir da raiz do repositório:
+O visualizador interativo do Projeto 1 foi reaproveitado. Ele mostra os grafos gerados pelo Projeto 2 caso a caso, e cada nó e aresta tem sua evidência destacada no `case_text` original. Para gerar e abrir o visualizador, rode a partir da raiz do repositório:
 
 ~~~bash
 python -m project2.src.montagem.montagem --visualizador project2/data/visualizador

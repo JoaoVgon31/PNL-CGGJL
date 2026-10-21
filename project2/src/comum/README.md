@@ -29,7 +29,7 @@ classes = etiquetar(tokens)  # HMM já treinado em project1/src/sintagmas/model/
 for frase in dividir_frases(texto):
     assert texto[frase.start:frase.end] == frase.text
 
-reservados = casos_gold("project2/data/mock/gold/casos.txt")  # só demonstração
+reservados = casos_gold()  # project2/data/gold/casos.txt
 treino = [(c, t) for c, t in casos if c not in reservados]
 ```
 
@@ -45,7 +45,7 @@ treino = [(c, t) for c, t in casos if c not in reservados]
 
 CSV exige `case_id,case_text`, aceita UTF-8 com BOM e campos multilinha, e rejeita ids duplicados.
 Limite zero não lê casos; limite negativo é erro. Linhas vazias e comentários `#` são ignorados na
-lista gold. Seu caminho padrão é `project2/data/gold/casos.txt`, nunca o mock automaticamente.
+lista gold. Seu caminho padrão é `project2/data/gold/casos.txt`.
 
 `tokenizar` reutiliza `ClinicalRegexTokenizer`; `dividir_frases` reutiliza `split_sentences`.
 O contrato de frases permanece igual ao P1: exclui pontuação terminal e conserva espaços iniciais.
@@ -69,11 +69,8 @@ O diretório padrão é `project2/data/corpus/`. Contém `raw/<record_id>/`, `cs
 e `proveniencia.json`. Resolvem-se as versões pela API Zenodo `versions/latest`; tamanho e MD5 são
 conferidos antes de reutilizar arquivos. Downloads incompletos têm sufixo `.part` e são retomados
 por HTTP Range, com até 3 tentativas e conferência final de checksum. Se o servidor ignorar Range,
-reinicia-se a transferência em vez de concatenar arquivos incorretamente. O número de casos
-vem dos arquivos efetivamente obtidos; não é fixado em “93 mil”. O volume depende da versão; o
-tutorial registra aproximadamente 190 MB nos Parquet, além do espaço da exportação em CSV.
-O progresso é impresso durante a transferência. O tempo depende da conexão; não há estimativa
-validada para todas as máquinas.
+reinicia-se a transferência em vez de concatenar arquivos incorretamente. Os Parquet ocupam cerca
+de 190 MB, além do espaço da exportação em CSV.
 
 Ao contrário do notebook completo da disciplina, este utilitário exporta somente o corpus completo:
 não gera um banco DuckDB persistente nem uma nova amostra aleatória. Os 56 textos já versionados
@@ -93,19 +90,3 @@ de pontuação passou a aceitar esse caractere, sem alterar o ranking gerado nos
 Os registros [antes](../../experimentos/amostra/validacao_tokenizador_antes.json) e
 [depois](../../experimentos/amostra/validacao_tokenizador_corpus.json) preservam a verificação.
 Essa passagem não executa o HMM nem a contagem de termos no corpus inteiro.
-
-## Integrar com as etapas 2 e 3
-
-Na etapa 2, o import compartilhado passa a ser:
-
-```python
-from project2.src.comum import REPO, casos_gold, dividir_frases, etiquetar, ler_casos, tokenizar
-from project2.src.termos.termos import ler_termos
-```
-
-Ao executar um script diretamente, adicione a raiz do repositório ao `sys.path` antes desse import,
-como nos scripts `termos.py` e `montagem.py`, ou execute com a raiz no `PYTHONPATH`.
-Além dos imports, é preciso atualizar os caminhos do silver, do gold e de `termos.csv`.
-Usar o leitor real mantendo caminhos de mocks não transforma o experimento em definitivo.
-As funções `ler_casos`, `tokenizar`, `dividir_frases`, `etiquetar` e `casos_gold` mantêm as assinaturas
-esperadas pelo mock da etapa 2. A lista oficial do gold continua sendo responsabilidade da #29.

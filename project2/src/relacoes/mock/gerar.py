@@ -4,7 +4,7 @@ das mencoes tipadas da Etapa 2 (#33) e das arestas do Projeto 1.
 
 Resolve cada relacao do Projeto 1 contra uma mencao real via sobreposicao de
 offset de caractere + tipo - nunca via casamento de texto (rotulo do no x
-texto do chunk), que e o que torna o weak_supervision.py do George fragil
+texto do chunk), que tornava a primeira versao do silver fragil
 para boa parte dos casos (ver project2/docs/relacoes.md para o porquê).
 """
 

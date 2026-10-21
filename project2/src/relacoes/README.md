@@ -1,7 +1,7 @@
 # Etapa 4 — Relações entre entidades (Issue #35)
 
 Infere relações clínicas entre entidades combinando uma regra fixa (pares envolvendo o paciente `P1`) com um classificador de N-gramas (demais pares compatíveis com a ontologia).
-Ver também a análise detalhada em [docs/relacoes.md](../../docs/relacoes.md).
+As decisões de projeto estão em [docs/relacoes.md](../../docs/relacoes.md).
 
 ## Como rodar
 
