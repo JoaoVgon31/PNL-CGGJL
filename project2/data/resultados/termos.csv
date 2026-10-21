@@ -1,0 +1,101 @@
+posicao,termo,n,frequencia,pmi,c_value,conhecido_mesh,codigos_mesh
+1,physical examination,2,20,8.719032,20.0,1,D010808
+2,spontaneous respiration,2,15,9.888957,15.0,0,
+3,s serum,2,13,6.840785,13.0,0,
+4,white blood cell count,4,6,6.696664,12.0,1,D007958
+5,left main bronchus,3,7,7.753248,11.094738,0,
+6,normal range,2,11,8.345574,11.0,0,
+7,abdominal pain,2,13,7.625056,11.0,1,D015746
+8,intensive care unit,3,6,9.719032,9.509775,0,
+9,past medical history,3,6,8.037208,9.509775,0,
+10,postoperative day,2,9,7.403799,9.0,0,
+11,chest pain,2,9,7.094541,9.0,1,D002637
+12,ct scan,2,8,9.446014,8.0,0,
+13,erythrocyte sedimentation rate,3,5,9.844563,7.924813,1,D001799
+14,weeks gestational age,3,5,8.982067,7.924813,0,
+15,left upper extremity,3,5,6.923173,7.924813,0,
+16,pleural effusion,2,7,10.7715,7.0,1,D010996
+17,esophagobronchial fistulae,2,7,10.303995,7.0,0,
+18,normal limits,2,7,8.471105,7.0,0,
+19,intrauterine fetal demise,3,4,11.13407,6.33985,0,
+20,full symptom resolution,3,4,10.326715,6.33985,0,
+21,magnetic resonance imaging,3,4,10.259601,6.33985,1,D008279
+22,esophageal bypass surgery,3,4,7.844563,6.33985,0,
+23,normal sinus rhythm,3,4,7.30118,6.33985,0,
+24,free t4,2,6,10.303995,6.0,0,
+25,shoulder dystocia,2,6,10.303995,6.0,1,D000080883
+26,emergency department,2,6,9.660139,6.0,0,
+27,inflammatory process,2,6,9.64103,6.0,0,
+28,heart rate,2,6,8.622171,6.0,1,D006339
+29,medical history,2,12,8.037208,6.0,0,
+30,laboratory results,2,6,7.719032,6.0,0,
+31,left ventricular ejection fraction,4,3,7.522635,6.0,0,
+32,arterial blood gas analysis,4,3,7.501802,6.0,0,
+33,blood pressure,2,8,7.033699,6.0,1,D001794
+34,female patient,2,6,4.957481,6.0,0,
+35,one-lung ventilation,2,5,10.982067,5.0,1,D061810
+36,human herpesvirus,2,5,10.844563,5.0,0,
+37,oxygen saturation,2,5,10.625923,5.0,0,
+38,c-reactive protein,2,5,10.603555,5.0,1,D002097
+39,hemoglobin a1c,2,7,10.49664,5.0,0,
+40,operating room,2,5,10.455998,5.0,0,
+41,main bronchus,2,10,10.397104,5.0,0,
+42,weight loss,2,7,10.088982,5.0,1,D015431
+43,gestational age,2,10,9.982067,5.0,0,
+44,anticoagulation therapy,2,5,8.731105,5.0,0,
+45,postoperative course,2,7,8.560603,5.0,0,
+46,recurrent thrombosis,2,5,8.549107,5.0,0,
+47,red cells,2,8,7.982067,5.0,0,
+48,thoracic ct,2,5,7.818568,5.0,0,
+49,respiratory rate,2,5,7.774174,5.0,1,D056152
+50,laboratory tests,2,5,7.549107,5.0,0,
+51,recurrent symptoms,2,5,7.549107,5.0,0,
+52,family history,2,5,7.533166,5.0,0,
+53,enlarged cecal appendix,3,3,10.567029,4.754888,0,
+54,proximal pa stenosis,3,3,8.216532,4.754888,0,
+55,p-negative red cells,3,3,7.982067,4.754888,0,
+56,p-positive red cells,3,3,7.982067,4.754888,0,
+57,left temporal lobe,3,3,7.923173,4.754888,0,
+58,surgical chest tube,3,3,5.844563,4.754888,0,
+59,right main bronchus,3,3,5.660139,4.754888,0,
+60,veno-venous extracorporeal membrane oxygenator,4,2,13.303995,4.0,0,
+61,mycophenolate mofetil,2,4,12.303995,4.0,1,D009173
+62,vp shunt,2,4,11.49664,4.0,0,
+63,celiac lymph node dissections,4,2,11.13407,4.0,0,
+64,peptic stricture,2,4,10.812142,4.0,0,
+65,aortic arch,2,4,10.719032,4.0,0,
+66,partial hexon gene sequencing,4,2,10.397104,4.0,0,
+67,suprapubic pressure,2,4,10.056067,4.0,0,
+68,low molecular weight heparin,4,2,9.911677,4.0,1,D006495
+69,caspr2 antibodies,2,4,9.734139,4.0,0,
+70,fetal head,2,4,9.674638,4.0,0,
+71,gastric emptying,2,4,9.458505,4.0,0,
+72,skin lesions,2,4,9.326715,4.0,0,
+73,liver function,2,4,9.303995,4.0,0,
+74,symptom free,2,4,9.281627,4.0,0,
+75,main pa,2,4,8.812142,4.0,0,
+76,surgical intervention,2,4,8.49664,4.0,0,
+77,posterior wall,2,4,8.452246,4.0,0,
+78,pulmonary hypertension,2,4,8.397104,4.0,1,D006976
+79,white blood,2,9,8.197795,4.0,0,
+80,peripheral blood,2,4,7.179873,4.0,0,
+81,mean arterial blood pressure,4,2,7.033699,4.0,0,
+82,bilateral lower extremity edema,4,2,6.866589,4.0,0,
+83,right lung,2,4,6.397104,4.0,0,
+84,right side,2,4,6.397104,4.0,0,
+85,patients underwent,2,4,5.479832,4.0,0,
+86,patient underwent repeat egd,4,2,5.324023,4.0,0,
+87,packed red blood cells,4,2,5.281627,4.0,0,
+88,methicillin-resistant staphylococcus aureus,3,2,13.303995,3.169925,0,
+89,gentle downward traction,3,2,12.303995,3.169925,0,
+90,vitamin k antagonists,3,2,12.303995,3.169925,0,
+91,indirect immunofluorescence assay,3,2,11.719032,3.169925,1,D019084
+92,international normalized ratio,3,2,11.303995,3.169925,1,D019934
+93,american diabetes association,3,2,11.13407,3.169925,0,
+94,mean corpuscular volume,3,2,11.13407,3.169925,1,D004909
+95,parastomal hernial sac,3,2,10.982067,3.169925,0,
+96,urine drug screen,3,2,10.719032,3.169925,0,
+97,video capsule endoscopy,3,2,10.719032,3.169925,1,D053704
+98,hemoglobin a1c value,3,2,10.49664,3.169925,0,
+99,high-frequency jet ventilation,3,2,10.397104,3.169925,1,D006611
+100,keratocystic odontogenic tumor,3,2,9.982067,3.169925,0,

@@ -22,5 +22,6 @@ Módulo unificado de avaliação do Projeto 2 (`project2/src/avaliacao/avaliar.p
 python project2/src/avaliacao/avaliar.py mencoes --pred project2/data/mencoes.csv --gold project2/data/gold/mencoes.csv
 python project2/src/avaliacao/avaliar.py tipos --pred project2/data/mencoes_tipadas.csv --gold project2/data/gold/mencoes.csv
 python project2/src/avaliacao/avaliar.py relacoes --pred project2/data/relacoes.csv --gold project2/data/gold/relacoes.csv --mencoes-pred project2/data/mencoes_tipadas.csv --mencoes-gold project2/data/gold/mencoes.csv
-python project2/src/avaliacao/avaliar.py grafo --pasta project2/data/grafos
+python project2/src/avaliacao/avaliar.py grafo --pasta project2/data/grafo
+python project2/src/avaliacao/avaliar.py consolidar   # resultados/montagem.csv e resultados/comparativo_p1_p2.csv
 ```

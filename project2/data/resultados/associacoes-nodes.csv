@@ -1,0 +1,18 @@
+node_id,type,label,attributes
+D000418,Concept,Albumins,code=D000418; cases=2
+D011506,Concept,Proteins,code=D011506; cases=3
+D001799,Concept,Blood Sedimentation,code=D001799; cases=2
+D002097,Concept,C-Reactive Protein,code=D002097; cases=3
+D004724,Concept,Endoscopy,code=D004724; cases=5
+D000740,Concept,Anemia,code=D000740; cases=2
+D006454,Concept,Hemoglobins,code=D006454; cases=10
+D001663,Concept,Bilirubin,code=D001663; cases=2
+D001706,Concept,Biopsy,code=D001706; cases=10
+D013812,Concept,Therapeutics,code=D013812; cases=2
+D005313,Concept,Fetal Death,code=D005313; cases=2
+D007958,Concept,Leukocyte Count,code=D007958; cases=3
+D014054,Concept,Tomography,code=D014054; cases=15
+D008279,Concept,Magnetic Resonance Imaging,code=D008279; cases=4
+D009369,Concept,Neoplasms,code=D009369; cases=4
+D004322,Concept,Drainage,code=D004322; cases=4
+D004487,Concept,Edema,code=D004487; cases=5
