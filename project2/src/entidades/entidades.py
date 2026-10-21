@@ -16,22 +16,41 @@ import argparse
 import csv
 import pickle
 import time
+import sys
 from collections import defaultdict
 from pathlib import Path
 
 import sklearn_crfsuite
 
-# Entregas de outras etapas ainda em mock: troque estes imports quando #29 e #32 publicarem.
-from mock.comum import REPO, casos_gold, dividir_frases, etiquetar, ler_casos, tokenizar
-from mock import avaliar as avaliacao
-from mock import silver as silver_mock
-from mock import termos as termos_mock
+REPO = Path(__file__).resolve().parents[3]
+PROJECT1_SRC = REPO / "project1" / "src"
+for _pasta in (
+    REPO,
+    PROJECT1_SRC / "grafo_lote",
+    PROJECT1_SRC,
+    PROJECT1_SRC / "tokenizacao",
+    PROJECT1_SRC / "sintagmas",
+    PROJECT1_SRC / "dicionarios",
+):
+    if str(_pasta) not in sys.path:
+        sys.path.insert(0, str(_pasta))
+
+from project2.src.avaliacao import avaliar as avaliacao  # noqa: E402
+from project2.src.comum import (  # noqa: E402
+    casos_gold,
+    dividir_frases,
+    etiquetar,
+    ler_casos,
+    tokenizar,
+)
+from project2.src.dados import silver as dados_silver  # noqa: E402
+from project2.src.termos import termos as termos_mod  # noqa: E402
 
 DADOS = REPO / "project2" / "data"
-SILVER = DADOS / "mock" / "silver" / "mencoes.csv"
-REGRAS = DADOS / "mock" / "regras" / "mencoes.csv"
-GOLD = DADOS / "mock" / "gold" / "mencoes.csv"
-TERMOS = DADOS / "mock" / "termos.csv"
+SILVER = DADOS / "silver" / "mencoes.csv"
+REGRAS = DADOS / "regras" / "mencoes.csv"
+GOLD = DADOS / "gold" / "mencoes.csv"
+TERMOS = DADOS / "termos.csv"
 MENCOES = DADOS / "mencoes.csv"
 RESULTADOS = DADOS / "resultados"
 MODELOS = REPO / "project2" / "models" / "entidades"
@@ -179,8 +198,8 @@ def _termos(com_termos: bool) -> set | None:
     if not com_termos:
         return None
     if not TERMOS.is_file():
-        raise FileNotFoundError(f"{TERMOS} não existe: rode o subcomando `mock` antes")
-    return set(termos_mock.ler_termos(TERMOS))
+        raise FileNotFoundError(f"{TERMOS} não existe: rode `python project2/src/termos/termos.py gerar` antes")
+    return set(termos_mod.ler_termos(TERMOS))
 
 
 def _caminho_modelo(com_termos: bool) -> Path:
@@ -325,7 +344,7 @@ def comparar() -> list[dict]:
 def main() -> None:
     parser = argparse.ArgumentParser(description=__doc__.splitlines()[0])
     sub = parser.add_subparsers(dest="comando", required=True)
-    sub.add_parser("mock", help="gera silver, linha de base das regras e termos (mocks de #29 e #32)")
+    sub.add_parser("mock", help="gera silver, linha de base das regras e termos (#29 e #32)")
     p_treinar = sub.add_parser("treinar", help="treina o CRF no silver")
     p_treinar.add_argument("--termos", action="store_true", help="usa a pista do termos.csv")
     p_prever = sub.add_parser("prever", help="gera project2/data/mencoes.csv")
@@ -335,7 +354,7 @@ def main() -> None:
     args = parser.parse_args()
 
     if args.comando == "mock":
-        print(silver_mock.gerar(), {"termos": termos_mock.gerar()})
+        print(dados_silver.gerar(), {"termos": termos_mod.gerar()})
     elif args.comando == "treinar":
         print(treinar(args.termos))
     elif args.comando == "prever":

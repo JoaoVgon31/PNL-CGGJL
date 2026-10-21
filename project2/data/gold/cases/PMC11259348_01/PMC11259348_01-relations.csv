@@ -1,1 +1,16 @@
 case_id,source,target,relation,polarity,certainty
+PMC11259348_01,t1,t2,HAS_SYMPTOM,present,asserted
+PMC11259348_01,t1,t3,HAS_SYMPTOM,present,asserted
+PMC11259348_01,t1,t4,HAS_SYMPTOM,present,asserted
+PMC11259348_01,t1,t5,DIAGNOSED_WITH,present,asserted
+PMC11259348_01,t1,t6,UNDERWENT_EXAM,present,asserted
+PMC11259348_01,t6,t7,HAS_RESULT,present,asserted
+PMC11259348_01,t1,t8,UNDERWENT_EXAM,present,asserted
+PMC11259348_01,t8,t9,HAS_RESULT,present,asserted
+PMC11259348_01,t1,t10,UNDERWENT_EXAM,present,asserted
+PMC11259348_01,t10,t11,HAS_RESULT,present,asserted
+PMC11259348_01,t1,t12,UNDERWENT_EXAM,present,asserted
+PMC11259348_01,t12,t13,HAS_RESULT,present,asserted
+PMC11259348_01,t1,t14,TREATED_WITH,present,asserted
+PMC11259348_01,t1,t15,TREATED_WITH,present,asserted
+PMC11259348_01,t1,t16,HAS_SYMPTOM,present,asserted

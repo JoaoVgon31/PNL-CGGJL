@@ -1,19 +1,17 @@
 case_id,ent_id,char_start,char_end,texto,type,concept_code
-PMC11259348_01,t1,2,7,child,,
-PMC11259348_01,t2,22,27,fever,Symptom,
+PMC11259348_01,t1,2,7,child,Patient,
+PMC11259348_01,t2,22,27,fever,Symptom,D005334
 PMC11259348_01,t3,29,41,loose stools,Symptom,
 PMC11259348_01,t4,47,63,dark color urine,Symptom,
-PMC11259348_01,t5,83,86,PCH,Symptom,
-PMC11259348_01,t6,93,132,having positive Donath-Landsteiner test,Exam,
-PMC11259348_01,t7,140,156,hemoglobin level,Exam,
-PMC11259348_01,t8,169,186,three blood units,,
-PMC11259348_01,t9,204,215,blood group,,
-PMC11259348_01,t10,222,235,Rh D-positive,,
-PMC11259348_01,t11,240,248,antibody,,
-PMC11259348_01,t12,277,284,patient,,
-PMC11259348_01,t13,305,348,group-specific cross-match-compatible blood,,
-PMC11259348_01,t14,352,367,three occasions,,
-PMC11259348_01,t15,376,388,blood warmer,,
-PMC11259348_01,t16,400,422,each blood transfusion,Treatment,D001803
-PMC11259348_01,t17,428,446,developed episodes,,
-PMC11259348_01,t18,450,464,hemoglobinuria,,
+PMC11259348_01,t5,83,86,PCH,Diagnosis,
+PMC11259348_01,t6,109,132,Donath-Landsteiner test,Exam,
+PMC11259348_01,t7,100,108,positive,ExamResult,
+PMC11259348_01,t8,140,156,hemoglobin level,Exam,D006454
+PMC11259348_01,t9,161,167,4 g/dL,ExamResult,
+PMC11259348_01,t10,204,215,blood group,Exam,D001789
+PMC11259348_01,t11,220,235,A Rh D-positive,ExamResult,
+PMC11259348_01,t12,240,258,antibody screening,Exam,D008403
+PMC11259348_01,t13,263,271,negative,ExamResult,
+PMC11259348_01,t14,289,299,transfused,Treatment,
+PMC11259348_01,t15,405,422,blood transfusion,Treatment,D001803
+PMC11259348_01,t16,450,464,hemoglobinuria,Symptom,D006456

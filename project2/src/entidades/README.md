@@ -20,7 +20,7 @@ Nada abaixo é versionado (ver `.gitignore`); cada passo recria seus arquivos.
 
 | # | Comando | Gera | Tempo |
 |---|---|---|---|
-| 1 | `python project2/src/entidades/entidades.py mock` | `data/mock/silver/mencoes.csv`, `data/mock/regras/mencoes.csv`, `data/mock/termos.csv` | ~7 s |
+| 1 | `python project2/src/dados/silver.py && python project2/src/termos/termos.py gerar` | `data/silver/mencoes.csv`, `data/regras/mencoes.csv`, `data/termos.csv` | ~10 s |
 | 2 | `python project2/src/entidades/entidades.py treinar` | `models/entidades/crf.pkl` | ~20 s |
 | 3 | `python project2/src/entidades/entidades.py treinar --termos` | `models/entidades/crf_termos.pkl` | ~20 s |
 | 4 | `python project2/src/entidades/entidades.py prever [--termos] [--todos]` | `data/mencoes.csv` (casos do gabarito; `--todos` para os 56) | ~5 s |
@@ -51,23 +51,10 @@ Do silver para o BIO: um token entra no span se tiver interseção com ele; span
 (sítio anatômico dentro de um sintoma) ficam só com o mais longo, porque o BIO é plano. A mesma
 regra é aplicada às saídas das regras e do `pos_bio` antes de avaliar.
 
-## (TODO => CAIO) Mocks
+## Integração
 
-O que depende de outras etapas está em `mock/`, com a interface prometida nas issues. Isso serve para o desenvolvimento deste módulo sem precisar esperar os outros membrom. 
-
-Fica pendente trocar o import no topo de `entidades.py` e apagar os mocks.
-
-| Mock | Substitui | Issue | Diferença para a entrega real |
-|---|---|---|---|
-| `mock/comum.py` | `project2/src/comum/` | #32 | mesma base (`ClinicalRegexTokenizer`, `split_sentences`); só lê a amostra |
-| `mock/silver.py` | `project2/src/dados/silver.py` | #29 | só os 56 casos da amostra (silver v0) |
-| `mock/avaliar.py` | `project2/src/avaliacao/avaliar.py` | #29 | só menções |
-| `mock/termos.py` | `project2/src/termos/termos.py` | #32 | conta só na amostra, não no corpus inteiro |
-| `data/mock/gold/` | `project2/data/gold/` | #29 | 3 casos da amostra anotados à mão, não 16 de fora |
-
-O gabarito mock (`data/mock/gold/casos.txt` e `mencoes.csv`) é a única entrada feita à mão e é
-versionado. Critério usado: menção é o sintagma nominal sem artigo, com seus modificadores
-(tamanho, lateralidade, intensidade); coordenação com núcleo comum é uma menção só
-(`right flank and lower quadrant abdominal pain`); sem aninhamento; verbos ficam de fora, adjetivos
-de estado (`febrile`) entram. Os casos vêm da amostra em que as regras do projeto 1 foram ajustadas,
-o que as favorece na comparação.
+Esta etapa consome diretamente os módulos oficiais:
+- `project2/src/comum/` (#32) para leitura dos casos, tokenização (`ClinicalRegexTokenizer`), divisão em frases (`split_sentences`) e POS tagging (`HMMTagger`).
+- `project2/src/termos/termos.py` (#32) para leitura do vocabulário de termos compostos (`project2/data/termos.csv`).
+- `project2/src/dados/silver.py` (#29) para o silver standard (`project2/data/silver/mencoes.csv`) e linha de base das regras (`project2/data/regras/mencoes.csv`).
+- `project2/src/avaliacao/avaliar.py` (#29) para cálculo de precisão, revocação e F1 (`exato` e `sobreposicao`) contra `project2/data/gold/mencoes.csv`.

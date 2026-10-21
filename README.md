@@ -19,6 +19,6 @@ O enunciado dos projetos vem do repositório da disciplina: [santanche/nlp2learn
 | João Vitor Gonçalves Oliveira | 237871 |
 | Lucas Guarnieri | 119756 |
 
-# Apresentação
+## Apresentação
 
 O presente projeto foi originado no contexto das atividades da disciplina de graduação [*Processamento de Línguas Naturais*](https://www.ic.unicamp.br/~santanch/teaching/nlp/2026-2/), oferecida no segundo semestre de 2026, na Unicamp.

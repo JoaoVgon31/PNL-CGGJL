@@ -195,5 +195,29 @@ class TestEvaluateAgainstGold(unittest.TestCase):
         self.assertEqual(result["relation_f1"], 1.0)
 
 
+class TestPreverMencoes(unittest.TestCase):
+    def test_prever_mencoes_contrato_montagem(self):
+        from project2.src.relacoes.relacoes import prever_mencoes, relacoes_permitidas
+
+        self.assertIn("REVEALS", relacoes_permitidas("Exam", "Finding"))
+        self.assertIn("HAS_RESULT", relacoes_permitidas("Exam", "ExamResult"))
+        self.assertIn("LOCATED_IN", relacoes_permitidas("Symptom", "AnatomicalSite"))
+        self.assertEqual(relacoes_permitidas("AnatomicalSite", "Exam"), set())
+
+        df = _toy_training_frame()
+        _, pipeline, _ = select_best_lr_config(df, df)
+        mencoes = [
+            {"case_id": "C1", "id": "m1", "start": 0, "end": 4, "texto": "Exam", "tipo": "Exam"},
+            {"case_id": "C1", "id": "m2", "start": 28, "end": 32, "texto": "mass", "tipo": "Finding"},
+            {"case_id": "C1", "id": "m3", "start": 40, "end": 44, "texto": "lung", "tipo": "AnatomicalSite"},
+        ]
+        textos = {"C1": "Exam revealed a mass in the mass in the lung."}
+        rels = prever_mencoes(mencoes, textos, pipeline=pipeline)
+        self.assertTrue(len(rels) >= 1)
+        for r in rels:
+            self.assertEqual(list(r.keys()), ["case_id", "origem", "destino", "relacao", "confianca"])
+
+
 if __name__ == "__main__":
     unittest.main()
+

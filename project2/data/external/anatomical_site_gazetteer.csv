@@ -1,0 +1,102 @@
+term,code,preferred_term,category
+Stomach,ANAT001,Stomach,anatomical_site
+gastric,ANAT001,Stomach,anatomical_site
+Pancreas,ANAT002,Pancreas,anatomical_site
+pancreatic,ANAT002,Pancreas,anatomical_site
+Liver,ANAT003,Liver,anatomical_site
+hepatic,ANAT003,Liver,anatomical_site
+Kidney,ANAT004,Kidney,anatomical_site
+renal,ANAT004,Kidney,anatomical_site
+Spleen,ANAT005,Spleen,anatomical_site
+splenic,ANAT005,Spleen,anatomical_site
+Heart,ANAT006,Heart,anatomical_site
+cardiac,ANAT006,Heart,anatomical_site
+Lung,ANAT007,Lung,anatomical_site
+pulmonary,ANAT007,Lung,anatomical_site
+Brain,ANAT008,Brain,anatomical_site
+cerebral,ANAT008,Brain,anatomical_site
+Colon,ANAT009,Colon,anatomical_site
+colonic,ANAT009,Colon,anatomical_site
+Esophagus,ANAT010,Esophagus,anatomical_site
+esophageal,ANAT010,Esophagus,anatomical_site
+Gallbladder,ANAT011,Gallbladder,anatomical_site
+Bladder,ANAT012,Bladder,anatomical_site
+vesical,ANAT012,Bladder,anatomical_site
+Prostate,ANAT013,Prostate,anatomical_site
+prostatic,ANAT013,Prostate,anatomical_site
+Ovary,ANAT014,Ovary,anatomical_site
+ovarian,ANAT014,Ovary,anatomical_site
+Uterus,ANAT015,Uterus,anatomical_site
+uterine,ANAT015,Uterus,anatomical_site
+Breast,ANAT016,Breast,anatomical_site
+mammary,ANAT016,Breast,anatomical_site
+Thyroid,ANAT017,Thyroid,anatomical_site
+Skin,ANAT018,Skin,anatomical_site
+cutaneous,ANAT018,Skin,anatomical_site
+dermal,ANAT018,Skin,anatomical_site
+Bone,ANAT019,Bone,anatomical_site
+osseous,ANAT019,Bone,anatomical_site
+Appendix,ANAT020,Appendix,anatomical_site
+appendiceal,ANAT020,Appendix,anatomical_site
+Small intestine,ANAT021,Small intestine,anatomical_site
+Large intestine,ANAT022,Large intestine,anatomical_site
+Spinal cord,ANAT023,Spinal cord,anatomical_site
+Head,ANAT024,Head,anatomical_site
+cranial,ANAT024,Head,anatomical_site
+cephalic,ANAT024,Head,anatomical_site
+Face,ANAT025,Face,anatomical_site
+facial,ANAT025,Face,anatomical_site
+Eye,ANAT026,Eye,anatomical_site
+ocular,ANAT026,Eye,anatomical_site
+orbital,ANAT026,Eye,anatomical_site
+Cheek,ANAT027,Cheek,anatomical_site
+buccal,ANAT027,Cheek,anatomical_site
+Ear,ANAT028,Ear,anatomical_site
+otic,ANAT028,Ear,anatomical_site
+auricular,ANAT028,Ear,anatomical_site
+Nose,ANAT029,Nose,anatomical_site
+nasal,ANAT029,Nose,anatomical_site
+Chin,ANAT030,Chin,anatomical_site
+mental,ANAT030,Chin,anatomical_site
+Neck,ANAT031,Neck,anatomical_site
+cervical,ANAT031,Neck,anatomical_site
+Chest,ANAT032,Chest,anatomical_site
+thoracic,ANAT032,Chest,anatomical_site
+Abdomen,ANAT033,Abdomen,anatomical_site
+abdominal,ANAT033,Abdomen,anatomical_site
+Pubic region,ANAT034,Pubic region,anatomical_site
+pubic,ANAT034,Pubic region,anatomical_site
+Navel,ANAT035,Navel,anatomical_site
+umbilical,ANAT035,Navel,anatomical_site
+Armpit,ANAT036,Armpit,anatomical_site
+axillary,ANAT036,Armpit,anatomical_site
+Upper arm,ANAT037,Upper arm,anatomical_site
+brachial,ANAT037,Upper arm,anatomical_site
+Forearm,ANAT038,Forearm,anatomical_site
+antebrachial,ANAT038,Forearm,anatomical_site
+Wrist,ANAT039,Wrist,anatomical_site
+carpal,ANAT039,Wrist,anatomical_site
+Palm,ANAT040,Palm,anatomical_site
+palmar,ANAT040,Palm,anatomical_site
+Groin,ANAT041,Groin,anatomical_site
+inguinal,ANAT041,Groin,anatomical_site
+Thigh,ANAT042,Thigh,anatomical_site
+femoral,ANAT042,Thigh,anatomical_site
+Knee,ANAT043,Knee,anatomical_site
+patellar,ANAT043,Knee,anatomical_site
+Lower leg,ANAT044,Lower leg,anatomical_site
+crural,ANAT044,Lower leg,anatomical_site
+Ankle,ANAT045,Ankle,anatomical_site
+tarsal,ANAT045,Ankle,anatomical_site
+Foot,ANAT046,Foot,anatomical_site
+pedal,ANAT046,Foot,anatomical_site
+Sole,ANAT047,Sole,anatomical_site
+plantar,ANAT047,Sole,anatomical_site
+Back,ANAT048,Back,anatomical_site
+dorsal,ANAT048,Back,anatomical_site
+Lower back,ANAT049,Lower back,anatomical_site
+lumbar,ANAT049,Lower back,anatomical_site
+Buttocks,ANAT050,Buttocks,anatomical_site
+gluteal,ANAT050,Buttocks,anatomical_site
+Pelvis,ANAT051,Pelvis,anatomical_site
+pelvic,ANAT051,Pelvis,anatomical_site
