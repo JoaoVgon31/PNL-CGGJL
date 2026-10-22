@@ -27,6 +27,11 @@ STRATEGY_SOURCES = {
     "dicionarios": Path("src/dicionarios/output"),
     "sintagmas": Path("src/sintagmas/output"),
     "normalizacao": Path("src/normalizacao/output"),
+    # project2/ é diretório-irmão de project1/ no repositório; o caminho relativo
+    # sobe um nível antes de entrar em project2/data/grafo (saída de
+    # project2/src/montagem/montagem.py). Ver build_case_payload para o alias
+    # "projeto1" que depende desta chave existir.
+    "projeto2": Path("../project2/data/grafo"),
 }
 
 PROJECT_ROOT = Path(__file__).resolve().parent.parent

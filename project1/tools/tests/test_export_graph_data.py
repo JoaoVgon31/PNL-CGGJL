@@ -59,6 +59,17 @@ class DiscoverCasesTests(unittest.TestCase):
 
             self.assertEqual(cases, {})
 
+    def test_finds_projeto2_graphs_from_sibling_project2_directory(self):
+        with tempfile.TemporaryDirectory() as tmp:
+            tmp_root = Path(tmp)
+            project1_root = tmp_root / "project1"
+            _write_case_graph(project1_root / "data" / "processed", "CASE1")
+            _write_case_graph(tmp_root / "project2" / "data" / "grafo", "CASE1")
+
+            cases = discover_cases(project1_root)
+
+            self.assertEqual(set(cases["CASE1"].keys()), {"combinado", "projeto2"})
+
 
 class BuildCasePayloadTests(unittest.TestCase):
     def test_includes_case_text_when_known(self):
