@@ -17,9 +17,11 @@ sys.path.insert(0, str(Path(__file__).resolve().parent))
 
 from graph_csv import read_case_texts, read_edges_csv, read_nodes_csv
 
-# Ordem também usada pelo front-end para desenhar as abas da esquerda pra
-# direita; a chave é o nome da aba, o valor é o caminho (relativo à raiz de
-# project1/) de onde vêm os CSVs daquela estratégia.
+# A chave é o nome da fonte; o valor é o caminho de onde vêm os CSVs daquela
+# fonte, resolvido a partir da raiz de project1/ (o project_root recebido por
+# discover_cases) — a maioria fica dentro de project1/, mas "projeto2" sobe um
+# nível para o diretório-irmão project2/. A ordem das abas no site vem de
+# STRATEGY_ORDER em app.js, não da ordem deste dict.
 STRATEGY_SOURCES = {
     "combinado": Path("data/processed"),
     "tokenizacao": Path("src/tokenizacao/output"),
@@ -70,10 +72,14 @@ def build_case_payload(
         }
     # "Projeto 1" só existe como aba de comparação quando o caso também tem
     # grafo do Projeto 2 — evita duplicar uma aba idêntica a "Combinado" nos
-    # casos (a maioria, hoje) sem contraparte em P2. O app.js já esconde a aba
-    # "Combinado" quando "projeto1"/"projeto2" estão presentes.
+    # casos (a maioria, hoje) sem contraparte em P2. Renomeia (não copia) para
+    # que "combinado" deixe de existir nesses casos: app.js tem uma troca de
+    # caso com seleção "sticky" (loadCase mantém state.currentStrategy se a
+    # chave ainda existir no payload) que, se as duas chaves coexistissem,
+    # deixaria a barra de abas sem nenhuma aba destacada ao navegar de um caso
+    # comum para um com grafo do Projeto 2 — renomear evita esse estado.
     if "projeto2" in graphs and "combinado" in graphs:
-        graphs["projeto1"] = graphs["combinado"]
+        graphs["projeto1"] = graphs.pop("combinado")
     payload: dict = {"case_id": case_id, "graphs": graphs}
     if case_id in case_texts:
         payload["case_text"] = case_texts[case_id]

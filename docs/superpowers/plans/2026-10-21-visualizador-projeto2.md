@@ -299,7 +299,7 @@ Stop the server with `Ctrl+C` when done.
 
 - [ ] **Step 4: Confirm the full test suite still passes**
 
-Run: `cd project1/tools && python3 -m unittest discover tests -v`
+Run: `python3 -m unittest discover -s project1/tools/tests -t . -v` (from the repo root — `project1/tools/tests/test_graph_csv.py` imports `project1.src...`, which only resolves with the repo root, not `project1/tools`, as the discovery top-level dir; this is a pre-existing repo quirk, unrelated to this feature)
 Expected: PASS for every test (`test_export_graph_data.py`, `test_generate_case_texts.py`, `test_graph_csv.py`).
 
 No commit for this task — it's verification only, confirming Tasks 1-3 work correctly together before considering the branch ready for review.

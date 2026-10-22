@@ -19,11 +19,11 @@ def _write_csv(path: Path, columns: tuple, rows: list[dict]) -> None:
         writer.writerows(rows)
 
 
-def _write_case_graph(directory: Path, case_id: str) -> None:
+def _write_case_graph(directory: Path, case_id: str, label: str = "case") -> None:
     _write_csv(
         directory / f"{case_id}-nodes.csv",
         NODE_COLUMNS,
-        [{"case_id": case_id, "node_id": "P1", "type": "Patient", "label": "case", "attributes": ""}],
+        [{"case_id": case_id, "node_id": "P1", "type": "Patient", "label": label, "attributes": ""}],
     )
     _write_csv(directory / f"{case_id}-edges.csv", EDGE_COLUMNS, [])
 
@@ -96,14 +96,16 @@ class BuildCasePayloadTests(unittest.TestCase):
     def test_adds_projeto1_alias_when_projeto2_and_combinado_present(self):
         with tempfile.TemporaryDirectory() as tmp:
             root = Path(tmp)
-            _write_case_graph(root / "combinado", "CASE1")
-            _write_case_graph(root / "projeto2", "CASE1")
+            _write_case_graph(root / "combinado", "CASE1", label="grafo combinado P1")
+            _write_case_graph(root / "projeto2", "CASE1", label="grafo P2")
             sources = {"combinado": root / "combinado", "projeto2": root / "projeto2"}
 
             payload = build_case_payload("CASE1", sources, {})
 
-            self.assertEqual(set(payload["graphs"].keys()), {"combinado", "projeto2", "projeto1"})
-            self.assertEqual(payload["graphs"]["projeto1"], payload["graphs"]["combinado"])
+            self.assertEqual(set(payload["graphs"].keys()), {"projeto2", "projeto1"})
+            self.assertNotIn("combinado", payload["graphs"])
+            self.assertEqual(payload["graphs"]["projeto1"]["nodes"][0]["label"], "grafo combinado P1")
+            self.assertNotEqual(payload["graphs"]["projeto1"], payload["graphs"]["projeto2"])
 
     def test_omits_projeto1_alias_when_only_one_of_the_pair_present(self):
         with tempfile.TemporaryDirectory() as tmp:
@@ -175,18 +177,20 @@ class ExportAllTests(unittest.TestCase):
         with tempfile.TemporaryDirectory() as tmp:
             tmp_root = Path(tmp)
             project1_root = tmp_root / "project1"
-            _write_case_graph(project1_root / "data" / "processed", "CASE1")
-            _write_case_graph(tmp_root / "project2" / "data" / "grafo", "CASE1")
+            _write_case_graph(project1_root / "data" / "processed", "CASE1", label="grafo combinado P1")
+            _write_case_graph(tmp_root / "project2" / "data" / "grafo", "CASE1", label="grafo P2")
             output_dir = project1_root / "visualizer" / "data"
 
             manifest = export_all(project1_root, output_dir)
 
             self.assertEqual(
                 manifest,
-                {"cases": [{"case_id": "CASE1", "graphs": ["combinado", "projeto1", "projeto2"]}]},
+                {"cases": [{"case_id": "CASE1", "graphs": ["projeto1", "projeto2"]}]},
             )
             case1 = json.loads((output_dir / "CASE1.json").read_text())
-            self.assertEqual(case1["graphs"]["projeto1"], case1["graphs"]["combinado"])
+            self.assertNotIn("combinado", case1["graphs"])
+            self.assertEqual(case1["graphs"]["projeto1"]["nodes"][0]["label"], "grafo combinado P1")
+            self.assertNotEqual(case1["graphs"]["projeto1"], case1["graphs"]["projeto2"])
 
 
 if __name__ == "__main__":
