@@ -8,6 +8,7 @@ on:
       - "project1/src/*/output/**"
       - "project1/visualizer/**"
       - "project1/tools/**"
+      - "project2/data/grafo/**"
   workflow_dispatch: {}
 
 permissions:
