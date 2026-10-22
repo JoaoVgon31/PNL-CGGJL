@@ -24,6 +24,12 @@ um JSON por caso + `manifest.json` em `visualizer/data/`. Roda sozinho a cada pu
 relevante via `.github/workflows/deploy-visualizer.yml`; localmente, rode manualmente
 como acima sempre que quiser ver dados atualizados.
 
+Também lê `project2/data/grafo/` (saída de `project2/src/montagem/montagem.py`), caso exista,
+expondo-a como a aba "Projeto 2". Quando um caso tem tanto esse grafo quanto o grafo combinado do
+Projeto 1, o combinado também aparece com o rótulo "Projeto 1" (mesmo dado, outro nome) para
+facilitar a comparação lado a lado — casos sem grafo do Projeto 2 continuam mostrando só
+"Combinado", sem aba duplicada.
+
 O leitor compartilhado `tools/graph_csv.py` aceita tanto os atributos legados `chave=valor`
 quanto objetos JSON com valores string. O serializador da tokenização e da montagem P2 usa
 JSON quando texto como `CT; p=0.05` tornaria o formato legado ambíguo.

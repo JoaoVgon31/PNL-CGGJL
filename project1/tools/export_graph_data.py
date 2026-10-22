@@ -68,6 +68,12 @@ def build_case_payload(
             "nodes": read_nodes_csv(directory / f"{case_id}-nodes.csv"),
             "edges": read_edges_csv(directory / f"{case_id}-edges.csv"),
         }
+    # "Projeto 1" só existe como aba de comparação quando o caso também tem
+    # grafo do Projeto 2 — evita duplicar uma aba idêntica a "Combinado" nos
+    # casos (a maioria, hoje) sem contraparte em P2. O app.js já esconde a aba
+    # "Combinado" quando "projeto1"/"projeto2" estão presentes.
+    if "projeto2" in graphs and "combinado" in graphs:
+        graphs["projeto1"] = graphs["combinado"]
     payload: dict = {"case_id": case_id, "graphs": graphs}
     if case_id in case_texts:
         payload["case_text"] = case_texts[case_id]

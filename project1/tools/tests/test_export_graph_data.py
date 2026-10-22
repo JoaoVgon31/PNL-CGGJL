@@ -93,6 +93,29 @@ class BuildCasePayloadTests(unittest.TestCase):
 
             self.assertNotIn("case_text", payload)
 
+    def test_adds_projeto1_alias_when_projeto2_and_combinado_present(self):
+        with tempfile.TemporaryDirectory() as tmp:
+            root = Path(tmp)
+            _write_case_graph(root / "combinado", "CASE1")
+            _write_case_graph(root / "projeto2", "CASE1")
+            sources = {"combinado": root / "combinado", "projeto2": root / "projeto2"}
+
+            payload = build_case_payload("CASE1", sources, {})
+
+            self.assertEqual(set(payload["graphs"].keys()), {"combinado", "projeto2", "projeto1"})
+            self.assertEqual(payload["graphs"]["projeto1"], payload["graphs"]["combinado"])
+
+    def test_omits_projeto1_alias_when_only_one_of_the_pair_present(self):
+        with tempfile.TemporaryDirectory() as tmp:
+            root = Path(tmp)
+            _write_case_graph(root, "CASE1")
+
+            only_combinado = build_case_payload("CASE1", {"combinado": root}, {})
+            only_projeto2 = build_case_payload("CASE1", {"projeto2": root}, {})
+
+            self.assertNotIn("projeto1", only_combinado["graphs"])
+            self.assertNotIn("projeto1", only_projeto2["graphs"])
+
 
 class BuildManifestTests(unittest.TestCase):
     def test_lists_cases_sorted_with_their_graph_keys(self):
@@ -147,6 +170,23 @@ class ExportAllTests(unittest.TestCase):
 
             case2 = json.loads((output_dir / "CASE2.json").read_text())
             self.assertNotIn("case_text", case2)
+
+    def test_includes_projeto1_alias_when_projeto2_graph_exists(self):
+        with tempfile.TemporaryDirectory() as tmp:
+            tmp_root = Path(tmp)
+            project1_root = tmp_root / "project1"
+            _write_case_graph(project1_root / "data" / "processed", "CASE1")
+            _write_case_graph(tmp_root / "project2" / "data" / "grafo", "CASE1")
+            output_dir = project1_root / "visualizer" / "data"
+
+            manifest = export_all(project1_root, output_dir)
+
+            self.assertEqual(
+                manifest,
+                {"cases": [{"case_id": "CASE1", "graphs": ["combinado", "projeto1", "projeto2"]}]},
+            )
+            case1 = json.loads((output_dir / "CASE1.json").read_text())
+            self.assertEqual(case1["graphs"]["projeto1"], case1["graphs"]["combinado"])
 
 
 if __name__ == "__main__":
